@@ -826,3 +826,56 @@ body {
         gap: 20px;
     }
 }
+.learnmore{
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+label{
+    color: white;
+    margin-left: 7px;
+}
+input{
+    background-color: transparent;
+    border-radius: 7px;
+    border: solid white;
+    height: 35px;
+}
+#s_appointment{
+    display: flex;
+    justify-content: center;
+    color: white;
+
+}
+#message{
+    background-color: transparent;
+    border: solid white;
+    color: #1a2922;
+    width: 100%;
+    height: 70px;
+}
+#name, #phoneNum, #em{
+
+}
+
+#name, #phoneNum{
+    margin-right: 50px;
+}
+@media (max-width: 600px) {
+    #name, #phoneNum{
+        margin-right: 0px;
+    }
+    #name{
+        margin-bottom: 10px;
+    }
+    #date{
+        line-break: normal;
+    }
+    
+}
