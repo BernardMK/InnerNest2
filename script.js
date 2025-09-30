@@ -234,35 +234,81 @@ function getConditionInfo(conditionType) {
                 'Develop healthy coping mechanisms'
             ]
         },
+        biPolarDisorder: {
+            id: 'biPolarDisorder',
+            icon: '😵‍💫',
+            title: 'Bipolar Disorder',
+            description: 'Bipolar disorder is characterized by extreme mood swings, including emotional highs (mania or hypomania) and lows (depression).',
+            symptoms: [
+                'Frequent mood changes',
+                'Increased energy or activity levels',
+                'Racing thoughts or rapid speech',
+                'Impulsive or risky behavior',
+                'Feelings of hopelessness or despair',
+                'Changes in sleep patterns'
+            ],
+            strategies: [
+                'Maintain a consistent daily routine',
+                'Track mood changes',
+                ' Avoid alcohol and drugs',
+                'Take medications as prescribed',
+                'Educate yourself about the disorder',
+                'Build a strong support system',
+                'Engage in therapy or counseling',
+                'Practice self-compassion'
+            ]
+        },
+        eatingDisorder: {
+            id: 'eatingDisorder',
+            icon: '🍽️',
+            title: 'Eating Disorders',
+            description: 'Eating disorders involve unhealthy eating habits that negatively impact physical and mental health.',
+            symptoms: [
+                'Preoccupation with food, weight, and body image',
+                'Extreme dietary restrictions',
+                'Binge eating episodes',
+                'Purging behaviors (vomiting, laxatives)',
+                'Excessive exercise',
+                'Social withdrawal',
+            ],
+            strategies: [
+                'Seek professional help from a therapist or dietitian',
+                'Avoid dieting or restrictive eating',
+                'Practice mindful eating',
+                'Build a support network',
+                'Engage in self-care activities',
+                'Challenge negative thoughts about body image'
+            ]
+        }, 
         relationships: {
             id: 'relationships',
             icon: '💑',
             title: 'Relationship Issues',
-            description: 'Healthy relationships are crucial for mental wellbeing. Relationship challenges can significantly impact your quality of life.',
+            description: 'Healthy relationships are vital for mental wellbeing. Addressing relationship issues can improve communication and emotional connection.',
             symptoms: [
                 'Frequent arguments or conflicts',
-                'Communication breakdowns',
-                'Feeling disconnected from others',
-                'Trust issues',
-                'Difficulty expressing emotions',
-                'Social isolation'
+                'Feeling misunderstood or unappreciated',
+                'Lack of trust or intimacy',
+                'Emotional distance or withdrawal',
+                'Jealousy or insecurity',
+                'Difficulty resolving disagreements'
             ],
             strategies: [
                 'Practice active listening',
-                'Use "I" statements in communication',
+                'Communicate openly and honestly',
                 'Set healthy boundaries',
-                'Show empathy and understanding',
+                'Seek couples or family therapy',
                 'Spend quality time together',
-                'Consider couples or family therapy'
+                'Show appreciation and gratitude'
             ]
         },
         selfcare: {
             id: 'selfcare',
             icon: '🌸',
             title: 'Self-Care & Wellness',
-            description: 'Self-care is essential for maintaining mental health and preventing burnout. It involves taking intentional actions to care for your wellbeing.',
+            description: 'Self-care is essential for maintaining mental and physical health. Prioritizing self-care can enhance overall wellbeing.',
             symptoms: [
-                'Feeling burnt out or exhausted',
+                'Feeling overwhelmed or stressed',
                 'Neglecting personal needs',
                 'Difficulty relaxing',
                 'Loss of motivation',
@@ -277,9 +323,52 @@ function getConditionInfo(conditionType) {
                 'Practice mindfulness or meditation',
                 'Set realistic expectations for yourself'
             ]
+        },
+       panicdisorder: {
+            id: 'panicdisorder',
+            icon: '😱',
+            title: 'Panic Disorder',
+            description: 'Panic disorder is characterized by recurrent and unexpected panic attacks, along with persistent concern about future attacks.',
+            symptoms: [
+                'Sudden and intense fear or discomfort',
+                'Rapid heartbeat or palpitations',
+                'Shortness of breath',
+                'Chest pain or discomfort',
+                'Dizziness or lightheadedness',
+                'Fear of losing control or "going crazy"'
+            ],
+            strategies: [
+                'Practice deep breathing exercises',
+                'Use grounding techniques',
+                'Challenge negative thoughts',
+                'Gradual exposure to feared situations',
+                'Seek professional help if needed',
+                'Join a support group'
+            ]
+        }, 
+        delusionaldisorder: {
+            id: 'delusionaldisorder',
+            icon: '🤯',
+            title: 'Delusional Disorder',
+            description: 'Delusional disorder is characterized by the presence of one or more delusions that persist for at least one month.',
+            symptoms: [
+                'Strongly held false beliefs',
+                'Difficulty distinguishing reality from delusion',
+                'Possible hallucinations',
+                'Social withdrawal',
+                'Emotional distress',
+                'Impaired functioning'
+            ],
+            strategies: [
+                'Seek professional help from a psychiatrist or therapist',
+                'Engage in supportive therapy',
+                'Educate yourself about the disorder',
+                'Build a strong support system',
+                'Practice self-compassion'
+            ]
         }
     };
-    
+
     return conditions[conditionType] || conditions.anxiety;
 }
 
