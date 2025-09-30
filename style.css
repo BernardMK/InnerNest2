@@ -50,7 +50,7 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 12px 20px;
+    padding: 19px 25px;
     background: rgba(88, 131, 119, 0.8);
     border-radius: 16px;
     text-decoration: none;
@@ -87,6 +87,13 @@ body {
 .logo-icon {
     font-size: 1.5em;
     animation: float 3s ease-in-out infinite;
+}
+#logo_img{
+    display: flex;
+    justify-content: center;
+}
+#image{
+    width: 30%;
 }
 
 .mobile-menu-toggle {
