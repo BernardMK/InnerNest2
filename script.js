@@ -234,26 +234,28 @@ function getConditionInfo(conditionType) {
                 'Develop healthy coping mechanisms'
             ]
         },
-        relationships: {
-            id: 'relationships',
-            icon: '💑',
-            title: 'Relationship Issues',
-            description: 'Healthy relationships are crucial for mental wellbeing. Relationship challenges can significantly impact your quality of life.',
+        biPolarDisorder: {
+            id: 'biPolarDisorder',
+            icon: '😵‍💫',
+            title: 'Bipolar Disorder',
+            description: 'Bipolar disorder is characterized by extreme mood swings, including emotional highs (mania or hypomania) and lows (depression).',
             symptoms: [
-                'Frequent arguments or conflicts',
-                'Communication breakdowns',
-                'Feeling disconnected from others',
-                'Trust issues',
-                'Difficulty expressing emotions',
-                'Social isolation'
+                'Frequent mood changes',
+                'Increased energy or activity levels',
+                'Racing thoughts or rapid speech',
+                'Impulsive or risky behavior',
+                'Feelings of hopelessness or despair',
+                'Changes in sleep patterns'
             ],
             strategies: [
-                'Practice active listening',
-                'Use "I" statements in communication',
-                'Set healthy boundaries',
-                'Show empathy and understanding',
-                'Spend quality time together',
-                'Consider couples or family therapy'
+                'Maintain a consistent daily routine',
+                'Track mood changes',
+                ' Avoid alcohol and drugs',
+                'Take medications as prescribed',
+                'Educate yourself about the disorder',
+                'Build a strong support system',
+                'Engage in therapy or counseling',
+                'Practice self-compassion'
             ]
         },
         selfcare: {
@@ -277,9 +279,31 @@ function getConditionInfo(conditionType) {
                 'Practice mindfulness or meditation',
                 'Set realistic expectations for yourself'
             ]
+        }, 
+        relationships: {
+            id: 'relationships',
+            icon: '💑',
+            title: 'Relationship Issues',
+            description: 'Healthy relationships are vital for mental wellbeing. Addressing relationship issues can improve communication and emotional connection.',
+            symptoms: [
+                'Frequent arguments or conflicts',
+                'Feeling misunderstood or unappreciated',
+                'Lack of trust or intimacy',
+                'Emotional distance or withdrawal',
+                'Jealousy or insecurity',
+                'Difficulty resolving disagreements'
+            ],
+            strategies: [
+                'Practice active listening',
+                'Communicate openly and honestly',
+                'Set healthy boundaries',
+                'Seek couples or family therapy',
+                'Spend quality time together',
+                'Show appreciation and gratitude'
+            ]
         }
     };
-    
+
     return conditions[conditionType] || conditions.anxiety;
 }
 
