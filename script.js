@@ -366,7 +366,30 @@ function getConditionInfo(conditionType) {
                 'Build a strong support system',
                 'Practice self-compassion'
             ]
+        },
+        Schizophrenia: {
+            id: 'Schizophrenia',
+            icon: '🫨',
+            title: 'Schizophrenia',
+            description: 'Schizophrenia is a chronic mental health disorder that affects how a person thinks, feels, and behaves. It may involve hallucinations, delusions, and disorganized thinking.',
+            symptoms: [
+                'Hallucinations (seeing or hearing things that are not there)',
+                'Delusions (strongly held false beliefs)',
+                'Disorganized thinking and speech',
+                'Social withdrawal',
+                'Lack of motivation or emotional expression',
+                'Cognitive difficulties (e.g., trouble concentrating)'
+            ],
+            strategies: [
+                'Seek professional help from a psychiatrist or therapist',
+                'Take prescribed medications as directed',
+                'Engage in supportive therapy',
+                'Build a strong support system',
+                'Practice self-care and stress management techniques',
+                'Educate yourself about the disorder'
+            ]
         }
+
     };
 
     return conditions[conditionType] || conditions.anxiety;
