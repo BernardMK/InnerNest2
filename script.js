@@ -388,7 +388,29 @@ function getConditionInfo(conditionType) {
                 'Practice self-care and stress management techniques',
                 'Educate yourself about the disorder'
             ]
-        }
+        },
+        HistrionicPersonalityDisorder: {
+            id: 'HistrionicPersonalityDisorder',
+            icon: '😭',
+            title: 'Histrionic Personality Disorder',
+            description: 'Histrionic Personality Disorder is characterized by a pattern of excessive emotionality and attention-seeking behavior.',
+            symptoms: [
+                'Constantly seeking attention',
+                'Inappropriate seductive behavior',
+                'Rapidly shifting and shallow emotions',
+                'Overly concerned with physical appearance',
+                'Dramatic and theatrical behavior',
+                'Easily influenced by others'
+            ],
+            strategies: [
+                'Seek professional help from a therapist or counselor',
+                'Engage in cognitive-behavioral therapy (CBT)',
+                'Develop healthy coping mechanisms',
+                'Build a strong support system',
+                'Practice self-awareness and emotional regulation',
+                'Set realistic goals and expectations'
+            ]
+        },
 
     };
 
