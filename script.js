@@ -411,6 +411,29 @@ function getConditionInfo(conditionType) {
                 'Set realistic goals and expectations'
             ]
         },
+           Trichotillomania: {
+            id: 'Trichotillomania',
+            icon: '💇‍♀️',
+            title: 'Trichotillomania',
+            description: ' Trichotillomania disorder where a person can’t stop pulling out their own hair, leading to hair loss and stress.',
+            symptoms: [
+                'Constantly seeking attention',
+                'Inappropriate seductive behavior',
+                'Rapidly shifting and shallow emotions',
+                'Overly concerned with physical appearance',
+                'Dramatic and theatrical behavior',
+                'Easily influenced by others'
+            ],
+            strategies: [
+                'Seek professional help from a therapist or counselor',
+                'Engage in cognitive-behavioral therapy (CBT)',
+                'Develop healthy coping mechanisms',
+                'Build a strong support system',
+                'Practice self-awareness and emotional regulation',
+                'Set realistic goals and expectations'
+            ]
+        },
+        
 
     };
 
