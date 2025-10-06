@@ -417,20 +417,20 @@ function getConditionInfo(conditionType) {
             title: 'Trichotillomania',
             description: ' Trichotillomania disorder where a person can’t stop pulling out their own hair, leading to hair loss and stress.',
             symptoms: [
-                'Constantly seeking attention',
-                'Inappropriate seductive behavior',
-                'Rapidly shifting and shallow emotions',
-                'Overly concerned with physical appearance',
-                'Dramatic and theatrical behavior',
-                'Easily influenced by others'
+                'Emotional distress',
+                'Repeated pulling out of hair',
+                'Avoiding social situations or hiding hair loss',
+                'Difficulty stopping the behavior even when wanting to',
+                'Strong urges or tension before pulling hair.',
+                'Playing with, biting, or examining the pulled hairs.'
             ],
             strategies: [
                 'Seek professional help from a therapist or counselor',
-                'Engage in cognitive-behavioral therapy (CBT)',
-                'Develop healthy coping mechanisms',
+                'Keeping hair short or wearing gloves.',
+                'Managing stress through exercise, mindfulness, or meditation.',
                 'Build a strong support system',
-                'Practice self-awareness and emotional regulation',
-                'Set realistic goals and expectations'
+                'Acceptance and Commitment Therapy (ACT): Encourages acceptance of urges without acting on them.',
+                'Connecting with others with trichotillomania can provide encouragement and reduce shame.'
             ]
         },
         
