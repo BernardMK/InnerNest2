@@ -49,17 +49,7 @@ function scrollToSection(sectionId) {
 }
 
 // Navigation link active state
-navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href').substring(1);
-        scrollToSection(targetId);
-        
-        // Update active state
-        navLinks.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-    });
-});
+
 
 // Condition item interactions
 conditionItems.forEach((item, index) => {
@@ -787,8 +777,8 @@ function initEmergencyContact() {
     const style = document.createElement('style');
     style.textContent = `
         @keyframes pulse {
-            0% { box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3); }
-            50% { box-shadow: 0 4px 20px rgba(220, 53, 69, 0.6); transform: scale(1.05); }
+            0% { box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);}
+            50% { box-shadow: 0 4px 20px rgba(220, 53, 69, 0.6);}
             100% { box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3); }
         }
     `;
