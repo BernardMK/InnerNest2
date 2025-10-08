@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InnerNest - Mental Health Support Chat</title>
     <link rel="stylesheet" href="chatbot.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -18,19 +19,49 @@
     </div>
 
     <!-- Header - Matching Home Page Nav Style -->
-    <header class="header">
-        <div class="header-content">
-            <div class="logo">
-                <img src="image/InnerNest logo.png" alt="InnerNest Logo">
-                <h1>InnerNest</h1>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-links" id="index">
+                <a href="index.html" class="nav-link" id="home">
+
+                    <span class="nav-text">Home</span>
+                </a>
             </div>
-            <div class="nav-menu">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="blog.html" class="nav-link">Blog</a>
-                <button class="nav-link emergency" onclick="showEmergencyContacts()">🆘 Emergency</button>
+            <div class="nav-links" id="post">
+                <a href="blog.html" class="nav-link" id="blog">
+
+                    <span class="nav-text">Blog</span>
+                </a>
+            </div>
+            
+            <div class="logo" id="logo">
+                <div id="logo_img">
+                    <img src="image/InnerNest logo.png" alt="logo" id="image">
+                </div>
+                
+
+            </div>
+            
+            <div class="nav-links" id="chat">
+                <a href="chat.html" class="nav-link" id="chatb">
+                    <span class="nav-text">Chat</span>
+                </a>
+            </div>
+            <div class="nav-links" id="book">
+                <a href="book.html" class="nav-link" id="booka">
+
+                    <span class="nav-text">Book</span>
+                </a>
+            </div>
+            
+            <div class="mobile-menu-toggle" id="mobileToggle">
+                <span>
+                </span>
+                <span></span>
+                <span></span>
             </div>
         </div>
-    </header>
+    </nav>
 
     <!-- Main Container -->
     <div class="container">
