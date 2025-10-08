@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnerNest - Your Mental Health Sanctuary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    
+
+    <!-- Main Hero Section -->
+    <div class="booking_container">
+        <div id="content">
+            <h3>The following information has been submitted:</h3>
+            Submitted Name:
+            <div id="name"></div><br>
+            Submitted Email:
+            <div id="email"></div><br>
+            Submitted PhoneNumber:
+            <div id="phone"></div><br>
+            Submitted Date:
+            <div id="date"></div><br>
+            Submitted Subject:
+            <div id="subject"></div><br>
+            Message:
+            <div id="message"></div><br>
+            <script>
+            const name = document.getElementById("name");
+            const email = document.getElementById("email");
+            const phone = document.getElementById("phone");
+            const date = document.getElementById("date");
+            const subject = document.getElementById("subject");
+            const message = document.getElementById("message");
+
+            // Check browser support
+            if (typeof(Storage) !== "undefined") {
+
+                if(localStorage.getItem("name") == null){
+                    window.location.href = "book.html";
+                }else{
+                    name.innerHTML = localStorage.getItem("name");
+                    phone.innerHTML = localStorage.getItem("phone");
+                    email.innerHTML = localStorage.getItem("email");
+                    date.innerHTML = localStorage.getItem("date");
+                    subject.innerHTML = localStorage.getItem("subject");
+                    message.innerHTML = localStorage.getItem("message");
+
+                    localStorage.clear();
+                }
+            } 
+            </script>
+            <br><br>
+            <a href="book.html">Back to Booking page.</a>
+        </div>
+        
+    </main>
+    <script src="booking.js"></script>
+    <script src="script.js"></script>
+    <script src="blog.js"></script>
+</body>
+</html>

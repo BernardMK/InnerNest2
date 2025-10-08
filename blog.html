@@ -10,37 +10,34 @@
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
-            <div class="nav-links">
-                <a href="index.html" class="nav-link" id="home">
-                    <span class="nav-text">Home</span>
+            <div class="nav-links desktop-only">
+                <a href="index.html" class="nav-link">
+                    <h4 class="nav-text">Home</h4>
                 </a>
-                <a href="blog.html" class="nav-link" id="blog">
-
-                    <span class="nav-text">Blog</span>
+                <a href="blog.html" class="nav-link">
+                    <h4 class="nav-text">Blog</h4>
                 </a>
             </div>
             
-            <div class="logo" id="logo">
-                <div id="logo_img">
-                    <img src="image/InnerNest logo.png" alt="logo" id="image">
+            <a href="index.html">
+                <div class="logo">
+                    <div id="logo_img">
+                        <img src="image/InnerNest logo.png" alt="logo" id="image">
+                    </div>
                 </div>
-                
-
-            </div>
+            </a>
             
-            <div class="nav-links">
-                <a href="#chat" class="nav-link" id="chatb">
-                    <span class="nav-text">Chat</span>
+            <div class="nav-links desktop-only">
+                <a href="chat.html" class="nav-link">
+                    <h4 class="nav-text">Chat</h4>
                 </a>
-                <a href="#book" class="nav-link" id="booka">
-
-                    <span class="nav-text">Book</span>
+                <a href="#book" class="nav-link">
+                    <h4 class="nav-text">Book</h4>
                 </a>
             </div>
             
             <div class="mobile-menu-toggle" id="mobileToggle">
-                <span>
-                </span>
+                <span></span>
                 <span></span>
                 <span></span>
             </div>
@@ -49,11 +46,11 @@
 
     <!-- Mobile Navigation -->
     <div class="mobile-nav" id="mobileNav">
-        <a href="#home" class="mobile-nav-link">
+        <a href="index.html" class="mobile-nav-link">
             <span class="nav-icon">🏠</span>
             Home
         </a>
-        <a href="#blog" class="mobile-nav-link">
+        <a href="blog.html" class="mobile-nav-link">
             <span class="nav-icon">📝</span>
             Blog
         </a>
@@ -107,86 +104,162 @@
             </div>
             
             <div class="conditions-grid" id="item_container">
-                <div class="condition-item">
-                    <div class="condition-icon">😔</div>
+                <div class="condition-item" data-blog-id="1">
+                    <div class="condition-icon">😰</div>
                    
                     <div class="condition-tags">
-                        <span class="tag">13 ❤️</span>
-                        <span class="tag">mm/dd/yyyy</span>
-                        <span class="tag">Comments</span>
+                        <span class="tag">❤️ 4</span>
+                        <span class="tag">12 Jan 2026</span>
+                        <span class="tag">4 Comments</span>
                     </div>
-                    <h3>Name</h3> 
-                    <p>Description</p>
+                    <h3>Finding Calm When My Heart Won't Slow Down</h3> 
+                    <p>After five years of daily panic attacks, I discovered grounding exercises that turned my anxiety into a manageable rhythm.</p>
+                    <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.8); margin-top: 10px;">By Rajan Patel</p>
                 </div>
                 
-                <div class="condition-item">
-                    <div class="condition-icon">😔</div>
+                <div class="condition-item" data-blog-id="2">
+                    <div class="condition-icon">💙</div>
                    
                     <div class="condition-tags">
-                        <span class="tag">Major</span>
-                        <span class="tag">Seasonal</span>
-                        <span class="tag">Bipolar</span>
+                        <span class="tag">❤️ 3</span>
+                        <span class="tag">23 Jan 2026</span>
+                        <span class="tag">3 Comments</span>
                     </div>
-                    <h3>Depression</h3> 
-                    <p>Understanding depression, its impact, and paths to recovery and support.</p>
+                    <h3>Why Therapy Is My Lifeline, Not a Luxury</h3> 
+                    <p>When depression made me feel invisible, a consistent therapist helped me rebuild my self‑worth, one session at a time.</p>
+                    <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.8); margin-top: 10px;">By Mara Kim</p>
                 </div>
                 
-                <div class="condition-item">
-                    <div class="condition-icon">😔</div>
+                <div class="condition-item" data-blog-id="3">
+                    <div class="condition-icon">🤝</div>
                    
                     <div class="condition-tags">
-                        <span class="tag">Major</span>
-                        <span class="tag">Seasonal</span>
-                        <span class="tag">Bipolar</span>
+                        <span class="tag">❤️ 2</span>
+                        <span class="tag">17 Feb 2026</span>
+                        <span class="tag">2 Comments</span>
                     </div>
-                    <h3>Depression</h3> 
-                    <p>Understanding depression, its impact, and paths to recovery and support.</p>
+                    <h3>Together We Thrive: Peer Support in Recovery</h3> 
+                    <p>Joining a local support group gave me both accountability and compassion, proving that shared experiences heal faster.</p>
+                    <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.8); margin-top: 10px;">By Emily Torres</p>
                 </div>
                 
-                <div class="condition-item">
-                    <div class="condition-icon">💔</div>
-                    <h3>Trauma & PTSD</h3>
-                    <p>Support and resources for trauma survivors and PTSD recovery.</p>
+                <div class="condition-item" data-blog-id="4">
+                    <div class="condition-icon">🧘</div>
+                   
                     <div class="condition-tags">
-                        <span class="tag">PTSD</span>
-                        <span class="tag">Complex</span>
-                        <span class="tag">Recovery</span>
+                        <span class="tag">❤️ 1</span>
+                        <span class="tag">02 Mar 2026</span>
+                        <span class="tag">1 Comment</span>
                     </div>
-                    <a href="resources.html">
-                        <button class="learnmore">Learn More</button>
-                    </a>
+                    <h3>Mindfulness at Work: A Daily Reset</h3> 
+                    <p>Setting aside ten minutes for focused breathing at lunchtime reduced my stress spike and increased workplace creativity.</p>
+                    <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.8); margin-top: 10px;">By Arun Gupta</p>
                 </div>
                 
-                <div class="condition-item">
-                    <div class="condition-icon">💑</div>
-                    <h3>Relationship Issues</h3>
-                    <p>Guidance for improving relationships and communication skills.</p>
+                <div class="condition-item" data-blog-id="5">
+                    <div class="condition-icon">💪</div>
+                   
                     <div class="condition-tags">
-                        <span class="tag">Couples</span>
-                        <span class="tag">Family</span>
-                        <span class="tag">Social</span>
+                        <span class="tag">❤️ 5</span>
+                        <span class="tag">08 Mar 2026</span>
+                        <span class="tag">5 Comments</span>
                     </div>
-                    <a href="resources.html">
-                        <button class="learnmore">Learn More</button>
-                    </a>
+                    <h3>Building Resilience After Trauma</h3> 
+                    <p>Through guided imagery and community art projects, I reclaimed joy in small moments, learning that healing is a journey, not a destination.</p>
+                    <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.8); margin-top: 10px;">By Sofia Reyes</p>
                 </div>
                 
-                <div class="condition-item">
-                    <div class="condition-icon">🌸</div>
-                    <h3>Self-Care & Wellness</h3>
-                    <p>Building healthy habits and sustainable self-care practices.</p>
+                <div class="condition-item" data-blog-id="6">
+                    <div class="condition-icon">📱</div>
+                   
                     <div class="condition-tags">
-                        <span class="tag">Mindfulness</span>
-                        <span class="tag">Habits</span>
-                        <span class="tag">Balance</span>
+                        <span class="tag">❤️ 3</span>
+                        <span class="tag">15 Mar 2026</span>
+                        <span class="tag">3 Comments</span>
                     </div>
-                    <a href="resources.html">
-                        <button class="learnmore">Learn More</button>
-                    </a>
+                    <h3>Digital Detox & Mental Clarity</h3> 
+                    <p>Cutting screen time to 30 minutes a day helped me rediscover reading, journaling, and deep breathing – all of which brought calm to my mind.</p>
+                    <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.8); margin-top: 10px;">By Liam Patel</p>
                 </div>
             </div>
         </div>
     </section>
+    <section class="disorder-container" id="disorders">
+        <div class="container">
+            <div class="description" id="description">
+                <h2>Testimony</h2>
+            </div>
+            
+            <div class="conditions-grid" id="item_container">
+                <div class="condition-item" data-blog-id="1">
+                    <div class="condition-icon">😰</div>
+                   
+                    <div>
+                        <span class="tag">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <h3>Rajan Patel</h3> 
+                    
+                    <p>After five years of daily panic attacks, I discovered grounding exercises that turned my anxiety into a manageable rhythm.</p>
+                </div>
+                
+                <div class="condition-item" data-blog-id="1">
+                    <div class="condition-icon">😰</div>
+                   
+                    <div>
+                        <span class="tag">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <h3>Mara Kim</h3> 
+                    
+                    <p>When depression made me feel invisible, a consistent therapist helped me rebuild my self‑worth, one session at a time.</p>
+                </div>
+                
+                <div class="condition-item" data-blog-id="1">
+                    <div class="condition-icon">😰</div>
+                   
+                    <div>
+                        <span class="tag">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <h3>Emily Torres</h3> 
+                    
+                    <p>Joining a local support group gave me both accountability and compassion, proving that shared experiences heal faster.</p>
+                </div>
+                
+                <div class="condition-item" data-blog-id="1">
+                    <div class="condition-icon">😰</div>
+                   
+                    <div>
+                        <span class="tag">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <h3>Arun Gupta</h3> 
+                    
+                    <p>Setting aside ten minutes for focused breathing at lunchtime reduced my stress spike and increased workplace creativity.</p>
+                </div>
+                
+                <div class="condition-item" data-blog-id="1">
+                    <div class="condition-icon">😰</div>
+                   
+                    <div>
+                        <span class="tag">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <h3>Sofia Reyes</h3> 
+                    
+                    <p>Through guided imagery and community art projects, I reclaimed joy in small moments, learning that healing is a journey, not a destination.</p>
+                </div>
+                
+                <div class="condition-item" data-blog-id="1">
+                    <div class="condition-icon">😰</div>
+                   
+                    <div>
+                        <span class="tag">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <h3>Liam Patel</h3> 
+                    
+                    <p>Cutting screen time to 30 minutes a day helped me rediscover reading, journaling, and deep breathing – all of which brought calm to my mind.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
 
     <!-- Footer -->
     <footer class="footer">
@@ -219,7 +292,7 @@
             </div>
         </div>
     </footer>
-
     <script src="script.js"></script>
+    <script src="blog.js"></script>
 </body>
 </html>

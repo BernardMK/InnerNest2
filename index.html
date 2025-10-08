@@ -10,38 +10,34 @@
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
-            <div class="nav-links">
-                <a href="index.html" class="nav-link" id="home">
-
-                    <span class="nav-text">Home</span>
+            <div class="nav-links desktop-only">
+                <a href="index.html" class="nav-link">
+                    <h4 class="nav-text">Home</h4>
                 </a>
-                <a href="#blog" class="nav-link" id="blog">
-
-                    <span class="nav-text">Blog</span>
+                <a href="blog.html" class="nav-link">
+                    <h4 class="nav-text">Blog</h4>
                 </a>
             </div>
             
-            <div class="logo" id="logo">
-                <div id="logo_img">
-                    <img src="image/InnerNest logo.png" alt="logo" id="image">
+            <a href="index.html">
+                <div class="logo">
+                    <div id="logo_img">
+                        <img src="image/InnerNest logo.png" alt="logo" id="image">
+                    </div>
                 </div>
-                
-
-            </div>
+            </a>
             
-            <div class="nav-links">
-                <a href="#chat" class="nav-link" id="chatb">
-                    <span class="nav-text">Chat</span>
+            <div class="nav-links desktop-only">
+                <a href="chat.html" class="nav-link">
+                    <h4 class="nav-text">Chat</h4>
                 </a>
-                <a href="#book" class="nav-link" id="booka">
-
-                    <span class="nav-text">Book</span>
+                <a href="#book" class="nav-link">
+                    <h4 class="nav-text">Book</h4>
                 </a>
             </div>
             
             <div class="mobile-menu-toggle" id="mobileToggle">
-                <span>
-                </span>
+                <span></span>
                 <span></span>
                 <span></span>
             </div>
@@ -50,11 +46,11 @@
 
     <!-- Mobile Navigation -->
     <div class="mobile-nav" id="mobileNav">
-        <a href="#home" class="mobile-nav-link">
+        <a href="index.html" class="mobile-nav-link">
             <span class="nav-icon">🏠</span>
             Home
         </a>
-        <a href="#blog" class="mobile-nav-link">
+        <a href="blog.html" class="mobile-nav-link">
             <span class="nav-icon">📝</span>
             Blog
         </a>
@@ -77,7 +73,6 @@
                     InnerNest is your safe space for mental wellness, self-discovery, and growth. 
                     Connect with professionals, access resources, and build resilience.
                 </p>
-                
             </div>
             <div class="hero-visual">
                 <div class="floating-card">
@@ -104,11 +99,8 @@
         <div class="container">
             <div class="description" id="description">
                 <h2>Understanding Mental Health Conditions</h2>
-                <p>Learn about common mental health conditions and find appropriate support and resources for your journey to wellness.</p>
-            </div>
-            
             <div class="conditions-grid" id="item_container">
-                <div class="condition-item">
+                <div class="condition-item" id="anxiety">
                     <div class="condition-icon">😰</div>
                     <h3>Anxiety Disorders</h3>
                     <p>Learn about anxiety symptoms, coping strategies, and treatment options.</p>
@@ -117,11 +109,9 @@
                         <span class="tag">Panic</span>
                         <span class="tag">Social</span>
                     </div>
-                    <a href="resources.html">
-                        <button class="learnmore">Learn More</button>
-                    </a>
-                    
+                   
                 </div>
+               
                 <div class="condition-item" id="depression">
                     <div class="condition-icon">😔</div>
                     <h3>Depression</h3>
@@ -131,25 +121,20 @@
                         <span class="tag">Seasonal</span>
                         <span class="tag">Bipolar</span>
                     </div>
-                    <a href="resources.html">
-                        <button class="learnmore">Learn More</button>
-                    </a>
                 </div>
-                
+               
                 <div class="condition-item" id="stress">
                     <div class="condition-icon">😓</div>
                     <h3>Stress Management</h3>
                     <p>Effective techniques and strategies for managing daily stress and pressure.</p>
-                    <div class="condition-tWorkags">
+                    <div class="condition-tags">
                         <span class="tag">Work</span>
                         <span class="tag">Life</span>
                         <span class="tag">Chronic</span>
                     </div>
-                    <a href="resources.html">
-                        <button class="learnmore">Learn More</button>
-                    </a>
+ 
                 </div>
-
+               
                 <div class="condition-item" id="trauma">
                     <div class="condition-icon">💔</div>
                     <h3>Trauma & PTSD</h3>
@@ -159,11 +144,8 @@
                         <span class="tag">Complex</span>
                         <span class="tag">Recovery</span>
                     </div>
-                    <a href="resources.html">
-                        <button class="learnmore">Learn More</button>
-                    </a>
                 </div>
-
+               
                 <div class="condition-item" id="relationships">
                     <div class="condition-icon">💑</div>
                     <h3>Relationship Issues</h3>
@@ -173,11 +155,8 @@
                         <span class="tag">Family</span>
                         <span class="tag">Social</span>
                     </div>
-                    <a href="resources.html">
-                        <button class="learnmore">Learn More</button>
-                    </a>
                 </div>
-                
+               
                 <div class="condition-item" id="selfcare">
                     <div class="condition-icon">🌸</div>
                     <h3>Self-Care & Wellness</h3>
@@ -187,11 +166,10 @@
                         <span class="tag">Habits</span>
                         <span class="tag">Balance</span>
                     </div>
-                    <a href="resources.html">
-                        <button class="learnmore">Learn More</button>
-                    </a>
                 </div>
+                
             </div>
+             
         </div>
     </section>
 
