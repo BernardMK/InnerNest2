@@ -1049,6 +1049,7 @@ function initThemeToggle() {
         box-shadow: 0 4px 15px rgba(107, 162, 146, 0.3);
         transition: all 0.3s ease;
         z-index: 1000;
+        
     `;
     
     let isDarkMode = false;
