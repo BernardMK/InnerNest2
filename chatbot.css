@@ -236,7 +236,7 @@ body {
 
 .mood-btn {
   background: white;
-  border: 2px solid var(--border);
+  border: 1px solid var(--border);
   font-size: 24px;
   padding: 8px;
   border-radius: 8px;
