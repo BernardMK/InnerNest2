@@ -1209,3 +1209,16 @@ body.dark-mode .user-info h3 {
 body.dark-mode .user-status {
   color: #94a3b8;
 }
+body.dark-mode .session-privacy {
+  color: #22c55e;
+}
+body.dark-mode .end-session-btn {
+  background: transparent;
+  border: 1px solid #6BA292;
+  color: #6BA292;
+}
+body.dark-mode .end-session-btn:hover {
+  background: #ef4444;
+  color: white;
+  border-color: #ef4444;
+}
