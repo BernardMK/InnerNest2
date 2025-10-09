@@ -763,8 +763,8 @@ body {
   padding: 30px;
   max-width: 500px;
   width: 90%;
-  position: relative;
-  animation: slideUp 0.3s ease;
+  position: center;
+  animation: fadeIn 0.3s ease;
   border: 1px solid var(--border);
 }
 
