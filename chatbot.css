@@ -445,6 +445,19 @@ body {
   
 }
 
+.messages-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background: var(--background);
+  gap: 16px;
+  scroll-behavior: smooth;
+  height: 500px; /* Fixed height for the box */
+  max-height: 500px; /* Prevents growing beyond this */
+}
+
 .messages-container::-webkit-scrollbar {
   width: 8px;
 }
