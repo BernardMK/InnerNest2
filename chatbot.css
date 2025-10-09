@@ -1222,3 +1222,12 @@ body.dark-mode .end-session-btn:hover {
   color: white;
   border-color: #ef4444;
 }
+body.dark-mode .mood-btn {
+  background: transparent;
+  border: 1px solid #374151;
+  color: #e5e7eb;
+}
+body.dark-mode .mood-btn:hover {
+  border-color: #6BA292;
+  background: rgba(107, 162, 146, 0.1);
+}
