@@ -1248,3 +1248,14 @@ body.dark-mode .mood-btn:hover {
   border-color: #6BA292;
   background: rgba(107, 162, 146, 0.1);
 }
+body.dark-mode ::-webkit-scrollbar-thumb {
+  background: #374151;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb:hover {
+  background: #6BA292;
+}
+
+body.dark-mode ::-webkit-scrollbar-track {
+  background: #232a25;
+}
