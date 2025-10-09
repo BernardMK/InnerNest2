@@ -36,14 +36,21 @@ body {
 
 .nav-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 20px;
 }
+.nav-links{
+    height: 30px;
+}
 
-.nav-links {
+#index,#post{
     display: flex;
-    gap: 130px;
+    margin-right: 10%;
+}
+#chat,#book{
+    display: flex;
+    margin-left: 10%;
 }
 
 .nav-link {
@@ -55,7 +62,7 @@ body {
     border-radius: 16px;
     text-decoration: none;
     color: white;
-    font-weight: 500;
+    font-weight: 400;
     transition: all 0.3s ease;
     border: 2px solid transparent;
 }
@@ -521,8 +528,8 @@ body {
 
 @media (max-width: 768px) {
     /* Hide desktop navigation, show mobile toggle */
-    .nav-links.desktop-only {
-        display: none;
+    .nav-links {
+        display: none !important;
     }
     
     .mobile-menu-toggle {
