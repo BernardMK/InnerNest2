@@ -48,9 +48,6 @@ function scrollToSection(sectionId) {
     }
 }
 
-// Navigation link active state
-
-
 // Condition item interactions
 conditionItems.forEach((item, index) => {
     // Add click interaction
@@ -158,26 +155,26 @@ function getConditionInfo(conditionType) {
                 'Maintain a regular sleep schedule'
             ]
         },
-        dissociativeIdentityDisorder: {
-            id: 'dissociativeIdentityDisorder',
-            icon: '👥',
-            title: 'Dissociative Identity Disorder',
-            description: 'Dissociative Identity Disorder (DID) is a complex mental health condition characterized by the presence of two or more distinct identities or personality states that control a person’s behavior at different times.',
+        depression: {
+            id: 'depression',
+            icon: '😔',
+            title: 'Depression',
+            description: 'Depression is a mood disorder that causes persistent feelings of sadness and loss of interest in activities you once enjoyed.',
             symptoms: [
-                'Memory gaps about everyday events or personal history',
-                'Feeling detached from oneself (depersonalization)',
-                'Feeling disconnected from reality (derealization)',
-                'Sudden changes in behavior, preferences, or skills',
-                'Distinct identities with their own names, histories, and characteristics',
-                'Periods of lost time or confusion'
+                'Persistent sad or empty mood',
+                'Loss of interest in activities',
+                'Fatigue and decreased energy',
+                'Changes in appetite or weight',
+                'Sleep disturbances',
+                'Feelings of worthlessness or guilt'
             ],
             strategies: [
-                'Seek professional help from a therapist experienced in trauma and dissociation',
-                'Engage in trauma-informed therapy (such as CBT or DBT)',
-                'Practice grounding techniques to stay present',
-                'Build a strong support system',
-                'Maintain a daily routine and self-care practices',
-                'Educate yourself and loved ones about DID'
+                'Maintain social connections',
+                'Establish a daily routine',
+                'Engage in regular exercise',
+                'Practice self-care activities',
+                'Set small, achievable goals',
+                'Seek professional support'
             ]
         },
         stress: {
@@ -356,229 +353,7 @@ function getConditionInfo(conditionType) {
                 'Build a strong support system',
                 'Practice self-compassion'
             ]
-        },
-        Schizophrenia: {
-            id: 'Schizophrenia',
-            icon: '🫨',
-            title: 'Schizophrenia',
-            description: 'Schizophrenia is a chronic mental health disorder that affects how a person thinks, feels, and behaves. It may involve hallucinations, delusions, and disorganized thinking.',
-            symptoms: [
-                'Hallucinations (seeing or hearing things that are not there)',
-                'Delusions (strongly held false beliefs)',
-                'Disorganized thinking and speech',
-                'Social withdrawal',
-                'Lack of motivation or emotional expression',
-                'Cognitive difficulties (e.g., trouble concentrating)'
-            ],
-            strategies: [
-                'Seek professional help from a psychiatrist or therapist',
-                'Take prescribed medications as directed',
-                'Engage in supportive therapy',
-                'Build a strong support system',
-                'Practice self-care and stress management techniques',
-                'Educate yourself about the disorder'
-            ]
-        },
-        HistrionicPersonalityDisorder: {
-            id: 'HistrionicPersonalityDisorder',
-            icon: '🎭',
-            title: 'Histrionic Personality Disorder',
-            description: 'Histrionic Personality Disorder is characterized by a pattern of excessive emotionality and attention-seeking behavior.',
-            symptoms: [
-                'Constantly seeking attention',
-                'Inappropriate seductive behavior',
-                'Rapidly shifting and shallow emotions',
-                'Overly concerned with physical appearance',
-                'Dramatic and theatrical behavior',
-                'Easily influenced by others'
-            ],
-            strategies: [
-                'Seek professional help from a therapist or counselor',
-                'Engage in cognitive-behavioral therapy (CBT)',
-                'Develop healthy coping mechanisms',
-                'Build a strong support system',
-                'Practice self-awareness and emotional regulation',
-                'Set realistic goals and expectations'
-            ]
-        },
-           Trichotillomania: {
-            id: 'Trichotillomania',
-            icon: '💇‍♀️',
-            title: 'Trichotillomania',
-            description: ' Trichotillomania disorder where a person can’t stop pulling out their own hair, leading to hair loss and stress.',
-            symptoms: [
-                'Emotional distress',
-                'Repeated pulling out of hair',
-                'Avoiding social situations or hiding hair loss',
-                'Difficulty stopping the behavior even when wanting to',
-                'Strong urges or tension before pulling hair.',
-                'Playing with, biting, or examining the pulled hairs.'
-            ],
-            strategies: [
-                'Seek professional help from a therapist or counselor',
-                'Keeping hair short or wearing gloves.',
-                'Managing stress through exercise, mindfulness, or meditation.',
-                'Build a strong support system',
-                'Acceptance and Commitment Therapy (ACT): Encourages acceptance of urges without acting on them.',
-                'Connecting with others with trichotillomania can provide encouragement and reduce shame.'
-            ]
-        },
-        intermittentExplosiveDisorder: {
-            id: 'intermittentExplosiveDisorder',
-            icon: '🤬',
-            title: 'Intermittent Explosive Disorder',
-            description: 'Intermittent Explosive Disorder (IED) is characterized by sudden episodes of impulsive, aggressive, violent behavior or angry verbal outbursts that are out of proportion to the situation.',
-            symptoms: [
-                'Frequent angry outbursts',
-                'Physical aggression or property damage',
-                'Verbal threats or tirades',
-                'Irritability between episodes',
-                'Feelings of relief or remorse after outbursts',
-                'Difficulty controlling temper'
-            ],
-            strategies: [
-                'Practice deep breathing and relaxation techniques',
-                'Identify and avoid triggers for anger',
-                'Develop healthy communication skills',
-                'Engage in regular physical activity',
-                'Seek professional therapy (CBT, anger management)',
-                'Build calm habits to prevent explosive episodes'
-            ]
-        },
-        anankasticPersonalityDisorder: {
-            id: 'anankasticPersonalityDisorder',
-            icon: '🧩',
-            title: 'Anankastic (Obsessive-Compulsive) Personality Disorder',
-            description: 'Anankastic Personality Disorder is characterized by a chronic preoccupation with orderliness, perfectionism, and control, often at the expense of flexibility and efficiency.',
-            symptoms: [
-                'Excessive attention to detail and rules',
-                'Perfectionism that interferes with task completion',
-                'Rigid and stubborn behavior',
-                'Reluctance to delegate tasks',
-                'Over-devotion to work and productivity',
-                'Difficulty relaxing and enjoying leisure activities'
-            ],
-            strategies: [
-                'Practice self-compassion and accept imperfections',
-                'Set realistic goals and expectations',
-                'Engage in relaxation and mindfulness exercises',
-                'Challenge rigid thinking patterns',
-                'Seek professional therapy (CBT can be helpful)',
-                'Allow time for hobbies and social activities'
-            ]
-        },
-        avoidantPersonalityDisorder: {
-            id: 'avoidantPersonalityDisorder',
-            icon: '🙈',
-            title: 'Avoidant Personality Disorder',
-            description: 'Avoidant Personality Disorder is characterized by feelings of extreme social inhibition, inadequacy, and sensitivity to negative criticism or rejection.',
-            symptoms: [
-                'Avoidance of social activities or jobs involving interpersonal contact',
-                'Fear of criticism, disapproval, or rejection',
-                'Low self-esteem and feelings of inferiority',
-                'Reluctance to take risks or try new activities',
-                'Difficulty forming close relationships',
-                'Excessive shyness or social anxiety'
-            ],
-            strategies: [
-                'Seek professional help from a therapist (CBT can be effective)',
-                'Gradually expose yourself to social situations',
-                'Challenge negative thoughts about self-worth',
-                'Build a supportive network of trusted individuals',
-                'Practice self-compassion and acceptance',
-                'Set small, achievable social goals'
-            ]
-        },
-    bodyDysmorphicDisorder: {
-        id: 'bodyDysmorphicDisorder',
-        icon: '🪞',
-        title: 'Body Dysmorphic Disorder',
-        description: 'Body Dysmorphic Disorder (BDD) is a mental health condition where a person becomes excessively concerned and preoccupied with perceived flaws in their appearance, which are often unnoticeable to others.',
-        symptoms: [
-            'Preoccupation with one or more perceived defects or flaws in physical appearance',
-            'Frequent mirror checking or avoidance of mirrors',
-            'Seeking reassurance about appearance',
-            'Engaging in excessive grooming or skin picking',
-            'Comparing appearance with others',
-            'Avoiding social situations due to appearance concerns'
-        ],
-        strategies: [
-            'Seek professional help from a therapist experienced in BDD or OCD',
-            'Practice self-compassion and challenge negative thoughts',
-            'Limit time spent checking appearance in mirrors',
-            'Engage in activities that shift focus away from appearance',
-            'Educate yourself and loved ones about BDD',
-            'Build a supportive network and share your feelings'
-        ]
-    },
-    maladaptiveDaydreaming: {
-        id: 'maladaptiveDaydreaming',
-        icon: '💭',
-        title: 'Maladaptive Daydreaming',
-        description: 'Maladaptive Daydreaming is a psychological condition where a person experiences intense, vivid daydreams that interfere with daily life and functioning.',
-        symptoms: [
-            'Frequent, immersive daydreams lasting for hours',
-            'Difficulty controlling or stopping daydreaming',
-            'Neglect of real-life relationships and responsibilities',
-            'Strong emotional attachment to imagined scenarios',
-            'Triggers such as loneliness, boredom, or trauma',
-            'Distress or impairment due to daydreaming'
-        ],
-        strategies: [
-            'Track and identify triggers for daydreaming',
-            'Set specific times for healthy imagination or creativity',
-            'Practice mindfulness and grounding techniques',
-            'Engage in fulfilling real-life activities and hobbies',
-            'Seek professional support if daydreaming causes distress',
-            'Connect with support groups or online communities'
-        ]
-    },
-    prolongedGriefDisorder: {
-        id: 'prolongedGriefDisorder',
-        icon: '😭',
-        title: 'Prolonged Grief Disorder',
-        description: 'Prolonged Grief Disorder is characterized by intense and persistent grief that lasts longer than expected after a loss, interfering with daily functioning and wellbeing.',
-        symptoms: [
-            'Persistent longing or yearning for the deceased',
-            'Difficulty accepting the loss',
-            'Emotional numbness or detachment',
-            'Preoccupation with thoughts of the deceased',
-            'Avoidance of reminders of the loss',
-            'Impaired social or occupational functioning',
-            'Intense sorrow and emotional pain'
-        ],
-        strategies: [
-            'Seek support from a mental health professional',
-            'Join grief support groups or counseling',
-            'Express feelings through journaling or creative outlets',
-            'Maintain routines and self-care practices',
-            'Connect with supportive friends and family',
-            'Practice mindfulness and grounding techniques',
-            'Allow yourself time and patience to heal'
-        ]
-    },
-    attachmentDisorder: {
-        id: 'attachmentDisorder',
-        icon: '💔',
-        title: 'Attachment Disorder',
-        description: 'Attachment disorders are conditions that affect a person’s ability to form healthy emotional bonds with others, often stemming from early childhood experiences.',
-        symptoms: [
-            'Difficulty trusting others',
-            'Problems forming close relationships',
-            'Fear of abandonment or rejection',
-            'Emotional withdrawal or detachment',
-            'Difficulty expressing emotions',
-            'Seeking excessive reassurance'
-        ],
-        strategies: [
-            'Seek professional therapy (such as attachment-based therapy)',
-            'Build safe and supportive relationships',
-            'Practice self-awareness and emotional regulation',
-            'Engage in activities that foster trust and connection',
-            'Educate yourself and loved ones about attachment issues',
-            'Join support groups for individuals with attachment challenges'
-        ]
-    },
+        }
     };
 
     return conditions[conditionType] || conditions.anxiety;
@@ -777,8 +552,8 @@ function initEmergencyContact() {
     const style = document.createElement('style');
     style.textContent = `
         @keyframes pulse {
-            0% { box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);}
-            50% { box-shadow: 0 4px 20px rgba(220, 53, 69, 0.6);}
+            0% { box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3); }
+            50% { box-shadow: 0 4px 20px rgba(220, 53, 69, 0.6); }
             100% { box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3); }
         }
     `;
