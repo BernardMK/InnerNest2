@@ -175,6 +175,7 @@ body {
   position: sticky;
   top: 20px;
   height: fit-content;
+  margin-top: 30px;
 }
 
 .user-profile {
@@ -240,7 +241,7 @@ body {
 .mood-btn {
   background: white;
   border: 1px solid var(--border);
-  font-size: 24px;
+  font-size: 18px;
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
@@ -352,6 +353,7 @@ body {
   overflow: hidden;
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
+  margin-top: 30px;
 }
 
 .chat-header {
