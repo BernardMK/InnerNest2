@@ -589,12 +589,14 @@ function showEmergencyContacts() {
         background: white;
         padding: 30px;
         border-radius: 15px;
-        max-width: 800px;
-        max-height: 80vh;
+        max-width: 900px;
+        max-height: 90vh;
         overflow-y: auto;
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         color: #333;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        width: 80%;
+        
     `;
     
     modal.innerHTML = `
@@ -605,7 +607,7 @@ function showEmergencyContacts() {
         
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px;">
             <!-- Ohio Hot-Lines -->
-            <div style="border: 2px solid #dc3545; border-radius: 10px; padding: 15px; background: #fef2f2;">
+            <div id = "local" style="border: 2px solid #dc3545; border-radius: 10px; padding: 15px; background: #fef2f2;">
                 <h3 style="color: #dc3545; margin-bottom: 15px; text-align: center;">🏠 Ohio Hot-Lines</h3>
                 
                 <div style="margin-bottom: 15px; padding: 10px; background: white; border-radius: 5px;">
@@ -635,7 +637,7 @@ function showEmergencyContacts() {
             </div>
             
             <!-- National Hot-Lines -->
-            <div style="border: 2px solid #0066cc; border-radius: 10px; padding: 15px; background: #f0f8ff;">
+            <div id = "national" style="border: 2px solid #0066cc; border-radius: 10px; padding: 15px; background: #f0f8ff;">
                 <h3 style="color: #0066cc; margin-bottom: 15px; text-align: center;">🇺🇸 National Hot-Lines</h3>
                 
                 <div style="margin-bottom: 15px; padding: 10px; background: white; border-radius: 5px;">
@@ -894,7 +896,6 @@ function addCustomStyles() {
         }
         </style>
     `;
-    
     document.head.insertAdjacentHTML('beforeend', styles);
 }
 

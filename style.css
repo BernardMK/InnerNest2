@@ -642,3 +642,6 @@ body {
     width: 100%;
     padding: 14px;
 }
+::placeholder{
+    color: white;
+}
