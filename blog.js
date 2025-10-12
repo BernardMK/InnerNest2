@@ -98,15 +98,16 @@ function showBlogCommentsModal(blogId) {
                     }
                 </div>
                 
-                <div style="margin-top: 30px; padding-top: 30px; border-top: 2px solid #e0e0e0;">
+                <div style="margin-top: 30px; padding-top: 30px; border-top: 2px solid #588377;">
                     <h3 style="color: #588377; margin-bottom: 20px;">Add a Comment</h3>
                     <div style="margin-bottom: 15px;">
-                        <input type="text" id="commentName" placeholder="Your Name" style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem;">
+                        
+                        <input type="text" id="commentName" placeholder="Your Name" style="width: 100%;color: black; padding: 12px; border: 2px solid rgba(88, 131, 119, 1); border-radius: 8px; font-size: 1rem;">
                     </div>
                     <div style="margin-bottom: 15px;">
-                        <textarea id="commentText" rows="4" placeholder="Write your comment here..." style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; resize: vertical;"></textarea>
+                        <textarea id="commentText" rows="4" placeholder="Write your comment here..." style="width: 100%; padding: 12px; border: 2px solid #588377; border-radius: 8px; font-size: 1rem; resize: vertical;"></textarea>
                     </div>
-                    <button type="button" class="btn-primary" id="submitComment">Submit Comment</button>
+                    <button type="button" class="btn-primary" id="submitComment" style="width: 17%;border-radius: 14px;border: solid transparent;background-color: #588377;color: #ffffffff; padding: 7px;">Submit Comment</button>
                 </div>
             </div>
         </div>
@@ -219,7 +220,7 @@ function addBlogStyles() {
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: white;
+            background: rgb(222, 222, 213);
             border-radius: 20px;
             padding: 40px;
             max-width: 600px;
@@ -236,16 +237,19 @@ function addBlogStyles() {
             border: none;
             font-size: 2rem;
             cursor: pointer;
-            color: #999;
+            color: #ff0000ff;
             transition: color 0.3s ease;
         }
         
         .modal-close:hover {
-            color: #333;
+            color: #e40000ff;
+        }
+        ::placeholder{
+            color: rgba(0, 0, 0, 1);
         }
         
         .modal-header h2 {
-            color: #588377;
+            color: #ffffffff;
             font-size: 1.8rem;
             font-weight: 600;
             margin: 0;
