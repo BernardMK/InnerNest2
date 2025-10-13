@@ -1,3 +1,1685 @@
+// Enhanced Games Popup System
+const gamesPopupHTML = `
+<div id="gamesOverlay" class="games-overlay">
+    <div class="games-popup">
+        <button class="close-popup" id="closeGames" aria-label="Close games menu">&times;</button>
+        <div class="popup-header">
+            <h2 class="games-title">Stress Relief Mini Games</h2>
+            <p class="games-subtitle">Choose a game to relax and unwind</p>
+        </div>
+        
+        <div class="games-grid">
+            <div class="game-card" data-game="breathing" data-category="relaxation">
+                <div class="game-icon">🫁</div>
+                <h3>Breathing Exercise</h3>
+                <p>Guided breathing for calm</p>
+                <span class="game-badge">Relaxation</span>
+            </div>
+            
+            <div class="game-card" data-game="bubble" data-category="interactive">
+                <div class="game-icon">🫧</div>
+                <h3>Pop Bubbles</h3>
+                <p>Pop bubbles to release stress</p>
+                <span class="game-badge">Interactive</span>
+            </div>
+            
+            <div class="game-card" data-game="paint" data-category="creative">
+                <div class="game-icon">🎨</div>
+                <h3>Zen Paint</h3>
+                <p>Draw to express yourself</p>
+                <span class="game-badge">Creative</span>
+            </div>
+            
+            <div class="game-card" data-game="memory" data-category="cognitive">
+                <div class="game-icon">🧩</div>
+                <h3>Memory Match</h3>
+                <p>Focus your mind</p>
+                <span class="game-badge">Cognitive</span>
+            </div>
+            
+            <div class="game-card" data-game="typing" data-category="mindful">
+                <div class="game-icon">⌨️</div>
+                <h3>Mindful Typing</h3>
+                <p>Type away your worries</p>
+                <span class="game-badge">Mindful</span>
+            </div>
+            
+            <div class="game-card" data-game="garden" data-category="creative">
+                <div class="game-icon">🌱</div>
+                <h3>Zen Garden</h3>
+                <p>Create peaceful patterns</p>
+                <span class="game-badge">Creative</span>
+            </div>
+
+            <div class="game-card" data-game="whackamole" data-category="active">
+                <div class="game-icon">🔨</div>
+                <h3>Stress Whack</h3>
+                <p>Whack away your stress</p>
+                <span class="game-badge">Active</span>
+            </div>
+
+            <div class="game-card" data-game="balloon" data-category="interactive">
+                <div class="game-icon">🎈</div>
+                <h3>Balloon Pop</h3>
+                <p>Pop floating balloons</p>
+                <span class="game-badge">Interactive</span>
+            </div>
+
+            <div class="game-card" data-game="simon" data-category="cognitive">
+                <div class="game-icon">🎵</div>
+                <h3>Memory Melody</h3>
+                <p>Follow the pattern</p>
+                <span class="game-badge">Cognitive</span>
+            </div>
+
+            <div class="game-card" data-game="colormatch" data-category="cognitive">
+                <div class="game-icon">🌈</div>
+                <h3>Color Match</h3>
+                <p>Match the colors quickly</p>
+                <span class="game-badge">Cognitive</span>
+            </div>
+
+            <div class="game-card" data-game="mandala" data-category="creative">
+                <div class="game-icon">🔮</div>
+                <h3>Mandala Creator</h3>
+                <p>Create symmetrical art</p>
+                <span class="game-badge">Creative</span>
+            </div>
+
+            <div class="game-card" data-game="starfield" data-category="relaxation">
+                <div class="game-icon">⭐</div>
+                <h3>Starfield Journey</h3>
+                <p>Relax in space</p>
+                <span class="game-badge">Relaxation</span>
+            </div>
+
+            <div class="game-card" data-game="wordsearch" data-category="cognitive">
+                <div class="game-icon">🔍</div>
+                <h3>Calm Word Search</h3>
+                <p>Find peaceful words</p>
+                <span class="game-badge">Cognitive</span>
+            </div>
+
+            <div class="game-card" data-game="2048" data-category="puzzle">
+                <div class="game-icon">🎯</div>
+                <h3>Zen 2048</h3>
+                <p>Combine tiles mindfully</p>
+                <span class="game-badge">Puzzle</span>
+            </div>
+
+            <div class="game-card" data-game="meditation" data-category="mindful">
+                <div class="game-icon">🧘‍♀️</div>
+                <h3>Guided Meditation</h3>
+                <p>Audio meditation session</p>
+                <span class="game-badge">Mindful</span>
+            </div>
+        </div>
+        
+        <div id="gameContainer" class="game-container" style="display: none;">
+            <button class="back-button" id="backToGames">
+                <span>←</span> Back to Games
+            </button>
+            <div id="gameContent"></div>
+        </div>
+    </div>
+</div>
+`;
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.body.insertAdjacentHTML('beforeend', gamesPopupHTML);
+    initializeGamesPopup();
+});
+
+function initializeGamesPopup() {
+    const overlay = document.getElementById('gamesOverlay');
+    const closeBtn = document.getElementById('closeGames');
+    const gameCards = document.querySelectorAll('.game-card');
+    const gameContainer = document.getElementById('gameContainer');
+    const gameContent = document.getElementById('gameContent');
+    const backBtn = document.getElementById('backToGames');
+    const gamesGrid = document.querySelector('.games-grid');
+
+    // Open popup when clicking the Games floating card
+    const floatingCards = document.querySelectorAll('.floating-card');
+    floatingCards.forEach(card => {
+        const cardText = card.querySelector('h3');
+        if (cardText && cardText.textContent.trim() === 'Games') {
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', function() {
+                overlay.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+                overlay.classList.add('active');
+            });
+        }
+    });
+
+    // Close popup
+    closeBtn.addEventListener('click', closePopup);
+    overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closePopup();
+    });
+
+    // ESC key to close
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && overlay.style.display === 'flex') {
+            closePopup();
+        }
+    });
+
+    function closePopup() {
+        overlay.classList.remove('active');
+        setTimeout(() => {
+            overlay.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            showGamesGrid();
+        }, 300);
+    }
+
+    backBtn.addEventListener('click', showGamesGrid);
+
+    function showGamesGrid() {
+        gameContainer.style.opacity = '0';
+        setTimeout(() => {
+            gameContainer.style.display = 'none';
+            gamesGrid.style.display = 'grid';
+            gameContent.innerHTML = '';
+            setTimeout(() => {
+                gamesGrid.style.opacity = '1';
+            }, 10);
+        }, 300);
+    }
+
+    // Add hover sound effect simulation
+    gameCards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.05}s`;
+        
+        card.addEventListener('click', function() {
+            const gameType = this.dataset.game;
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+                launchGame(gameType);
+            }, 150);
+        });
+
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-8px) scale(1.02)';
+        });
+
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+        });
+    });
+
+    function launchGame(gameType) {
+        gamesGrid.style.opacity = '0';
+        setTimeout(() => {
+            gamesGrid.style.display = 'none';
+            gameContainer.style.display = 'block';
+            setTimeout(() => {
+                gameContainer.style.opacity = '1';
+            }, 10);
+            
+            switch(gameType) {
+                case 'breathing': loadBreathingGame(); break;
+                case 'bubble': loadBubbleGame(); break;
+                case 'paint': loadPaintGame(); break;
+                case 'memory': loadMemoryGame(); break;
+                case 'typing': loadTypingGame(); break;
+                case 'garden': loadGardenGame(); break;
+                case 'whackamole': loadWhackAMoleGame(); break;
+                case 'balloon': loadBalloonGame(); break;
+                case 'simon': loadSimonGame(); break;
+                case 'colormatch': loadColorMatchGame(); break;
+                case 'mandala': loadMandalaGame(); break;
+                case 'starfield': loadStarfieldGame(); break;
+                case 'wordsearch': loadWordSearchGame(); break;
+                case '2048': load2048Game(); break;
+                case 'meditation': loadMeditationGame(); break;
+            }
+        }, 300);
+    }
+
+    // BREATHING EXERCISE GAME
+    function loadBreathingGame() {
+        gameContent.innerHTML = `
+            <div class="breathing-game">
+                <h2>Breathing Exercise</h2>
+                <p class="game-description">Follow the circle to regulate your breathing</p>
+                <div class="breathing-circle" id="breathCircle">
+                    <span id="breathText">Ready</span>
+                </div>
+                <p id="breathInstruction">Click start when you're ready</p>
+                <button id="startBreath" class="game-button">Start Breathing</button>
+            </div>
+        `;
+
+        const circle = document.getElementById('breathCircle');
+        const text = document.getElementById('breathText');
+        const instruction = document.getElementById('breathInstruction');
+        const startBtn = document.getElementById('startBreath');
+        let isBreathing = false;
+
+        startBtn.addEventListener('click', function() {
+            if (!isBreathing) {
+                isBreathing = true;
+                startBtn.textContent = 'Stop';
+                startBtn.classList.add('active');
+                breatheCycle();
+            } else {
+                isBreathing = false;
+                startBtn.textContent = 'Start Breathing';
+                startBtn.classList.remove('active');
+                circle.style.transform = 'scale(1)';
+                text.textContent = 'Ready';
+                instruction.textContent = 'Click start when you\'re ready';
+            }
+        });
+
+        function breatheCycle() {
+            if (!isBreathing) return;
+            
+            text.textContent = 'Inhale';
+            instruction.textContent = 'Breathe in slowly through your nose...';
+            circle.style.transform = 'scale(1.5)';
+            circle.style.transition = 'transform 4s ease-in-out';
+            
+            setTimeout(() => {
+                if (!isBreathing) return;
+                text.textContent = 'Hold';
+                instruction.textContent = 'Hold your breath gently...';
+                
+                setTimeout(() => {
+                    if (!isBreathing) return;
+                    text.textContent = 'Exhale';
+                    instruction.textContent = 'Breathe out slowly through your mouth...';
+                    circle.style.transform = 'scale(1)';
+                    
+                    setTimeout(() => {
+                        if (isBreathing) breatheCycle();
+                    }, 4000);
+                }, 2000);
+            }, 4000);
+        }
+    }
+
+    // BUBBLE POP GAME
+    function loadBubbleGame() {
+        gameContent.innerHTML = `
+            <div class="bubble-game">
+                <h2>Pop the Bubbles</h2>
+                <p class="game-description">Click on the bubbles as they float up</p>
+                <p class="game-score">Popped: <span id="bubbleScore">0</span></p>
+                <div id="bubbleCanvas" class="bubble-canvas"></div>
+            </div>
+        `;
+
+        const canvas = document.getElementById('bubbleCanvas');
+        const scoreEl = document.getElementById('bubbleScore');
+        let score = 0;
+
+        function createBubble() {
+            const bubble = document.createElement('div');
+            bubble.className = 'bubble';
+            bubble.style.left = Math.random() * (canvas.offsetWidth - 60) + 'px';
+            bubble.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            
+            bubble.addEventListener('click', function(e) {
+                e.stopPropagation();
+                score++;
+                scoreEl.textContent = score;
+                
+                // Create pop effect
+                const pop = document.createElement('div');
+                pop.className = 'pop-effect';
+                pop.style.left = e.clientX - canvas.getBoundingClientRect().left + 'px';
+                pop.style.top = e.clientY - canvas.getBoundingClientRect().top + 'px';
+                pop.textContent = '+1';
+                canvas.appendChild(pop);
+                
+                this.style.animation = 'bubblePop 0.3s ease-out';
+                setTimeout(() => {
+                    this.remove();
+                    pop.remove();
+                }, 300);
+            });
+            
+            canvas.appendChild(bubble);
+            
+            setTimeout(() => {
+                if (bubble.parentElement) bubble.remove();
+            }, 6000);
+        }
+
+        const bubbleInterval = setInterval(() => {
+            if (gameContainer.style.display === 'none') {
+                clearInterval(bubbleInterval);
+            } else {
+                createBubble();
+            }
+        }, 800);
+    }
+
+    // ZEN PAINT GAME
+    function loadPaintGame() {
+        gameContent.innerHTML = `
+            <div class="paint-game">
+                <h2>Zen Paint</h2>
+                <p class="game-description">Express yourself freely through art</p>
+                <div class="paint-controls">
+                    <label class="control-label">
+                        <span>Color:</span>
+                        <input type="color" id="paintColor" value="#6366f1">
+                    </label>
+                    <label class="control-label">
+                        <span>Brush: <span id="brushValue">15</span>px</span>
+                        <input type="range" id="brushSize" min="5" max="30" value="15">
+                    </label>
+                    <button id="clearCanvas" class="game-button-sm">Clear Canvas</button>
+                </div>
+                <canvas id="paintCanvas" width="600" height="400"></canvas>
+            </div>
+        `;
+
+        const canvas = document.getElementById('paintCanvas');
+        const ctx = canvas.getContext('2d');
+        const colorPicker = document.getElementById('paintColor');
+        const brushSize = document.getElementById('brushSize');
+        const brushValue = document.getElementById('brushValue');
+        const clearBtn = document.getElementById('clearCanvas');
+
+        // White background
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        let isDrawing = false;
+
+        brushSize.addEventListener('input', function() {
+            brushValue.textContent = this.value;
+        });
+
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseup', stopDrawing);
+        canvas.addEventListener('mouseout', stopDrawing);
+
+        canvas.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            startDrawing(e.touches[0]);
+        });
+        canvas.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+            draw(e.touches[0]);
+        });
+        canvas.addEventListener('touchend', stopDrawing);
+
+        clearBtn.addEventListener('click', () => {
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        });
+
+        function startDrawing(e) {
+            isDrawing = true;
+            draw(e);
+        }
+
+        function draw(e) {
+            if (!isDrawing) return;
+            
+            const rect = canvas.getBoundingClientRect();
+            const x = (e.clientX || e.pageX) - rect.left;
+            const y = (e.clientY || e.pageY) - rect.top;
+            
+            ctx.beginPath();
+            ctx.arc(x, y, brushSize.value / 2, 0, Math.PI * 2);
+            ctx.fillStyle = colorPicker.value;
+            ctx.fill();
+        }
+
+        function stopDrawing() {
+            isDrawing = false;
+        }
+    }
+
+    // MEMORY MATCH GAME
+    function loadMemoryGame() {
+        const emojis = ['🌸', '🌺', '🌻', '🌷', '🌹', '🏵️', '🌼', '💐'];
+        const cards = [...emojis, ...emojis].sort(() => Math.random() - 0.5);
+        
+        gameContent.innerHTML = `
+            <div class="memory-game">
+                <h2>Memory Match</h2>
+                <p class="game-description">Find all matching pairs of flowers</p>
+                <div class="game-stats">
+                    <p class="game-score">Matches: <span id="memoryScore">0 / 8</span></p>
+                    <p class="game-score">Moves: <span id="memoryMoves">0</span></p>
+                </div>
+                <div class="memory-grid" id="memoryGrid"></div>
+                <button id="resetMemory" class="game-button-sm">New Game</button>
+            </div>
+        `;
+
+        const grid = document.getElementById('memoryGrid');
+        const scoreEl = document.getElementById('memoryScore');
+        const movesEl = document.getElementById('memoryMoves');
+        const resetBtn = document.getElementById('resetMemory');
+        let flipped = [];
+        let matches = 0;
+        let moves = 0;
+        let canFlip = true;
+
+        function createCards() {
+            grid.innerHTML = '';
+            cards.forEach((emoji, index) => {
+                const card = document.createElement('div');
+                card.className = 'memory-card';
+                card.dataset.emoji = emoji;
+                card.dataset.index = index;
+                card.innerHTML = `
+                    <div class="card-front">?</div>
+                    <div class="card-back">${emoji}</div>
+                `;
+                
+                card.addEventListener('click', flipCard);
+                grid.appendChild(card);
+            });
+        }
+
+        function flipCard() {
+            if (!canFlip || flipped.length === 2 || this.classList.contains('flipped')) return;
+            
+            this.classList.add('flipped');
+            flipped.push(this);
+            
+            if (flipped.length === 2) {
+                moves++;
+                movesEl.textContent = moves;
+                canFlip = false;
+                setTimeout(checkMatch, 800);
+            }
+        }
+
+        function checkMatch() {
+            const [card1, card2] = flipped;
+            
+            if (card1.dataset.emoji === card2.dataset.emoji) {
+                card1.classList.add('matched');
+                card2.classList.add('matched');
+                matches++;
+                scoreEl.textContent = `${matches} / 8`;
+                
+                if (matches === 8) {
+                    setTimeout(() => {
+                        alert(`🎉 Congratulations! You won in ${moves} moves!`);
+                    }, 500);
+                }
+            } else {
+                card1.classList.remove('flipped');
+                card2.classList.remove('flipped');
+            }
+            
+            flipped = [];
+            canFlip = true;
+        }
+
+        resetBtn.addEventListener('click', () => {
+            matches = 0;
+            moves = 0;
+            flipped = [];
+            scoreEl.textContent = '0 / 8';
+            movesEl.textContent = '0';
+            cards.sort(() => Math.random() - 0.5);
+            createCards();
+        });
+
+        createCards();
+    }
+
+    // MINDFUL TYPING GAME
+    function loadTypingGame() {
+        const affirmations = [
+            "I am calm and peaceful",
+            "I choose to be happy",
+            "I am worthy of love",
+            "I release all tension",
+            "I am in control of my thoughts",
+            "I embrace positive energy",
+            "I am grateful for this moment",
+            "I trust in my journey",
+            "I breathe in peace",
+            "I am enough"
+        ];
+
+        gameContent.innerHTML = `
+            <div class="typing-game">
+                <h2>Mindful Typing</h2>
+                <p class="game-description">Type each affirmation slowly and mindfully</p>
+                <p class="game-score">Completed: <span id="typingScore">0</span></p>
+                <div class="typing-target" id="typingTarget"></div>
+                <input type="text" id="typingInput" class="typing-input" placeholder="Start typing..." autocomplete="off">
+                <p class="typing-feedback" id="typingFeedback"></p>
+            </div>
+        `;
+
+        const target = document.getElementById('typingTarget');
+        const input = document.getElementById('typingInput');
+        const feedback = document.getElementById('typingFeedback');
+        const scoreEl = document.getElementById('typingScore');
+        let currentAffirmation = affirmations[Math.floor(Math.random() * affirmations.length)];
+        let completed = 0;
+
+        target.textContent = currentAffirmation;
+        input.focus();
+
+        input.addEventListener('input', function() {
+            const typed = this.value;
+            const targetText = currentAffirmation;
+            
+            if (typed === targetText) {
+                completed++;
+                scoreEl.textContent = completed;
+                feedback.textContent = '✨ Perfect! Take a deep breath...';
+                feedback.style.color = '#10b981';
+                this.disabled = true;
+                
+                setTimeout(() => {
+                    currentAffirmation = affirmations[Math.floor(Math.random() * affirmations.length)];
+                    target.textContent = currentAffirmation;
+                    input.value = '';
+                    input.disabled = false;
+                    input.focus();
+                    feedback.textContent = '';
+                }, 2000);
+            } else if (targetText.startsWith(typed)) {
+                feedback.textContent = '✓ Keep going...';
+                feedback.style.color = '#6366f1';
+            } else {
+                feedback.textContent = '↻ Take your time, start over';
+                feedback.style.color = '#f59e0b';
+            }
+        });
+    }
+
+    // ZEN GARDEN GAME
+    function loadGardenGame() {
+        gameContent.innerHTML = `
+            <div class="garden-game">
+                <h2>Zen Garden</h2>
+                <p class="game-description">Draw peaceful patterns in the sand</p>
+                <canvas id="gardenCanvas" width="600" height="400"></canvas>
+                <button id="clearGarden" class="game-button">Clear Garden</button>
+            </div>
+        `;
+
+        const canvas = document.getElementById('gardenCanvas');
+        const ctx = canvas.getContext('2d');
+        const clearBtn = document.getElementById('clearGarden');
+
+        ctx.fillStyle = '#f5e6d3';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        let isDrawing = false;
+        let lastX = 0;
+        let lastY = 0;
+
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseup', () => isDrawing = false);
+        canvas.addEventListener('mouseout', () => isDrawing = false);
+
+        canvas.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            startDrawing(e.touches[0]);
+        });
+        canvas.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+            draw(e.touches[0]);
+        });
+        canvas.addEventListener('touchend', () => isDrawing = false);
+
+        clearBtn.addEventListener('click', () => {
+            ctx.fillStyle = '#f5e6d3';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        });
+
+        function startDrawing(e) {
+            isDrawing = true;
+            const rect = canvas.getBoundingClientRect();
+            lastX = (e.clientX || e.pageX) - rect.left;
+            lastY = (e.clientY || e.pageY) - rect.top;
+        }
+
+        function draw(e) {
+            if (!isDrawing) return;
+            
+            const rect = canvas.getBoundingClientRect();
+            const x = (e.clientX || e.pageX) - rect.left;
+            const y = (e.clientY || e.pageY) - rect.top;
+            
+            ctx.strokeStyle = '#8b7355';
+            ctx.lineWidth = 3;
+            ctx.lineCap = 'round';
+            
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(x, y);
+            ctx.stroke();
+            
+            ctx.fillStyle = '#a0826d';
+            ctx.beginPath();
+            ctx.arc(x, y, 1, 0, Math.PI * 2);
+            ctx.fill();
+            
+            lastX = x;
+            lastY = y;
+        }
+    }
+
+    // Continue with remaining games... (keeping the same structure but adding descriptions and polish)
+    // Due to length, I'll include the essential polished elements for the remaining games
+
+    function loadWhackAMoleGame() {
+        gameContent.innerHTML = `
+            <div class="whack-game">
+                <h2>Stress Whack</h2>
+                <p class="game-description">Release stress by whacking the moles!</p>
+                <p class="game-score">Score: <span id="whackScore">0</span> | Time: <span id="whackTime">30</span>s</p>
+                <div class="whack-grid" id="whackGrid"></div>
+                <button id="startWhack" class="game-button">Start Game</button>
+            </div>
+        `;
+
+        const grid = document.getElementById('whackGrid');
+        const scoreEl = document.getElementById('whackScore');
+        const timeEl = document.getElementById('whackTime');
+        const startBtn = document.getElementById('startWhack');
+        let score = 0;
+        let timeLeft = 30;
+        let gameInterval;
+        let moleInterval;
+
+        for (let i = 0; i < 9; i++) {
+            const hole = document.createElement('div');
+            hole.className = 'whack-hole';
+            hole.innerHTML = '<div class="mole">😰</div>';
+            hole.addEventListener('click', function() {
+                if (this.classList.contains('active')) {
+                    score++;
+                    scoreEl.textContent = score;
+                    this.classList.remove('active');
+                    this.classList.add('whacked');
+                    setTimeout(() => this.classList.remove('whacked'), 200);
+                }
+            });
+            grid.appendChild(hole);
+        }
+
+        startBtn.addEventListener('click', function() {
+            score = 0;
+            timeLeft = 30;
+            scoreEl.textContent = score;
+            timeEl.textContent = timeLeft;
+            startBtn.disabled = true;
+
+            gameInterval = setInterval(() => {
+                timeLeft--;
+                timeEl.textContent = timeLeft;
+                if (timeLeft <= 0) {
+                    clearInterval(gameInterval);
+                    clearInterval(moleInterval);
+                    startBtn.disabled = false;
+                    alert(`🎯 Game Over! Your score: ${score}`);
+                }
+            }, 1000);
+
+            moleInterval = setInterval(() => {
+                const holes = document.querySelectorAll('.whack-hole');
+                holes.forEach(h => h.classList.remove('active'));
+                const randomHole = holes[Math.floor(Math.random() * holes.length)];
+                randomHole.classList.add('active');
+            }, 800);
+        });
+    }
+
+    function loadBalloonGame() {
+        gameContent.innerHTML = `
+            <div class="balloon-game">
+                <h2>Balloon Pop</h2>
+                <p class="game-description">Pop the colorful balloons as they float</p>
+                <p class="game-score">Popped: <span id="balloonScore">0</span></p>
+                <div id="balloonCanvas" class="balloon-canvas"></div>
+            </div>
+        `;
+
+        const canvas = document.getElementById('balloonCanvas');
+        const scoreEl = document.getElementById('balloonScore');
+        let score = 0;
+
+        function createBalloon() {
+            const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#f9ca24', '#6c5ce7', '#fd79a8'];
+            const balloon = document.createElement('div');
+            balloon.className = 'balloon';
+            balloon.style.left = Math.random() * (canvas.offsetWidth - 60) + 'px';
+            balloon.style.background = colors[Math.floor(Math.random() * colors.length)];
+            balloon.style.animationDuration = (Math.random() * 2 + 4) + 's';
+            
+            balloon.innerHTML = '<div class="balloon-string"></div>';
+            
+            balloon.addEventListener('click', function(e) {
+                e.stopPropagation();
+                score++;
+                scoreEl.textContent = score;
+                
+                const pop = document.createElement('div');
+                pop.className = 'pop-effect';
+                pop.style.left = e.clientX - canvas.getBoundingClientRect().left + 'px';
+                pop.style.top = e.clientY - canvas.getBoundingClientRect().top + 'px';
+                pop.textContent = '🎈';
+                canvas.appendChild(pop);
+                
+                this.style.animation = 'balloonPop 0.3s ease-out';
+                setTimeout(() => {
+                    this.remove();
+                    pop.remove();
+                }, 300);
+            });
+            
+            canvas.appendChild(balloon);
+            
+            setTimeout(() => {
+                if (balloon.parentElement) balloon.remove();
+            }, 7000);
+        }
+
+        const balloonInterval = setInterval(() => {
+            if (gameContainer.style.display === 'none') {
+                clearInterval(balloonInterval);
+            } else {
+                createBalloon();
+            }
+        }, 1000);
+    }
+
+    function loadSimonGame() {
+        gameContent.innerHTML = `
+            <div class="simon-game">
+                <h2>Memory Melody</h2>
+                <p class="game-description">Watch and repeat the pattern</p>
+                <p class="game-score">Level: <span id="simonLevel">1</span></p>
+                <div class="simon-board">
+                    <div class="simon-btn" data-color="red" style="background: #e74c3c;"></div>
+                    <div class="simon-btn" data-color="blue" style="background: #3498db;"></div>
+                    <div class="simon-btn" data-color="green" style="background: #2ecc71;"></div>
+                    <div class="simon-btn" data-color="yellow" style="background: #f1c40f;"></div>
+                </div>
+                <button id="startSimon" class="game-button">Start Game</button>
+                <p id="simonStatus" class="simon-status"></p>
+            </div>
+        `;
+
+        const buttons = document.querySelectorAll('.simon-btn');
+        const levelEl = document.getElementById('simonLevel');
+        const startBtn = document.getElementById('startSimon');
+        const statusEl = document.getElementById('simonStatus');
+        let sequence = [];
+        let playerSequence = [];
+        let level = 1;
+        let isPlaying = false;
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                if (sequence.length === 0 || isPlaying) return;
+                
+                const color = this.dataset.color;
+                playerSequence.push(color);
+                lightUp(this);
+                
+                if (playerSequence[playerSequence.length - 1] !== sequence[playerSequence.length - 1]) {
+                    statusEl.textContent = '❌ Wrong! Starting over...';
+                    statusEl.style.color = '#ef4444';
+                    setTimeout(() => {
+                        resetGame();
+                    }, 1000);
+                    return;
+                }
+                
+                if (playerSequence.length === sequence.length) {
+                    level++;
+                    levelEl.textContent = level;
+                    statusEl.textContent = '✅ Correct! Next level...';
+                    statusEl.style.color = '#10b981';
+                    playerSequence = [];
+                    setTimeout(playSequence, 1000);
+                }
+            });
+        });
+
+        startBtn.addEventListener('click', function() {
+            resetGame();
+            playSequence();
+            startBtn.disabled = true;
+        });
+
+        function resetGame() {
+            sequence = [];
+            playerSequence = [];
+            level = 1;
+            levelEl.textContent = level;
+            statusEl.textContent = '';
+            startBtn.disabled = false;
+        }
+
+        function playSequence() {
+            isPlaying = true;
+            statusEl.textContent = 'Watch the pattern...';
+            statusEl.style.color = '#6366f1';
+            const colors = ['red', 'blue', 'green', 'yellow'];
+            sequence.push(colors[Math.floor(Math.random() * 4)]);
+            
+            let i = 0;
+            const interval = setInterval(() => {
+                const btn = document.querySelector(`[data-color="${sequence[i]}"]`);
+                lightUp(btn);
+                i++;
+                if (i >= sequence.length) {
+                    clearInterval(interval);
+                    isPlaying = false;
+                    statusEl.textContent = 'Your turn!';
+                }
+            }, 600);
+        }
+
+        function lightUp(btn) {
+            btn.style.opacity = '1';
+            btn.style.transform = 'scale(0.95)';
+            btn.style.boxShadow = '0 0 20px currentColor';
+            setTimeout(() => {
+                btn.style.opacity = '0.7';
+                btn.style.transform = 'scale(1)';
+                btn.style.boxShadow = '';
+            }, 300);
+        }
+    }
+
+    function loadColorMatchGame() {
+        gameContent.innerHTML = `
+            <div class="colormatch-game">
+                <h2>Color Match</h2>
+                <p class="game-description">Click the color of the TEXT, not the word</p>
+                <p class="game-score">Score: <span id="colorScore">0</span> | Time: <span id="colorTime">30</span>s</p>
+                <div class="color-display">
+                    <div class="color-word" id="colorWord"></div>
+                    <div class="color-buttons">
+                        <button class="color-btn" data-color="red" style="background: #e74c3c;">Red</button>
+                        <button class="color-btn" data-color="blue" style="background: #3498db;">Blue</button>
+                        <button class="color-btn" data-color="green" style="background: #2ecc71;">Green</button>
+                        <button class="color-btn" data-color="yellow" style="background: #f1c40f;">Yellow</button>
+                        <button class="color-btn" data-color="purple" style="background: #9b59b6;">Purple</button>
+                        <button class="color-btn" data-color="orange" style="background: #e67e22;">Orange</button>
+                    </div>
+                </div>
+                <button id="startColor" class="game-button">Start Game</button>
+            </div>
+        `;
+
+        const wordEl = document.getElementById('colorWord');
+        const scoreEl = document.getElementById('colorScore');
+        const timeEl = document.getElementById('colorTime');
+        const startBtn = document.getElementById('startColor');
+        const buttons = document.querySelectorAll('.color-btn');
+        let score = 0;
+        let timeLeft = 30;
+        let currentColor;
+        let gameInterval;
+
+        const colors = ['red', 'blue', 'green', 'yellow', 'purple', 'orange'];
+        const colorMap = {
+            red: '#e74c3c', blue: '#3498db', green: '#2ecc71',
+            yellow: '#f1c40f', purple: '#9b59b6', orange: '#e67e22'
+        };
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                if (timeLeft <= 0) return;
+                
+                if (this.dataset.color === currentColor) {
+                    score++;
+                    scoreEl.textContent = score;
+                    this.style.transform = 'scale(1.1)';
+                    setTimeout(() => this.style.transform = '', 200);
+                    generateQuestion();
+                } else {
+                    score = Math.max(0, score - 1);
+                    scoreEl.textContent = score;
+                    this.style.filter = 'brightness(0.5)';
+                    setTimeout(() => this.style.filter = '', 200);
+                }
+            });
+        });
+
+        startBtn.addEventListener('click', function() {
+            score = 0;
+            timeLeft = 30;
+            scoreEl.textContent = score;
+            timeEl.textContent = timeLeft;
+            startBtn.disabled = true;
+            generateQuestion();
+
+            gameInterval = setInterval(() => {
+                timeLeft--;
+                timeEl.textContent = timeLeft;
+                if (timeLeft <= 0) {
+                    clearInterval(gameInterval);
+                    startBtn.disabled = false;
+                    wordEl.textContent = 'GAME OVER';
+                    wordEl.style.color = '#ef4444';
+                    setTimeout(() => alert(`🎨 Final Score: ${score}`), 300);
+                }
+            }, 1000);
+        });
+
+        function generateQuestion() {
+            const wordColor = colors[Math.floor(Math.random() * colors.length)];
+            currentColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            wordEl.textContent = wordColor.toUpperCase();
+            wordEl.style.color = colorMap[currentColor];
+        }
+    }
+
+    function loadMandalaGame() {
+        gameContent.innerHTML = `
+            <div class="mandala-game">
+                <h2>Mandala Creator</h2>
+                <p class="game-description">Create beautiful symmetrical patterns</p>
+                <div class="mandala-controls">
+                    <label class="control-label">
+                        <span>Color:</span>
+                        <input type="color" id="mandalaColor" value="#6366f1">
+                    </label>
+                    <label class="control-label">
+                        <span>Symmetry: <span id="symmetryValue">8</span></span>
+                        <input type="range" id="mandalaSymmetry" min="4" max="12" value="8">
+                    </label>
+                    <button id="clearMandala" class="game-button-sm">Clear</button>
+                </div>
+                <canvas id="mandalaCanvas" width="500" height="500"></canvas>
+            </div>
+        `;
+
+        const canvas = document.getElementById('mandalaCanvas');
+        const ctx = canvas.getContext('2d');
+        const colorPicker = document.getElementById('mandalaColor');
+        const symmetrySlider = document.getElementById('mandalaSymmetry');
+        const symmetryValue = document.getElementById('symmetryValue');
+        const clearBtn = document.getElementById('clearMandala');
+
+        ctx.fillStyle = '#f8fafc';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        let isDrawing = false;
+
+        symmetrySlider.addEventListener('input', function() {
+            symmetryValue.textContent = this.value;
+        });
+
+        canvas.addEventListener('mousedown', () => isDrawing = true);
+        canvas.addEventListener('mouseup', () => isDrawing = false);
+        canvas.addEventListener('mouseout', () => isDrawing = false);
+        canvas.addEventListener('mousemove', draw);
+
+        canvas.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            isDrawing = true;
+        });
+        canvas.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+            draw(e.touches[0]);
+        });
+        canvas.addEventListener('touchend', () => isDrawing = false);
+
+        clearBtn.addEventListener('click', () => {
+            ctx.fillStyle = '#f8fafc';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        });
+
+        function draw(e) {
+            if (!isDrawing) return;
+
+            const rect = canvas.getBoundingClientRect();
+            const x = (e.clientX || e.pageX) - rect.left - canvas.width / 2;
+            const y = (e.clientY || e.pageY) - rect.top - canvas.height / 2;
+            const symmetry = parseInt(symmetrySlider.value);
+
+            ctx.save();
+            ctx.translate(canvas.width / 2, canvas.height / 2);
+
+            for (let i = 0; i < symmetry; i++) {
+                ctx.rotate((Math.PI * 2) / symmetry);
+                ctx.beginPath();
+                ctx.arc(x, y, 3, 0, Math.PI * 2);
+                ctx.fillStyle = colorPicker.value;
+                ctx.fill();
+            }
+
+            ctx.restore();
+        }
+    }
+
+    function loadStarfieldGame() {
+        gameContent.innerHTML = `
+            <div class="starfield-game">
+                <h2>Starfield Journey</h2>
+                <p class="game-description">Watch the stars and let your mind drift</p>
+                <canvas id="starCanvas" width="700" height="500"></canvas>
+                <div class="starfield-controls">
+                    <button id="toggleStars" class="game-button">Pause</button>
+                    <label class="control-label">
+                        <span>Speed: <span id="speedValue">Normal</span></span>
+                        <input type="range" id="starSpeed" min="1" max="5" value="2">
+                    </label>
+                </div>
+            </div>
+        `;
+
+        const canvas = document.getElementById('starCanvas');
+        const ctx = canvas.getContext('2d');
+        const toggleBtn = document.getElementById('toggleStars');
+        const speedSlider = document.getElementById('starSpeed');
+        const speedValue = document.getElementById('speedValue');
+        let isPaused = false;
+        let speed = 2;
+
+        const speedNames = ['Very Slow', 'Slow', 'Normal', 'Fast', 'Very Fast'];
+
+        const stars = [];
+        for (let i = 0; i < 200; i++) {
+            stars.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                z: Math.random() * canvas.width,
+                size: Math.random() * 2
+            });
+        }
+
+        speedSlider.addEventListener('input', function() {
+            speed = parseInt(this.value);
+            speedValue.textContent = speedNames[speed - 1];
+        });
+
+        toggleBtn.addEventListener('click', function() {
+            isPaused = !isPaused;
+            this.textContent = isPaused ? 'Resume' : 'Pause';
+            this.classList.toggle('active', !isPaused);
+        });
+
+        function animate() {
+            if (gameContainer.style.display === 'none') return;
+
+            ctx.fillStyle = '#000';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            if (!isPaused) {
+                stars.forEach(star => {
+                    star.z -= speed;
+                    if (star.z <= 0) {
+                        star.z = canvas.width;
+                        star.x = Math.random() * canvas.width;
+                        star.y = Math.random() * canvas.height;
+                    }
+
+                    const k = 128 / star.z;
+                    const px = (star.x - canvas.width / 2) * k + canvas.width / 2;
+                    const py = (star.y - canvas.height / 2) * k + canvas.height / 2;
+                    const size = (1 - star.z / canvas.width) * star.size * 3;
+
+                    ctx.fillStyle = '#fff';
+                    ctx.beginPath();
+                    ctx.arc(px, py, size, 0, Math.PI * 2);
+                    ctx.fill();
+                });
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    }
+
+    function loadWordSearchGame() {
+        const words = ['CALM', 'PEACE', 'RELAX', 'HAPPY', 'BREATHE', 'SMILE', 'JOY', 'HOPE'];
+        
+        gameContent.innerHTML = `
+            <div class="wordsearch-game">
+                <h2>Calm Word Search</h2>
+                <p class="game-description">Find all the peaceful words</p>
+                <p class="game-score">Found: <span id="foundWords">0</span> / ${words.length}</p>
+                <div class="word-list">
+                    ${words.map(w => `<span class="word-item" data-word="${w}">${w}</span>`).join('')}
+                </div>
+                <div id="wordGrid" class="word-grid"></div>
+            </div>
+        `;
+
+        const grid = document.getElementById('wordGrid');
+        const foundEl = document.getElementById('foundWords');
+        let found = 0;
+        const gridSize = 10;
+        const gridData = Array(gridSize).fill().map(() => Array(gridSize).fill(''));
+
+        words.forEach(word => {
+            let placed = false;
+            while (!placed) {
+                const dir = Math.random() > 0.5 ? 'h' : 'v';
+                const row = Math.floor(Math.random() * gridSize);
+                const col = Math.floor(Math.random() * gridSize);
+
+                if (dir === 'h' && col + word.length <= gridSize) {
+                    let canPlace = true;
+                    for (let i = 0; i < word.length; i++) {
+                        if (gridData[row][col + i] !== '' && gridData[row][col + i] !== word[i]) {
+                            canPlace = false;
+                        }
+                    }
+                    if (canPlace) {
+                        for (let i = 0; i < word.length; i++) {
+                            gridData[row][col + i] = word[i];
+                        }
+                        placed = true;
+                    }
+                } else if (dir === 'v' && row + word.length <= gridSize) {
+                    let canPlace = true;
+                    for (let i = 0; i < word.length; i++) {
+                        if (gridData[row + i][col] !== '' && gridData[row + i][col] !== word[i]) {
+                            canPlace = false;
+                        }
+                    }
+                    if (canPlace) {
+                        for (let i = 0; i < word.length; i++) {
+                            gridData[row + i][col] = word[i];
+                        }
+                        placed = true;
+                    }
+                }
+            }
+        });
+
+        const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        for (let i = 0; i < gridSize; i++) {
+            for (let j = 0; j < gridSize; j++) {
+                if (gridData[i][j] === '') {
+                    gridData[i][j] = letters[Math.floor(Math.random() * letters.length)];
+                }
+            }
+        }
+
+        gridData.forEach((row, i) => {
+            row.forEach((letter, j) => {
+                const cell = document.createElement('div');
+                cell.className = 'word-cell';
+                cell.textContent = letter;
+                cell.dataset.row = i;
+                cell.dataset.col = j;
+                grid.appendChild(cell);
+            });
+        });
+
+        let selectedCells = [];
+        let isSelecting = false;
+
+        grid.addEventListener('mousedown', () => isSelecting = true);
+        grid.addEventListener('mouseup', checkWord);
+
+        document.querySelectorAll('.word-cell').forEach(cell => {
+            cell.addEventListener('mouseenter', function() {
+                if (isSelecting) {
+                    this.classList.add('selected');
+                    selectedCells.push(this);
+                }
+            });
+        });
+
+        function checkWord() {
+            isSelecting = false;
+            const word = selectedCells.map(c => c.textContent).join('');
+            const reversedWord = word.split('').reverse().join('');
+            
+            if (words.includes(word) || words.includes(reversedWord)) {
+                const foundWord = words.includes(word) ? word : reversedWord;
+                selectedCells.forEach(c => c.classList.add('found'));
+                document.querySelector(`[data-word="${foundWord}"]`).classList.add('word-found');
+                found++;
+                foundEl.textContent = found;
+                
+                if (found === words.length) {
+                    setTimeout(() => alert('🎉 Congratulations! You found all words!'), 300);
+                }
+            } else {
+                selectedCells.forEach(c => c.classList.remove('selected'));
+            }
+            
+            selectedCells = [];
+        }
+    }
+
+    function load2048Game() {
+        gameContent.innerHTML = `
+            <div class="game2048">
+                <h2>Zen 2048</h2>
+                <p class="game-description">Combine tiles to reach 2048</p>
+                <p class="game-score">Score: <span id="score2048">0</span></p>
+                <div id="grid2048" class="grid2048"></div>
+                <button id="restart2048" class="game-button">New Game</button>
+                <p class="game-hint">Use arrow keys to play</p>
+            </div>
+        `;
+
+        const grid = document.getElementById('grid2048');
+        const scoreEl = document.getElementById('score2048');
+        const restartBtn = document.getElementById('restart2048');
+        let board = Array(4).fill().map(() => Array(4).fill(0));
+        let score = 0;
+
+        function initGame() {
+            board = Array(4).fill().map(() => Array(4).fill(0));
+            score = 0;
+            scoreEl.textContent = score;
+            addNewTile();
+            addNewTile();
+            render();
+        }
+
+        function addNewTile() {
+            const empty = [];
+            for (let i = 0; i < 4; i++) {
+                for (let j = 0; j < 4; j++) {
+                    if (board[i][j] === 0) empty.push([i, j]);
+                }
+            }
+            if (empty.length > 0) {
+                const [row, col] = empty[Math.floor(Math.random() * empty.length)];
+                board[row][col] = Math.random() > 0.9 ? 4 : 2;
+            }
+        }
+
+        function render() {
+            grid.innerHTML = '';
+            for (let i = 0; i < 4; i++) {
+                for (let j = 0; j < 4; j++) {
+                    const tile = document.createElement('div');
+                    tile.className = 'tile2048';
+                    if (board[i][j] !== 0) {
+                        tile.textContent = board[i][j];
+                        tile.classList.add(`tile-${board[i][j]}`);
+                        tile.style.animation = 'tileAppear 0.2s ease';
+                    }
+                    grid.appendChild(tile);
+                }
+            }
+        }
+
+        function move(direction) {
+            let moved = false;
+            const newBoard = board.map(row => [...row]);
+
+            if (direction === 'left' || direction === 'right') {
+                for (let i = 0; i < 4; i++) {
+                    const row = direction === 'left' ? board[i] : board[i].reverse();
+                    const newRow = slide(row);
+                    if (direction === 'right') newRow.reverse();
+                    newBoard[i] = newRow;
+                    if (JSON.stringify(board[i]) !== JSON.stringify(newBoard[i])) moved = true;
+                }
+            } else {
+                for (let j = 0; j < 4; j++) {
+                    const col = board.map(row => row[j]);
+                    const newCol = direction === 'up' ? slide(col) : slide(col.reverse()).reverse();
+                    for (let i = 0; i < 4; i++) {
+                        newBoard[i][j] = newCol[i];
+                        if (board[i][j] !== newBoard[i][j]) moved = true;
+                    }
+                }
+            }
+
+            if (moved) {
+                board = newBoard;
+                addNewTile();
+                render();
+            }
+        }
+
+        function slide(row) {
+            let arr = row.filter(val => val !== 0);
+            for (let i = 0; i < arr.length - 1; i++) {
+                if (arr[i] === arr[i + 1]) {
+                    arr[i] *= 2;
+                    score += arr[i];
+                    scoreEl.textContent = score;
+                    arr.splice(i + 1, 1);
+                }
+            }
+            while (arr.length < 4) arr.push(0);
+            return arr;
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (gameContainer.style.display === 'none') return;
+            e.preventDefault();
+            if (e.key === 'ArrowLeft') move('left');
+            if (e.key === 'ArrowRight') move('right');
+            if (e.key === 'ArrowUp') move('up');
+            if (e.key === 'ArrowDown') move('down');
+        });
+
+        restartBtn.addEventListener('click', initGame);
+        initGame();
+    }
+
+    function loadMeditationGame() {
+        gameContent.innerHTML = `
+            <div class="meditation-game">
+                <h2>Guided Meditation</h2>
+                <p class="game-description">Take a moment for yourself</p>
+                <div class="meditation-display">
+                    <div class="meditation-circle" id="meditationCircle">
+                        <span id="meditationText">Ready</span>
+                    </div>
+                    <p id="meditationInstruction">Choose a duration and click start</p>
+                </div>
+                <div class="meditation-controls">
+                    <select id="meditationDuration" class="meditation-select">
+                        <option value="1">1 minute</option>
+                        <option value="3">3 minutes</option>
+                        <option value="5" selected>5 minutes</option>
+                        <option value="10">10 minutes</option>
+                    </select>
+                    <button id="startMeditation" class="game-button">Start Meditation</button>
+                </div>
+                <div class="meditation-progress">
+                    <div class="progress-bar" id="meditationProgress"></div>
+                </div>
+            </div>
+        `;
+
+        const circle = document.getElementById('meditationCircle');
+        const text = document.getElementById('meditationText');
+        const instruction = document.getElementById('meditationInstruction');
+        const startBtn = document.getElementById('startMeditation');
+        const durationSelect = document.getElementById('meditationDuration');
+        const progressBar = document.getElementById('meditationProgress');
+
+        const meditationSteps = [
+            { text: 'Settle In', instruction: 'Find a comfortable position and close your eyes if you wish', duration: 15 },
+            { text: 'Notice', instruction: 'Notice the sounds around you without judgment', duration: 20 },
+            { text: 'Breathe', instruction: 'Feel your breath moving in and out naturally', duration: 30 },
+            { text: 'Body Scan', instruction: 'Gently scan your body from head to toe', duration: 40 },
+            { text: 'Present', instruction: 'Simply be present in this moment', duration: 30 },
+            { text: 'Gratitude', instruction: 'Think of something you are grateful for', duration: 25 },
+            { text: 'Release', instruction: 'Let go of any tension you may be holding', duration: 30 },
+            { text: 'Return', instruction: 'Slowly bring your awareness back to the room', duration: 20 }
+        ];
+
+        let isMeditating = false;
+        let currentStep = 0;
+        let totalDuration = 0;
+        let elapsed = 0;
+        let progressInterval;
+
+        startBtn.addEventListener('click', function() {
+            if (!isMeditating) {
+                isMeditating = true;
+                startBtn.textContent = 'Stop';
+                startBtn.classList.add('active');
+                durationSelect.disabled = true;
+                const duration = parseInt(durationSelect.value) * 60;
+                totalDuration = duration;
+                elapsed = 0;
+                currentStep = 0;
+                startMeditation();
+            } else {
+                stopMeditation();
+            }
+        });
+
+        function startMeditation() {
+            if (!isMeditating) return;
+
+            const step = meditationSteps[currentStep % meditationSteps.length];
+            text.textContent = step.text;
+            instruction.textContent = step.instruction;
+            circle.style.transform = 'scale(1.1)';
+            circle.style.transition = 'transform 2s ease-in-out';
+
+            const stepDuration = Math.min(step.duration * 1000, (totalDuration - elapsed) * 1000);
+            
+            setTimeout(() => {
+                if (isMeditating) circle.style.transform = 'scale(1)';
+            }, stepDuration / 2);
+
+            progressInterval = setInterval(() => {
+                if (!isMeditating) {
+                    clearInterval(progressInterval);
+                    return;
+                }
+                elapsed += 0.1;
+                const progress = (elapsed / totalDuration) * 100;
+                progressBar.style.width = Math.min(progress, 100) + '%';
+
+                if (elapsed >= totalDuration) {
+                    clearInterval(progressInterval);
+                    completeMeditation();
+                }
+            }, 100);
+
+            setTimeout(() => {
+                if (isMeditating && elapsed < totalDuration) {
+                    currentStep++;
+                    startMeditation();
+                }
+            }, stepDuration);
+        }
+
+        function stopMeditation() {
+            isMeditating = false;
+            clearInterval(progressInterval);
+            startBtn.textContent = 'Start Meditation';
+            startBtn.classList.remove('active');
+            durationSelect.disabled = false;
+            text.textContent = 'Paused';
+            instruction.textContent = 'Click start to continue or choose a new duration';
+            circle.style.transform = 'scale(1)';
+            progressBar.style.width = '0%';
+            elapsed = 0;
+        }
+
+        function completeMeditation() {
+            isMeditating = false;
+            startBtn.textContent = 'Start Meditation';
+            startBtn.classList.remove('active');
+            durationSelect.disabled = false;
+            text.textContent = '✨ Complete';
+            instruction.textContent = 'Well done! You completed your meditation session';
+            circle.style.transform = 'scale(1)';
+            
+            setTimeout(() => {
+                progressBar.style.width = '0%';
+                text.textContent = 'Ready';
+                instruction.textContent = 'Choose a duration and click start';
+            }, 5000);
+        }
+    }
+    function loadSimonGame() {
+    gameContent.innerHTML = `
+        <div class="simon-game">
+            <h2>Memory Melody</h2>
+            <p class="game-description">Watch and repeat the pattern</p>
+            <p class="game-score">Level: <span id="simonLevel">1</span></p>
+            <div class="simon-board">
+                <div class="simon-btn" data-color="red" data-freq="329.63" style="background: #e74c3c;"></div>
+                <div class="simon-btn" data-color="blue" data-freq="261.63" style="background: #3498db;"></div>
+                <div class="simon-btn" data-color="green" data-freq="293.66" style="background: #2ecc71;"></div>
+                <div class="simon-btn" data-color="yellow" data-freq="349.23" style="background: #f1c40f;"></div>
+            </div>
+            <button id="startSimon" class="game-button">Start Game</button>
+            <p id="simonStatus" class="simon-status"></p>
+        </div>
+    `;
+
+    const buttons = document.querySelectorAll('.simon-btn');
+    const levelEl = document.getElementById('simonLevel');
+    const startBtn = document.getElementById('startSimon');
+    const statusEl = document.getElementById('simonStatus');
+    let sequence = [];
+    let playerSequence = [];
+    let level = 1;
+    let isPlaying = false;
+
+    // Audio Context for sounds
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    const audioContext = new AudioContext();
+
+    // Function to play a tone
+    function playTone(frequency, duration = 300) {
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        
+        oscillator.frequency.value = frequency;
+        oscillator.type = 'sine';
+        
+        gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration / 1000);
+        
+        oscillator.start(audioContext.currentTime);
+        oscillator.stop(audioContext.currentTime + duration / 1000);
+    }
+
+    // Function to play error sound
+    function playErrorSound() {
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        
+        oscillator.frequency.setValueAtTime(200, audioContext.currentTime);
+        oscillator.frequency.exponentialRampToValueAtTime(100, audioContext.currentTime + 0.3);
+        oscillator.type = 'sawtooth';
+        
+        gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
+        
+        oscillator.start(audioContext.currentTime);
+        oscillator.stop(audioContext.currentTime + 0.3);
+    }
+
+    // Function to play success sound
+    function playSuccessSound() {
+        const frequencies = [523.25, 659.25, 783.99];
+        frequencies.forEach((freq, index) => {
+            setTimeout(() => {
+                playTone(freq, 150);
+            }, index * 100);
+        });
+    }
+
+    buttons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            if (sequence.length === 0 || isPlaying) return;
+            
+            // Resume audio context on user interaction (required by browsers)
+            if (audioContext.state === 'suspended') {
+                audioContext.resume();
+            }
+            
+            const color = this.dataset.color;
+            const frequency = parseFloat(this.dataset.freq);
+            playerSequence.push(color);
+            
+            lightUp(this);
+            playTone(frequency, 300);
+            
+            if (playerSequence[playerSequence.length - 1] !== sequence[playerSequence.length - 1]) {
+                statusEl.textContent = '❌ Wrong! Starting over...';
+                statusEl.style.color = '#ef4444';
+                playErrorSound();
+                setTimeout(() => {
+                    resetGame();
+                }, 1000);
+                return;
+            }
+            
+            if (playerSequence.length === sequence.length) {
+                level++;
+                levelEl.textContent = level;
+                statusEl.textContent = '✅ Correct! Next level...';
+                statusEl.style.color = '#10b981';
+                playSuccessSound();
+                playerSequence = [];
+                setTimeout(playSequence, 1500);
+            }
+        });
+    });
+
+    startBtn.addEventListener('click', function() {
+        // Resume audio context on user interaction
+        if (audioContext.state === 'suspended') {
+            audioContext.resume();
+        }
+        resetGame();
+        playSequence();
+        startBtn.disabled = true;
+    });
+
+    function resetGame() {
+        sequence = [];
+        playerSequence = [];
+        level = 1;
+        levelEl.textContent = level;
+        statusEl.textContent = '';
+        startBtn.disabled = false;
+    }
+
+    function playSequence() {
+        isPlaying = true;
+        statusEl.textContent = 'Watch the pattern...';
+        statusEl.style.color = '#6366f1';
+        const colors = ['red', 'blue', 'green', 'yellow'];
+        sequence.push(colors[Math.floor(Math.random() * 4)]);
+        
+        let i = 0;
+        const interval = setInterval(() => {
+            const btn = document.querySelector(`[data-color="${sequence[i]}"]`);
+            const frequency = parseFloat(btn.dataset.freq);
+            lightUp(btn);
+            playTone(frequency, 300);
+            i++;
+            if (i >= sequence.length) {
+                clearInterval(interval);
+                isPlaying = false;
+                statusEl.textContent = 'Your turn!';
+            }
+        }, 600);
+    }
+
+    function lightUp(btn) {
+        btn.style.opacity = '1';
+        btn.style.transform = 'scale(0.95)';
+        btn.style.boxShadow = '0 0 30px currentColor';
+        btn.style.filter = 'brightness(1.3)';
+        setTimeout(() => {
+            btn.style.opacity = '0.7';
+            btn.style.transform = 'scale(1)';
+            btn.style.boxShadow = '';
+            btn.style.filter = '';
+        }, 300);
+    }
+}
+}
+
+
 // DOM Elements
 const mobileToggle = document.getElementById('mobileToggle');
 const mobileNav = document.getElementById('mobileNav');
@@ -569,118 +2251,125 @@ function initEmergencyContact() {
 function showEmergencyContacts() {
     // Create modal overlay
     const overlay = document.createElement('div');
+    overlay.className = 'emergency-overlay-responsive';
     overlay.style.cssText = `
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.8);
+        background: rgba(0, 0, 0, 0.85);
         z-index: 10000;
         display: flex;
         justify-content: center;
         align-items: center;
         backdrop-filter: blur(5px);
+        padding: 15px;
+        overflow-y: auto;
     `;
     
     // Create modal content
     const modal = document.createElement('div');
+    modal.className = 'emergency-modal-responsive';
     modal.style.cssText = `
-        background: white;
-        padding: 30px;
+        background: #719a8d;
+        padding: clamp(20px, 5vw, 30px);
         border-radius: 15px;
         max-width: 900px;
+        width: 100%;
         max-height: 90vh;
         overflow-y: auto;
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         color: #333;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        width: 80%;
-        
+        margin: auto;
     `;
     
     modal.innerHTML = `
-        <div style="text-align: center; margin-bottom: 20px;">
-            <h2 style="color: #dc3545; margin-bottom: 10px;">🆘 Crisis Support Resources</h2>
-            <p style="font-size: 16px; color: #666;">You are not alone. Help is available 24/7.</p>
+        <div style="text-align: center; margin-bottom: clamp(15px, 3vw, 20px);">
+            <h2 style="color: #dc3545; margin-bottom: 10px; font-size: clamp(1.2rem, 5vw, 1.8rem); line-height: 1.3;">🆘 Crisis Support Resources</h2>
+            <p style="font-size: clamp(0.875rem, 3vw, 1rem); color: #ffffff;">You are not alone. Help is available 24/7.</p>
         </div>
         
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: clamp(15px, 3vw, 20px);">
             <!-- Ohio Hot-Lines -->
-            <div id = "local" style="border: 2px solid #dc3545; border-radius: 10px; padding: 15px; background: #fef2f2;">
-                <h3 style="color: #dc3545; margin-bottom: 15px; text-align: center;">🏠 Ohio Hot-Lines</h3>
+            <div style="border: 2px solid #5d8b7e; border-radius: 10px; padding: clamp(12px, 3vw, 15px); background: #5d8b7e;">
+                <h3 style="color: #ffffff; margin-bottom: 15px; text-align: center; font-size: clamp(1rem, 4vw, 1.3rem);">🏠 Ohio Hot-Lines</h3>
                 
-                <div style="margin-bottom: 15px; padding: 10px; background: white; border-radius: 5px;">
-                    <h4 style="margin-bottom: 8px; color: #dc3545;">Suicide Prevention</h4>
-                    <p><strong>Call:</strong> <a href="tel:988" style="color: #dc3545; text-decoration: none;">988</a></p>
-                    <p><strong>Text:</strong> <a href="sms:741741?body=4HOPE" style="color: #dc3545; text-decoration: none;">Text 4HOPE to 741741</a></p>
-                    <p><strong>Website:</strong> <a href="https://988lifeline.org" style="color: #dc3545; text-decoration: none;" target="_blank">988lifeline.org</a></p>
+                <div style="margin-bottom: 12px; padding: clamp(8px, 2vw, 10px); background: #719a8d; border-radius: 5px;">
+                    <h4 style="margin-bottom: 8px; color: #dc3545; font-size: clamp(0.875rem, 3vw, 1.1rem);">Suicide Prevention</h4>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-word;"><strong>Call:</strong> <a href="tel:988" style="color: #dc3545; text-decoration: none;">988</a></p>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-word;"><strong>Text:</strong> <a href="sms:741741?body=4HOPE" style="color: #dc3545; text-decoration: none;">4HOPE to 741741</a></p>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-all;"><strong>Website:</strong> <a href="https://988lifeline.org" style="color: #dc3545; text-decoration: none;" target="_blank">988lifeline.org</a></p>
                 </div>
                 
-                <div style="margin-bottom: 15px; padding: 10px; background: white; border-radius: 5px;">
-                    <h4 style="margin-bottom: 8px; color: #dc3545;">OhioMHAS</h4>
-                    <p><strong>Call:</strong> <a href="tel:1-877-275-6364" style="color: #dc3545; text-decoration: none;">1-877-275-6364</a></p>
-                    <p><strong>Website:</strong> <a href="https://mha.ohio.gov" style="color: #dc3545; text-decoration: none;" target="_blank">mha.ohio.gov</a></p>
+                <div style="margin-bottom: 12px; padding: clamp(8px, 2vw, 10px); background: #719a8d; border-radius: 5px;">
+                    <h4 style="margin-bottom: 8px; color: #dc3545; font-size: clamp(0.875rem, 3vw, 1.1rem);">OhioMHAS</h4>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-word;"><strong>Call:</strong> <a href="tel:1-877-275-6364" style="color: #dc3545; text-decoration: none;">1-877-275-6364</a></p>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-all;"><strong>Website:</strong> <a href="https://mha.ohio.gov" style="color: #dc3545; text-decoration: none;" target="_blank">mha.ohio.gov</a></p>
                 </div>
                 
-                <div style="margin-bottom: 15px; padding: 10px; background: white; border-radius: 5px;">
-                    <h4 style="margin-bottom: 8px; color: #dc3545;">Franklin County ADAMH Crisis Line</h4>
-                    <p><strong>Call:</strong> <a href="tel:614-276-2273" style="color: #dc3545; text-decoration: none;">614-276-2273</a></p>
-                    <p><strong>Website:</strong> <a href="https://adamhfranklin.org" style="color: #dc3545; text-decoration: none;" target="_blank">adamhfranklin.org</a></p>
+                <div style="margin-bottom: 12px; padding: clamp(8px, 2vw, 10px); background: #719a8d; border-radius: 5px;">
+                    <h4 style="margin-bottom: 8px; color: #dc3545; font-size: clamp(0.875rem, 3vw, 1.1rem);">Franklin County ADAMH</h4>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-word;"><strong>Call:</strong> <a href="tel:614-276-2273" style="color: #dc3545; text-decoration: none;">614-276-2273</a></p>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-all;"><strong>Website:</strong> <a href="https://adamhfranklin.org" style="color: #dc3545; text-decoration: none;" target="_blank">adamhfranklin.org</a></p>
                 </div>
                 
-                <div style="margin-bottom: 0; padding: 10px; background: white; border-radius: 5px;">
-                    <h4 style="margin-bottom: 8px; color: #dc3545;">Netcare Access (Central Ohio)</h4>
-                    <p><strong>Call:</strong> <a href="tel:614-276-2273" style="color: #dc3545; text-decoration: none;">614-276-2273</a></p>
-                    <p><strong>Website:</strong> <a href="https://mha.ohio.gov" style="color: #dc3545; text-decoration: none;" target="_blank">mha.ohio.gov</a></p>
+                <div style="margin-bottom: 0; padding: clamp(8px, 2vw, 10px); background: #719a8d; border-radius: 5px;">
+                    <h4 style="margin-bottom: 8px; color: #dc3545; font-size: clamp(0.875rem, 3vw, 1.1rem);">Netcare Access</h4>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-word;"><strong>Call:</strong> <a href="tel:614-276-2273" style="color: #dc3545; text-decoration: none;">614-276-2273</a></p>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-all;"><strong>Website:</strong> <a href="https://mha.ohio.gov" style="color: #dc3545; text-decoration: none;" target="_blank">mha.ohio.gov</a></p>
                 </div>
             </div>
             
             <!-- National Hot-Lines -->
-            <div id = "national" style="border: 2px solid #0066cc; border-radius: 10px; padding: 15px; background: #f0f8ff;">
-                <h3 style="color: #0066cc; margin-bottom: 15px; text-align: center;">🇺🇸 National Hot-Lines</h3>
+            <div style="border: 2px solid #5d8b7e; border-radius: 10px; padding: clamp(12px, 3vw, 15px); background: #5d8b7e;">
+                <h3 style="color: #ffffff; margin-bottom: 15px; text-align: center; font-size: clamp(1rem, 4vw, 1.3rem);">🇺🇸 National Hot-Lines</h3>
                 
-                <div style="margin-bottom: 15px; padding: 10px; background: white; border-radius: 5px;">
-                    <h4 style="margin-bottom: 8px; color: #0066cc;">Suicide Prevention</h4>
-                    <p><strong>Call:</strong> <a href="tel:988" style="color: #0066cc; text-decoration: none;">988</a></p>
-                    <p><strong>Website:</strong> <a href="https://988lifeline.org" style="color: #0066cc; text-decoration: none;" target="_blank">988lifeline.org</a></p>
+                <div style="margin-bottom: 12px; padding: clamp(8px, 2vw, 10px); background: #719a8d; border-radius: 5px;">
+                    <h4 style="margin-bottom: 8px; color: #0066cc; font-size: clamp(0.875rem, 3vw, 1.1rem);">Suicide Prevention</h4>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-word;"><strong>Call:</strong> <a href="tel:988" style="color: #0066cc; text-decoration: none;">988</a></p>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-all;"><strong>Website:</strong> <a href="https://988lifeline.org" style="color: #0066cc; text-decoration: none;" target="_blank">988lifeline.org</a></p>
                 </div>
                 
-                <div style="margin-bottom: 15px; padding: 10px; background: white; border-radius: 5px;">
-                    <h4 style="margin-bottom: 8px; color: #0066cc;">NAMI Helpline</h4>
-                    <p style="font-size: 13px; margin-bottom: 5px;">(National Alliance on Mental Illness)</p>
-                    <p><strong>Call:</strong> <a href="tel:1-800-950-6264" style="color: #0066cc; text-decoration: none;">1-800-950-6264</a></p>
-                    <p><strong>Website:</strong> <a href="https://nami.org/help" style="color: #0066cc; text-decoration: none;" target="_blank">nami.org/help</a></p>
+                <div style="margin-bottom: 12px; padding: clamp(8px, 2vw, 10px); background: #719a8d; border-radius: 5px;">
+                    <h4 style="margin-bottom: 8px; color: #0066cc; font-size: clamp(0.875rem, 3vw, 1.1rem);">NAMI Helpline</h4>
+                    <p style="font-size: clamp(0.75rem, 2vw, 0.85rem); margin-bottom: 4px;">(National Alliance on Mental Illness)</p>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-word;"><strong>Call:</strong> <a href="tel:1-800-950-6264" style="color: #0066cc; text-decoration: none;">1-800-950-6264</a></p>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-all;"><strong>Website:</strong> <a href="https://nami.org/help" style="color: #0066cc; text-decoration: none;" target="_blank">nami.org/help</a></p>
                 </div>
                 
-                <div style="margin-bottom: 15px; padding: 10px; background: white; border-radius: 5px;">
-                    <h4 style="margin-bottom: 8px; color: #0066cc;">SAMHSA Helpline</h4>
-                    <p><strong>Call:</strong> <a href="tel:1-800-662-4357" style="color: #0066cc; text-decoration: none;">1-800-662-4357</a></p>
-                    <p><strong>Website:</strong> <a href="https://findtreatment.gov" style="color: #0066cc; text-decoration: none;" target="_blank">findtreatment.gov</a></p>
+                <div style="margin-bottom: 12px; padding: clamp(8px, 2vw, 10px); background: #719a8d; border-radius: 5px;">
+                    <h4 style="margin-bottom: 8px; color: #0066cc; font-size: clamp(0.875rem, 3vw, 1.1rem);">SAMHSA Helpline</h4>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-word;"><strong>Call:</strong> <a href="tel:1-800-662-4357" style="color: #0066cc; text-decoration: none;">1-800-662-4357</a></p>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-all;"><strong>Website:</strong> <a href="https://findtreatment.gov" style="color: #0066cc; text-decoration: none;" target="_blank">findtreatment.gov</a></p>
                 </div>
                 
-                <div style="margin-bottom: 0; padding: 10px; background: white; border-radius: 5px;">
-                    <h4 style="margin-bottom: 8px; color: #0066cc;">Veterans Crisis Line</h4>
-                    <p><strong>Call:</strong> <a href="tel:988" style="color: #0066cc; text-decoration: none;">Dial 988, press 1</a></p>
-                    <p><strong>Website:</strong> <a href="https://www.veteranscrisisline.net" style="color: #0066cc; text-decoration: none;" target="_blank">veteranscrisisline.net</a></p>
+                <div style="margin-bottom: 0; padding: clamp(8px, 2vw, 10px); background: #719a8d; border-radius: 5px;">
+                    <h4 style="margin-bottom: 8px; color: #0066cc; font-size: clamp(0.875rem, 3vw, 1.1rem);">Veterans Crisis Line</h4>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-word;"><strong>Call:</strong> <a href="tel:988" style="color: #0066cc; text-decoration: none;">Dial 988, press 1</a></p>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-all;"><strong>Website:</strong> <a href="https://www.veteranscrisisline.net" style="color: #0066cc; text-decoration: none;" target="_blank">veteranscrisisline.net</a></p>
                 </div>
             </div>
         </div>
         
-        <div style="text-align: center; margin-top: 25px; padding: 15px; background: #fff3cd; border-radius: 10px; border: 1px solid #ffeaa7;">
-            <p style="margin: 0; font-weight: bold; color: #856404;">⚠️ If you're in immediate danger, call <a href="tel:911" style="color: #856404;">911</a></p>
+        <div style="text-align: center; margin-top: clamp(20px, 4vw, 25px); padding: clamp(12px, 3vw, 15px); background: #fff3cd; border-radius: 10px; border: 1px solid #ffeaa7;">
+            <p style="margin: 0; font-weight: bold; color: #856404; font-size: clamp(0.875rem, 2.5vw, 1rem); line-height: 1.4;">⚠️ If you're in immediate danger, call <a href="tel:911" style="color: #856404;">911</a></p>
         </div>
         
-        <div style="text-align: center; margin-top: 15px;">
-            <button id="closeModal" style="
+        <div style="text-align: center; margin-top: clamp(12px, 3vw, 15px);">
+            <button id="closeModalBtn" style="
                 background: #6c757d;
                 color: white;
                 border: none;
-                padding: 10px 25px;
+                padding: clamp(10px, 2.5vw, 12px) clamp(20px, 5vw, 30px);
                 border-radius: 25px;
                 cursor: pointer;
                 font-weight: bold;
                 transition: background 0.3s ease;
+                font-size: clamp(0.875rem, 2.5vw, 1rem);
+                min-width: clamp(100px, 25vw, 140px);
+                width: auto;
             ">Close</button>
         </div>
     `;
@@ -688,8 +2377,11 @@ function showEmergencyContacts() {
     overlay.appendChild(modal);
     document.body.appendChild(overlay);
     
+    // Prevent body scroll
+    document.body.style.overflow = 'hidden';
+    
     // Close modal functionality
-    const closeBtn = modal.querySelector('#closeModal');
+    const closeBtn = modal.querySelector('#closeModalBtn');
     closeBtn.addEventListener('mouseover', () => {
         closeBtn.style.background = '#5a6268';
     });
@@ -698,7 +2390,13 @@ function showEmergencyContacts() {
     });
     
     const closeModal = () => {
-        document.body.removeChild(overlay);
+        document.body.style.overflow = 'auto';
+        overlay.style.opacity = '0';
+        setTimeout(() => {
+            if (document.body.contains(overlay)) {
+                document.body.removeChild(overlay);
+            }
+        }, 300);
     };
     
     closeBtn.addEventListener('click', closeModal);
@@ -714,7 +2412,75 @@ function showEmergencyContacts() {
         }
     };
     document.addEventListener('keydown', handleEscape);
+    
+    // Fade in animation
+    setTimeout(() => {
+        overlay.style.opacity = '1';
+        overlay.style.transition = 'opacity 0.3s ease';
+    }, 10);
 }
+
+// Add responsive CSS for the emergency modal
+const responsiveEmergencyStyles = document.createElement('style');
+responsiveEmergencyStyles.textContent = `
+    .emergency-overlay-responsive {
+        opacity: 0;
+    }
+    
+    .emergency-modal-responsive {
+        animation: slideUp 0.3s ease-out;
+    }
+    
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Responsive adjustments for very small screens */
+    @media (max-width: 480px) {
+        .emergency-modal-responsive {
+            border-radius: 12px !important;
+        }
+        
+        .emergency-overlay-responsive {
+            padding: 10px !important;
+            align-items: flex-start !important;
+            padding-top: 20px !important;
+        }
+    }
+    
+    /* Smooth scrolling for modal content */
+    .emergency-modal-responsive {
+        scrollbar-width: thin;
+        scrollbar-color: #5d8b7e #719a8d;
+    }
+    
+    .emergency-modal-responsive::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    .emergency-modal-responsive::-webkit-scrollbar-track {
+        background: #719a8d;
+        border-radius: 10px;
+    }
+    
+    .emergency-modal-responsive::-webkit-scrollbar-thumb {
+        background: #5d8b7e;
+        border-radius: 10px;
+    }
+    
+    .emergency-modal-responsive::-webkit-scrollbar-thumb:hover {
+        background: #4a6f62;
+    }
+`;
+
+document.head.appendChild(responsiveEmergencyStyles);
 
 // Initialize the emergency contact button
 initEmergencyContact();
@@ -755,7 +2521,7 @@ function addCustomStyles() {
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: white;
+            background: #719a8d;
             border-radius: 20px;
             padding: 40px;
             max-width: 600px;
