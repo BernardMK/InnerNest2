@@ -1,4 +1,4 @@
-* {
+{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -101,6 +101,7 @@ body {
 }
 
 #image {
+    height: 40px;
     height: 50px;
     width: auto;
 }
@@ -516,11 +517,11 @@ body {
         gap: 40px;
         text-align: center;
     }
-    
+
     .hero-title {
         font-size: 3rem;
     }
-    
+
     .conditions-grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
@@ -531,55 +532,55 @@ body {
     .nav-links {
         display: none !important;
     }
-    
+
     .mobile-menu-toggle {
         display: flex;
     }
-    
+
     .nav {
         padding: 10px 20px;
         margin: 10px;
     }
-    
+
     .nav-container {
         justify-content: space-between;
     }
-    
+
     .logo {
         padding: 8px 15px;
     }
-    
+
     #image {
         height: 35px;
     }
-    
+
     .hero-title {
         font-size: 2.5rem;
     }
-    
+
     .hero-subtitle {
         font-size: 1.1rem;
     }
-    
+
     .main-container,
     .disorder-container {
         padding: 40px 20px;
         margin: 20px 10px;
     }
-    
+
     .conditions-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .description h2 {
         font-size: 1.8rem;
     }
-    
+
     .floating-card:nth-child(2) {
         grid-column: span 1;
         margin: 0;
     }
-    
+
     .hero-visual {
         grid-template-columns: 1fr;
     }
@@ -589,28 +590,28 @@ body {
     .container {
         padding: 0 15px;
     }
-    
+
     .nav {
         margin: 10px;
         padding: 10px 15px;
     }
-    
+
     .hero-title {
         font-size: 2rem;
     }
-    
+
     .hero-subtitle {
         font-size: 1rem;
     }
-    
+
     .condition-item {
         padding: 25px 20px;
     }
-    
+
     .conditions-grid {
         gap: 20px;
     }
-    
+
     .mobile-nav-link {
         min-width: 200px;
         padding: 18px 30px;
