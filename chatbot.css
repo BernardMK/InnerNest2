@@ -33,14 +33,13 @@ body {
 }
 
 .crisis-banner {
-    background: red;
+    background: linear-gradient(90deg, rgb(107, 162, 146), rgb(44, 62, 55));
     padding: 12px 20px;
     text-align: center;
     position: sticky;
     top: 0px;
     z-index: 1000;
     box-shadow: var(--shadow-sm);
-    border-radius: 14px;
 }
 
 .crisis-content {

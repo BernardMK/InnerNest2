@@ -88,22 +88,48 @@
                     <h3>Games</h3>
                     <p>For stress relief</p>
                 </div>
-                <div class="floating-card">
+                <div class="floating-card" id="supportCard">
                     <div class="card-icon">🤝</div>
                     <h3>Support</h3>
                     <p>Professional guidance</p>
                 </div>
-                <div class="floating-card">
+
+                <div class="floating-card" id="mindfulnessCard">
                     <div class="card-icon">🧘</div>
                     <h3>Mindfulness</h3>
                     <p>Mental wellness</p>
                 </div>
-            </div>
         </div>
     </main>
 
     <!-- Mental Health Conditions Section -->
     <section class="disorder-container" id="disorders">
+        <div class="video-modal" id="supportModal">
+            <div class="video-content">
+                    <button class="close-modal" onclick="closeModal('supportModal')">×</button>
+                    <h2>Professional Support & Guidance</h2>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/watch?v=2yzkhLZ-828" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-modal" id="mindfulnessModal">
+                <div class="video-content">
+                    <button class="close-modal" onclick="closeModal('mindfulnessModal')">×</button>
+                    <h2>Mindfulness & Mental Wellness</h2>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/inpok4MKVLM" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="container">
             <div class="description" id="description">
                 <h2>Understanding Mental Health Conditions</h2>
@@ -225,5 +251,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="translate.js"></script>
 </body>
 </html>
