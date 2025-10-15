@@ -408,101 +408,31 @@ const translations = {
     }
 };
 
-// Language Manager
+// Language Manager - Single unified class
 class LanguageManager {
     constructor() {
-        this.currentLanguage = localStorage.getItem('preferredLanguage') || 'en';
+        this.currentLanguage = this.getCurrentLanguage();
         this.init();
     }
     
+    getCurrentLanguage() {
+        // Check if ES button is active in the HTML
+        const esBtn = document.querySelector('.lang-btn[data-lang="es"]');
+        return esBtn && esBtn.classList.contains('active') ? 'es' : 'en';
+    }
+    
     init() {
-        this.createLanguageToggle();
-        this.translatePage();
         this.setupEventListeners();
-    }
-    
-    createLanguageToggle() {
-        // Add language toggle to navigation
-        const navContainer = document.querySelector('.nav-container');
-        if (!navContainer) return;
-        
-        const langToggle = document.createElement('div');
-        langToggle.className = 'language-toggle';
-        langToggle.innerHTML = `
-            <button class="lang-btn ${this.currentLanguage === 'en' ? 'active' : ''}" data-lang="en">
-                EN
-            </button>
-            <button class="lang-btn ${this.currentLanguage === 'es' ? 'active' : ''}" data-lang="es">
-                ES
-            </button>
-        `;
-        
-        // Insert before mobile toggle or at the end
-        const mobileToggle = document.getElementById('mobileToggle');
-        if (mobileToggle) {
-            navContainer.insertBefore(langToggle, mobileToggle);
-        } else {
-            navContainer.appendChild(langToggle);
-        }
-        
-        // Add styles
-        this.addStyles();
-    }
-    
-    addStyles() {
-        if (document.getElementById('language-toggle-styles')) return;
-        
-        const styles = document.createElement('style');
-        styles.id = 'language-toggle-styles';
-        styles.textContent = `
-            .language-toggle {
-                display: flex;
-                gap: 5px;
-                background: rgba(255, 255, 255, 0.15);
-                padding: 5px;
-                border-radius: 12px;
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(255, 255, 255, 0.2);
-            }
-            
-            .lang-btn {
-                padding: 8px 16px;
-                border: none;
-                background: transparent;
-                color: rgba(255, 255, 255, 0.7);
-                font-weight: 600;
-                font-size: 0.9rem;
-                cursor: pointer;
-                border-radius: 8px;
-                transition: all 0.3s ease;
-            }
-            
-            .lang-btn:hover {
-                background: rgba(255, 255, 255, 0.1);
-                color: white;
-            }
-            
-            .lang-btn.active {
-                background: rgba(88, 131, 119, 1);
-                color: white;
-                box-shadow: 0 2px 8px rgba(88, 131, 119, 0.4);
-            }
-            
-            @media (max-width: 768px) {
-                .language-toggle {
-                    order: -1;
-                }
-            }
-        `;
-        document.head.appendChild(styles);
+        this.translatePage();
     }
     
     setupEventListeners() {
-        document.addEventListener('click', (e) => {
-            if (e.target.classList.contains('lang-btn')) {
+        // Add click handlers to language buttons
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
                 const newLang = e.target.dataset.lang;
                 this.changeLanguage(newLang);
-            }
+            });
         });
     }
     
@@ -510,7 +440,6 @@ class LanguageManager {
         if (lang === this.currentLanguage) return;
         
         this.currentLanguage = lang;
-        localStorage.setItem('preferredLanguage', lang);
         
         // Update button states
         document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -758,8 +687,6 @@ class LanguageManager {
                 supportLinks[2].textContent = footerTranslations.faq;
             }
         }
-        
-        // Footer bottom
         const footerBottom = document.querySelector('.footer-bottom p');
         if (footerBottom) {
             footerBottom.innerHTML = `${footerTranslations.copyright} | ${footerTranslations.privacy} | ${footerTranslations.terms}`;
@@ -777,7 +704,14 @@ class LanguageManager {
     }
     
     showNotification(message) {
+        // Remove any existing notification
+        const existingNotification = document.querySelector('.language-notification');
+        if (existingNotification) {
+            existingNotification.remove();
+        }
+        
         const notification = document.createElement('div');
+        notification.className = 'language-notification';
         notification.style.cssText = `
             position: fixed;
             top: 100px;
