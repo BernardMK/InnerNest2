@@ -7,51 +7,50 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!-- Navigation -->
-    <nav class="nav">
+    <!-- Navigation -->
    <nav class="nav">
-<div class="nav-container">
-<div class="nav-links" id="index">
-<a href="index.html" class="nav-link" id="home">
+        <div class="nav-container">
+            <div class="nav-links" id="index">
+                <a href="index.html" class="nav-link" id="home">
 
-<span class="nav-text">Home</span>
-</a>
-</div>
-<div class="nav-links" id="post">
-<a href="blog.html" class="nav-link" id="blog">
+                    <span class="nav-text">Home</span>
+                </a>
+            </div>
+            <div class="nav-links" id="post">
+                <a href="blog.html" class="nav-link" id="blog">
 
-<span class="nav-text">Blog</span>
-</a>
-</div>
+                    <span class="nav-text">Blog</span>
+                </a>
+            </div>
+            
+            <div class="logo" id="logo">
+                <div id="logo_img">
+                    <img src="image/InnerNest logo.png" alt="logo" id="image">
+                </div>
+                
 
-<div class="logo" id="logo">
-<div id="logo_img">
-<img src="image/InnerNest logo.png" alt="logo" id="image">
-</div>
+            </div>
+            
+            <div class="nav-links" id="chat">
+                <a href="chat.html" class="nav-link" id="chatb">
+                    <span class="nav-text">Chat</span>
+                </a>
+            </div>
+            <div class="nav-links" id="book">
+                <a href="book.html" class="nav-link" id="booka">
 
-
-</div>
-
-<div class="nav-links" id="chat">
-<a href="chat.html" class="nav-link" id="chatb">
-<span class="nav-text">Chat</span>
-</a>
-</div>
-<div class="nav-links" id="book">
-<a href="book.html" class="nav-link" id="booka">
-
-<span class="nav-text">Book</span>
-</a>
-</div>
-
-<div class="mobile-menu-toggle" id="mobileToggle">
-<span>
-</span>
-<span></span>
-<span></span>
-</div>
-</div>
-</nav>
+                    <span class="nav-text">Book</span>
+                </a>
+            </div>
+            
+            <div class="mobile-menu-toggle" id="mobileToggle">
+                <span>
+                </span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
 <!-- Mobile Navigation -->
 <div class="mobile-nav" id="mobileNav">
@@ -73,115 +72,138 @@ Book
 </a>
 </div>
 
-<!-- Main Hero Section -->
-<main class="main-container">
-<div class="hero-content">
-<div class="hero-text">
-<h1 class="hero-title">Welcome to Your Mental Health Journey</h1>
-<p class="hero-subtitle">
-InnerNest is your safe space for mental wellness, self-discovery, and growth. 
-Connect with professionals, access resources, and build resilience.
-</p>
-</div>
-<div class="hero-visual">
-<div class="floating-card">
-                    <div class="card-icon">🌱</div>
-                    <h3>Growth</h3>
-                    <p>Personal development</p>
+    <!-- Main Hero Section -->
+    <main class="main-container">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Welcome to Your Mental Health Journey</h1>
+                <p class="hero-subtitle">
+                    InnerNest is your safe space for mental wellness, self-discovery, and growth. 
+                    Connect with professionals, access resources, and build resilience.
+                </p>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card">
                     <div class="card-icon">🎮</div>
                     <h3>Games</h3>
                     <p>For stress relief</p>
-</div>
-<div class="floating-card">
-<div class="card-icon">🤝</div>
-<h3>Support</h3>
-<p>Professional guidance</p>
-</div>
-<div class="floating-card">
-<div class="card-icon">🧘</div>
-<h3>Mindfulness</h3>
-<p>Mental wellness</p>
-</div>
-</div>
-</div>
-</main>
+                </div>
+                <div class="floating-card" id="supportCard">
+                    <div class="card-icon">🤝</div>
+                    <h3>Support</h3>
+                    <p>Professional guidance</p>
+                </div>
 
-<!-- Mental Health Conditions Section -->
-<section class="disorder-container" id="disorders">
-<div class="container">
-<div class="description" id="description">
-<h2>Understanding Mental Health Conditions</h2>
-<div class="conditions-grid" id="item_container">
-<div class="condition-item" id="anxiety">
-<div class="condition-icon">😰</div>
-<h3>Anxiety Disorders</h3>
-<p>Learn about anxiety symptoms, coping strategies, and treatment options.</p>
-<div class="condition-tags">
-<span class="tag">GAD</span>
-<span class="tag">Panic</span>
-<span class="tag">Social</span>
-</div>
+                <div class="floating-card" id="mindfulnessCard">
+                    <div class="card-icon">🧘</div>
+                    <h3>Mindfulness</h3>
+                    <p>Mental wellness</p>
+                </div>
+        </div>
+    </main>
 
-</div>
+    <!-- Mental Health Conditions Section -->
+    <section class="disorder-container" id="disorders">
+        <div class="video-modal" id="supportModal">
+            <div class="video-content">
+                    <button class="close-modal" onclick="closeModal('supportModal')">×</button>
+                    <h2>Professional Support & Guidance</h2>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/watch?v=2yzkhLZ-828" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
 
-<div class="condition-item" id="depression">
-<div class="condition-icon">😔</div>
-<h3>Depression</h3>
-<p>Understanding depression, its impact, and paths to recovery and support.</p>
-<div class="condition-tags">
-<span class="tag">Major</span>
-<span class="tag">Seasonal</span>
-<span class="tag">Bipolar</span>
-</div>
-</div>
-
-<div class="condition-item" id="stress">
-<div class="condition-icon">😓</div>
-<h3>Stress Management</h3>
-<p>Effective techniques and strategies for managing daily stress and pressure.</p>
-<div class="condition-tags">
-<span class="tag">Work</span>
-<span class="tag">Life</span>
-<span class="tag">Chronic</span>
-</div>
-
-</div>
-
-<div class="condition-item" id="trauma">
-<div class="condition-icon">💔</div>
-<h3>Trauma & PTSD</h3>
-<p>Support and resources for trauma survivors and PTSD recovery.</p>
-<div class="condition-tags">
-<span class="tag">PTSD</span>
-<span class="tag">Complex</span>
-<span class="tag">Recovery</span>
-</div>
-</div>
-
-<div class="condition-item" id="relationships">
-<div class="condition-icon">💑</div>
-<h3>Relationship Issues</h3>
-<p>Guidance for improving relationships and communication skills.</p>
-<div class="condition-tags">
-<span class="tag">Couples</span>
-<span class="tag">Family</span>
-<span class="tag">Social</span>
-</div>
-</div>
-
-<div class="condition-item" id="selfcare">
-<div class="condition-icon">🌸</div>
-<h3>Self-Care & Wellness</h3>
-<p>Building healthy habits and sustainable self-care practices.</p>
-<div class="condition-tags">
-<span class="tag">Mindfulness</span>
-<span class="tag">Habits</span>
-<span class="tag">Balance</span>
-</div>
-</div>
-
+            <div class="video-modal" id="mindfulnessModal">
+                <div class="video-content">
+                    <button class="close-modal" onclick="closeModal('mindfulnessModal')">×</button>
+                    <h2>Mindfulness & Mental Wellness</h2>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/inpok4MKVLM" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="description" id="description">
+                <h2>Understanding Mental Health Conditions</h2>
+            <div class="conditions-grid" id="item_container">
+                <div class="condition-item" id="anxiety">
+                    <div class="condition-icon">😰</div>
+                    <h3>Anxiety Disorders</h3>
+                    <p>Learn about anxiety symptoms, coping strategies, and treatment options.</p>
+                    <div class="condition-tags">
+                        <span class="tag">GAD</span>
+                        <span class="tag">Panic</span>
+                        <span class="tag">Social</span>
+                    </div>
+                   
+                </div>
+               
+                <div class="condition-item" id="depression">
+                    <div class="condition-icon">😔</div>
+                    <h3>Depression</h3>
+                    <p>Understanding depression, its impact, and paths to recovery and support.</p>
+                    <div class="condition-tags">
+                        <span class="tag">Major</span>
+                        <span class="tag">Seasonal</span>
+                        <span class="tag">Bipolar</span>
+                    </div>
+                </div>
+               
+                <div class="condition-item" id="stress">
+                    <div class="condition-icon">😓</div>
+                    <h3>Stress Management</h3>
+                    <p>Effective techniques and strategies for managing daily stress and pressure.</p>
+                    <div class="condition-tags">
+                        <span class="tag">Work</span>
+                        <span class="tag">Life</span>
+                        <span class="tag">Chronic</span>
+                    </div>
+ 
+                </div>
+               
+                <div class="condition-item" id="trauma">
+                    <div class="condition-icon">💔</div>
+                    <h3>Trauma & PTSD</h3>
+                    <p>Support and resources for trauma survivors and PTSD recovery.</p>
+                    <div class="condition-tags">
+                        <span class="tag">PTSD</span>
+                        <span class="tag">Complex</span>
+                        <span class="tag">Recovery</span>
+                    </div>
+                </div>
+               
+                <div class="condition-item" id="relationships">
+                    <div class="condition-icon">💑</div>
+                    <h3>Relationship Issues</h3>
+                    <p>Guidance for improving relationships and communication skills.</p>
+                    <div class="condition-tags">
+                        <span class="tag">Couples</span>
+                        <span class="tag">Family</span>
+                        <span class="tag">Social</span>
+                    </div>
+                </div>
+               
+                <div class="condition-item" id="selfcare">
+                    <div class="condition-icon">🌸</div>
+                    <h3>Self-Care & Wellness</h3>
+                    <p>Building healthy habits and sustainable self-care practices.</p>
+                    <div class="condition-tags">
+                        <span class="tag">Mindfulness</span>
+                        <span class="tag">Habits</span>
+                        <span class="tag">Balance</span>
+                    </div>
+                </div>
                 
-</div>
+                
+            </div>
             <br>
             <div id="more">
                 <a href="resources.html">
@@ -192,9 +214,9 @@ Connect with professionals, access resources, and build resilience.
                     
                     
                 </div>
-
-</div>
-</section>
+             
+        </div>
+    </section>
 
 <!-- Footer -->
 <footer class="footer">
@@ -228,6 +250,7 @@ Connect with professionals, access resources, and build resilience.
 </div>
 </footer>
 
-<script src="script.js"></script>
-</body> 
- 
+    <script src="script.js"></script>
+    <script src="translate.js"></script>
+</body>
+</html>

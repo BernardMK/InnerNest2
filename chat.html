@@ -272,10 +272,23 @@
         </div>
     </div>
     
-   
-    <script src="script.js"></script> 
+    <button class="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()" style="position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px; border-radius: 50%; border: none; background: linear-gradient(135deg, rgb(107, 162, 146), rgb(88, 131, 119)); color: white; font-size: 1.2rem; cursor: pointer; box-shadow: rgba(107, 162, 146, 0.3) 0px 4px 15px; transition: 0.3s; z-index: 1000; transform: scale(1) rotate(0deg);">🌙</button>
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            // Optionally, toggle icon between moon and sun
+            const btn = document.querySelector('.theme-toggle');
+            if (document.body.classList.contains('dark-mode')) {
+                btn.textContent = '☀️';
+            } else {
+                btn.textContent = '🌙';
+            }
+        }
+    </script>
+    <script src="script.js"></script>   
     <script src="chatbot.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="translate.js"></script>
 
 </body>
 </html>
