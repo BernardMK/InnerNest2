@@ -208,8 +208,8 @@ const translations = {
         // Navegación
         nav: {
             home: "Inicio",
-            blog: "Blog",
-            chat: "Chat",
+            blog: "Bitácora",
+            chat: "Charla",
             book: "Reservar"
         },
         
@@ -221,7 +221,7 @@ const translations = {
             gamesDesc: "Para aliviar el estrés",
             support: "Apoyo",
             supportDesc: "Orientación profesional",
-            mindfulness: "Mindfulness",
+            mindfulness: "atención plena",
             mindfulnessDesc: "Bienestar mental"
         },
         
@@ -381,7 +381,7 @@ const translations = {
             quickLinks: "Enlaces Rápidos",
             home: "Inicio",
             services: "Servicios",
-            blog: "Blog",
+            blog: "Bitácora",
             contact: "Contacto",
             support: "Apoyo",
             crisis: "Apoyo en Crisis",
