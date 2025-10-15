@@ -1991,10 +1991,10 @@ input[type="range"]::-moz-range-thumb {
 .language-toggle {
 
    position: fixed;
-    bottom: 90px;
-    left: 20px;
+    bottom: 135px;
+    right: 20px;
     padding: 12px 20px;
-    background: linear-gradient(135deg, rgb(220, 53, 69), rgb(200, 35, 51));
+    background: #8fb0a5;
     color: white;
     border: none;
     border-radius: 25px;
@@ -2080,8 +2080,8 @@ input[type="range"]::-moz-range-thumb {
 /* Responsive Design */
 @media (max-width: 1024px) {
     .language-toggle {
-        bottom: 15px;
-        left: 15px;
+        bottom: 135px;
+        right: 15px;
     }
     
     .lang-btn {
@@ -2093,8 +2093,8 @@ input[type="range"]::-moz-range-thumb {
 
 @media (max-width: 768px) {
     .language-toggle {
-        bottom: 15px;
-        left: 15px;
+        bottom: 140px;
+        right: 15px;
     }
 }
 
@@ -2102,13 +2102,13 @@ input[type="range"]::-moz-range-thumb {
     .language-toggle {
         gap: 3px;
         padding: 4px;
-        bottom: 10px;
-        left: 10px;
+        bottom: 135px;
+        right: 24px;
     }
     
     .lang-btn {
         padding: 6px 10px;
-        font-size: 0.8rem;
+        font-size: 0.6rem;
         min-width: 35px;
     }
 }
