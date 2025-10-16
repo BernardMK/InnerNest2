@@ -8,6 +8,10 @@ document.getElementById('supportCard').addEventListener('click', function() {
 document.getElementById('mindfulnessCard').addEventListener('click', function() {
     document.getElementById('mindfulnessModal').classList.add('active');
 });
+// Open video modal for Support  card
+document.getElementById('supportCard').addEventListener('click', function() {
+    document.getElementById('supportModal').classList.add('active');
+});
 
 // Close video modal function
 function closeModal(modalId) {
@@ -2309,14 +2313,17 @@ function showEmergencyContacts() {
         max-height: 90vh;
         overflow-y: auto;
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        color: #333;
+        color: #ffffffff;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         margin: auto;
     `;
     
     modal.innerHTML = `
+        <div style="text-align: center; margin-top: clamp(20px, 4vw, 25px); padding: clamp(12px, 3vw, 15px); background: rgb(219, 53, 69); border-radius: 14px; border: 1px solid rgb(219, 53, 69);">
+            <p style="margin: 0; font-weight: bold; color: rgba(255, 255, 255, 1); font-size: clamp(0.875rem, 2.5vw, 1rem); line-height: 1.4;">⚠️ If you're in immediate danger, call <a href="tel:911" style="color: #ffffffff;">911</a></p>
+        </div>
         <div style="text-align: center; margin-bottom: clamp(15px, 3vw, 20px);">
-            <h2 style="color: #dc3545; margin-bottom: 10px; font-size: clamp(1.2rem, 5vw, 1.8rem); line-height: 1.3;">🆘 Crisis Support Resources</h2>
+            <h2 style="color: #ffffffff; margin-bottom: 10px; font-size: clamp(1.2rem, 5vw, 1.8rem); line-height: 1.3;">🆘 Crisis Support Resources</h2>
             <p style="font-size: clamp(0.875rem, 3vw, 1rem); color: #ffffff;">You are not alone. Help is available 24/7.</p>
         </div>
         
@@ -2327,27 +2334,27 @@ function showEmergencyContacts() {
                 
                 <div style="margin-bottom: 12px; padding: clamp(8px, 2vw, 10px); background: #5d8b7e; border-radius: 5px;">
                     <h4 style="margin-bottom: 8px; color: #ffffffff; font-size: clamp(0.875rem, 3vw, 1.1rem);">Suicide Prevention</h4>
-                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-word;"><strong>Call:</strong> <a href="tel:988" style="color: #dc3545; text-decoration: none;">988</a></p>
-                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-word;"><strong>Text:</strong> <a href="sms:741741?body=4HOPE" style="color: #dc3545; text-decoration: none;">4HOPE to 741741</a></p>
-                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-all;"><strong>Website:</strong> <a href="https://988lifeline.org" style="color: #dc3545; text-decoration: none;" target="_blank">988lifeline.org</a></p>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-word;"><strong>Call:</strong> <a href="tel:988" style="font-style: italic;color: #ffffffff; text-decoration:   underline;">988</a></p>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-word;"><strong>Text:</strong> <a href="sms:741741?body=4HOPE" style="font-style: italic;color: #ffffffff; text-decoration:   underline;">4HOPE to 741741</a></p>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-all;"><strong>Website:</strong> <a href="https://988lifeline.org" style="font-style: italic;color: #ffffffff; text-decoration:   underline;" target="_blank">988lifeline.org</a></p>
                 </div>
                 
                 <div style="margin-bottom: 12px; padding: clamp(8px, 2vw, 10px); background: #5d8b7e; border-radius: 5px;">
                     <h4 style="margin-bottom: 8px; color: #ffffffff; font-size: clamp(0.875rem, 3vw, 1.1rem);">OhioMHAS</h4>
-                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-word;"><strong>Call:</strong> <a href="tel:1-877-275-6364" style="color: #dc3545; text-decoration: none;">1-877-275-6364</a></p>
-                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-all;"><strong>Website:</strong> <a href="https://mha.ohio.gov" style="color: #dc3545; text-decoration: none;" target="_blank">mha.ohio.gov</a></p>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-word;"><strong>Call:</strong> <a href="tel:1-877-275-6364" style="font-style: italic;color: #ffffffff; text-decoration:   underline;">1-877-275-6364</a></p>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-all;"><strong>Website:</strong> <a href="https://mha.ohio.gov" style="font-style: italic;color: #ffffffff; text-decoration:   underline;" target="_blank">mha.ohio.gov</a></p>
                 </div>
                 
                 <div style="margin-bottom: 12px; padding: clamp(8px, 2vw, 10px); background: #5d8b7e; border-radius: 5px;">
                     <h4 style="margin-bottom: 8px; color: #ffffffff; font-size: clamp(0.875rem, 3vw, 1.1rem);">Franklin County ADAMH</h4>
-                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-word;"><strong>Call:</strong> <a href="tel:614-276-2273" style="color: #dc3545; text-decoration: none;">614-276-2273</a></p>
-                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-all;"><strong>Website:</strong> <a href="https://adamhfranklin.org" style="color: #dc3545; text-decoration: none;" target="_blank">adamhfranklin.org</a></p>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-word;"><strong>Call:</strong> <a href="tel:614-276-2273" style="font-style: italic;color: #ffffffff; text-decoration:   underline;">614-276-2273</a></p>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-all;"><strong>Website:</strong> <a href="https://adamhfranklin.org" style="font-style: italic;color: #ffffffff; text-decoration:   underline;" target="_blank">adamhfranklin.org</a></p>
                 </div>
                 
                 <div style="margin-bottom: 0; padding: clamp(8px, 2vw, 10px); background: #5d8b7e; border-radius: 5px;">
                     <h4 style="margin-bottom: 8px; color: #ffffffff; font-size: clamp(0.875rem, 3vw, 1.1rem);">Netcare Access</h4>
-                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-word;"><strong>Call:</strong> <a href="tel:614-276-2273" style="color: #dc3545; text-decoration: none;">614-276-2273</a></p>
-                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-all;"><strong>Website:</strong> <a href="https://mha.ohio.gov" style="color: #dc3545; text-decoration: none;" target="_blank">mha.ohio.gov</a></p>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-word;"><strong>Call:</strong> <a href="tel:614-276-2273" style="font-style: italic;color: #ffffffff; text-decoration:   underline;">614-276-2273</a></p>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-all;"><strong>Website:</strong> <a href="https://mha.ohio.gov" style="font-style: italic;color: #ffffffff; text-decoration:   underline;" target="_blank">mha.ohio.gov</a></p>
                 </div>
             </div>
             
@@ -2357,38 +2364,36 @@ function showEmergencyContacts() {
                 
                 <div style="margin-bottom: 12px; padding: clamp(8px, 2vw, 10px); background: #5d8b7e; border-radius: 5px;">
                     <h4 style="margin-bottom: 8px; color: #ffffffff; font-size: clamp(0.875rem, 3vw, 1.1rem);">Suicide Prevention</h4>
-                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-word;"><strong>Call:</strong> <a href="tel:988" style="color: #ffffffff; text-decoration: none;">988</a></p>
-                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-all;"><strong>Website:</strong> <a href="https://988lifeline.org" style="color: #0066cc; text-decoration: none;" target="_blank">988lifeline.org</a></p>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-word;"><strong>Call:</strong> <a href="tel:988" style="font-style: italic;color: #ffffffff; text-decoration:   underline;">988</a></p>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-all;"><strong>Website:</strong> <a href="https://988lifeline.org" style="font-style: italic;color: #ffffffff; text-decoration:   underline;" target="_blank">988lifeline.org</a></p>
                 </div>
                 
                 <div style="margin-bottom: 12px; padding: clamp(8px, 2vw, 10px); background: #5d8b7e; border-radius: 5px;">
                     <h4 style="margin-bottom: 8px; color: #ffffffff; font-size: clamp(0.875rem, 3vw, 1.1rem);">NAMI Helpline</h4>
                     <p style="font-size: clamp(0.75rem, 2vw, 0.85rem); margin-bottom: 4px;">(National Alliance on Mental Illness)</p>
-                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-word;"><strong>Call:</strong> <a href="tel:1-800-950-6264" style="color: #ffffffff; text-decoration: none;">1-800-950-6264</a></p>
-                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-all;"><strong>Website:</strong> <a href="https://nami.org/help" style="color: #0066cc; text-decoration: none;" target="_blank">nami.org/help</a></p>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-word;"><strong>Call:</strong> <a href="tel:1-800-950-6264" style="color: #ffffffff; text-decoration:   underline;">1-800-950-6264</a></p>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-all;"><strong>Website:</strong> <a href="https://nami.org/help" style="font-style: italic;color: #ffffffff; text-decoration:   underline;" target="_blank">nami.org/help</a></p>
                 </div>
                 
                 <div style="margin-bottom: 12px; padding: clamp(8px, 2vw, 10px); background: #5d8b7e; border-radius: 5px;">
                     <h4 style="margin-bottom: 8px; color: #ffffffff; font-size: clamp(0.875rem, 3vw, 1.1rem);">SAMHSA Helpline</h4>
-                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-word;"><strong>Call:</strong> <a href="tel:1-800-662-4357" style="color: #ffffffff; text-decoration: none;">1-800-662-4357</a></p>
-                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-all;"><strong>Website:</strong> <a href="https://findtreatment.gov" style="color: #0066cc; text-decoration: none;" target="_blank">findtreatment.gov</a></p>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-word;"><strong>Call:</strong> <a href="tel:1-800-662-4357" style="color: #ffffffff; text-decoration:   underline;">1-800-662-4357</a></p>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-all;"><strong>Website:</strong> <a href="https://findtreatment.gov" style="font-style: italic;color: #ffffffff; text-decoration:   underline;" target="_blank">findtreatment.gov</a></p>
                 </div>
                 
                 <div style="margin-bottom: 0; padding: clamp(8px, 2vw, 10px); background: #5d8b7e; border-radius: 5px;">
                     <h4 style="margin-bottom: 8px; color: #ffffffff; font-size: clamp(0.875rem, 3vw, 1.1rem);">Veterans Crisis Line</h4>
-                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-word;"><strong>Call:</strong> <a href="tel:988" style="color: #ffffffff; text-decoration: none;">Dial 988, press 1</a></p>
-                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-all;"><strong>Website:</strong> <a href="https://www.veteranscrisisline.net" style="color: #0066cc; text-decoration: none;" target="_blank">veteranscrisisline.net</a></p>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-word;"><strong>Call:</strong> <a href="tel:988" style="color: #ffffffff; text-decoration:   underline;">Dial 988, press 1</a></p>
+                    <p style="font-size: clamp(0.8rem, 2.5vw, 1rem); margin: 4px 0; word-break: break-all;"><strong>Website:</strong> <a href="https://www.veteranscrisisline.net" style="font-style: italic;color: #ffffffff; text-decoration:   underline;" target="_blank">veteranscrisisline.net</a></p>
                 </div>
             </div>
         </div>
         
-        <div style="text-align: center; margin-top: clamp(20px, 4vw, 25px); padding: clamp(12px, 3vw, 15px); background: #fff3cd; border-radius: 10px; border: 1px solid #ffeaa7;">
-            <p style="margin: 0; font-weight: bold; color: #856404; font-size: clamp(0.875rem, 2.5vw, 1rem); line-height: 1.4;">⚠️ If you're in immediate danger, call <a href="tel:911" style="color: #856404;">911</a></p>
-        </div>
+        
         
         <div style="text-align: center; margin-top: clamp(12px, 3vw, 15px);">
             <button id="closeModalBtn" style="
-                background: #6c757d;
+                background: rgb(219, 53, 69);
                 color: white;
                 border: none;
                 padding: clamp(10px, 2.5vw, 12px) clamp(20px, 5vw, 30px);
