@@ -57,7 +57,7 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 12px 20px;
+    padding: 20px 20px;
     background: rgba(88, 131, 119, 0.8);
     border-radius: 16px;
     text-decoration: none;
