@@ -1,3 +1,4 @@
+
 /* ============================================================
    InnerNest - Advanced Mental Health Support Assistant
    ============================================================ */
@@ -1070,3 +1071,35 @@ function initThemeToggle() {
     
     document.body.appendChild(themeToggle);
 }
+const crisisBtn = document.getElementById('crisisBtn');
+const modalOverlay = document.getElementById('modalOverlay');
+const modalContent = document.getElementById('modalContent');
+const closeBtn = document.getElementById('closeBtn');
+
+// Open modal
+crisisBtn.addEventListener('click', () => {
+    modalOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+});
+
+// Close modal
+const closeModal = () => {
+    modalOverlay.classList.remove('active');
+    document.body.style.overflow = 'auto';
+};
+
+closeBtn.addEventListener('click', closeModal);
+
+// Close when clicking overlay (not the content)
+modalOverlay.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) {
+        closeModal();
+    }
+});
+
+// Close with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+        closeModal();
+    }
+});

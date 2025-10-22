@@ -17,6 +17,89 @@
             <button class="crisis-close" onclick="closeCrisisBanner()">×</button>
         </div>
     </div>
+    <button class="crisis-button" id="crisisBtn">
+        🆘 Crisis Support
+    </button>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content" id="modalContent">
+            <div class="emergency-alert">
+                <p>⚠️ If you're in immediate danger, call <a href="tel:911">911</a></p>
+            </div>
+
+            <div class="modal-header">
+                <h2>🆘 Crisis Support Resources</h2>
+                <p>You are not alone. Help is available 24/7.</p>
+            </div>
+
+            <div class="resource-grid">
+                <!-- Ohio Hot-Lines -->
+                <div class="resource-section">
+                    <h3>Ohio Hot-Lines</h3>
+
+                    <div class="resource-item">
+                        <h4>Suicide Prevention</h4>
+                        <p><strong>Call:</strong> <a href="tel:988">988</a></p>
+                        <p><strong>Text:</strong> <a href="sms:741741?body=4HOPE">4HOPE to 741741</a></p>
+                        <p><strong>Website:</strong> <a href="https://988lifeline.org" target="_blank">988lifeline.org</a></p>
+                    </div>
+
+                    <div class="resource-item">
+                        <h4>OhioMHAS</h4>
+                        <p><strong>Call:</strong> <a href="tel:1-877-275-6364">1-877-275-6364</a></p>
+                        <p><strong>Website:</strong> <a href="https://mha.ohio.gov" target="_blank">mha.ohio.gov</a></p>
+                    </div>
+
+                    <div class="resource-item">
+                        <h4>Franklin County ADAMH</h4>
+                        <p><strong>Call:</strong> <a href="tel:614-276-2273">614-276-2273</a></p>
+                        <p><strong>Website:</strong> <a href="https://adamhfranklin.org" target="_blank">adamhfranklin.org</a></p>
+                    </div>
+
+                    <div class="resource-item">
+                        <h4>Netcare Access</h4>
+                        <p><strong>Call:</strong> <a href="tel:614-276-2273">614-276-2273</a></p>
+                        <p><strong>Website:</strong> <a href="https://mha.ohio.gov" target="_blank">mha.ohio.gov</a></p>
+                    </div>
+                </div>
+
+                <!-- National Hot-Lines -->
+                <div class="resource-section">
+                    <h3>National Hot-Lines</h3>
+
+                    <div class="resource-item">
+                        <h4>Suicide Prevention</h4>
+                        <p><strong>Call:</strong> <a href="tel:988">988</a></p>
+                        <p><strong>Website:</strong> <a href="https://988lifeline.org" target="_blank">988lifeline.org</a></p>
+                    </div>
+
+                    <div class="resource-item">
+                        <h4>NAMI Helpline</h4>
+                        <p class="resource-subtitle">(National Alliance on Mental Illness)</p>
+                        <p><strong>Call:</strong> <a href="tel:1-800-950-6264">1-800-950-6264</a></p>
+                        <p><strong>Website:</strong> <a href="https://nami.org/help" target="_blank">nami.org/help</a></p>
+                    </div>
+
+                    <div class="resource-item">
+                        <h4>SAMHSA Helpline</h4>
+                        <p><strong>Call:</strong> <a href="tel:1-800-662-4357">1-800-662-4357</a></p>
+                        <p><strong>Website:</strong> <a href="https://findtreatment.gov" target="_blank">findtreatment.gov</a></p>
+                    </div>
+
+                    <div class="resource-item">
+                        <h4>Veterans Crisis Line</h4>
+                        <p><strong>Call:</strong> <a href="tel:988">Dial 988, press 1</a></p>
+                        <p><strong>Website:</strong> <a href="https://www.veteranscrisisline.net" target="_blank">veteranscrisisline.net</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="close-button">
+                <button class="close-btn" id="closeBtn">Close</button>
+            </div>
+        </div>
+    </div>
     <div class="language-toggle">
         <button class="lang-btn active" data-lang="en">
             EN
