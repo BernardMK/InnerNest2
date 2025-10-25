@@ -85,13 +85,67 @@ const translations = {
                 description: "Building healthy habits and sustainable self-care practices.",
                 tags: ["Emotional", "Dramatic", "Pose"]
             },
+            Trichotillomania: {
+                title: "Trichotillomania",
+                description: "Replace pulling with soothing habits every urge.",
+                tags: ["Hair Pulling", "Urge", "Relief"]
+            },
+            anankasticPersonalityDisorder: {
+                title: "Anankastic Personality Disorder",
+                description: "Building flexibility daily brings peace and balance.",
+                tags: ["Perfectionist", "Neat", "Fixed"]
+            },
+            avoidantPersonalityDisorder: {
+                title: "Avoidant Personality Disorder",
+                description: "Building courage slowly eases fear and isolation.",
+                tags: ["Shy", "Fearful", "Withdrawn"]
+            },
+            intermittentExplosiveDisorder: {
+                title: "Intermittent Explosive Disorder",
+                description: "Building calm habits prevents sudden anger and harm.",
+                tags: ["Anger", "Impulsive", "Intense"]
+            },
+            bodyDysmorphicDisorder: {
+                title: "Body Dysmorphic Disorder",
+                description: "Building self-love reduces harmful thoughts about appearance.",
+                tags: ["Critical", "Anxious", "Insecure"]
+            },
+            maladaptiveDaydreaming: {
+                title: "Maladaptive Daydreaming",
+                description: "Building focus helps ground dreams into reality.",
+                tags: ["Distracted", "Dreamy", "Avoidant"]
+            },
+            prolongedGriefDisorder: {
+                title: "Prolonged Grief Disorder",
+                description: "Building support eases pain and nurtures healing.",
+                tags: ["Sad", "Persistent", "Lonely"]
+            },
+            attachmentDisorder: {
+                title: "Attachment Disorder",
+                description: "Building trust slowly strengthens emotional connection and security.",
+                tags: ["Distrustful", "Isolated", "Insecure"]
+            },
+            dissociativeIdentityDisorder: {
+                title: "Dissociative Identity Disorder",
+                description: "Building integration promotes harmony between multiple identities.",
+                tags: ["Dissociative", "Lost", "Complex"]
+            },
             loadMore: "Load More"
         },
         
         // Blog Section
         blog: {
-            title: "Welcome to Your Mental Health Journey",
-            subtitle: "InnerNest is your safe space for mental wellness, self-discovery, and growth. Connect with professionals, access resources, and build resilience.",
+            title: "Testimony",
+            reviewTitle: "Your Review",
+            namePlaceholder: "Your Name",
+            subjectPlaceholder: "Subject",
+            messagePlaceholder: "Message",
+            submitButton: "Submit",
+            successTitle: "Form Submitted Successfully!",
+            successMessage: "Thanks for your input – your submission helps us improve. Continue exploring more resources.",
+            nameError: "Please enter your name (at least 2 characters)",
+            subjectError: "Please enter a subject (at least 3 characters)",
+            messageError: "Please enter a message (at least 10 characters)",
             posts: {
                 post1: {
                     title: "Finding Calm When My Heart Won't Slow Down",
@@ -132,11 +186,16 @@ const translations = {
         booking: {
             title: "Schedule Appointment",
             namePlaceholder: "Your Name",
+            emailLabel: "Email",
             emailPlaceholder: "Your Email",
+            phoneLabel: "Phone",
             phonePlaceholder: "Your Phone",
             datePlaceholder: "Your Booking Date",
+            subjectLabel: "Subject",
             subjectPlaceholder: "Subject",
-            messagePlaceholder: "Message"
+            messageLabel: "Message",
+            messagePlaceholder: "Message",
+            submitButton: "Submit"
         },
         
         // Chat Section
@@ -221,7 +280,7 @@ const translations = {
             gamesDesc: "Para aliviar el estrés",
             support: "Apoyo",
             supportDesc: "Orientación profesional",
-            mindfulness: "atención plena",
+            mindfulness: "Atención plena",
             mindfulnessDesc: "Bienestar mental"
         },
         
@@ -288,13 +347,67 @@ const translations = {
                 description: "Construyendo hábitos saludables y prácticas sostenibles de autocuidado.",
                 tags: ["Emocional", "Dramático", "Pose"]
             },
+            Trichotillomania: {
+                title: "Tricotilomanía",
+                description: "Reemplazar el tirón con hábitos calmantes en cada impulso.",
+                tags: ["Tirón de pelo", "Impulso", "Alivio"]
+            },
+            anankasticPersonalityDisorder: {
+                title: "Trastorno de Personalidad Anancástico",
+                description: "Construir flexibilidad diaria trae paz y equilibrio.",
+                tags: ["Perfeccionista", "Ordenado", "Fijo"]
+            },
+            avoidantPersonalityDisorder: {
+                title: "Trastorno de Personalidad Evitativa",
+                description: "Construir coraje lentamente alivia el miedo y el aislamiento.",
+                tags: ["Tímido", "Temeroso", "Retraído"]
+            },
+            intermittentExplosiveDisorder: {
+                title: "Trastorno Explosivo Intermitente",
+                description: "Construir hábitos de calma previene la ira repentina y el daño.",
+                tags: ["Ira", "Impulsivo", "Intenso"]
+            },
+            bodyDysmorphicDisorder: {
+                title: "Trastorno Dismórfico Corporal",
+                description: "Construir amor propio reduce pensamientos dañinos sobre la apariencia.",
+                tags: ["Crítico", "Ansioso", "Inseguro"]
+            },
+            maladaptiveDaydreaming: {
+                title: "Soñar Despierto Desadaptativo",
+                description: "Construir enfoque ayuda a aterrizar sueños en la realidad.",
+                tags: ["Distraído", "Soñador", "Evitador"]
+            },
+            prolongedGriefDisorder: {
+                title: "Trastorno de Duelo Prolongado",
+                description: "Construir apoyo alivia el dolor y nutre la curación.",
+                tags: ["Triste", "Persistente", "Solitario"]
+            },
+            attachmentDisorder: {
+                title: "Trastorno de Apego",
+                description: "Construir confianza lentamente fortalece la conexión emocional y la seguridad.",
+                tags: ["Desconfiado", "Aislado", "Inseguro"]
+            },
+            dissociativeIdentityDisorder: {
+                title: "Trastorno de Identidad Disociativo",
+                description: "Construir integración promueve armonía entre múltiples identidades.",
+                tags: ["Disociativo", "Perdido", "Complejo"]
+            },
             loadMore: "Cargar Más"
         },
         
         // Sección de Blog
         blog: {
-            title: "Bienvenido a Tu Viaje de Salud Mental",
-            subtitle: "InnerNest es tu espacio seguro para el bienestar mental, el autodescubrimiento y el crecimiento. Conéctate con profesionales, accede a recursos y construye resiliencia.",
+            title: "Testimonio",
+            reviewTitle: "Tu Reseña",
+            namePlaceholder: "Tu Nombre",
+            subjectPlaceholder: "Asunto",
+            messagePlaceholder: "Mensaje",
+            submitButton: "Enviar",
+            successTitle: "¡Formulario Enviado Exitosamente!",
+            successMessage: "Gracias por tu aporte, tu envío nos ayuda a mejorar. Continúa explorando más recursos.",
+            nameError: "Por favor ingresa tu nombre (al menos 2 caracteres)",
+            subjectError: "Por favor ingresa un asunto (al menos 3 caracteres)",
+            messageError: "Por favor ingresa un mensaje (al menos 10 caracteres)",
             posts: {
                 post1: {
                     title: "Encontrando la Calma Cuando Mi Corazón No Se Calma",
@@ -335,11 +448,16 @@ const translations = {
         booking: {
             title: "Programar Cita",
             namePlaceholder: "Tu Nombre",
+            emailLabel: "Correo electrónico",
             emailPlaceholder: "Tu Email",
+            phoneLabel: "Teléfono",
             phonePlaceholder: "Tu Teléfono",
             datePlaceholder: "Fecha de Reserva",
+            subjectLabel: "Asunto",
             subjectPlaceholder: "Asunto",
-            messagePlaceholder: "Mensaje"
+            messageLabel: "Mensaje",
+            messagePlaceholder: "Mensaje",
+            submitButton: "Enviar"
         },
         
         // Sección de Chat
@@ -416,7 +534,6 @@ class LanguageManager {
     }
     
     getCurrentLanguage() {
-        // Check if ES button is active in the HTML
         const esBtn = document.querySelector('.lang-btn[data-lang="es"]');
         return esBtn && esBtn.classList.contains('active') ? 'es' : 'en';
     }
@@ -427,7 +544,6 @@ class LanguageManager {
     }
     
     setupEventListeners() {
-        // Add click handlers to language buttons
         document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const newLang = e.target.dataset.lang;
@@ -441,15 +557,11 @@ class LanguageManager {
         
         this.currentLanguage = lang;
         
-        // Update button states
         document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.classList.toggle('active', btn.dataset.lang === lang);
         });
         
-        // Translate page
         this.translatePage();
-        
-        // Show notification
         this.showNotification(lang === 'en' ? 'Language changed to English' : 'Idioma cambiado a Español');
     }
     
@@ -457,54 +569,13 @@ class LanguageManager {
         const t = translations[this.currentLanguage];
         
         // Translate navigation
-        this.translateElement('.nav-link#home .nav-text', t.nav.home);
-        this.translateElement('.nav-link#blog .nav-text', t.nav.blog);
-        this.translateElement('.nav-link#chatb .nav-text', t.nav.chat);
-        this.translateElement('.nav-link#booka .nav-text', t.nav.book);
-        
-        // Translate mobile navigation
-        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
-        if (mobileLinks.length >= 4) {
-            mobileLinks[0].childNodes[2].textContent = ' ' + t.nav.home;
-            mobileLinks[1].childNodes[2].textContent = ' ' + t.nav.blog;
-            mobileLinks[2].childNodes[2].textContent = ' ' + t.nav.chat;
-            mobileLinks[3].childNodes[2].textContent = ' ' + t.nav.book;
-        }
+        this.translateNav(t.nav);
         
         // Translate hero section
-        this.translateElement('.hero-title', t.hero.title);
-        this.translateElement('.hero-subtitle', t.hero.subtitle);
-        
-        // Translate floating cards
-        const floatingCards = document.querySelectorAll('.floating-card');
-        if (floatingCards.length >= 3) {
-            floatingCards[0].querySelector('h3').textContent = t.hero.games;
-            floatingCards[0].querySelector('p').textContent = t.hero.gamesDesc;
-            floatingCards[1].querySelector('h3').textContent = t.hero.support;
-            floatingCards[1].querySelector('p').textContent = t.hero.supportDesc;
-            floatingCards[2].querySelector('h3').textContent = t.hero.mindfulness;
-            floatingCards[2].querySelector('p').textContent = t.hero.mindfulnessDesc;
-        }
+        this.translateHero(t.hero);
         
         // Translate conditions section
-        this.translateElement('.description h2', t.conditions.title);
-        
-        // Translate individual conditions
-        this.translateCondition('anxiety', t.conditions.anxiety);
-        this.translateCondition('depression', t.conditions.depression);
-        this.translateCondition('stress', t.conditions.stress);
-        this.translateCondition('trauma', t.conditions.trauma);
-        this.translateCondition('relationships', t.conditions.relationships);
-        this.translateCondition('selfcare', t.conditions.selfcare);
-        this.translateCondition('biPolarDisorder', t.conditions.biPolarDisorder);
-        this.translateCondition('panicdisorder', t.conditions.panicdisorder);
-        this.translateCondition('delusionaldisorder', t.conditions.delusionaldisorder);
-        this.translateCondition('eatingDisorder', t.conditions.eatingDisorder);
-        this.translateCondition('Schizophrenia', t.conditions.Schizophrenia);
-        this.translateCondition('HistrionicPersonalityDisorder', t.conditions.HistrionicPersonalityDisorder);
-        
-        // Translate "Load More" button
-        this.translateElement('#learnmore h4', t.conditions.loadMore);
+        this.translateConditions(t.conditions);
         
         // Translate blog section if present
         this.translateBlogSection(t.blog);
@@ -517,6 +588,63 @@ class LanguageManager {
         
         // Translate footer
         this.translateFooter(t.footer);
+    }
+    
+    translateNav(nav) {
+        this.translateElement('.nav-link#home .nav-text', nav.home);
+        this.translateElement('.nav-link#blog .nav-text', nav.blog);
+        this.translateElement('.nav-link#chatb .nav-text', nav.chat);
+        this.translateElement('.nav-link#booka .nav-text', nav.book);
+        
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+        if (mobileLinks.length >= 4) {
+            const texts = [nav.home, nav.blog, nav.chat, nav.book];
+            mobileLinks.forEach((link, i) => {
+                const textNode = Array.from(link.childNodes).find(n => n.nodeType === 3);
+                if (textNode) textNode.textContent = ' ' + texts[i];
+            });
+        }
+    }
+    
+    translateHero(hero) {
+        this.translateElement('.hero-title', hero.title);
+        this.translateElement('.hero-subtitle', hero.subtitle);
+        
+        const floatingCards = document.querySelectorAll('.floating-card');
+        if (floatingCards.length >= 3) {
+            const cards = [
+                { h3: hero.games, p: hero.gamesDesc },
+                { h3: hero.support, p: hero.supportDesc },
+                { h3: hero.mindfulness, p: hero.mindfulnessDesc }
+            ];
+            floatingCards.forEach((card, i) => {
+                const h3 = card.querySelector('h3');
+                const p = card.querySelector('p');
+                if (h3) h3.textContent = cards[i].h3;
+                if (p) p.textContent = cards[i].p;
+            });
+        }
+    }
+    
+    translateConditions(conditions) {
+        // Main title
+        const titles = document.querySelectorAll('#disoder_preview h2, .description h2');
+        titles.forEach(title => {
+            if (title.textContent.includes('Understanding') || title.textContent.includes('Comprendiendo')) {
+                title.textContent = conditions.title;
+            }
+        });
+        
+        // Individual conditions
+        Object.keys(conditions).forEach(key => {
+            if (key !== 'title' && key !== 'loadMore') {
+                this.translateCondition(key, conditions[key]);
+            }
+        });
+        
+        // Load More button
+        const loadMore = document.querySelector('#learnmore h4');
+        if (loadMore) loadMore.textContent = conditions.loadMore;
     }
     
     translateCondition(id, translation) {
@@ -536,15 +664,59 @@ class LanguageManager {
         }
     }
     
-    translateBlogSection(blogTranslations) {
-        // Translate blog posts
+    translateBlogSection(blog) {
+        // Main title
+        const testTitle = document.querySelector('#test-title h2');
+        if (testTitle) testTitle.textContent = blog.reviewTitle;
+        
+        // Form labels and placeholders
+        const nameLabel = document.querySelector('#name_label');
+        if (nameLabel) nameLabel.textContent = 'Nombre:';
+        
+        const nameInput = document.querySelector('#name');
+        if (nameInput) nameInput.placeholder = blog.namePlaceholder;
+        
+        const subjectLabel = document.querySelector('#subject');
+        if (subjectLabel) subjectLabel.textContent = 'Asunto:';
+        
+        const subjectInput = document.querySelector('#subject-input');
+        if (subjectInput) subjectInput.placeholder = blog.subjectPlaceholder;
+        
+        const messageLabel = document.querySelector('#message_label');
+        if (messageLabel) messageLabel.textContent = 'Mensaje:';
+        
+        const messageTextarea = document.querySelector('#message');
+        if (messageTextarea) messageTextarea.placeholder = blog.messagePlaceholder;
+        
+        // Submit button
+        const submitBtn = document.querySelector('#test-submit h4');
+        if (submitBtn) submitBtn.textContent = blog.submitButton;
+        
+        // Success message
+        const successTitle = document.querySelector('#submit-message h4');
+        if (successTitle) successTitle.textContent = blog.successTitle;
+        
+        const successMsg = document.querySelector('#submit-message p');
+        if (successMsg) successMsg.textContent = blog.successMessage;
+        
+        // Error messages
+        const nameError = document.getElementById('name-error');
+        if (nameError) nameError.textContent = blog.nameError;
+        
+        const subjectError = document.getElementById('subject-error');
+        if (subjectError) subjectError.textContent = blog.subjectError;
+        
+        const messageError = document.getElementById('message-error');
+        if (messageError) messageError.textContent = blog.messageError;
+        
+        // Blog posts
         const posts = [
-            { selector: '[data-blog-id="1"]', data: blogTranslations.posts.post1 },
-            { selector: '[data-blog-id="2"]', data: blogTranslations.posts.post2 },
-            { selector: '[data-blog-id="3"]', data: blogTranslations.posts.post3 },
-            { selector: '[data-blog-id="4"]', data: blogTranslations.posts.post4 },
-            { selector: '[data-blog-id="5"]', data: blogTranslations.posts.post5 },
-            { selector: '[data-blog-id="6"]', data: blogTranslations.posts.post6 }
+            { selector: '[data-blog-id="1"]', data: blog.posts.post1 },
+            { selector: '[data-blog-id="2"]', data: blog.posts.post2 },
+            { selector: '[data-blog-id="3"]', data: blog.posts.post3 },
+            { selector: '[data-blog-id="4"]', data: blog.posts.post4 },
+            { selector: '[data-blog-id="5"]', data: blog.posts.post5 },
+            { selector: '[data-blog-id="6"]', data: blog.posts.post6 }
         ];
         
         posts.forEach(post => {
@@ -560,136 +732,212 @@ class LanguageManager {
             if (author) author.textContent = post.data.author;
         });
         
-        // Translate "Testimony" heading
-        const testimonyHeading = document.querySelector('#description h2');
-        if (testimonyHeading && testimonyHeading.textContent.includes('Testimony')) {
-            testimonyHeading.textContent = blogTranslations.testimony;
+        // Testimony heading on index page
+        const testimonyHeading = document.querySelectorAll('h2');
+        testimonyHeading.forEach(h2 => {
+            if (h2.textContent.includes('Testimony') || h2.textContent.includes('Testimonio')) {
+                h2.textContent = blog.title;
+            }
+        });
+        
+        // Translate testimonies on index page (without data-blog-id)
+        const testimonies = document.querySelectorAll('#testimony .condition-item, .disorder-container:last-of-type .condition-item');
+        const testimonyData = [
+            blog.posts.post1,
+            blog.posts.post2,
+            blog.posts.post3,
+            blog.posts.post4,
+            blog.posts.post5,
+            blog.posts.post6
+        ];
+        
+        testimonies.forEach((testimony, index) => {
+            if (index < testimonyData.length) {
+                const h3 = testimony.querySelector('h3');
+                const p = testimony.querySelector('p');
+                
+                if (h3 && p && !testimony.hasAttribute('data-blog-id')) {
+                    // Check if this is a testimony card (has author name in h3)
+                    if (h3.textContent.includes('Rajan') || h3.textContent.includes('Mara') || 
+                        h3.textContent.includes('Justin') || h3.textContent.includes('Arun') || 
+                        h3.textContent.includes('Sofia') || h3.textContent.includes('Liam')) {
+                        // Keep the name, translate the description
+                        p.textContent = testimonyData[index].description;
+                    }
+                }
+            }
+        });
+        
+        // Translate the main blog description on blog.html
+        const blogDescription = document.querySelector('.description h2');
+        if (blogDescription && blogDescription.closest('.disorder-container') && 
+            (blogDescription.textContent.includes('Finding Calm') || 
+             blogDescription.textContent.includes('Encontrando la Calma'))) {
+            blogDescription.textContent = blog.posts.post1.title;
+        }
+        
+        const blogDescriptionP = document.querySelector('.description p');
+        if (blogDescriptionP && blogDescriptionP.closest('.disorder-container') &&
+            (blogDescriptionP.textContent.includes('After five years') || 
+             blogDescriptionP.textContent.includes('Después de cinco años'))) {
+            blogDescriptionP.textContent = blog.posts.post1.description;
         }
     }
     
-    translateBookingSection(bookingTranslations) {
-        this.translateElement('#s_appointment h1', bookingTranslations.title);
-        this.translatePlaceholder('input[placeholder*="Name"]', bookingTranslations.namePlaceholder);
-        this.translatePlaceholder('input[placeholder*="Email"]', bookingTranslations.emailPlaceholder);
-        this.translatePlaceholder('input[placeholder*="Phone"]', bookingTranslations.phonePlaceholder);
-        this.translatePlaceholder('input[type="date"]', bookingTranslations.datePlaceholder);
-        this.translatePlaceholder('input[placeholder*="Subject"]', bookingTranslations.subjectPlaceholder);
-        this.translatePlaceholder('#message', bookingTranslations.messagePlaceholder);
+    translateBookingSection(booking) {
+        // Title
+        const title = document.querySelector('#s_appointment h1');
+        if (title) title.textContent = booking.title;
+        
+        // Form fields
+        const nameInput = document.querySelector('input[name="name"]');
+        if (nameInput) nameInput.placeholder = booking.namePlaceholder;
+        
+        const emailLabel = document.querySelector('#email_label');
+        if (emailLabel) emailLabel.textContent = booking.emailLabel;
+        
+        const emailInput = document.querySelector('input[name="email"]');
+        if (emailInput) emailInput.placeholder = booking.emailPlaceholder;
+        
+        const phoneLabel = document.querySelector('#phone');
+        if (phoneLabel) phoneLabel.textContent = booking.phoneLabel;
+        
+        const phoneInput = document.querySelector('input[name="phone"]');
+        if (phoneInput) phoneInput.placeholder = booking.phonePlaceholder;
+        
+        const dateInput = document.querySelector('input[name="date"]');
+        if (dateInput) dateInput.placeholder = booking.datePlaceholder;
+        
+        const subjectLabel = document.querySelector('#subject');
+        if (subjectLabel) subjectLabel.textContent = booking.subjectLabel;
+        
+        const subjectInput = document.querySelector('input[name="subject"]');
+        if (subjectInput) subjectInput.placeholder = booking.subjectPlaceholder;
+        
+        const messageLabel = document.querySelector('#message_label');
+        if (messageLabel) messageLabel.textContent = booking.messageLabel;
+        
+        const messageTextarea = document.querySelector('#message');
+        if (messageTextarea) messageTextarea.placeholder = booking.messagePlaceholder;
+        
+        const submitBtn = document.querySelector('#submit');
+        if (submitBtn) submitBtn.textContent = booking.submitButton;
     }
     
-    translateChatSection(chatTranslations) {
+    translateChatSection(chat) {
         // Crisis banner
         const crisisBanner = document.querySelector('.crisis-content span');
         if (crisisBanner) {
             const strong = crisisBanner.querySelector('strong');
             if (strong) {
-                crisisBanner.childNodes.forEach(node => {
-                    if (node.nodeType === 3) { // Text node
-                        node.textContent = chatTranslations.crisisBanner.replace('988', strong.textContent);
-                    }
-                });
+                const numbers = ['988', '911'];
+                let text = chat.crisisBanner;
+                crisisBanner.innerHTML = text.replace('988', '<strong>988</strong>').replace('911', '<strong>911</strong>');
             }
         }
         
         // User profile
-        this.translateElement('.user-info h3', chatTranslations.userProfile);
-        this.translateElement('.user-status', chatTranslations.safeSpace);
+        this.translateElement('.user-info h3', chat.userProfile);
+        this.translateElement('.user-status', chat.safeSpace);
         
         // Mood tracker
-        this.translateElement('.mood-tracker h4', chatTranslations.moodQuestion);
+        this.translateElement('.mood-tracker h4', chat.moodQuestion);
         
         // Quick tools
-        this.translateElement('.quick-tools h4', chatTranslations.quickTools);
+        this.translateElement('.quick-tools h4', chat.quickTools);
         const toolBtns = document.querySelectorAll('.tool-btn span:last-child');
         if (toolBtns.length >= 4) {
-            toolBtns[0].textContent = chatTranslations.breathingExercise;
-            toolBtns[1].textContent = chatTranslations.guidedMeditation;
-            toolBtns[2].textContent = chatTranslations.journalEntry;
-            toolBtns[3].textContent = chatTranslations.copingStrategies;
+            toolBtns[0].textContent = chat.breathingExercise;
+            toolBtns[1].textContent = chat.guidedMeditation;
+            toolBtns[2].textContent = chat.journalEntry;
+            toolBtns[3].textContent = chat.copingStrategies;
         }
         
         // Session info
-        this.translateElement('.session-info h4', chatTranslations.sessionInfo);
+        this.translateElement('.session-info h4', chat.sessionInfo);
         const sessionTimeLabel = document.querySelector('.session-time');
         if (sessionTimeLabel) {
             const timeSpan = sessionTimeLabel.querySelector('span');
             if (timeSpan) {
-                sessionTimeLabel.childNodes[0].textContent = chatTranslations.duration + ': ';
+                sessionTimeLabel.childNodes[0].textContent = chat.duration + ': ';
             }
         }
-        this.translateElement('.session-privacy', `🔒 ${chatTranslations.encrypted}`);
-        this.translateElement('.end-session-btn', chatTranslations.endSession);
+        this.translateElement('.session-privacy', `🔒 ${chat.encrypted}`);
+        this.translateElement('.end-session-btn', chat.endSession);
         
         // Chat header
-        this.translateElement('.assistant-info h3', chatTranslations.supportAssistant);
+        this.translateElement('.assistant-info h3', chat.supportAssistant);
         const assistantStatus = document.querySelector('.assistant-status');
         if (assistantStatus) {
             const statusDot = assistantStatus.querySelector('.status-dot');
             assistantStatus.innerHTML = '';
             if (statusDot) assistantStatus.appendChild(statusDot);
-            assistantStatus.appendChild(document.createTextNode(' ' + chatTranslations.available));
+            assistantStatus.appendChild(document.createTextNode(' ' + chat.available));
         }
-        this.translateElement('.clear-chat-btn', chatTranslations.clearChat);
+        this.translateElement('.clear-chat-btn', chat.clearChat);
         
         // Welcome message
-        this.translateElement('.welcome-message h2', chatTranslations.welcomeTitle);
-        this.translateElement('.welcome-message > p', chatTranslations.welcomeMessage);
+        this.translateElement('.welcome-message h2', chat.welcomeTitle);
+        this.translateElement('.welcome-message > p', chat.welcomeMessage);
         
         const features = document.querySelectorAll('.feature span:last-child');
         if (features.length >= 3) {
-            features[0].textContent = chatTranslations.confidential;
-            features[1].textContent = chatTranslations.nonjudgmental;
-            features[2].textContent = chatTranslations.available247;
+            features[0].textContent = chat.confidential;
+            features[1].textContent = chat.nonjudgmental;
+            features[2].textContent = chat.available247;
         }
         
         // Suggested prompts
-        this.translateElement('.prompts-label', chatTranslations.promptsLabel);
+        this.translateElement('.prompts-label', chat.promptsLabel);
         const prompts = document.querySelectorAll('.prompt-chip');
         if (prompts.length >= 5) {
-            prompts[0].textContent = chatTranslations.feelingAnxious;
-            prompts[1].textContent = chatTranslations.needTalk;
-            prompts[2].textContent = chatTranslations.troubleSleeping;
-            prompts[3].textContent = chatTranslations.feelingOverwhelmed;
-            prompts[4].textContent = chatTranslations.copingStrategiesPrompt;
+            prompts[0].textContent = chat.feelingAnxious;
+            prompts[1].textContent = chat.needTalk;
+            prompts[2].textContent = chat.troubleSleeping;
+            prompts[3].textContent = chat.feelingOverwhelmed;
+            prompts[4].textContent = chat.copingStrategiesPrompt;
         }
         
         // Input area
-        this.translatePlaceholder('#messageInput', chatTranslations.messagePlaceholder);
-        this.translateElement('.input-hint span', chatTranslations.pressEnter);
+        this.translatePlaceholder('#messageInput', chat.messagePlaceholder);
+        const inputHint = document.querySelector('.input-hint span');
+        if (inputHint) inputHint.textContent = chat.pressEnter;
     }
     
-    translateFooter(footerTranslations) {
+    translateFooter(footer) {
         const footerSections = document.querySelectorAll('.footer-section');
         if (footerSections.length >= 3) {
             // First section
-            footerSections[0].querySelector('p').textContent = footerTranslations.tagline;
+            const tagline = footerSections[0].querySelector('p');
+            if (tagline) tagline.textContent = footer.tagline;
             
             // Quick Links section
             const quickLinksTitle = footerSections[1].querySelector('h4');
-            if (quickLinksTitle) quickLinksTitle.textContent = footerTranslations.quickLinks;
+            if (quickLinksTitle) quickLinksTitle.textContent = footer.quickLinks;
             
             const quickLinks = footerSections[1].querySelectorAll('li a');
             if (quickLinks.length >= 4) {
-                quickLinks[0].textContent = footerTranslations.home;
-                quickLinks[1].textContent = footerTranslations.services;
-                quickLinks[2].textContent = footerTranslations.blog;
-                quickLinks[3].textContent = footerTranslations.contact;
+                quickLinks[0].textContent = footer.home;
+                quickLinks[1].textContent = footer.services;
+                quickLinks[2].textContent = footer.blog;
+                quickLinks[3].textContent = footer.contact;
             }
             
             // Support section
             const supportTitle = footerSections[2].querySelector('h4');
-            if (supportTitle) supportTitle.textContent = footerTranslations.support;
+            if (supportTitle) supportTitle.textContent = footer.support;
             
             const supportLinks = footerSections[2].querySelectorAll('li a');
             if (supportLinks.length >= 3) {
-                supportLinks[0].textContent = footerTranslations.crisis;
-                supportLinks[1].textContent = footerTranslations.resources;
-                supportLinks[2].textContent = footerTranslations.faq;
+                supportLinks[0].textContent = footer.crisis;
+                supportLinks[1].textContent = footer.resources;
+                supportLinks[2].textContent = footer.faq;
             }
         }
+        
         const footerBottom = document.querySelector('.footer-bottom p');
         if (footerBottom) {
-            footerBottom.innerHTML = `${footerTranslations.copyright} | ${footerTranslations.privacy} | ${footerTranslations.terms}`;
+            footerBottom.innerHTML = `${footer.copyright} | ${footer.privacy} | ${footer.terms}`;
         }
     }
     
@@ -704,7 +952,6 @@ class LanguageManager {
     }
     
     showNotification(message) {
-        // Remove any existing notification
         const existingNotification = document.querySelector('.language-notification');
         if (existingNotification) {
             existingNotification.remove();
@@ -727,7 +974,6 @@ class LanguageManager {
         `;
         notification.textContent = message;
         
-        // Add animation styles if not already present
         if (!document.getElementById('notification-animations')) {
             const animStyles = document.createElement('style');
             animStyles.id = 'notification-animations';

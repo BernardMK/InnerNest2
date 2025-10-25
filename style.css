@@ -43,7 +43,10 @@ body {
 .nav-links{
     height: 30px;
 }
-
+.nav-link.active {
+    background: rgba(88, 131, 119, 1);
+    border-color: rgba(255, 255, 255, 0.3);
+}
 #index,#post{
     display: flex;
     margin-right: 10%;
@@ -593,6 +596,10 @@ body {
 
     .hero-visual {
         grid-template-columns: 1fr;
+    }
+    #testimony{
+        padding: 40px 20px;
+        margin: 20px 10px;
     }
 }
 
@@ -2453,30 +2460,396 @@ body.dark-mode textarea::placeholder {
     color: #a0b5ad;
 }
 
-/* Mobile adjustments */
 @media (max-width: 768px) {
     .theme-toggle {
         right: 15px;
         bottom: 15px;
     }
 }
-#disoder_preview{
+#disoder_preview {
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 40px;
     text-align: center;
+    margin-bottom: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+    max-width: 1750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#disoder_preview h2 {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+@media (max-width: 1400px) {
+    #disoder_preview {
+        max-width: 95%;
+        padding: 35px;
+    }
+    
+    #disoder_preview h2 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    #disoder_preview {
+        padding: 30px;
+    }
+    
+    #disoder_preview h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #disoder_preview {
+        padding: 25px 20px;
+        border-radius: 15px;
+    }
+    
+    #disoder_preview h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #disoder_preview {
+        padding: 20px 15px;
+        border-radius: 12px;
+    }
+    
+    #disoder_preview h2 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+}
+#testimony {
+    background: linear-gradient(135deg, rgba(107, 162, 146, 0.9), rgba(88, 131, 119, 0.9));
+    border-radius: 25px;
+    margin: 30px auto;
+    max-width: 1750px;
+    padding: 60px 40px;
+    box-shadow: 0 20px 60px rgba(107, 162, 146, 0.3);
+}
+
+#test-title {
+    display: flex;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    color: white;
     margin-bottom: 40px;
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
-#disoder_preview h2 {
+
+h2 {
+    margin: 0;
+}
+
+#test_collector label {
+    color: white;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#test_collector input {
+    display: flex;
+    height: 40px;
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    background-color: transparent;
+    border: solid #ffffff;
+    color: white;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+#test_collector input:focus,
+    textarea:focus {
+    outline: none;
+    border-color: #ffffff;
+}
+
+input.error,
+textarea.error {
+    border-color: #ff6b6b !important;
+    border-width: 2px;
+}
+
+::placeholder {
+    color: white;
+    opacity: 0.7;
+}
+
+textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 14px;
+    border-radius: 14px;
+    background-color: transparent;
+    border: solid #ffffff;
+    color: white;
+    resize: vertical;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.error-message {
+    color: #ff6b6b;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.error-message.show {
+    display: block;
+}
+
+#test-submit {
+    display: flex;
+    padding: 7px;
+    font-size: 15px;
+    justify-content: center;
+    width: 7%;
+    border: transparent;
+    border-radius: 7px;
+    color: white;
+    background-color: #5c877c;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+#test-submit:hover {
+    background-color: #4a6d63;
+}
+
+#test-submit h4 {
+    margin: 0;
+}
+
+#submit-message {
+    display: none;
+    justify-content: center;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 40px;
     text-align: center;
+    color: white;
     margin-bottom: 40px;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    font-size: 2rem;
-    color: #fff;
+    flex-direction: column;
+}
+
+#submit-message h4 {
+    margin: 0 0 10px 0;
+}
+
+#submit-message p {
+    line-height: 1.6;
+}
+
+
+
+body:not(.dark-mode) {
+    background: linear-gradient(135deg, #F7EFE5 0%, #E8DDD4 100%) !important;
+    color: #2C3E37 !important;
+}
+
+body:not(.dark-mode) .nav {
+    background: rgba(107, 162, 146, 0.95) !important;
+}
+
+body:not(.dark-mode) .nav-link {
+    background: rgba(88, 131, 119, 0.8) !important;
+    color: white !important;
+}
+
+body:not(.dark-mode) .main-container {
+    background: linear-gradient(135deg, rgba(107, 162, 146, 0.9), rgba(88, 131, 119, 0.9)) !important;
+    color: white !important;
+}
+
+body:not(.dark-mode) .disorder-container,
+body:not(.dark-mode) #testimony {
+    background: linear-gradient(135deg, rgba(107, 162, 146, 0.9), rgba(88, 131, 119, 0.9)) !important;
+    color: white !important;
+}
+
+body:not(.dark-mode) .description,
+body:not(.dark-mode) #disoder_preview,
+body:not(.dark-mode) #test-title {
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(10px);
+    color: white !important;
+}
+
+body:not(.dark-mode) .condition-item,
+body:not(.dark-mode) .floating-card {
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: white !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+body:not(.dark-mode) .footer {
+    background: #588377 !important;
+    color: white !important;
+}
+
+body:not(.dark-mode) .mobile-nav {
+    background: rgba(107, 162, 146, 0.98) !important;
+}
+
+body:not(.dark-mode) .mobile-nav-link {
+    background: rgba(88, 131, 119, 0.8) !important;
+    color: white !important;
+}
+
+body:not(.dark-mode) .logo {
+    background: linear-gradient(135deg, #588377, #6BA292) !important;
+    color: white !important;
+}
+
+body:not(.dark-mode) input:not([type="range"]):not([type="color"]),
+body:not(.dark-mode) textarea {
+    background-color: transparent !important;
+    border: solid #ffffff !important;
+    color: white !important;
+}
+
+body:not(.dark-mode) ::placeholder {
+    color: rgb(255, 255, 255) !important;
+    opacity: 0.7;
+}
+
+/* Ensure dark mode styles still apply correctly */
+body.dark-mode {
+    background: linear-gradient(135deg, #2C3E37 0%, #1a2922 100%) !important;
+    color: #F7EFE5 !important;
+}
+
+body.dark-mode .nav {
+    background: rgba(44, 62, 55, 0.95) !important;
+}
+
+body.dark-mode .nav-link {
+    background: rgba(26, 41, 34, 0.8) !important;
+}
+
+body.dark-mode .main-container,
+body.dark-mode .disorder-container,
+body.dark-mode #testimony {
+    background: linear-gradient(135deg, rgba(44, 62, 55, 0.9), rgba(26, 41, 34, 0.9)) !important;
+}
+
+body.dark-mode .description,
+body.dark-mode #disoder_preview,
+body.dark-mode #test-title {
+    background: rgba(26, 41, 34, 0.5) !important;
+    border-color: rgba(107, 162, 146, 0.3) !important;
+}
+
+body.dark-mode .condition-item,
+body.dark-mode .floating-card {
+    background: rgba(26, 41, 34, 0.5) !important;
+    border-color: rgba(107, 162, 146, 0.3) !important;
+}
+
+body.dark-mode .footer {
+    background: #2C3E37 !important;
+}
+
+body.dark-mode .mobile-nav {
+    background: rgba(44, 62, 55, 0.98) !important;
+}
+
+body.dark-mode .mobile-nav-link {
+    background: rgba(26, 41, 34, 0.8) !important;
+}
+
+body.dark-mode .logo {
+    background: linear-gradient(135deg, #3b5a4e, #588377) !important;
+}
+
+body.dark-mode input:not([type="range"]):not([type="color"]),
+body.dark-mode textarea {
+    background: #3a4f47 !important;
+    color: #F7EFE5 !important;
+    border-color: rgba(107, 162, 146, 0.3) !important;
+}
+
+body.dark-mode ::placeholder {
+    color: #a0b5ad !important;
+}
+
+/* Ensure modal content respects theme */
+body:not(.dark-mode) .modal-content {
+    background: rgb(222, 222, 213) !important;
+    color: #333 !important;
+}
+
+body.dark-mode .modal-content {
+    background: #2C3E37 !important;
+    color: #F7EFE5 !important;
+    border: 1px solid rgba(107, 162, 146, 0.3) !important;
+}
+
+/* Fix for games popup and other overlays */
+body:not(.dark-mode) .games-popup {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+    color: #1e293b !important;
+}
+
+body.dark-mode .games-popup {
+    background: linear-gradient(135deg, #2C3E37 0%, #1a2922 100%) !important;
+    color: #F7EFE5 !important;
+}
+
+/* Chat interface theming */
+body:not(.dark-mode) .chat-area {
+    background: white !important;
+    color: var(--text-primary) !important;
+}
+
+body.dark-mode .chat-area {
+    background: #2C3E37 !important;
+    color: #F7EFE5 !important;
+}
+
+body:not(.dark-mode) .sidebar {
+    background: rgba(107, 162, 146, 0.9) !important;
+}
+
+body.dark-mode .sidebar {
+    background: rgba(44, 62, 55, 0.9) !important;
+}
+
+body,
+.nav,
+.main-container,
+.disorder-container,
+#testimony,
+.footer,
+.condition-item,
+.floating-card,
+.mobile-nav,
+.chat-area,
+.sidebar {
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
 }

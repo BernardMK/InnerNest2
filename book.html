@@ -178,16 +178,17 @@
             <div>
                 <form id="info_collector" name="myForm" onsubmit="return validateForm()">
                     <div>
+                        <label id="name_label">Name:</label>
                         <input type="text" name="name" placeholder="Your Name">
                     </div>
                     <br>
                     <div>
-                        <label id="email_label">Email</label>
+                        <label id="email_label">Email:</label>
                         <input type="email" name="email" placeholder="Your Email" required>
                     </div>
                     <br>
                     <div>
-                        <label id="phone">Phone</label>
+                        <label id="phone">Phonenumber:</label>
                         <input type="tel" name="phone" placeholder="Your Phone" required>
                     </div>
                     <br>
@@ -196,7 +197,7 @@
                     </div>
                     <br>
                     <div>
-                        <label id="subject">Subject</label>
+                        <label id="subject">Subject:</label>
                         <input type="text" name="subject" placeholder="Subject" required>
                     </div>
                     <br>
@@ -204,7 +205,7 @@
                         <label id="message_label">Message</label>
                         <textarea name="message" id="message" placeholder="Message" required></textarea>
                     </div>
-                    <button type="submit">Submit</button>
+                    <button type="submit" id="submit">Submit</button>
                 </form>
             </div>
             
@@ -245,7 +246,7 @@
             </div>
         </div>
     </footer>
-
+    <script src="preferences.js"></script>
     <script src="script.js"></script>
     <script src="booking.js"></script>
     <script src="translate.js"></script>

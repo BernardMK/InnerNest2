@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <!-- Language Toggle - Fixed Bottom Left -->
     <div class="language-toggle">
         <button class="lang-btn active" data-lang="en">
             EN
@@ -17,7 +17,7 @@
         </button>
     </div>
     <!-- Navigation -->
-    <nav class="nav">
+   <nav class="nav">
         <div class="nav-container">
             <div class="nav-links" id="index">
                 <a href="index.html" class="nav-link" id="home">
@@ -31,15 +31,18 @@
                     <span class="nav-text">Blog</span>
                 </a>
             </div>
-
+            
             <div class="logo" id="logo">
                 <div id="logo_img">
-                    <img src="image/InnerNest logo.png" alt="logo" id="image">
+                    <a href="index.html">
+                        <img src="image/InnerNest logo.png" alt="logo" id="image">
+                    </a>
+                    
                 </div>
-
+                
 
             </div>
-
+            
             <div class="nav-links" id="chat">
                 <a href="chat.html" class="nav-link" id="chatb">
                     <span class="nav-text">Chat</span>
@@ -51,7 +54,7 @@
                     <span class="nav-text">Book</span>
                 </a>
             </div>
-
+            
             <div class="mobile-menu-toggle" id="mobileToggle">
                 <span>
                 </span>
@@ -170,6 +173,45 @@
             </div>
         </div>
     </section>
+    <div id="testimony">
+        <div id="test-title">
+            <h2>Your Review</h2>
+        </div>
+        
+        <div>
+            <form id="test_collector">
+                <div>
+                    <label id="name_label">Name:</label>
+                    <input type="text" name="name" id="name" placeholder="Your Name" required>
+                    <span class="error-message" id="name-error">Please enter your name (at least 2 characters)</span>
+                </div>
+                <br>
+                <div>
+                    <label id="subject">Subject:</label>
+                    <input type="text" name="subject" id="subject-input" placeholder="Subject" required>
+                    <span class="error-message" id="subject-error">Please enter a subject (at least 3 characters)</span>
+                </div>
+                <br>
+                <div>
+                    <label id="message_label">Message:</label>
+                    <textarea name="message" id="message" placeholder="Message" required></textarea>
+                    <span class="error-message" id="message-error">Please enter a message (at least 10 characters)</span>
+                </div>
+                <button type="button" id="test-submit">
+                    <h4>Submit</h4>
+                </button>
+            </form>
+        </div>
+        <div id="submit-message">
+            <div>
+                <h4>Form Submitted Successfully!</h4>
+            </div>
+            <br>
+            <p>Thanks for your input — your submission helps us improve.
+                <br>
+            Continue exploring more resources.</p>
+        </div>
+    </div>
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -200,6 +242,7 @@
             </div>
         </div>
     </footer>
+        <script src="preferences.js"></script>
     <script src="script.js"></script>
 
     <script src="blog.js"></script>

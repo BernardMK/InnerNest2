@@ -1,4 +1,95 @@
-// Blog Comments System
+const submitBtn = document.getElementById("test-submit");
+const form = document.getElementById("test_collector");
+const title = document.getElementById("test-title");
+const successMessage = document.getElementById("submit-message");
+
+const nameInput = document.getElementById("name");
+const subjectInput = document.getElementById("subject-input");
+const messageInput = document.getElementById("message");
+
+const nameError = document.getElementById("name-error");
+const subjectError = document.getElementById("subject-error");
+const messageError = document.getElementById("message-error");
+
+function validateName() {
+    const value = nameInput.value.trim();
+    if (value.length < 2) {
+        nameInput.classList.add("error");
+        nameError.classList.add("show");
+        return false;
+    } else {
+        nameInput.classList.remove("error");
+        nameError.classList.remove("show");
+        return true;
+    }
+}
+
+function validateSubject() {
+    const value = subjectInput.value.trim();
+    if (value.length < 3) {
+        subjectInput.classList.add("error");
+        subjectError.classList.add("show");
+        return false;
+    } else {
+        subjectInput.classList.remove("error");
+        subjectError.classList.remove("show");
+        return true;
+    }
+}
+
+function validateMessage() {
+    const value = messageInput.value.trim();
+    if (value.length < 10) {
+        messageInput.classList.add("error");
+        messageError.classList.add("show");
+        return false;
+    } else {
+        messageInput.classList.remove("error");
+        messageError.classList.remove("show");
+        return true;
+    }
+}
+
+// Real-time validation
+nameInput.addEventListener("blur", validateName);
+subjectInput.addEventListener("blur", validateSubject);
+messageInput.addEventListener("blur", validateMessage);
+
+// Remove error on input
+nameInput.addEventListener("input", () => {
+    if (nameInput.value.trim().length >= 2) {
+        nameInput.classList.remove("error");
+        nameError.classList.remove("show");
+    }
+});
+
+subjectInput.addEventListener("input", () => {
+    if (subjectInput.value.trim().length >= 3) {
+        subjectInput.classList.remove("error");
+        subjectError.classList.remove("show");
+    }
+});
+
+messageInput.addEventListener("input", () => {
+    if (messageInput.value.trim().length >= 10) {
+        messageInput.classList.remove("error");
+        messageError.classList.remove("show");
+    }
+});
+
+submitBtn.addEventListener("click", () => {
+    // Validate all fields
+    const isNameValid = validateName();
+    const isSubjectValid = validateSubject();
+    const isMessageValid = validateMessage();
+
+    // If all fields are valid, show success message
+    if (isNameValid && isSubjectValid && isMessageValid) {
+        form.style.display = "none";
+        title.style.display = "none";
+        successMessage.style.display = "flex";
+    }
+});
 const commentsData = {
     1: [
         { id: 1, author: "Dr. Sarah Johnson", date: "2026-01-13", text: "Thank you for sharing this, Rajan. Your journey resonates with so many people dealing with anxiety. The grounding techniques you mentioned are evidence-based and really effective." },
@@ -714,22 +805,6 @@ function handleScrollAnimations() {
     }, observerOptions);
 
     document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
-}
-
-// Navigation scroll handler
-function handleNavigationScroll() {
-    const nav = document.querySelector('.nav');
-    if (!nav) return;
-    
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            nav.style.background = 'rgba(113, 154, 141, 0.98)';
-            nav.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
-        } else {
-            nav.style.background = 'rgba(113, 154, 141, 0.95)';
-            nav.style.boxShadow = 'none';
-        }
-    });
 }
 
 // Floating animations
