@@ -80,10 +80,10 @@ function validateForm() {
     
     // Validate message
     const message = form["message"] ? form["message"].value : "";
-    if (message === "" || message.length < 100) {
+    if (message === "" || message.length < 20) {
         const messageError = document.getElementById("message_label");
         if (messageError) {
-            messageError.textContent = "Message must be at least 100 characters";
+            messageError.textContent = "Message must be at least 20 characters";
             messageError.style.color = "red";
             messageError.style.fontWeight = "bold";
         }

@@ -525,6 +525,13 @@ body {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
+    #booking-form{
+        text-align: left;
+    }
+    #booking-photo{
+        justify-content: center;
+        text-align: center;
+    }
     .hero-content {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -2014,8 +2021,6 @@ input[type="range"]::-moz-range-thumb {
     box-shadow: rgb(143, 176, 165) 0px 4px 15px;
     transition: 0.3s;
     z-index: 1000;
-    animation: 2s 
-    ease 0s infinite normal none running pulse;
     display: flex;
     gap: 8px;
     justify-content: center;
@@ -2619,6 +2624,22 @@ textarea {
 .error-message.show {
     display: block;
 }
+#submit{
+    display: flex;
+    padding: 7px;
+    font-size: 15px;
+    width: 100%;
+    justify-content: center;
+    width: 7%;
+    border: transparent;
+    border-radius: 7px;
+    color: white;
+    background-color: #5c877c;
+    backdrop-filter: bl;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
 
 #test-submit {
     display: flex;
@@ -2852,4 +2873,13 @@ body,
 .chat-area,
 .sidebar {
     transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+}
+#disorder-type,#disorder-description{
+    display: flex;
+    justify-content: center;
+    padding: 7px;
+    background-color: #5c877c;
+    border-radius: 14px;
+    margin-bottom: 10px;
+    
 }

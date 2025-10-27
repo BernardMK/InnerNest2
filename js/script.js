@@ -734,7 +734,7 @@ function initializeGamesPopup() {
         for (let i = 0; i < 9; i++) {
             const hole = document.createElement('div');
             hole.className = 'whack-hole';
-            hole.innerHTML = '<div class="mole">😰</div>';
+            hole.innerHTML = '<div class="mole">🎃🎃</div>';
             hole.addEventListener('click', function() {
                 if (this.classList.contains('active')) {
                     score++;

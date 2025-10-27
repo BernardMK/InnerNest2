@@ -185,13 +185,14 @@ const translations = {
         // Booking Section
         booking: {
             title: "Schedule Appointment",
+            nameLabel: "Name:",
             namePlaceholder: "Your Name",
-            emailLabel: "Email",
+            emailLabel: "Email:",
             emailPlaceholder: "Your Email",
-            phoneLabel: "Phone",
+            phoneLabel: "Phonenumber:",
             phonePlaceholder: "Your Phone",
             datePlaceholder: "Your Booking Date",
-            subjectLabel: "Subject",
+            subjectLabel: "Subject:",
             subjectPlaceholder: "Subject",
             messageLabel: "Message",
             messagePlaceholder: "Message",
@@ -447,13 +448,14 @@ const translations = {
         // Sección de Reservas
         booking: {
             title: "Programar Cita",
+            nameLabel: "Nombre:",
             namePlaceholder: "Tu Nombre",
-            emailLabel: "Correo electrónico",
+            emailLabel: "Correo electrónico:",
             emailPlaceholder: "Tu Email",
-            phoneLabel: "Teléfono",
+            phoneLabel: "Teléfono:",
             phonePlaceholder: "Tu Teléfono",
             datePlaceholder: "Fecha de Reserva",
-            subjectLabel: "Asunto",
+            subjectLabel: "Asunto:",
             subjectPlaceholder: "Asunto",
             messageLabel: "Mensaje",
             messagePlaceholder: "Mensaje",
@@ -671,7 +673,7 @@ class LanguageManager {
         
         // Form labels and placeholders
         const nameLabel = document.querySelector('#name_label');
-        if (nameLabel) nameLabel.textContent = 'Nombre:';
+        if (nameLabel) nameLabel.textContent = blog.nameLabel;
         
         const nameInput = document.querySelector('#name');
         if (nameInput) nameInput.placeholder = blog.namePlaceholder;
@@ -790,6 +792,8 @@ class LanguageManager {
         if (title) title.textContent = booking.title;
         
         // Form fields
+        const nameLabel = document.querySelector('#name_label');
+        if (nameLabel) nameLabel.textContent = booking.nameLabel;
         const nameInput = document.querySelector('input[name="name"]');
         if (nameInput) nameInput.placeholder = booking.namePlaceholder;
         
