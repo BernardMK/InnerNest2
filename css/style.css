@@ -2874,12 +2874,336 @@ body,
 .sidebar {
     transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
 }
-#disorder-type,#disorder-description{
+
+#disorder-type{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 7px;
+    width: 15%;
+    background-color: #5c877c;
+    border-radius: 14px;
+    margin: 0 auto;
+}
+#disorder-description{
+    display: flex;
+    padding: 7px;
+    margin-top: 7px;
+    background-color: #5c877c;
+    border-radius: 14px;
+    width: 100%;
+    align-content: center;
+}
+#disorder-symptoms{
     display: flex;
     justify-content: center;
     padding: 7px;
+    margin-top: 7px;
     background-color: #5c877c;
     border-radius: 14px;
-    margin-bottom: 10px;
-    
+    width: 8%;
+    align-content: center;
+    list-style-position: inside;
 }
+ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    margin: 20px;
+}
+#cures{
+    display: flex;
+    justify-content: center;
+    padding: 7px;
+    margin-top: 7px;
+    background-color: #5c877c;
+    border-radius: 14px;
+    width: 6%;
+    align-content: center;
+}
+#symptom-list{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    padding: 7px;
+    border-radius: 14px;
+    background-color: #5c877c;
+}
+@media (max-width: 768px) {
+    #disorder-type,#disorder-description, #disorder-symptoms, #cures {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+/* Blog Comment Styles */
+        .condition-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .condition-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 0, 0, 1);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #ff0000ff;
+            transition: color 0.3s ease;
+        }
+        
+        .modal-close:hover {
+            color: #e40000ff;
+        }
+        
+        ::placeholder {
+            color: rgba(0, 0, 0, 1);
+        }
+        
+        .modal-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .modal-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .modal-header h2 {
+            color: #ffffffff;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .modal-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            color: #555;
+        }
+        
+        .modal-body h3 {
+            color: #588377;
+            margin: 25px 0 15px 0;
+            font-size: 1.2rem;
+        }
+        
+        .symptom-list,
+        .strategy-list {
+            margin-bottom: 25px;
+            padding-left: 20px;
+        }
+        
+        .symptom-list li,
+        .strategy-list li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+            color: #666;
+        }
+        
+        .modal-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .modal-actions button {
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        .blog-comment-item {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid #6BA292;
+            transition: all 0.3s ease;
+        }
+        
+        .blog-comment-item:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .comment-author {
+            font-weight: 600;
+            color: #588377;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+        
+        .comment-date {
+            color: #999;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        
+        .comment-text {
+            color: #555;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        /* Dark Mode Styles */
+        .dark-mode {
+            background: linear-gradient(135deg, #2C3E37 0%, #1a2922 100%);
+            color: #F7EFE5;
+        }
+        
+        .dark-mode .nav {
+            background: rgba(44, 62, 55, 0.95);
+        }
+        
+        .dark-mode .main-container,
+        .dark-mode .disorder-container {
+            background: linear-gradient(135deg, rgba(44, 62, 55, 0.9), rgba(26, 41, 34, 0.9));
+        }
+        
+        .dark-mode .service-card,
+        .dark-mode .modal-content {
+            background: #2C3E37;
+            color: #F7EFE5;
+            border: 1px solid rgba(107, 162, 146, 0.3);
+        }
+        
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3); }
+            50% { box-shadow: 0 4px 25px rgba(220, 53, 69, 0.6); }
+            100% { box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3); }
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .modal-content {
+                margin: 20px;
+                padding: 30px 25px;
+                max-width: none;
+                width: calc(100% - 40px);
+            }
+            
+            .modal-actions {
+                flex-direction: column;
+            }
+            
+            .modal-actions button {
+                width: 100%;
+            }
+            
+            .theme-toggle,
+            .emergency-contact {
+                right: 15px;
+            }
+            
+            .emergency-contact {
+                bottom: 70px;
+                padding: 10px 16px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Emergency Modal Responsive Styles */
+        @media (max-width: 768px) {
+            .emergency-overlay {
+                padding: 10px !important;
+            }
+            
+            .emergency-modal {
+                padding: 20px !important;
+                border-radius: 12px !important;
+                max-height: 95vh !important;
+            }
+            
+            .emergency-modal h2 {
+                font-size: clamp(1.2rem, 5vw, 1.5rem) !important;
+            }
+            
+            .emergency-modal > div:first-child {
+                margin-bottom: 15px !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .emergency-modal {
+                padding: 15px !important;
+            }
+            
+            .emergency-modal h2 {
+                font-size: 1.2rem !important;
+            }
+            
+            .emergency-modal h3 {
+                font-size: 1rem !important;
+            }
+            
+            .emergency-modal h4 {
+                font-size: 0.95rem !important;
+            }
+            
+            #local, #national {
+                padding: 12px !important;
+            }
+            
+            #closeModal {
+                width: 100% !important;
+                padding: 12px 20px !important;
+            }
+        }
