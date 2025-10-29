@@ -297,7 +297,7 @@ body {
 }
 
 /* Mental Health Conditions Section */
-.disorder-container {
+.disorder-container{
     background: linear-gradient(135deg, rgba(107, 162, 146, 0.9), rgba(88, 131, 119, 0.9));
     border-radius: 25px;
     margin: 30px auto;
