@@ -2875,67 +2875,6 @@ body,
     transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
 }
 
-#disorder-type{
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    padding: 7px;
-    width: 15%;
-    background-color: #5c877c;
-    border-radius: 14px;
-    margin: 0 auto;
-}
-#disorder-description{
-    display: flex;
-    padding: 7px;
-    margin-top: 7px;
-    background-color: #5c877c;
-    border-radius: 14px;
-    width: 100%;
-    align-content: center;
-}
-#disorder-symptoms{
-    display: flex;
-    justify-content: center;
-    padding: 7px;
-    margin-top: 7px;
-    background-color: #5c877c;
-    border-radius: 14px;
-    width: 8%;
-    align-content: center;
-    list-style-position: inside;
-}
-ul{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0;
-    margin: 20px;
-}
-#cures{
-    display: flex;
-    justify-content: center;
-    padding: 7px;
-    margin-top: 7px;
-    background-color: #5c877c;
-    border-radius: 14px;
-    width: 6%;
-    align-content: center;
-}
-#symptom-list{
-    display: flex;
-    flex-direction: column;
-    margin-top: 5px;
-    padding: 7px;
-    border-radius: 14px;
-    background-color: #5c877c;
-}
-@media (max-width: 768px) {
-    #disorder-type,#disorder-description, #disorder-symptoms, #cures {
-        justify-content: center;
-        width: 100%;
-    }
-}
 
 /* Blog Comment Styles */
         .condition-modal {
@@ -3218,7 +3157,7 @@ ul{
             width: 20%;
             border-radius: 14px;
             margin: auto;
-            margin-bottom: 7px;
+            margin-bottom: 14px;
         }
         #about_description{
             display: flex;
@@ -3239,19 +3178,111 @@ ul{
             color: white;
 
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0);
             border-radius: 14px;
+            margin-bottom: 7px;
 
         }
         #profile1,#profile2,#profile3{
             display: flex;
             justify-content: center;
-            width: 40%;
+            width: 400px;
             height: 400px;
             padding: 7px;
             color: white;
+            margin:  auto;
             background: rgba(255, 255, 255, 0.15) !important;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 100%;
+        }
+        #names{
+            display: flex;
+            flex-direction: c;
+            justify-content: center;
+            padding: 7px;
+            margin-top: 7px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+            background: rgba(255, 255, 255, 0.15) !important;
+            backdrop-filter: blur(10px);
+        }
+        .disorder-info {
+            display: none;
+            flex-direction: column;
+            background: linear-gradient(135deg, rgba(107, 162, 146, 0.9), rgba(88, 131, 119, 0.9));
+            border-radius: 25px;
+            margin: 30px auto;
+            max-width: 1750px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 60px rgba(107, 162, 146, 0.3);
+            position: relative;
+            overflow: hidden;
+            color: white;
+        }
+
+        #disorder-type {
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            padding: 7px;
+            width: 15%;
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 14px;
+            margin: 0 auto;
+        }
+
+        #disorder-description {
+            display: flex;
+            flex-direction: column;
+            padding: 7px;
+            margin-top: 7px;
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 14px;
+            width: 100%;
+            align-content: center;
+        }
+        #type{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 14px;
+        }
+        #paragraph{
+            text-align: center;
+        }
+        #disorder-symptoms, #cures {
+            display: flex;
+            justify-content: center;
+            padding: 7px;
+            margin-top: 7px;
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 14px;
+            width: 15%;
+            align-content: center;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0;
+            margin: 20px;
+            list-style-position: inside;
+        }
+
+        #symptom-list, #cure-list {
+            display: flex;
+            flex-direction: column;
+            margin-top: 5px;
+            padding: 7px;
+            border-radius: 14px;
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            #disorder-type, #disorder-description, #disorder-symptoms, #cures {
+                justify-content: center;
+                width: 100%;
+            }
         }

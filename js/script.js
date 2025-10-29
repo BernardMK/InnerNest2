@@ -12,6 +12,21 @@ document.getElementById('mindfulnessCard').addEventListener('click', function() 
 document.getElementById('supportCard').addEventListener('click', function() {
     document.getElementById('supportModal').classList.add('active');
 });
+function showAndScroll(id) {
+    const section = document.getElementById(id);
+    section.style.display = 'flex';
+    
+    // Scroll with offset
+    setTimeout(() => {
+        const elementPosition = section.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - 120; // Adjust 100 to your preferred offset
+        
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    }, 10);
+}
 
 // Close video modal function
 function closeModal(modalId) {
