@@ -3286,3 +3286,14 @@ body,
                 width: 100%;
             }
         }
+        #support-column
+        {
+            display: block;
+            }
+
+            @media (max-width: 768px) {
+                #support-column {
+                    display: none !important;
+                }
+            }
+        }
