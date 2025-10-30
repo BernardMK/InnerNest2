@@ -1741,36 +1741,49 @@ const conditionItems = document.querySelectorAll('.condition-item');
 const serviceCards = document.querySelectorAll('.service-card');
 const heroButtons = document.querySelectorAll('.btn-primary, .btn-secondary');
 
-// Mobile Navigation Toggle
-if (mobileToggle) {
-    mobileToggle.addEventListener('click', () => {
-        if (mobileNav) mobileNav.classList.toggle('active');
-        mobileToggle.classList.toggle('active');
-        
-        // Animate hamburger menu
-        const spans = mobileToggle.querySelectorAll('span');
-        if (mobileNav && mobileNav.classList.contains('active')) {
-            if (spans[0]) spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-            if (spans[1]) spans[1].style.opacity = '0';
-            if (spans[2]) spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
-        } else {
+// Mobile Navigation Toggle (delegated, capture-phase handler to avoid duplicate listeners)
+document.addEventListener('click', function _mobileToggleHandler(e) {
+    const toggle = e.target.closest('.mobile-menu-toggle');
+    if (!toggle) return;
+
+    // prevent other click handlers (avoid double toggle if multiple scripts add listeners)
+    e.stopImmediatePropagation();
+    e.preventDefault();
+
+    const nav = document.getElementById('mobileNav');
+
+    // Toggle active state
+    toggle.classList.toggle('active');
+    if (nav) nav.classList.toggle('active');
+
+    // Animate hamburger spans safely
+    const spans = toggle.querySelectorAll('span');
+    if (nav && nav.classList.contains('active')) {
+        if (spans[0]) spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        if (spans[1]) spans[1].style.opacity = '0';
+        if (spans[2]) spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+    } else {
+        if (spans[0]) spans[0].style.transform = 'rotate(0) translate(0, 0)';
+        if (spans[1]) spans[1].style.opacity = '1';
+        if (spans[2]) spans[2].style.transform = 'rotate(0) translate(0, 0)';
+    }
+
+}, true); // use capture phase
+
+// Close mobile nav when clicking on a link (guarded)
+document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        const nav = document.getElementById('mobileNav');
+        const toggle = document.querySelector('.mobile-menu-toggle');
+        if (nav) nav.classList.remove('active');
+        if (toggle) toggle.classList.remove('active');
+
+        if (toggle) {
+            const spans = toggle.querySelectorAll('span');
             if (spans[0]) spans[0].style.transform = 'rotate(0) translate(0, 0)';
             if (spans[1]) spans[1].style.opacity = '1';
             if (spans[2]) spans[2].style.transform = 'rotate(0) translate(0, 0)';
         }
-    });
-}
-
-// Close mobile nav when clicking on a link
-document.querySelectorAll('.mobile-nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        mobileNav.classList.remove('active');
-        mobileToggle.classList.remove('active');
-        
-        const spans = mobileToggle.querySelectorAll('span');
-        spans[0].style.transform = 'rotate(0) translate(0, 0)';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'rotate(0) translate(0, 0)';
     });
 });
 
