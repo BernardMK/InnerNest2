@@ -1,17 +1,22 @@
 
 // Enhanced Games Popup System
-document.getElementById('supportCard').addEventListener('click', function() {
-    document.getElementById('supportModal').classList.add('active');
-});
+// Guarded event listeners: some pages may not include these elements
+const supportCard = document.getElementById('supportCard');
+if (supportCard) {
+    supportCard.addEventListener('click', function() {
+        const supportModal = document.getElementById('supportModal');
+        if (supportModal) supportModal.classList.add('active');
+    });
+}
 
 // Open video modal for Mindfulness card
-document.getElementById('mindfulnessCard').addEventListener('click', function() {
-    document.getElementById('mindfulnessModal').classList.add('active');
-});
-// Open video modal for Support  card
-document.getElementById('supportCard').addEventListener('click', function() {
-    document.getElementById('supportModal').classList.add('active');
-});
+const mindfulnessCard = document.getElementById('mindfulnessCard');
+if (mindfulnessCard) {
+    mindfulnessCard.addEventListener('click', function() {
+        const mindfulnessModal = document.getElementById('mindfulnessModal');
+        if (mindfulnessModal) mindfulnessModal.classList.add('active');
+    });
+}
 function showAndScroll(id) {
     const section = document.getElementById(id);
     section.style.display = 'flex';
@@ -1737,22 +1742,24 @@ const serviceCards = document.querySelectorAll('.service-card');
 const heroButtons = document.querySelectorAll('.btn-primary, .btn-secondary');
 
 // Mobile Navigation Toggle
-mobileToggle.addEventListener('click', () => {
-    mobileNav.classList.toggle('active');
-    mobileToggle.classList.toggle('active');
-    
-    // Animate hamburger menu
-    const spans = mobileToggle.querySelectorAll('span');
-    if (mobileNav.classList.contains('active')) {
-        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-        spans[1].style.opacity = '0';
-        spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
-    } else {
-        spans[0].style.transform = 'rotate(0) translate(0, 0)';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'rotate(0) translate(0, 0)';
-    }
-});
+if (mobileToggle) {
+    mobileToggle.addEventListener('click', () => {
+        if (mobileNav) mobileNav.classList.toggle('active');
+        mobileToggle.classList.toggle('active');
+        
+        // Animate hamburger menu
+        const spans = mobileToggle.querySelectorAll('span');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            if (spans[0]) spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+            if (spans[1]) spans[1].style.opacity = '0';
+            if (spans[2]) spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+        } else {
+            if (spans[0]) spans[0].style.transform = 'rotate(0) translate(0, 0)';
+            if (spans[1]) spans[1].style.opacity = '1';
+            if (spans[2]) spans[2].style.transform = 'rotate(0) translate(0, 0)';
+        }
+    });
+}
 
 // Close mobile nav when clicking on a link
 document.querySelectorAll('.mobile-nav-link').forEach(link => {

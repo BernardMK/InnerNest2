@@ -736,6 +736,7 @@ a{
 }
 
 .popup-header {
+    color: #000000;
     text-align: center;
     margin-bottom: 35px;
 }
@@ -767,7 +768,7 @@ a{
 
 .games-title {
     font-size: 36px;
-    color: #ffffff;
+    color: #000000;
     margin-bottom: 10px;
     font-weight: 700;
     background: white;
@@ -777,7 +778,7 @@ a{
 }
 
 .games-subtitle {
-    color: #ffffff;
+    color: #000000;
     font-size: 16px;
     font-weight: 500;
 }
@@ -3176,12 +3177,14 @@ body,
             justify-content: center;
             padding: 7px;
             color: white;
-
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0);
             border-radius: 14px;
             margin-bottom: 7px;
 
+        }
+        #profiles div{
+            margin: 14px;
         }
         #profile1,#profile2,#profile3{
             display: flex;
@@ -3198,13 +3201,14 @@ body,
         }
         #names{
             display: flex;
-            flex-direction: c;
             justify-content: center;
             padding: 7px;
             margin-top: 7px;
             font-size: 1.2rem;
             font-weight: bold;
             color: white;
+            margin: auto;
+            border-radius: 14px;
             background: rgba(255, 255, 255, 0.15) !important;
             backdrop-filter: blur(10px);
         }
