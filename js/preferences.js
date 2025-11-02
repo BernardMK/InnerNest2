@@ -143,8 +143,8 @@ class UniversalPreferencesManager {
 
     /**
      * Apply theme to the page
-     * @param {string} theme - 'dark' or 'light'
-     * @param {boolean} showNotification - Whether to show notification
+     * @param {string} theme 
+     * @param {boolean} showNotification
      */
     applyTheme(theme, showNotification = true) {
         const isDark = theme === 'dark';

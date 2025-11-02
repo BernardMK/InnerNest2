@@ -1,22 +1,17 @@
 
 // Enhanced Games Popup System
-// Guarded event listeners: some pages may not include these elements
-const supportCard = document.getElementById('supportCard');
-if (supportCard) {
-    supportCard.addEventListener('click', function() {
-        const supportModal = document.getElementById('supportModal');
-        if (supportModal) supportModal.classList.add('active');
-    });
-}
+document.getElementById('supportCard').addEventListener('click', function() {
+    document.getElementById('supportModal').classList.add('active');
+});
 
 // Open video modal for Mindfulness card
-const mindfulnessCard = document.getElementById('mindfulnessCard');
-if (mindfulnessCard) {
-    mindfulnessCard.addEventListener('click', function() {
-        const mindfulnessModal = document.getElementById('mindfulnessModal');
-        if (mindfulnessModal) mindfulnessModal.classList.add('active');
-    });
-}
+document.getElementById('mindfulnessCard').addEventListener('click', function() {
+    document.getElementById('mindfulnessModal').classList.add('active');
+});
+// Open video modal for Support  card
+document.getElementById('supportCard').addEventListener('click', function() {
+    document.getElementById('supportModal').classList.add('active');
+});
 function showAndScroll(id) {
     const section = document.getElementById(id);
     section.style.display = 'flex';
@@ -1741,49 +1736,34 @@ const conditionItems = document.querySelectorAll('.condition-item');
 const serviceCards = document.querySelectorAll('.service-card');
 const heroButtons = document.querySelectorAll('.btn-primary, .btn-secondary');
 
-// Mobile Navigation Toggle (delegated, capture-phase handler to avoid duplicate listeners)
-document.addEventListener('click', function _mobileToggleHandler(e) {
-    const toggle = e.target.closest('.mobile-menu-toggle');
-    if (!toggle) return;
-
-    // prevent other click handlers (avoid double toggle if multiple scripts add listeners)
-    e.stopImmediatePropagation();
-    e.preventDefault();
-
-    const nav = document.getElementById('mobileNav');
-
-    // Toggle active state
-    toggle.classList.toggle('active');
-    if (nav) nav.classList.toggle('active');
-
-    // Animate hamburger spans safely
-    const spans = toggle.querySelectorAll('span');
-    if (nav && nav.classList.contains('active')) {
-        if (spans[0]) spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-        if (spans[1]) spans[1].style.opacity = '0';
-        if (spans[2]) spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+// Mobile Navigation Toggle
+mobileToggle.addEventListener('click', () => {
+    mobileNav.classList.toggle('active');
+    mobileToggle.classList.toggle('active');
+    
+    // Animate hamburger menu
+    const spans = mobileToggle.querySelectorAll('span');
+    if (mobileNav.classList.contains('active')) {
+        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
     } else {
-        if (spans[0]) spans[0].style.transform = 'rotate(0) translate(0, 0)';
-        if (spans[1]) spans[1].style.opacity = '1';
-        if (spans[2]) spans[2].style.transform = 'rotate(0) translate(0, 0)';
+        spans[0].style.transform = 'rotate(0) translate(0, 0)';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'rotate(0) translate(0, 0)';
     }
+});
 
-}, true); // use capture phase
-
-// Close mobile nav when clicking on a link (guarded)
+// Close mobile nav when clicking on a link
 document.querySelectorAll('.mobile-nav-link').forEach(link => {
     link.addEventListener('click', () => {
-        const nav = document.getElementById('mobileNav');
-        const toggle = document.querySelector('.mobile-menu-toggle');
-        if (nav) nav.classList.remove('active');
-        if (toggle) toggle.classList.remove('active');
-
-        if (toggle) {
-            const spans = toggle.querySelectorAll('span');
-            if (spans[0]) spans[0].style.transform = 'rotate(0) translate(0, 0)';
-            if (spans[1]) spans[1].style.opacity = '1';
-            if (spans[2]) spans[2].style.transform = 'rotate(0) translate(0, 0)';
-        }
+        mobileNav.classList.remove('active');
+        mobileToggle.classList.remove('active');
+        
+        const spans = mobileToggle.querySelectorAll('span');
+        spans[0].style.transform = 'rotate(0) translate(0, 0)';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'rotate(0) translate(0, 0)';
     });
 });
 
@@ -2037,16 +2017,19 @@ function initEmergencyContact() {
         animation: pulse 2s infinite;
     `;
     
+    // Add pulse animation styles
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes pulse {
+            0% { box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3); }
+            50% { box-shadow: 0 4px 20px rgba(220, 53, 69, 0.6); }
+            100% { box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3); }
+        }
+    `;
+    document.head.appendChild(style);
+    
     emergencyBtn.addEventListener('click', () => {
         showEmergencyContacts();
-    });
-    
-    emergencyBtn.addEventListener('mouseenter', () => {
-        emergencyBtn.style.transform = 'scale(1.05)';
-    });
-    
-    emergencyBtn.addEventListener('mouseleave', () => {
-        emergencyBtn.style.transform = 'scale(1)';
     });
     
     document.body.appendChild(emergencyBtn);
