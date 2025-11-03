@@ -3187,45 +3187,17 @@ body,
     border: 1px solid rgba(255, 255, 255, 0.2);
     margin-bottom: 7px;
 }
-#profiles{
+#team-picture{
     display: flex;
-    justify-content: center;
-    padding: 7px;
-    color: white;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0);
+    padding: 7px ;
+    align-content: center;
     border-radius: 14px;
-    margin-bottom: 7px;
-
-}
-#profiles div{
-    margin: 14px;
-}
-#profile1,#profile2,#profile3{
-    display: flex;
     justify-content: center;
-    width: 400px;
-    height: 400px;
-    padding: 7px;
     color: white;
-    margin:  auto;
     background: rgba(255, 255, 255, 0.15) !important;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 100%;
-}
-#names{
-    display: flex;
-    justify-content: center;
-    padding: 7px;
-    margin-top: 7px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: white;
-    margin: auto;
-    border-radius: 14px;
-    background: rgba(255, 255, 255, 0.15) !important;
-    backdrop-filter: blur(10px);
+    margin-bottom: 7px;
 }
 .disorder-info {
     display: none;
@@ -3303,6 +3275,51 @@ ul {
     #disorder-type, #disorder-description, #disorder-symptoms, #cures {
         justify-content: center;
         width: 100%;
+    }
+}
+body.dark-mode .disorder-info {
+    background: linear-gradient(135deg, rgba(44, 62, 55, 0.9), rgba(26, 41, 34, 0.9));
+    border-color: rgba(107, 162, 146, 0.3);
+}
+
+body.dark-mode #disorder-type,
+body.dark-mode #disorder-description,
+body.dark-mode #disorder-symptoms,
+body.dark-mode #cures,
+body.dark-mode #symptom-list,
+body.dark-mode #cure-list {
+    background-color: rgba(26, 41, 34, 0.5);
+    border-color: rgba(107, 162, 146, 0.3);
+}
+
+body.dark-mode #type h2,
+body.dark-mode #disorder-symptoms h3,
+body.dark-mode #cures h3 {
+    color: #F7EFE5;
+}
+
+body.dark-mode #paragraph,
+body.dark-mode #symptom-list li,
+body.dark-mode #cure-list li {
+    color: rgba(247, 239, 229, 0.95);
+}
+
+@media (max-width: 768px) {
+    #disorder-type, #disorder-description, #disorder-symptoms, #cures {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .disorder-info {
+        padding: 40px 20px;
+    }
+    
+    #disorder-description {
+        padding: 20px;
+    }
+    
+    #symptom-list, #cure-list {
+        padding: 20px;
     }
 }
 #support-column

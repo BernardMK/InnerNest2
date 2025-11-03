@@ -21,6 +21,11 @@ const translations = {
             mindfulness: "Mindfulness",
             mindfulnessDesc: "Mental wellness"
         },
+        about: {
+            title: "About Us",
+            teamPicture: "Team Picture",
+            description: "Hi from the creators of InnerNest — a space built to bring peace, understanding, and connection to anyone navigating their mental health journey. We started InnerNest because we believe mental health deserves just as much care and conversation as physical health. Over the years, we have learned how powerful it can be to pause, reflect, and share — whether it's through journaling, music, mindfulness, or simply connecting with others who understand. Here, our goal is to make mental wellness more accessible and less intimidating. InnerNest offers articles, tools, and resources that encourage balance, healing, and self-awareness. Whether you're learning to manage anxiety, seeking calm through mindfulness, or just needing a reminder that you're not alone — this is your place to breathe and reset. Mental health isn't a destination — it's a journey. And InnerNest is here to help you find your peace along the way. 🌸"
+        },
         
         // Conditions Section
         conditions: {
@@ -283,6 +288,11 @@ const translations = {
             supportDesc: "Orientación profesional",
             mindfulness: "Atención plena",
             mindfulnessDesc: "Bienestar mental"
+        },
+        about: {
+            title: "Acerca de Nosotros",
+            teamPicture: "Foto del Equipo",
+            description: "Hola de los creadores de InnerNest — un espacio construido para traer paz, comprensión y conexión a cualquiera que navegue su viaje de salud mental. Comenzamos InnerNest porque creemos que la salud mental merece tanto cuidado y conversación como la salud física. A lo largo de los años, hemos aprendido cuán poderoso puede ser pausar, reflexionar y compartir — ya sea a través de escribir en un diario, música, mindfulness, o simplemente conectar con otros que entienden. Aquí, nuestro objetivo es hacer el bienestar mental más accesible y menos intimidante. InnerNest ofrece artículos, herramientas y recursos que fomentan el equilibrio, la curación y la autoconciencia. Ya sea que estés aprendiendo a manejar la ansiedad, buscando calma a través del mindfulness, o simplemente necesitando un recordatorio de que no estás solo — este es tu lugar para respirar y reiniciar. La salud mental no es un destino — es un viaje. Y InnerNest está aquí para ayudarte a encontrar tu paz en el camino. 🌸"
         },
         
         // Sección de Condiciones
@@ -572,6 +582,9 @@ class LanguageManager {
         
         // Translate navigation
         this.translateNav(t.nav);
+
+        // Translate About Us
+        this.translateAboutSection(t.about);
         
         // Translate hero section
         this.translateHero(t.hero);
@@ -608,6 +621,7 @@ class LanguageManager {
         }
     }
     
+    
     translateHero(hero) {
         this.translateElement('.hero-title', hero.title);
         this.translateElement('.hero-subtitle', hero.subtitle);
@@ -626,6 +640,19 @@ class LanguageManager {
                 if (p) p.textContent = cards[i].p;
             });
         }
+    }
+    translateAboutSection(about) {
+        // Title
+        const aboutTitle = document.querySelector('#about_title h2');
+        if (aboutTitle) aboutTitle.textContent = about.title;
+        
+        // Team Picture
+        const teamPicture = document.querySelector('#team-picture');
+        if (teamPicture) teamPicture.textContent = about.teamPicture;
+        
+        // Description
+        const aboutDescription = document.querySelector('#about_description p');
+        if (aboutDescription) aboutDescription.textContent = about.description;
     }
     
     translateConditions(conditions) {
@@ -785,6 +812,8 @@ class LanguageManager {
             blogDescriptionP.textContent = blog.posts.post1.description;
         }
     }
+
+
     
     translateBookingSection(booking) {
         // Title
@@ -1010,6 +1039,7 @@ class LanguageManager {
             }
         }, 3000);
     }
+    
 }
 
 // Initialize language manager when DOM is ready
