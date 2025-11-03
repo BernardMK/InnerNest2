@@ -535,6 +535,7 @@ const translations = {
             immediateHelp: "Si estás en peligro inmediato, llama al 911",
             close: "Cerrar"
         }
+        
     }
 };
 

@@ -3336,3 +3336,13 @@ body.dark-mode #cure-list li {
 .game-description{
     color: white;
 }
+#doctor-img{
+    border-radius: 14px;
+    width: 80%;
+    height: auto;
+}
+@media (max-width: 750px) {
+    #doctor-img{
+        display: none;
+    }
+}
