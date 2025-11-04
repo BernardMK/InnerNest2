@@ -2834,7 +2834,7 @@ body.dark-mode ::placeholder {
 
 /* Ensure modal content respects theme */
 body:not(.dark-mode) .modal-content {
-    background:rgb(108, 163, 147);
+    background:rgb(114, 166, 150);
     color: #333 !important;
 }
 
@@ -3090,6 +3090,8 @@ body,
         padding: 30px 25px;
         max-width: none;
         width: calc(100% - 40px);
+        top: 46%;
+        left: 40%;
     }
     
     .modal-actions {

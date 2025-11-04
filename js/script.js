@@ -2094,7 +2094,7 @@ function showEmergencyContacts() {
             <p style="margin: 0; font-weight: bold; color: rgba(255, 255, 255, 1); font-size: clamp(0.875rem, 2.5vw, 1rem); line-height: 1.4;">⚠️ If you're in immediate danger, call <a href="tel:911" style="color: #ffffffff;">911</a></p>
         </div>
         <div style="text-align: center; margin-bottom: clamp(15px, 3vw, 20px);">
-            <h2 style="color: #ffffffff; margin-bottom: 10px; font-size: clamp(1.2rem, 5vw, 1.8rem); line-height: 1.3;">🆘 Crisis Support Resources</h2>
+            <h2 style="color: #ffffffff;margin-top: 10px; margin-bottom: 10px; font-size: clamp(1.2rem, 5vw, 1.8rem); line-height: 1.3;">🆘 Crisis Support Resources</h2>
             <p style="font-size: clamp(0.875rem, 3vw, 1rem); color: #ffffff;">You are not alone. Help is available 24/7.</p>
         </div>
         
