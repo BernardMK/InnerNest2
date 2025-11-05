@@ -545,6 +545,9 @@ body {
     .conditions-grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
+    .footer{
+        width: 95%;
+    }
 }
 
 @media (max-width: 768px) {
