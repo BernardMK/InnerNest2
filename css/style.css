@@ -545,6 +545,9 @@ body {
     .conditions-grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
+    .footer{
+        width: 95%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -2834,7 +2837,7 @@ body.dark-mode ::placeholder {
 
 /* Ensure modal content respects theme */
 body:not(.dark-mode) .modal-content {
-    background:rgb(108, 163, 147);
+    background:rgb(114, 166, 150);
     color: #333 !important;
 }
 
@@ -3090,6 +3093,8 @@ body,
         padding: 30px 25px;
         max-width: none;
         width: calc(100% - 40px);
+        top: 46%;
+        left: 40%;
     }
     
     .modal-actions {
@@ -3341,8 +3346,12 @@ body.dark-mode #cure-list li {
     width: 80%;
     height: auto;
 }
+
 @media (max-width: 750px) {
     #doctor-img{
         display: none;
     }
+    
 }
+
+

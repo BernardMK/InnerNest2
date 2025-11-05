@@ -747,7 +747,7 @@ body {
 
 .breathing-modal h2 {
     margin-bottom: 30px;
-    color: var(--primary-color);
+    color: #ffffff;
 }
 
 .breathing-circle {
@@ -786,12 +786,12 @@ body {
 }
 
 .breathing-instructions p {
-    color: var(--text-secondary);
+    color: #ffffff;
     font-size: 14px;
 }
 
 .breathing-start-btn {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border: none;
     color: white;
     padding: 12px 30px;
@@ -809,11 +809,11 @@ body {
 /* Journal Modal */
 .journal-modal h2 {
     margin-bottom: 20px;
-    color: var(--primary-color);
+    color: white;
 }
 
 .journal-date {
-    color: var(--text-muted);
+    color: white;
     font-size: 14px;
     margin-bottom: 20px;
 }
@@ -969,13 +969,14 @@ body {
 
     .quick-tools {
         display: flex;
+        justify-content: center;
         flex-direction: row;
         flex-wrap: wrap;
         gap: 8px;
     }
 
     .tool-btn {
-        flex: 1 1 calc(50% - 4px);
+        flex: 1 1 calc(70% - 4px);
         margin-bottom: 0;
     }
 }
