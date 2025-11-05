@@ -24,7 +24,7 @@ const translations = {
         about: {
             title: "About Us",
             teamPicture: "Team Picture",
-            description: "Hi from the creators of InnerNest â€” a space built to bring peace, understanding, and connection to anyone navigating their mental health journey. We started InnerNest because we believe mental health deserves just as much care and conversation as physical health. Over the years, we have learned how powerful it can be to pause, reflect, and share â€” whether it's through journaling, music, mindfulness, or simply connecting with others who understand. Here, our goal is to make mental wellness more accessible and less intimidating. InnerNest offers articles, tools, and resources that encourage balance, healing, and self-awareness. Whether you're learning to manage anxiety, seeking calm through mindfulness, or just needing a reminder that you're not alone â€” this is your place to breathe and reset. Mental health isn't a destination â€” it's a journey. And InnerNest is here to help you find your peace along the way. ðŸŒ¸"
+            description: "Hi from the creators of InnerNest — a space built to bring peace, understanding, and connection to anyone navigating their mental health journey. We started InnerNest because we believe mental health deserves just as much care and conversation as physical health. Over the years, we have learned how powerful it can be to pause, reflect, and share — whether it's through journaling, music, mindfulness, or simply connecting with others who understand. Here, our goal is to make mental wellness more accessible and less intimidating. InnerNest offers articles, tools, and resources that encourage balance, healing, and self-awareness. Whether you're learning to manage anxiety, seeking calm through mindfulness, or just needing a reminder that you're not alone — this is your place to breathe and reset. Mental health isn't a destination — it's a journey. And InnerNest is here to help you find your peace along the way. 🌸"
         },
         
         // Conditions Section
@@ -147,7 +147,7 @@ const translations = {
             messagePlaceholder: "Message",
             submitButton: "Submit",
             successTitle: "Form Submitted Successfully!",
-            successMessage: "Thanks for your input â€“ your submission helps us improve. Continue exploring more resources.",
+            successMessage: "Thanks for your input – your submission helps us improve. Continue exploring more resources.",
             nameError: "Please enter your name (at least 2 characters)",
             subjectError: "Please enter a subject (at least 3 characters)",
             messageError: "Please enter a message (at least 10 characters)",
@@ -179,7 +179,7 @@ const translations = {
                 },
                 post6: {
                     title: "Digital Detox & Mental Clarity",
-                    description: "Cutting screen time to 30 minutes a day helped me rediscover reading, journaling, and deep breathing â€” all of which brought calm to my mind.",
+                    description: "Cutting screen time to 30 minutes a day helped me rediscover reading, journaling, and deep breathing — all of which brought calm to my mind.",
                     author: "By Liam Patel"
                 }
             },
@@ -220,7 +220,7 @@ const translations = {
             encrypted: "End-to-end encrypted",
             endSession: "End Session",
             supportAssistant: "Support Assistant",
-            available: "Available 24/7 â€¢ Confidential Support",
+            available: "Available 24/7 • Confidential Support",
             clearChat: "Clear Chat",
             welcomeTitle: "Welcome to InnerNest",
             welcomeMessage: "This is a safe, confidential space where you can express yourself freely.",
@@ -249,7 +249,7 @@ const translations = {
             crisis: "Crisis Support",
             resources: "Resources",
             faq: "FAQ",
-            copyright: "Â© 2025 InnerNest. All rights reserved.",
+            copyright: "© 2025 InnerNest. All rights reserved.",
             privacy: "Privacy Policy",
             terms: "Terms of Service"
         },
@@ -270,184 +270,184 @@ const translations = {
     },
     
     es: {
-        // NavegaciÃ³n
+        // Navegación
         nav: {
             home: "Inicio",
-            blog: "BitÃ¡cora",
+            blog: "Bitácora",
             chat: "Charla",
             book: "Reservar"
         },
         
-        // SecciÃ³n Principal
+        // Sección Principal
         hero: {
             title: "Bienvenido a Tu Viaje de Salud Mental",
-            subtitle: "InnerNest es tu espacio seguro para el bienestar mental, el autodescubrimiento y el crecimiento. ConÃ©ctate con profesionales, accede a recursos y construye resiliencia.",
+            subtitle: "InnerNest es tu espacio seguro para el bienestar mental, el autodescubrimiento y el crecimiento. Conéctate con profesionales, accede a recursos y construye resiliencia.",
             games: "Juegos",
-            gamesDesc: "Para aliviar el estrÃ©s",
+            gamesDesc: "Para aliviar el estrés",
             support: "Apoyo",
-            supportDesc: "OrientaciÃ³n profesional",
-            mindfulness: "AtenciÃ³n plena",
+            supportDesc: "Orientación profesional",
+            mindfulness: "Atención plena",
             mindfulnessDesc: "Bienestar mental"
         },
         about: {
             title: "Acerca de Nosotros",
             teamPicture: "Foto del Equipo",
-            description: "Hola de los creadores de InnerNest â€” un espacio construido para traer paz, comprensiÃ³n y conexiÃ³n a cualquiera que navegue su viaje de salud mental. Comenzamos InnerNest porque creemos que la salud mental merece tanto cuidado y conversaciÃ³n como la salud fÃ­sica. A lo largo de los aÃ±os, hemos aprendido cuÃ¡n poderoso puede ser pausar, reflexionar y compartir â€” ya sea a travÃ©s de escribir en un diario, mÃºsica, mindfulness, o simplemente conectar con otros que entienden. AquÃ­, nuestro objetivo es hacer el bienestar mental mÃ¡s accesible y menos intimidante. InnerNest ofrece artÃ­culos, herramientas y recursos que fomentan el equilibrio, la curaciÃ³n y la autoconciencia. Ya sea que estÃ©s aprendiendo a manejar la ansiedad, buscando calma a travÃ©s del mindfulness, o simplemente necesitando un recordatorio de que no estÃ¡s solo â€” este es tu lugar para respirar y reiniciar. La salud mental no es un destino â€” es un viaje. Y InnerNest estÃ¡ aquÃ­ para ayudarte a encontrar tu paz en el camino. ðŸŒ¸"
+            description: "Hola de los creadores de InnerNest — un espacio construido para traer paz, comprensión y conexión a cualquiera que navegue su viaje de salud mental. Comenzamos InnerNest porque creemos que la salud mental merece tanto cuidado y conversación como la salud física. A lo largo de los años, hemos aprendido cuán poderoso puede ser pausar, reflexionar y compartir — ya sea a través de escribir en un diario, música, mindfulness, o simplemente conectar con otros que entienden. Aquí, nuestro objetivo es hacer el bienestar mental más accesible y menos intimidante. InnerNest ofrece artículos, herramientas y recursos que fomentan el equilibrio, la curación y la autoconciencia. Ya sea que estés aprendiendo a manejar la ansiedad, buscando calma a través del mindfulness, o simplemente necesitando un recordatorio de que no estás solo — este es tu lugar para respirar y reiniciar. La salud mental no es un destino — es un viaje. Y InnerNest está aquí para ayudarte a encontrar tu paz en el camino. 🌸"
         },
         
-        // SecciÃ³n de Condiciones
+        // Sección de Condiciones
         conditions: {
             title: "Comprendiendo las Condiciones de Salud Mental",
             anxiety: {
                 title: "Trastornos de Ansiedad",
-                description: "Aprende sobre los sÃ­ntomas de ansiedad, estrategias de afrontamiento y opciones de tratamiento.",
-                tags: ["TAG", "PÃ¡nico", "Social"]
+                description: "Aprende sobre los síntomas de ansiedad, estrategias de afrontamiento y opciones de tratamiento.",
+                tags: ["TAG", "Pánico", "Social"]
             },
             depression: {
-                title: "DepresiÃ³n",
-                description: "Comprendiendo la depresiÃ³n, su impacto y caminos hacia la recuperaciÃ³n y el apoyo.",
+                title: "Depresión",
+                description: "Comprendiendo la depresión, su impacto y caminos hacia la recuperación y el apoyo.",
                 tags: ["Mayor", "Estacional", "Bipolar"]
             },
             stress: {
-                title: "Manejo del EstrÃ©s",
-                description: "TÃ©cnicas y estrategias efectivas para manejar el estrÃ©s diario y la presiÃ³n.",
-                tags: ["Trabajo", "Vida", "CrÃ³nico"]
+                title: "Manejo del Estrés",
+                description: "Técnicas y estrategias efectivas para manejar el estrés diario y la presión.",
+                tags: ["Trabajo", "Vida", "Crónico"]
             },
             trauma: {
                 title: "Trauma y TEPT",
-                description: "Apoyo y recursos para sobrevivientes de trauma y recuperaciÃ³n de TEPT.",
-                tags: ["TEPT", "Complejo", "RecuperaciÃ³n"]
+                description: "Apoyo y recursos para sobrevivientes de trauma y recuperación de TEPT.",
+                tags: ["TEPT", "Complejo", "Recuperación"]
             },
             relationships: {
                 title: "Problemas de Relaciones",
-                description: "OrientaciÃ³n para mejorar las relaciones y habilidades de comunicaciÃ³n.",
+                description: "Orientación para mejorar las relaciones y habilidades de comunicación.",
                 tags: ["Parejas", "Familia", "Social"]
             },
             selfcare: {
                 title: "Autocuidado y Bienestar",
-                description: "Construyendo hÃ¡bitos saludables y prÃ¡cticas sostenibles de autocuidado.",
-                tags: ["Mindfulness", "HÃ¡bitos", "Balance"]
+                description: "Construyendo hábitos saludables y prácticas sostenibles de autocuidado.",
+                tags: ["Mindfulness", "Hábitos", "Balance"]
             },
             biPolarDisorder: {
                 title: "Trastorno Bipolar",
-                description: "Aprende sobre los sÃ­ntomas del trastorno bipolar, estrategias de afrontamiento y opciones de tratamiento.",
-                tags: ["ManÃ­a", "DepresiÃ³n", "Estado de Ã¡nimo"]
+                description: "Aprende sobre los síntomas del trastorno bipolar, estrategias de afrontamiento y opciones de tratamiento.",
+                tags: ["Manía", "Depresión", "Estado de ánimo"]
             },
             panicdisorder: {
-                title: "Trastorno de PÃ¡nico",
-                description: "Comprendiendo el trastorno de pÃ¡nico, su impacto y caminos hacia la recuperaciÃ³n y el apoyo.",
-                tags: ["Ansiedad", "PÃ¡nico", "Miedo"]
+                title: "Trastorno de Pánico",
+                description: "Comprendiendo el trastorno de pánico, su impacto y caminos hacia la recuperación y el apoyo.",
+                tags: ["Ansiedad", "Pánico", "Miedo"]
             },
             delusionaldisorder: {
                 title: "Trastorno Delirante",
-                description: "TÃ©cnicas y estrategias efectivas para manejar el estrÃ©s diario y la presiÃ³n.",
-                tags: ["Paranoia", "Creencia", "PersecuciÃ³n"]
+                description: "Técnicas y estrategias efectivas para manejar el estrés diario y la presión.",
+                tags: ["Paranoia", "Creencia", "Persecución"]
             },
             eatingDisorder: {
                 title: "Trastorno Alimentario",
                 description: "Apoyo y recursos para personas que luchan con trastornos alimentarios.",
-                tags: ["AlimentaciÃ³n", "AtracÃ³n", "Bulimia"]
+                tags: ["Alimentación", "Atracón", "Bulimia"]
             },
             Schizophrenia: {
                 title: "Esquizofrenia",
-                description: "OrientaciÃ³n para manejar los sÃ­ntomas y mejorar la calidad de vida.",
-                tags: ["Psicosis", "VisiÃ³n", "Delirios"]
+                description: "Orientación para manejar los síntomas y mejorar la calidad de vida.",
+                tags: ["Psicosis", "Visión", "Delirios"]
             },
             HistrionicPersonalityDisorder: {
-                title: "Trastorno de Personalidad HistriÃ³nico",
-                description: "Construyendo hÃ¡bitos saludables y prÃ¡cticas sostenibles de autocuidado.",
-                tags: ["Emocional", "DramÃ¡tico", "Pose"]
+                title: "Trastorno de Personalidad Histriónico",
+                description: "Construyendo hábitos saludables y prácticas sostenibles de autocuidado.",
+                tags: ["Emocional", "Dramático", "Pose"]
             },
             Trichotillomania: {
-                title: "TricotilomanÃ­a",
-                description: "Reemplazar el tirÃ³n con hÃ¡bitos calmantes en cada impulso.",
-                tags: ["TirÃ³n de pelo", "Impulso", "Alivio"]
+                title: "Tricotilomanía",
+                description: "Reemplazar el tirón con hábitos calmantes en cada impulso.",
+                tags: ["Tirón de pelo", "Impulso", "Alivio"]
             },
             anankasticPersonalityDisorder: {
-                title: "Trastorno de Personalidad AnancÃ¡stico",
+                title: "Trastorno de Personalidad Anancástico",
                 description: "Construir flexibilidad diaria trae paz y equilibrio.",
                 tags: ["Perfeccionista", "Ordenado", "Fijo"]
             },
             avoidantPersonalityDisorder: {
                 title: "Trastorno de Personalidad Evitativa",
                 description: "Construir coraje lentamente alivia el miedo y el aislamiento.",
-                tags: ["TÃ­mido", "Temeroso", "RetraÃ­do"]
+                tags: ["Tímido", "Temeroso", "Retraído"]
             },
             intermittentExplosiveDisorder: {
                 title: "Trastorno Explosivo Intermitente",
-                description: "Construir hÃ¡bitos de calma previene la ira repentina y el daÃ±o.",
+                description: "Construir hábitos de calma previene la ira repentina y el daño.",
                 tags: ["Ira", "Impulsivo", "Intenso"]
             },
             bodyDysmorphicDisorder: {
-                title: "Trastorno DismÃ³rfico Corporal",
-                description: "Construir amor propio reduce pensamientos daÃ±inos sobre la apariencia.",
-                tags: ["CrÃ­tico", "Ansioso", "Inseguro"]
+                title: "Trastorno Dismórfico Corporal",
+                description: "Construir amor propio reduce pensamientos dañinos sobre la apariencia.",
+                tags: ["Crítico", "Ansioso", "Inseguro"]
             },
             maladaptiveDaydreaming: {
-                title: "SoÃ±ar Despierto Desadaptativo",
-                description: "Construir enfoque ayuda a aterrizar sueÃ±os en la realidad.",
-                tags: ["DistraÃ­do", "SoÃ±ador", "Evitador"]
+                title: "Soñar Despierto Desadaptativo",
+                description: "Construir enfoque ayuda a aterrizar sueños en la realidad.",
+                tags: ["Distraído", "Soñador", "Evitador"]
             },
             prolongedGriefDisorder: {
                 title: "Trastorno de Duelo Prolongado",
-                description: "Construir apoyo alivia el dolor y nutre la curaciÃ³n.",
+                description: "Construir apoyo alivia el dolor y nutre la curación.",
                 tags: ["Triste", "Persistente", "Solitario"]
             },
             attachmentDisorder: {
                 title: "Trastorno de Apego",
-                description: "Construir confianza lentamente fortalece la conexiÃ³n emocional y la seguridad.",
+                description: "Construir confianza lentamente fortalece la conexión emocional y la seguridad.",
                 tags: ["Desconfiado", "Aislado", "Inseguro"]
             },
             dissociativeIdentityDisorder: {
                 title: "Trastorno de Identidad Disociativo",
-                description: "Construir integraciÃ³n promueve armonÃ­a entre mÃºltiples identidades.",
+                description: "Construir integración promueve armonía entre múltiples identidades.",
                 tags: ["Disociativo", "Perdido", "Complejo"]
             },
-            loadMore: "Cargar MÃ¡s"
+            loadMore: "Cargar Más"
         },
         
-        // SecciÃ³n de Blog
+        // Sección de Blog
         blog: {
             title: "Testimonio",
-            reviewTitle: "Tu ReseÃ±a",
+            reviewTitle: "Tu Reseña",
             namePlaceholder: "Tu Nombre",
             subjectPlaceholder: "Asunto",
             messagePlaceholder: "Mensaje",
             submitButton: "Enviar",
-            successTitle: "Â¡Formulario Enviado Exitosamente!",
-            successMessage: "Gracias por tu aporte, tu envÃ­o nos ayuda a mejorar. ContinÃºa explorando mÃ¡s recursos.",
+            successTitle: "¡Formulario Enviado Exitosamente!",
+            successMessage: "Gracias por tu aporte, tu envío nos ayuda a mejorar. Continúa explorando más recursos.",
             nameError: "Por favor ingresa tu nombre (al menos 2 caracteres)",
             subjectError: "Por favor ingresa un asunto (al menos 3 caracteres)",
             messageError: "Por favor ingresa un mensaje (al menos 10 caracteres)",
             posts: {
                 post1: {
-                    title: "Encontrando la Calma Cuando Mi CorazÃ³n No Se Calma",
-                    description: "DespuÃ©s de cinco aÃ±os de ataques de pÃ¡nico diarios, descubrÃ­ ejercicios de conexiÃ³n a tierra que convirtieron mi ansiedad en un ritmo manejable.",
+                    title: "Encontrando la Calma Cuando Mi Corazón No Se Calma",
+                    description: "Después de cinco años de ataques de pánico diarios, descubrí ejercicios de conexión a tierra que convirtieron mi ansiedad en un ritmo manejable.",
                     author: "Por Rajan Patel"
                 },
                 post2: {
-                    title: "Por QuÃ© la Terapia Es Mi Salvavidas, No un Lujo",
-                    description: "Cuando la depresiÃ³n me hizo sentir invisible, un terapeuta constante me ayudÃ³ a reconstruir mi autoestima, sesiÃ³n tras sesiÃ³n.",
+                    title: "Por Qué la Terapia Es Mi Salvavidas, No un Lujo",
+                    description: "Cuando la depresión me hizo sentir invisible, un terapeuta constante me ayudó a reconstruir mi autoestima, sesión tras sesión.",
                     author: "Por Mara Kim"
                 },
                 post3: {
-                    title: "Juntos Prosperamos: Apoyo Entre Pares en la RecuperaciÃ³n",
-                    description: "Unirme a un grupo de apoyo local me dio responsabilidad y compasiÃ³n, demostrando que las experiencias compartidas sanan mÃ¡s rÃ¡pido.",
+                    title: "Juntos Prosperamos: Apoyo Entre Pares en la Recuperación",
+                    description: "Unirme a un grupo de apoyo local me dio responsabilidad y compasión, demostrando que las experiencias compartidas sanan más rápido.",
                     author: "Por Emily Torres"
                 },
                 post4: {
                     title: "Mindfulness en el Trabajo: Un Reinicio Diario",
-                    description: "Dedicar diez minutos a la respiraciÃ³n concentrada en el almuerzo redujo mi pico de estrÃ©s y aumentÃ³ mi creatividad laboral.",
+                    description: "Dedicar diez minutos a la respiración concentrada en el almuerzo redujo mi pico de estrés y aumentó mi creatividad laboral.",
                     author: "Por Arun Gupta"
                 },
                 post5: {
-                    title: "Construyendo Resiliencia DespuÃ©s del Trauma",
-                    description: "A travÃ©s de imÃ¡genes guiadas y proyectos de arte comunitario, recuperÃ© la alegrÃ­a en pequeÃ±os momentos, aprendiendo que la curaciÃ³n es un viaje, no un destino.",
+                    title: "Construyendo Resiliencia Después del Trauma",
+                    description: "A través de imágenes guiadas y proyectos de arte comunitario, recuperé la alegría en pequeños momentos, aprendiendo que la curación es un viaje, no un destino.",
                     author: "Por Sofia Reyes"
                 },
                 post6: {
-                    title: "DesintoxicaciÃ³n Digital y Claridad Mental",
-                    description: "Reducir el tiempo de pantalla a 30 minutos al dÃ­a me ayudÃ³ a redescubrir la lectura, el diario y la respiraciÃ³n profunda, todo lo cual trajo calma a mi mente.",
+                    title: "Desintoxicación Digital y Claridad Mental",
+                    description: "Reducir el tiempo de pantalla a 30 minutos al día me ayudó a redescubrir la lectura, el diario y la respiración profunda, todo lo cual trajo calma a mi mente.",
                     author: "Por Liam Patel"
                 }
             },
@@ -455,15 +455,15 @@ const translations = {
             comments: "Comentarios"
         },
         
-        // SecciÃ³n de Reservas
+        // Sección de Reservas
         booking: {
             title: "Programar Cita",
             nameLabel: "Nombre:",
             namePlaceholder: "Tu Nombre",
-            emailLabel: "Correo electrÃ³nico:",
+            emailLabel: "Correo electrónico:",
             emailPlaceholder: "Tu Email",
-            phoneLabel: "TelÃ©fono:",
-            phonePlaceholder: "Tu TelÃ©fono",
+            phoneLabel: "Teléfono:",
+            phonePlaceholder: "Tu Teléfono",
             datePlaceholder: "Fecha de Reserva",
             subjectLabel: "Asunto:",
             subjectPlaceholder: "Asunto",
@@ -472,67 +472,67 @@ const translations = {
             submitButton: "Enviar"
         },
         
-        // SecciÃ³n de Chat
+        // Sección de Chat
         chat: {
-            crisisBanner: "Si estÃ¡s en crisis, llama al 988 (LÃ­nea de Vida para Suicidio y Crisis) o al 911 para ayuda inmediata",
-            userProfile: "Usuario AnÃ³nimo",
+            crisisBanner: "Si estás en crisis, llama al 988 (Línea de Vida para Suicidio y Crisis) o al 911 para ayuda inmediata",
+            userProfile: "Usuario Anónimo",
             safeSpace: "Seguro y Confidencial",
-            moodQuestion: "Â¿CÃ³mo te sientes?",
-            quickTools: "Herramientas RÃ¡pidas",
-            breathingExercise: "Ejercicio de RespiraciÃ³n",
-            guidedMeditation: "MeditaciÃ³n Guiada",
+            moodQuestion: "¿Cómo te sientes?",
+            quickTools: "Herramientas Rápidas",
+            breathingExercise: "Ejercicio de Respiración",
+            guidedMeditation: "Meditación Guiada",
             journalEntry: "Entrada de Diario",
             copingStrategies: "Estrategias de Afrontamiento",
-            sessionInfo: "Info de SesiÃ³n",
-            duration: "DuraciÃ³n",
+            sessionInfo: "Info de Sesión",
+            duration: "Duración",
             encrypted: "Cifrado de extremo a extremo",
-            endSession: "Terminar SesiÃ³n",
+            endSession: "Terminar Sesión",
             supportAssistant: "Asistente de Apoyo",
-            available: "Disponible 24/7 â€¢ Apoyo Confidencial",
+            available: "Disponible 24/7 • Apoyo Confidencial",
             clearChat: "Limpiar Chat",
             welcomeTitle: "Bienvenido a InnerNest",
             welcomeMessage: "Este es un espacio seguro y confidencial donde puedes expresarte libremente.",
             confidential: "100% Confidencial",
             nonjudgmental: "Apoyo Sin Juicios",
             available247: "Disponible 24/7",
-            promptsLabel: "Iniciadores de conversaciÃ³n rÃ¡pidos:",
+            promptsLabel: "Iniciadores de conversación rápidos:",
             feelingAnxious: "Me siento ansioso",
             needTalk: "Necesito hablar con alguien",
             troubleSleeping: "Problemas para dormir",
             feelingOverwhelmed: "Me siento abrumado",
             copingStrategiesPrompt: "Estrategias de afrontamiento",
-            messagePlaceholder: "Escribe tu mensaje aquÃ­... Recuerda, este es un espacio seguro.",
-            pressEnter: "Presiona Enter para enviar, Shift+Enter para nueva lÃ­nea"
+            messagePlaceholder: "Escribe tu mensaje aquí... Recuerda, este es un espacio seguro.",
+            pressEnter: "Presiona Enter para enviar, Shift+Enter para nueva línea"
         },
         
-        // Pie de PÃ¡gina
+        // Pie de Página
         footer: {
             tagline: "Tu santuario para el bienestar mental y el crecimiento.",
-            quickLinks: "Enlaces RÃ¡pidos",
+            quickLinks: "Enlaces Rápidos",
             home: "Inicio",
             services: "Servicios",
-            blog: "BitÃ¡cora",
+            blog: "Bitácora",
             contact: "Contacto",
             support: "Apoyo",
             crisis: "Apoyo en Crisis",
             resources: "Recursos",
             faq: "Preguntas Frecuentes",
-            copyright: "Â© 2025 InnerNest. Todos los derechos reservados.",
-            privacy: "PolÃ­tica de Privacidad",
-            terms: "TÃ©rminos de Servicio"
+            copyright: "© 2025 InnerNest. Todos los derechos reservados.",
+            privacy: "Política de Privacidad",
+            terms: "Términos de Servicio"
         },
         
         // Contactos de Emergencia
         emergency: {
             title: "Recursos de Apoyo en Crisis",
-            subtitle: "No estÃ¡s solo. La ayuda estÃ¡ disponible 24/7.",
-            ohioTitle: "LÃ­neas Directas de Ohio",
-            nationalTitle: "LÃ­neas Directas Nacionales",
-            suicidePrevention: "PrevenciÃ³n del Suicidio",
+            subtitle: "No estás solo. La ayuda está disponible 24/7.",
+            ohioTitle: "Líneas Directas de Ohio",
+            nationalTitle: "Líneas Directas Nacionales",
+            suicidePrevention: "Prevención del Suicidio",
             call: "Llamar",
             text: "Texto",
             website: "Sitio Web",
-            immediateHelp: "Si estÃ¡s en peligro inmediato, llama al 911",
+            immediateHelp: "Si estás en peligro inmediato, llama al 911",
             close: "Cerrar"
         }
     }
@@ -574,7 +574,7 @@ class LanguageManager {
         });
         
         this.translatePage();
-        this.showNotification(lang === 'en' ? 'Language changed to English' : 'Idioma cambiado a EspaÃ±ol');
+        this.showNotification(lang === 'en' ? 'Language changed to English' : 'Idioma cambiado a Español');
     }
     
     translatePage() {
@@ -808,7 +808,7 @@ class LanguageManager {
         const blogDescriptionP = document.querySelector('.description p');
         if (blogDescriptionP && blogDescriptionP.closest('.disorder-container') &&
             (blogDescriptionP.textContent.includes('After five years') || 
-             blogDescriptionP.textContent.includes('DespuÃ©s de cinco aÃ±os'))) {
+             blogDescriptionP.textContent.includes('Después de cinco años'))) {
             blogDescriptionP.textContent = blog.posts.post1.description;
         }
     }
@@ -895,7 +895,7 @@ class LanguageManager {
                 sessionTimeLabel.childNodes[0].textContent = chat.duration + ': ';
             }
         }
-        this.translateElement('.session-privacy', `ðŸ”’ ${chat.encrypted}`);
+        this.translateElement('.session-privacy', `🔒 ${chat.encrypted}`);
         this.translateElement('.end-session-btn', chat.endSession);
         
         // Chat header
