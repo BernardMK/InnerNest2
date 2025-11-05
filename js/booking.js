@@ -238,6 +238,10 @@ function initFormSubmission() {
                 // Hide the form
                 const formContainer = document.getElementById('info_collector');
                 const bookingPhoto = document.getElementById('booking-photo');
+                const s_appointment = document.getElementById('s_appointment');
+                if (s_appointment) {
+                    s_appointment.style.display = 'none';
+                }
                 if (formContainer) {
                     formContainer.style.display = 'none';
                 }
