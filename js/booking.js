@@ -185,6 +185,79 @@ function initMobileMenu() {
     }
 }
 
+// Initialize form submission
+function initFormSubmission() {
+    const form = document.forms["myForm"];
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+            console.log('Form submitted, validating...');
+            
+            if (validateForm()) {
+                // Form is valid, show success message
+                console.log('Form is valid! Showing success message...');
+                
+                // Get form values
+                const name = form["name"].value || "Guest";
+                const date = form["date"].value;
+                const email = form["email"].value;
+                const phone = form["phone"].value;
+                const subject = form["subject"].value;
+                
+                // Format the date nicely
+                let dateText = "";
+                if (date) {
+                    const dateObj = new Date(date);
+                    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                    dateText = dateObj.toLocaleDateString('en-US', options);
+                }
+                
+                // Update the success message with personalized information
+                const submitMessage = document.getElementById('submit-message');
+                if (submitMessage) {
+                    let messageHTML = '<div><h4>Form Submitted Successfully!</h4></div><br>';
+                    
+                    if (name && name !== "Guest") {
+                        messageHTML += `<p><strong>${name}</strong>, thank you for booking an appointment with us!</p>`;
+                    } else {
+                        messageHTML += '<p>Thank you for booking an appointment with us!</p>';
+                    }
+                    
+                    if (dateText) {
+                        messageHTML += `<p>Your appointment is scheduled for <strong>${dateText}</strong>.</p>`;
+                    }
+                    
+                    messageHTML += '<br><p>We have received your request regarding: <strong>' + subject + '</strong></p>';
+                    messageHTML += '<p>A confirmation has been sent to <strong>' + email + '</strong>.</p>';
+                    messageHTML += '<br><p>We will contact you shortly at <strong>' + phone + '</strong> to confirm your appointment.</p>';
+                    
+                    submitMessage.innerHTML = messageHTML;
+                    submitMessage.style.display = 'block';
+                }
+                
+                // Hide the form
+                const formContainer = document.getElementById('info_collector');
+                const bookingPhoto = document.getElementById('booking-photo');
+                if (formContainer) {
+                    formContainer.style.display = 'none';
+                }
+                if (bookingPhoto) {
+                    bookingPhoto.style.display = 'none';
+                }
+                
+                // Optional: Scroll to the success message
+                if (submitMessage) {
+                    submitMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            } else {
+                console.log('Form validation failed - please check the error messages');
+            }
+        });
+    } else {
+        console.error('Form with name "myForm" not found!');
+    }
+}
+
 // Initialize all functionality when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded, initializing InnerNest...');
@@ -208,6 +281,13 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('✓ Mobile menu initialized');
     } catch (e) {
         console.error('Error initializing mobile menu:', e);
+    }
+    
+    try {
+        initFormSubmission();
+        console.log('✓ Form submission initialized');
+    } catch (e) {
+        console.error('Error initializing form submission:', e);
     }
     
     // Add loading animation
