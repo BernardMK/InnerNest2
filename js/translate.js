@@ -1,3 +1,5 @@
+// translations.js - Complete translation system for InnerNest
+
 const translations = {
     en: {
         // Navigation
@@ -22,510 +24,7 @@ const translations = {
         about: {
             title: "About Us",
             teamPicture: "Team Picture",
-            description: "Hi from the creators of InnerNest – a space built to bring peace, understanding, and connection to anyone navigating their mental health journey. We started InnerNest because we believe mental health deserves just as much care and conversation as physical health. Over the years, we have learned how powerful it can be to pause, reflect, and share – whether it's through journaling, music, mindfulness, or simply connecting with others who understand. Here, our goal is to make mental wellness more accessible and less intimidating. InnerNest offers articles, tools, and resources that encourage balance, healing, and self-awareness. Whether you're learning to manage anxiety, seeking calm through mindfulness, or just needing a reminder that you're not alone – this is your place to breathe and reset. Mental health isn't a destination – it's a journey. And InnerNest is here to help you find your peace along the way. 🌸"
-        },
-        
-        // Resources Section
-        resources: {
-            mainTitle: "Understanding Mental Health Conditions",
-            
-            // Disorder Details
-            anxiety: {
-                title: "Anxiety Disorders",
-                description: "Anxiety disorders are characterized by excessive fear, worry, and related behavioral disturbances. They include generalized anxiety disorder (GAD), panic disorder, and social anxiety disorder. These conditions go beyond normal nervousness and can significantly impact daily functioning.",
-                symptoms: "Symptoms",
-                symptomsList: [
-                    "Excessive worrying that's difficult to control",
-                    "Restlessness, feeling on edge or keyed up",
-                    "Rapid heartbeat, sweating, trembling",
-                    "Difficulty concentrating or mind going blank",
-                    "Sleep disturbances and muscle tension",
-                    "Avoidance of anxiety-triggering situations"
-                ],
-                treatment: "Treatment Options",
-                treatmentList: [
-                    "Cognitive Behavioral Therapy (CBT) to identify and change thought patterns",
-                    "Medications such as SSRIs or benzodiazepines as prescribed",
-                    "Relaxation techniques including deep breathing and progressive muscle relaxation",
-                    "Regular exercise and healthy sleep habits",
-                    "Mindfulness meditation and grounding exercises"
-                ]
-            },
-            
-            depression: {
-                title: "Depression",
-                description: "Depression is a mood disorder causing persistent feelings of sadness and loss of interest. It affects how you feel, think, and handle daily activities. Major depressive disorder, seasonal affective disorder, and bipolar depression are common types.",
-                symptoms: "Symptoms",
-                symptomsList: [
-                    "Persistent sad, anxious, or empty mood",
-                    "Loss of interest in activities once enjoyed",
-                    "Changes in appetite and weight",
-                    "Sleep disturbances (insomnia or oversleeping)",
-                    "Fatigue and decreased energy",
-                    "Feelings of worthlessness or excessive guilt",
-                    "Difficulty thinking, concentrating, or making decisions"
-                ],
-                treatment: "Treatment Options",
-                treatmentList: [
-                    "Psychotherapy (talk therapy) including CBT and interpersonal therapy",
-                    "Antidepressant medications as prescribed by a doctor",
-                    "Regular physical activity and exercise",
-                    "Light therapy for seasonal affective disorder",
-                    "Support groups and peer support",
-                    "Establishing routine and maintaining social connections"
-                ]
-            },
-            
-            stress: {
-                title: "Stress Management",
-                description: "Chronic stress occurs when the body's stress response is activated too often or for too long. It can result from work pressure, life changes, or ongoing difficulties. While stress is normal, chronic stress can lead to serious health problems.",
-                symptoms: "Symptoms",
-                symptomsList: [
-                    "Headaches and muscle tension",
-                    "Fatigue and sleep problems",
-                    "Irritability and mood changes",
-                    "Difficulty concentrating",
-                    "Changes in appetite",
-                    "Physical symptoms like upset stomach or chest pain"
-                ],
-                treatment: "Management Strategies",
-                treatmentList: [
-                    "Time management and prioritization techniques",
-                    "Regular exercise and physical activity",
-                    "Relaxation practices like yoga, meditation, or tai chi",
-                    "Healthy boundaries and learning to say no",
-                    "Social support and connecting with others",
-                    "Professional counseling or stress management programs"
-                ]
-            },
-            
-            trauma: {
-                title: "Trauma & PTSD",
-                description: "Post-Traumatic Stress Disorder (PTSD) can develop after experiencing or witnessing traumatic events. Complex PTSD results from prolonged trauma. These conditions involve intrusive memories, avoidance behaviors, and changes in mood and thinking.",
-                symptoms: "Symptoms",
-                symptomsList: [
-                    "Intrusive memories, flashbacks, or nightmares",
-                    "Avoidance of trauma reminders",
-                    "Negative changes in thoughts and mood",
-                    "Hypervigilance and exaggerated startle response",
-                    "Difficulty sleeping and concentrating",
-                    "Emotional numbness or detachment"
-                ],
-                treatment: "Treatment Options",
-                treatmentList: [
-                    "Trauma-focused cognitive behavioral therapy (TF-CBT)",
-                    "Eye Movement Desensitization and Reprocessing (EMDR)",
-                    "Prolonged exposure therapy",
-                    "Medications to manage symptoms",
-                    "Grounding techniques and emotional regulation skills",
-                    "Support groups for trauma survivors"
-                ]
-            },
-            
-            relationships: {
-                title: "Relationship Issues",
-                description: "Relationship difficulties can affect romantic partnerships, family dynamics, and social connections. Common issues include communication problems, conflict resolution challenges, trust issues, and attachment concerns that impact emotional well-being.",
-                symptoms: "Common Signs",
-                symptomsList: [
-                    "Frequent arguments or conflicts",
-                    "Poor communication or feeling misunderstood",
-                    "Lack of emotional intimacy or connection",
-                    "Trust issues or jealousy",
-                    "Difficulty setting or respecting boundaries",
-                    "Feeling isolated or unsupported"
-                ],
-                treatment: "Solutions and Support",
-                treatmentList: [
-                    "Couples therapy or family counseling",
-                    "Communication skills training",
-                    "Learning active listening techniques",
-                    "Conflict resolution strategies",
-                    "Individual therapy to address personal patterns",
-                    "Relationship workshops and support groups"
-                ]
-            },
-            
-            selfcare: {
-                title: "Self-Care & Wellness",
-                description: "Self-care involves intentional activities that promote physical, mental, and emotional health. Building sustainable wellness practices helps prevent burnout, manage stress, and maintain overall well-being through mindfulness and healthy habits.",
-                symptoms: "Signs You Need More Self-Care",
-                symptomsList: [
-                    "Feeling constantly exhausted or burned out",
-                    "Neglecting personal needs",
-                    "Increased irritability or emotional reactivity",
-                    "Declining physical health",
-                    "Loss of motivation or passion",
-                    "Difficulty enjoying activities"
-                ],
-                treatment: "Self-Care Practices",
-                treatmentList: [
-                    "Establishing regular sleep and wake times",
-                    "Mindfulness meditation and breathing exercises",
-                    "Physical activity and movement",
-                    "Healthy nutrition and hydration",
-                    "Setting boundaries and saying no",
-                    "Engaging in hobbies and enjoyable activities",
-                    "Social connection and quality time with loved ones"
-                ]
-            },
-            
-            bipolar: {
-                title: "Bipolar Disorder",
-                description: "Bipolar disorder is characterized by extreme mood swings including emotional highs (mania or hypomania) and lows (depression). These shifts affect energy, activity levels, and the ability to carry out daily tasks.",
-                symptoms: "Symptoms",
-                symptomsList: [
-                    "Manic episodes: elevated mood, increased energy, reduced need for sleep",
-                    "Racing thoughts and rapid speech",
-                    "Impulsive or risky behavior during manic phases",
-                    "Depressive episodes: low mood, fatigue, loss of interest",
-                    "Extreme changes in activity and energy levels",
-                    "Difficulty maintaining relationships and work performance"
-                ],
-                treatment: "Treatment Options",
-                treatmentList: [
-                    "Mood stabilizing medications (lithium, anticonvulsants)",
-                    "Psychotherapy including CBT and family-focused therapy",
-                    "Maintaining regular sleep schedules",
-                    "Mood tracking and trigger identification",
-                    "Support groups for bipolar disorder",
-                    "Psychoeducation about the condition"
-                ]
-            },
-            
-            panic: {
-                title: "Panic Disorder",
-                description: "Panic disorder involves recurrent, unexpected panic attacks—sudden periods of intense fear or discomfort. People often worry about future attacks and may avoid situations where attacks have occurred.",
-                symptoms: "Symptoms",
-                symptomsList: [
-                    "Sudden intense fear or discomfort",
-                    "Rapid heartbeat, sweating, trembling",
-                    "Shortness of breath or feeling of choking",
-                    "Chest pain and nausea",
-                    "Dizziness or feeling faint",
-                    "Fear of losing control or dying",
-                    "Avoidance of places where attacks occurred"
-                ],
-                treatment: "Treatment Options",
-                treatmentList: [
-                    "Cognitive Behavioral Therapy (CBT) focused on panic",
-                    "Exposure therapy to reduce avoidance behaviors",
-                    "Anti-anxiety medications or antidepressants",
-                    "Breathing techniques and relaxation exercises",
-                    "Panic attack management strategies",
-                    "Lifestyle modifications including reduced caffeine"
-                ]
-            },
-            
-            delusional: {
-                title: "Delusional Disorder",
-                description: "Delusional disorder involves persistent false beliefs (delusions) despite evidence to the contrary. Unlike schizophrenia, people with this disorder generally function well aside from their delusions, which often involve persecution, jealousy, or grandiosity.",
-                symptoms: "Symptoms",
-                symptomsList: [
-                    "Non-bizarre delusions lasting at least one month",
-                    "Beliefs of being persecuted or conspired against",
-                    "Jealous delusions about partner's fidelity",
-                    "Grandiose beliefs about special abilities or identity",
-                    "Irritability or anger related to delusions",
-                    "Social isolation due to mistrust"
-                ],
-                treatment: "Treatment Options",
-                treatmentList: [
-                    "Antipsychotic medications",
-                    "Individual psychotherapy to build trust",
-                    "Cognitive Behavioral Therapy (CBT)",
-                    "Family therapy and psychoeducation",
-                    "Treatment of co-occurring anxiety or depression",
-                    "Building therapeutic alliance gradually"
-                ]
-            },
-            
-            eating: {
-                title: "Eating Disorders",
-                description: "Eating disorders are serious conditions involving persistent disturbances in eating behaviors and distressing thoughts about weight and shape. Types include anorexia nervosa, bulimia nervosa, and binge eating disorder.",
-                symptoms: "Symptoms",
-                symptomsList: [
-                    "Severe restriction of food intake or fasting",
-                    "Binge eating followed by compensatory behaviors",
-                    "Preoccupation with weight, food, and body shape",
-                    "Distorted body image",
-                    "Excessive exercise",
-                    "Social withdrawal, especially around meals",
-                    "Physical symptoms: fatigue, dizziness, hair loss"
-                ],
-                treatment: "Treatment Options",
-                treatmentList: [
-                    "Specialized eating disorder therapy (CBT-E, FBT, DBT)",
-                    "Nutritional counseling and meal planning",
-                    "Medical monitoring for physical complications",
-                    "Medications for co-occurring conditions",
-                    "Group therapy and support groups",
-                    "Inpatient or residential treatment for severe cases"
-                ]
-            },
-            
-            schizophrenia: {
-                title: "Schizophrenia",
-                description: "Schizophrenia is a serious mental disorder affecting thinking, feelings, and behavior. It involves psychosis including hallucinations and delusions, along with disorganized thinking and reduced emotional expression.",
-                symptoms: "Symptoms",
-                symptomsList: [
-                    "Hallucinations (seeing or hearing things that aren't there)",
-                    "Delusions (false beliefs)",
-                    "Disorganized speech and thinking",
-                    "Reduced emotional expression",
-                    "Lack of motivation and withdrawal",
-                    "Cognitive difficulties with memory and attention"
-                ],
-                treatment: "Treatment Options",
-                treatmentList: [
-                    "Antipsychotic medications (first-line treatment)",
-                    "Psychosocial interventions and skills training",
-                    "Cognitive Behavioral Therapy for psychosis",
-                    "Family education and support",
-                    "Supported employment and housing programs",
-                    "Coordinated specialty care programs"
-                ]
-            },
-            
-            histrionic: {
-                title: "Histrionic Personality Disorder",
-                description: "Histrionic Personality Disorder is characterized by excessive emotionality and attention-seeking behavior. People with this disorder feel uncomfortable when not the center of attention and may display rapidly shifting, shallow emotions.",
-                symptoms: "Symptoms",
-                symptomsList: [
-                    "Discomfort when not the center of attention",
-                    "Inappropriately seductive or provocative behavior",
-                    "Rapidly shifting and shallow emotions",
-                    "Use of physical appearance to draw attention",
-                    "Impressionistic, vague speech",
-                    "Exaggerated emotional expression",
-                    "Easily influenced by others"
-                ],
-                treatment: "Treatment Options",
-                treatmentList: [
-                    "Psychodynamic psychotherapy",
-                    "Cognitive Behavioral Therapy",
-                    "Group therapy for interpersonal skills",
-                    "Emotional regulation training",
-                    "Developing genuine self-esteem",
-                    "Medications for co-occurring anxiety or depression"
-                ]
-            },
-            
-            trichotillomania: {
-                title: "Trichotillomania (Hair-Pulling Disorder)",
-                description: "Trichotillomania involves recurrent pulling out of one's hair resulting in hair loss. The behavior is often preceded by tension and provides relief or gratification. It's classified as a body-focused repetitive behavior.",
-                symptoms: "Symptoms",
-                symptomsList: [
-                    "Recurrent pulling out of hair",
-                    "Noticeable hair loss",
-                    "Tension before pulling or when resisting",
-                    "Pleasure or relief after pulling",
-                    "Attempts to stop or decrease behavior",
-                    "Significant distress or impairment",
-                    "Often occurs during relaxation or concentration"
-                ],
-                treatment: "Treatment Options",
-                treatmentList: [
-                    "Habit Reversal Training (HRT)",
-                    "Cognitive Behavioral Therapy",
-                    "Acceptance and Commitment Therapy (ACT)",
-                    "Stimulus control techniques",
-                    "Medications (SSRIs, N-acetylcysteine)",
-                    "Support groups and peer support"
-                ]
-            },
-            
-            anankastic: {
-                title: "Anankastic (Obsessive-Compulsive) Personality Disorder",
-                description: "Anankastic personality disorder involves a pervasive pattern of preoccupation with orderliness, perfectionism, and control. Unlike OCD, it's a personality pattern rather than intrusive thoughts and compulsions.",
-                symptoms: "Symptoms",
-                symptomsList: [
-                    "Preoccupation with details, rules, and order",
-                    "Perfectionism that interferes with task completion",
-                    "Excessive devotion to work",
-                    "Inflexibility about morality and values",
-                    "Reluctance to delegate tasks",
-                    "Rigidity and stubbornness",
-                    "Difficulty discarding worn-out items"
-                ],
-                treatment: "Treatment Options",
-                treatmentList: [
-                    "Psychodynamic psychotherapy",
-                    "Cognitive Behavioral Therapy to challenge rigid thinking",
-                    "Relaxation training",
-                    "Flexibility exercises",
-                    "Interpersonal therapy",
-                    "Medications for anxiety if present"
-                ]
-            },
-            
-            avoidant: {
-                title: "Avoidant Personality Disorder",
-                description: "Avoidant Personality Disorder involves a pervasive pattern of social inhibition, feelings of inadequacy, and hypersensitivity to negative evaluation. People with this disorder desire relationships but avoid them due to fear of rejection.",
-                symptoms: "Symptoms",
-                symptomsList: [
-                    "Avoidance of social activities due to fear of criticism",
-                    "Unwillingness to get involved unless certain of being liked",
-                    "Restraint in intimate relationships",
-                    "Preoccupation with being criticized or rejected",
-                    "Inhibited in new social situations",
-                    "Views self as socially inept or inferior",
-                    "Reluctance to take personal risks"
-                ],
-                treatment: "Treatment Options",
-                treatmentList: [
-                    "Cognitive Behavioral Therapy",
-                    "Social skills training",
-                    "Exposure therapy for social situations",
-                    "Schema therapy",
-                    "Group therapy for interpersonal practice",
-                    "Medications for co-occurring anxiety or depression"
-                ]
-            },
-            
-            intermittent: {
-                title: "Intermittent Explosive Disorder",
-                description: "Intermittent Explosive Disorder involves repeated, sudden episodes of impulsive, aggressive, violent behavior or angry verbal outbursts grossly out of proportion to the situation.",
-                symptoms: "Symptoms",
-                symptomsList: [
-                    "Recurrent behavioral outbursts",
-                    "Verbal aggression or physical aggression",
-                    "Impulsive anger disproportionate to the trigger",
-                    "Tension or arousal before the episode",
-                    "Relief afterward, followed by remorse",
-                    "Significant distress or impairment",
-                    "Damage to property or relationships"
-                ],
-                treatment: "Treatment Options",
-                treatmentList: [
-                    "Cognitive Behavioral Therapy focused on anger management",
-                    "Relaxation techniques and stress management",
-                    "Medications (SSRIs, mood stabilizers)",
-                    "Impulse control training",
-                    "Communication skills development",
-                    "Avoiding triggers when possible"
-                ]
-            },
-            
-            bodyDysmorphic: {
-                title: "Body Dysmorphic Disorder",
-                description: "Body Dysmorphic Disorder involves preoccupation with perceived flaws in physical appearance that are not observable or appear minor to others. This preoccupation causes significant distress and impairment.",
-                symptoms: "Symptoms",
-                symptomsList: [
-                    "Preoccupation with perceived appearance flaws",
-                    "Repetitive behaviors (mirror checking, excessive grooming)",
-                    "Comparing appearance with others",
-                    "Seeking reassurance about appearance",
-                    "Avoidance of social situations",
-                    "Seeking cosmetic procedures with dissatisfaction",
-                    "Significant distress and functional impairment"
-                ],
-                treatment: "Treatment Options",
-                treatmentList: [
-                    "Cognitive Behavioral Therapy (CBT) for BDD",
-                    "Exposure and Response Prevention",
-                    "SSRIs (often at higher doses)",
-                    "Perceptual retraining",
-                    "Mindfulness-based interventions",
-                    "Avoid cosmetic procedures during active symptoms"
-                ]
-            },
-            
-            maladaptive: {
-                title: "Maladaptive Daydreaming",
-                description: "Maladaptive Daydreaming involves extensive fantasy activity that replaces human interaction and interferes with academic, interpersonal, or vocational functioning. The daydreaming is vivid, immersive, and often accompanied by repetitive movements.",
-                symptoms: "Symptoms",
-                symptomsList: [
-                    "Intense, vivid daydreaming for hours",
-                    "Accompanied by repetitive movements (pacing, rocking)",
-                    "Triggered by real-life events or sensory stimuli",
-                    "Difficulty stopping or controlling daydreams",
-                    "Interference with daily functioning",
-                    "Strong desire to continue daydreaming",
-                    "Distress when unable to daydream"
-                ],
-                treatment: "Management Strategies",
-                treatmentList: [
-                    "Cognitive Behavioral Therapy",
-                    "Mindfulness and grounding techniques",
-                    "Scheduled daydreaming time with limits",
-                    "Identifying and managing triggers",
-                    "Increasing real-world engagement",
-                    "Treatment of underlying conditions (ADHD, OCD)"
-                ]
-            },
-            
-            prolongedGrief: {
-                title: "Prolonged Grief Disorder",
-                description: "Prolonged Grief Disorder involves intense and persistent grief lasting beyond 12 months after the death of a loved one. The grief is severe enough to significantly impair functioning and quality of life.",
-                symptoms: "Symptoms",
-                symptomsList: [
-                    "Intense yearning or longing for the deceased",
-                    "Preoccupation with thoughts or memories",
-                    "Difficulty accepting the death",
-                    "Feeling life is meaningless without the deceased",
-                    "Intense emotional pain",
-                    "Avoidance of reminders of the loss",
-                    "Social withdrawal and isolation"
-                ],
-                treatment: "Treatment Options",
-                treatmentList: [
-                    "Prolonged Grief Disorder therapy (PGD-T)",
-                    "Complicated Grief Treatment (CGT)",
-                    "Cognitive Behavioral Therapy",
-                    "Grief support groups",
-                    "Meaning reconstruction and narrative therapy",
-                    "Antidepressants if co-occurring depression"
-                ]
-            },
-            
-            attachment: {
-                title: "Attachment Disorder",
-                description: "Attachment disorders develop from disrupted attachment patterns in early childhood. They involve difficulty forming healthy emotional bonds and can manifest as inhibited or disinhibited social engagement, affecting relationships throughout life.",
-                symptoms: "Symptoms",
-                symptomsList: [
-                    "Difficulty trusting or connecting with others",
-                    "Avoidance of comfort or affection",
-                    "Lack of emotional responsiveness",
-                    "Indiscriminate friendliness (disinhibited type)",
-                    "Fear of abandonment or rejection",
-                    "Difficulty regulating emotions",
-                    "Behavioral problems and aggression"
-                ],
-                treatment: "Treatment Options",
-                treatmentList: [
-                    "Attachment-based therapy",
-                    "Trauma-focused interventions",
-                    "Family therapy and caregiver training",
-                    "Play therapy for children",
-                    "Creating stable, consistent relationships",
-                    "Emotional regulation skills training"
-                ]
-            },
-            
-            dissociative: {
-                title: "Dissociative Identity Disorder",
-                description: "Dissociative Identity Disorder (DID), formerly called multiple personality disorder, involves the presence of two or more distinct personality states. It typically develops as a response to severe childhood trauma and involves disruption of identity and memory.",
-                symptoms: "Symptoms",
-                symptomsList: [
-                    "Two or more distinct personality states",
-                    "Gaps in memory beyond normal forgetting",
-                    "Depersonalization (feeling detached from self)",
-                    "Derealization (feeling world is unreal)",
-                    "Identity confusion and alteration",
-                    "Time loss and unexplained possessions",
-                    "Voices or internal dialogue"
-                ],
-                treatment: "Treatment Options",
-                treatmentList: [
-                    "Long-term psychotherapy (primary treatment)",
-                    "Phase-oriented trauma therapy",
-                    "EMDR for trauma processing",
-                    "Dialectical Behavior Therapy (DBT)",
-                    "Integration or collaboration between identity states",
-                    "Medications for co-occurring symptoms",
-                    "Building internal cooperation and safety"
-                ]
-            }
+            description: "Hi from the creators of InnerNest â€” a space built to bring peace, understanding, and connection to anyone navigating their mental health journey. We started InnerNest because we believe mental health deserves just as much care and conversation as physical health. Over the years, we have learned how powerful it can be to pause, reflect, and share â€” whether it's through journaling, music, mindfulness, or simply connecting with others who understand. Here, our goal is to make mental wellness more accessible and less intimidating. InnerNest offers articles, tools, and resources that encourage balance, healing, and self-awareness. Whether you're learning to manage anxiety, seeking calm through mindfulness, or just needing a reminder that you're not alone â€” this is your place to breathe and reset. Mental health isn't a destination â€” it's a journey. And InnerNest is here to help you find your peace along the way. ðŸŒ¸"
         },
         
         // Conditions Section
@@ -648,7 +147,7 @@ const translations = {
             messagePlaceholder: "Message",
             submitButton: "Submit",
             successTitle: "Form Submitted Successfully!",
-            successMessage: "Thanks for your input – your submission helps us improve. Continue exploring more resources.",
+            successMessage: "Thanks for your input â€“ your submission helps us improve. Continue exploring more resources.",
             nameError: "Please enter your name (at least 2 characters)",
             subjectError: "Please enter a subject (at least 3 characters)",
             messageError: "Please enter a message (at least 10 characters)",
@@ -680,7 +179,7 @@ const translations = {
                 },
                 post6: {
                     title: "Digital Detox & Mental Clarity",
-                    description: "Cutting screen time to 30 minutes a day helped me rediscover reading, journaling, and deep breathing – all of which brought calm to my mind.",
+                    description: "Cutting screen time to 30 minutes a day helped me rediscover reading, journaling, and deep breathing â€” all of which brought calm to my mind.",
                     author: "By Liam Patel"
                 }
             },
@@ -721,7 +220,7 @@ const translations = {
             encrypted: "End-to-end encrypted",
             endSession: "End Session",
             supportAssistant: "Support Assistant",
-            available: "Available 24/7 • Confidential Support",
+            available: "Available 24/7 â€¢ Confidential Support",
             clearChat: "Clear Chat",
             welcomeTitle: "Welcome to InnerNest",
             welcomeMessage: "This is a safe, confidential space where you can express yourself freely.",
@@ -750,7 +249,7 @@ const translations = {
             crisis: "Crisis Support",
             resources: "Resources",
             faq: "FAQ",
-            copyright: "© 2025 InnerNest. All rights reserved.",
+            copyright: "Â© 2025 InnerNest. All rights reserved.",
             privacy: "Privacy Policy",
             terms: "Terms of Service"
         },
@@ -771,540 +270,271 @@ const translations = {
     },
     
     es: {
-        // Navegación
+        // NavegaciÃ³n
         nav: {
             home: "Inicio",
-            blog: "Bitácora",
+            blog: "BitÃ¡cora",
             chat: "Charla",
             book: "Reservar"
         },
         
-        // Sección Principal
+        // SecciÃ³n Principal
         hero: {
             title: "Bienvenido a Tu Viaje de Salud Mental",
-            subtitle: "InnerNest es tu espacio seguro para el bienestar mental, el autodescubrimiento y el crecimiento. Conéctate con profesionales, accede a recursos y construye resiliencia.",
+            subtitle: "InnerNest es tu espacio seguro para el bienestar mental, el autodescubrimiento y el crecimiento. ConÃ©ctate con profesionales, accede a recursos y construye resiliencia.",
             games: "Juegos",
-            gamesDesc: "Para aliviar el estrés",
+            gamesDesc: "Para aliviar el estrÃ©s",
             support: "Apoyo",
-            supportDesc: "Orientación profesional",
-            mindfulness: "Atención plena",
+            supportDesc: "OrientaciÃ³n profesional",
+            mindfulness: "AtenciÃ³n plena",
             mindfulnessDesc: "Bienestar mental"
         },
         about: {
             title: "Acerca de Nosotros",
             teamPicture: "Foto del Equipo",
-            description: "Hola de los creadores de InnerNest – un espacio construido para traer paz, comprensión y conexión a cualquiera que navegue su viaje de salud mental. Comenzamos InnerNest porque creemos que la salud mental merece tanto cuidado y conversación como la salud física. A lo largo de los años, hemos aprendido cuán poderoso puede ser pausar, reflexionar y compartir – ya sea a través de escribir en un diario, música, mindfulness, o simplemente conectar con otros que entienden. Aquí, nuestro objetivo es hacer el bienestar mental más accesible y menos intimidante. InnerNest ofrece artículos, herramientas y recursos que fomentan el equilibrio, la curación y la autoconciencia. Ya sea que estés aprendiendo a manejar la ansiedad, buscando calma a través del mindfulness, o simplemente necesitando un recordatorio de que no estás solo – este es tu lugar para respirar y reiniciar. La salud mental no es un destino – es un viaje. Y InnerNest está aquí para ayudarte a encontrar tu paz en el camino. 🌸"
+            description: "Hola de los creadores de InnerNest â€” un espacio construido para traer paz, comprensiÃ³n y conexiÃ³n a cualquiera que navegue su viaje de salud mental. Comenzamos InnerNest porque creemos que la salud mental merece tanto cuidado y conversaciÃ³n como la salud fÃ­sica. A lo largo de los aÃ±os, hemos aprendido cuÃ¡n poderoso puede ser pausar, reflexionar y compartir â€” ya sea a travÃ©s de escribir en un diario, mÃºsica, mindfulness, o simplemente conectar con otros que entienden. AquÃ­, nuestro objetivo es hacer el bienestar mental mÃ¡s accesible y menos intimidante. InnerNest ofrece artÃ­culos, herramientas y recursos que fomentan el equilibrio, la curaciÃ³n y la autoconciencia. Ya sea que estÃ©s aprendiendo a manejar la ansiedad, buscando calma a travÃ©s del mindfulness, o simplemente necesitando un recordatorio de que no estÃ¡s solo â€” este es tu lugar para respirar y reiniciar. La salud mental no es un destino â€” es un viaje. Y InnerNest estÃ¡ aquÃ­ para ayudarte a encontrar tu paz en el camino. ðŸŒ¸"
         },
         
-        // Sección de Recursos
-        resources: {
-            mainTitle: "Comprendiendo las Condiciones de Salud Mental",
-            
-            // Detalles de trastornos
-            anxiety: {
-                title: "Trastornos de Ansiedad",
-                description: "Los trastornos de ansiedad se caracterizan por miedo excesivo, preocupación y alteraciones conductuales relacionadas. Incluyen trastorno de ansiedad generalizada (TAG), trastorno de pánico y trastorno de ansiedad social. Estas condiciones van más allá del nerviosismo normal y pueden impactar significativamente el funcionamiento diario.",
-                symptoms: "Síntomas",
-                symptomsList: [
-                    "Preocupación excesiva difícil de controlar",
-                    "Inquietud, sentirse nervioso o tenso",
-                    "Latidos rápidos del corazón, sudoración, temblores",
-                    "Dificultad para concentrarse o mente en blanco",
-                    "Alteraciones del sueño y tensión muscular",
-                    "Evitación de situaciones que provocan ansiedad"
-                ],
-                treatment: "Opciones de Tratamiento",
-                treatmentList: [
-                    "Terapia Cognitivo-Conductual (TCC) para identificar y cambiar patrones de pensamiento",
-                    "Medicamentos como ISRS o benzodiazepinas según prescripción",
-                    "Técnicas de relajación incluyendo respiración profunda y relajación muscular progresiva",
-                    "Ejercicio regular y hábitos de sueño saludables",
-                    "Meditación de atención plena y ejercicios de conexión a tierra"
-                ]
-            },
-            
-            depression: {
-                title: "Depresión",
-                description: "La depresión es un trastorno del estado de ánimo que causa sentimientos persistentes de tristeza y pérdida de interés. Afecta cómo te sientes, piensas y manejas las actividades diarias. El trastorno depresivo mayor, el trastorno afectivo estacional y la depresión bipolar son tipos comunes.",
-                symptoms: "Síntomas",
-                symptomsList: [
-                    "Estado de ánimo persistentemente triste, ansioso o vacío",
-                    "Pérdida de interés en actividades que antes disfrutabas",
-                    "Cambios en el apetito y el peso",
-                    "Alteraciones del sueño (insomnio o dormir en exceso)",
-                    "Fatiga y disminución de energía",
-                    "Sentimientos de inutilidad o culpa excesiva",
-                    "Dificultad para pensar, concentrarse o tomar decisiones"
-                ],
-                treatment: "Opciones de Tratamiento",
-                treatmentList: [
-                    "Psicoterapia (terapia de conversación) incluyendo TCC y terapia interpersonal",
-                    "Medicamentos antidepresivos según prescripción médica",
-                    "Actividad física regular y ejercicio",
-                    "Terapia de luz para el trastorno afectivo estacional",
-                    "Grupos de apoyo y apoyo entre pares",
-                    "Establecer rutina y mantener conexiones sociales"
-                ]
-            },
-            
-            stress: {
-                title: "Manejo del Estrés",
-                description: "El estrés crónico ocurre cuando la respuesta al estrés del cuerpo se activa con demasiada frecuencia o durante demasiado tiempo. Puede resultar de la presión laboral, cambios de vida o dificultades continuas. Aunque el estrés es normal, el estrés crónico puede llevar a problemas de salud graves.",
-                symptoms: "Síntomas",
-                symptomsList: [
-                    "Dolores de cabeza y tensión muscular",
-                    "Fatiga y problemas de sueño",
-                    "Irritabilidad y cambios de humor",
-                    "Dificultad para concentrarse",
-                    "Cambios en el apetito",
-                    "Síntomas físicos como malestar estomacal o dolor en el pecho"
-                ],
-                treatment: "Estrategias de Manejo",
-                treatmentList: [
-                    "Técnicas de gestión del tiempo y priorización",
-                    "Ejercicio regular y actividad física",
-                    "Prácticas de relajación como yoga, meditación o tai chi",
-                    "Límites saludables y aprender a decir no",
-                    "Apoyo social y conectar con otros",
-                    "Asesoramiento profesional o programas de manejo del estrés"
-                ]
-            },
-            
-            trauma: {
-                title: "Trauma y TEPT",
-                description: "El Trastorno de Estrés Postraumático (TEPT) puede desarrollarse después de experimentar o presenciar eventos traumáticos. El TEPT complejo resulta de trauma prolongado. Estas condiciones involucran recuerdos intrusivos, comportamientos de evitación y cambios en el estado de ánimo y el pensamiento.",
-                symptoms: "Síntomas",
-                symptomsList: [
-                    "Recuerdos intrusivos, flashbacks o pesadillas",
-                    "Evitación de recordatorios del trauma",
-                    "Cambios negativos en pensamientos y estado de ánimo",
-                    "Hipervigilancia y respuesta de sobresalto exagerada",
-                    "Dificultad para dormir y concentrarse",
-                    "Entumecimiento emocional o desapego"
-                ],
-                treatment: "Opciones de Tratamiento",
-                treatmentList: [
-                    "Terapia cognitivo-conductual enfocada en trauma (TF-CBT)",
-                    "Desensibilización y Reprocesamiento por Movimientos Oculares (EMDR)",
-                    "Terapia de exposición prolongada",
-                    "Medicamentos para manejar síntomas",
-                    "Técnicas de conexión a tierra y habilidades de regulación emocional",
-                    "Grupos de apoyo para sobrevivientes de trauma"
-                ]
-            },
-            
-            relationships: {
-                title: "Problemas de Relaciones",
-                description: "Las dificultades en las relaciones pueden afectar asociaciones románticas, dinámicas familiares y conexiones sociales. Los problemas comunes incluyen problemas de comunicación, desafíos en la resolución de conflictos, problemas de confianza y preocupaciones de apego que impactan el bienestar emocional.",
-                symptoms: "Señales Comunes",
-                symptomsList: [
-                    "Argumentos o conflictos frecuentes",
-                    "Comunicación deficiente o sentirse incomprendido",
-                    "Falta de intimidad emocional o conexión",
-                    "Problemas de confianza o celos",
-                    "Dificultad para establecer o respetar límites",
-                    "Sentirse aislado o sin apoyo"
-                ],
-                treatment: "Soluciones y Apoyo",
-                treatmentList: [
-                    "Terapia de pareja o consejería familiar",
-                    "Entrenamiento en habilidades de comunicación",
-                    "Aprender técnicas de escucha activa",
-                    "Estrategias de resolución de conflictos",
-                    "Terapia individual para abordar patrones personales",
-                    "Talleres de relaciones y grupos de apoyo"
-                ]
-            },
-            
-            selfcare: {
-                title: "Autocuidado y Bienestar",
-                description: "El autocuidado involucra actividades intencionales que promueven la salud física, mental y emocional. Construir prácticas de bienestar sostenibles ayuda a prevenir el agotamiento, manejar el estrés y mantener el bienestar general a través de la atención plena y hábitos saludables.",
-                symptoms: "Señales de que Necesitas Más Autocuidado",
-                symptomsList: [
-                    "Sentirse constantemente exhausto o agotado",
-                    "Descuidar las necesidades personales",
-                    "Mayor irritabilidad o reactividad emocional",
-                    "Deterioro de la salud física",
-                    "Pérdida de motivación o pasión",
-                    "Dificultad para disfrutar actividades"
-                ],
-                treatment: "Prácticas de Autocuidado",
-                treatmentList: [
-                    "Establecer horarios regulares de sueño y despertar",
-                    "Meditación de atención plena y ejercicios de respiración",
-                    "Actividad física y movimiento",
-                    "Nutrición saludable e hidratación",
-                    "Establecer límites y decir no",
-                    "Participar en pasatiempos y actividades agradables",
-                    "Conexión social y tiempo de calidad con seres queridos"
-                ]
-            },
-            
-            bipolar: {
-                title: "Trastorno Bipolar",
-                description: "El trastorno bipolar se caracteriza por cambios extremos de humor que incluyen altos emocionales (manía o hipomanía) y bajos (depresión). Estos cambios afectan la energía, los niveles de actividad y la capacidad de realizar tareas diarias.",
-                symptoms: "Síntomas",
-                symptomsList: [
-                    "Episodios maníacos: estado de ánimo elevado, mayor energía, necesidad reducida de sueño",
-                    "Pensamientos acelerados y habla rápida",
-                    "Comportamiento impulsivo o arriesgado durante fases maníacas",
-                    "Episodios depresivos: estado de ánimo bajo, fatiga, pérdida de interés",
-                    "Cambios extremos en actividad y niveles de energía",
-                    "Dificultad para mantener relaciones y desempeño laboral"
-                ],
-                treatment: "Opciones de Tratamiento",
-                treatmentList: [
-                    "Medicamentos estabilizadores del estado de ánimo (litio, anticonvulsivos)",
-                    "Psicoterapia incluyendo TCC y terapia enfocada en la familia",
-                    "Mantener horarios regulares de sueño",
-                    "Seguimiento del estado de ánimo e identificación de desencadenantes",
-                    "Grupos de apoyo para trastorno bipolar",
-                    "Psicoeducación sobre la condición"
-                ]
-            },
-            
-            panic: {
-                title: "Trastorno de Pánico",
-                description: "El trastorno de pánico involucra ataques de pánico recurrentes e inesperados—períodos repentinos de miedo o incomodidad intensos. Las personas a menudo se preocupan por futuros ataques y pueden evitar situaciones donde han ocurrido ataques.",
-                symptoms: "Síntomas",
-                symptomsList: [
-                    "Miedo o incomodidad intensa repentina",
-                    "Latidos rápidos del corazón, sudoración, temblores",
-                    "Falta de aire o sensación de asfixia",
-                    "Dolor en el pecho y náuseas",
-                    "Mareos o sensación de desmayo",
-                    "Miedo a perder el control o morir",
-                    "Evitación de lugares donde ocurrieron ataques"
-                ],
-                treatment: "Opciones de Tratamiento",
-                treatmentList: [
-                    "Terapia Cognitivo-Conductual (TCC) enfocada en pánico",
-                    "Terapia de exposición para reducir comportamientos de evitación",
-                    "Medicamentos contra la ansiedad o antidepresivos",
-                    "Técnicas de respiración y ejercicios de relajación",
-                    "Estrategias de manejo de ataques de pánico",
-                    "Modificaciones del estilo de vida incluyendo reducción de cafeína"
-                ]
-            },
-            
-            delusional: {
-                title: "Trastorno Delirante",
-                description: "El trastorno delirante involucra creencias falsas persistentes (delirios) a pesar de evidencia contraria. A diferencia de la esquizofrenia, las personas con este trastorno generalmente funcionan bien aparte de sus delirios, que a menudo involucran persecución, celos o grandiosidad.",
-                symptoms: "Síntomas",
-                symptomsList: [
-                    "Delirios no extraños que duran al menos un mes",
-                    "Creencias de ser perseguido o conspirado en contra",
-                    "Delirios celosos sobre la fidelidad de la pareja",
-                    "Creencias grandiosas sobre habilidades o identidad especiales",
-                    "Irritabilidad o ira relacionada con delirios",
-                    "Aislamiento social debido a desconfianza"
-                ],
-                treatment: "Opciones de Tratamiento",
-                treatmentList: [
-                    "Medicamentos antipsicóticos",
-                    "Psicoterapia individual para construir confianza",
-                    "Terapia Cognitivo-Conductual (TCC)",
-                    "Terapia familiar y psicoeducación",
-                    "Tratamiento de ansiedad o depresión concurrente",
-                    "Construcción de alianza terapéutica gradualmente"
-                ]
-            },
-            
-            eating: {
-                title: "Trastornos Alimentarios",
-                description: "Los trastornos alimentarios son condiciones graves que involucran alteraciones persistentes en los comportamientos alimentarios y pensamientos angustiantes sobre el peso y la forma. Los tipos incluyen anorexia nerviosa, bulimia nerviosa y trastorno por atracón.",
-                symptoms: "Síntomas",
-                symptomsList: [
-                    "Restricción severa de la ingesta de alimentos o ayuno",
-                    "Comer en exceso seguido de comportamientos compensatorios",
-                    "Preocupación por el peso, la comida y la forma corporal",
-                    "Imagen corporal distorsionada",
-                    "Ejercicio excesivo",
-                    "Retraimiento social, especialmente alrededor de comidas",
-                    "Síntomas físicos: fatiga, mareos, pérdida de cabello"
-                ],
-                treatment: "Opciones de Tratamiento",
-                treatmentList: [
-                    "Terapia especializada para trastornos alimentarios (CBT-E, FBT, DBT)",
-                    "Asesoramiento nutricional y planificación de comidas",
-                    "Monitoreo médico para complicaciones físicas",
-                    "Medicamentos para condiciones concurrentes",
-                    "Terapia de grupo y grupos de apoyo",
-                    "Tratamiento hospitalario o residencial para casos severos"
-                ]
-            },
-            
-            schizophrenia: {
-                title: "Esquizofrenia",
-                description: "La esquizofrenia es un trastorno mental grave que afecta el pensamiento, los sentimientos y el comportamiento. Involucra psicosis incluyendo alucinaciones y delirios, junto con pensamiento desorganizado y expresión emocional reducida.",
-                symptoms: "Síntomas",
-                symptomsList: [
-                    "Alucinaciones (ver u oír cosas que no están allí)",
-                    "Delirios (creencias falsas)",
-                    "Habla y pensamiento desorganizados",
-                    "Expresión emocional reducida",
-                    "Falta de motivación y retraimiento",
-                    "Dificultades cognitivas con memoria y atención"
-                ],
-                treatment: "Opciones de Tratamiento",
-                treatmentList: [
-                    "Medicamentos antipsicóticos (tratamiento de primera línea)",
-                    "Intervenciones psicosociales y entrenamiento de habilidades",
-                    "Terapia Cognitivo-Conductual para psicosis",
-                    "Educación y apoyo familiar",
-                    "Programas de empleo y vivienda con apoyo",
-                    "Programas de atención especializada coordinada"
-                ]
-            },
-            
-            histrionic: {
-                title: "Trastorno de Personalidad Histriónico",
-                description: "El Trastorno de Personalidad Histriónico se caracteriza por emocionalidad excesiva y comportamiento de búsqueda de atención. Las personas con este trastorno se sienten incómodas cuando no son el centro de atención y pueden mostrar emociones rápidamente cambiantes y superficiales.",
-                symptoms: "Síntomas",
-                symptomsList: [
-                    "Incomodidad cuando no es el centro de atención",
-                    "Comportamiento inapropiadamente seductor o provocativo",
-                    "Emociones rápidamente cambiantes y superficiales",
-                    "Uso de apariencia física para llamar la atención",
-                    "Habla impresionista y vaga",
-                    "Expresión emocional exagerada",
-                    "Fácilmente influenciado por otros"
-                ],
-                treatment: "Opciones de Tratamiento",
-                treatmentList: [
-                    "Psicoterapia psicodinámica",
-                    "Terapia Cognitivo-Conductual",
-                    "Terapia de grupo para habilidades interpersonales",
-                    "Entrenamiento en regulación emocional",
-                    "Desarrollar autoestima genuina",
-                    "Medicamentos para ansiedad o depresión concurrente"
-                ]
-            },
-            
-            trichotillomania: {
-                title: "Tricotilomanía (Trastorno de Tirón de Pelo)",
-                description: "La tricotilomanía involucra el tirón recurrente del propio cabello resultando en pérdida de cabello. El comportamiento a menudo está precedido por tensión y proporciona alivio o gratificación. Se clasifica como un comportamiento repetitivo enfocado en el cuerpo.",
-                symptoms: "Síntomas",
-                symptomsList: [
-                    "Tirón recurrente del cabello",
-                    "Pérdida de cabello notable",
-                    "Tensión antes de tirar o al resistir",
-                    "Placer o alivio después de tirar",
-                    "Intentos de detener o disminuir el comportamiento",
-                    "Angustia o deterioro significativo",
-                    "A menudo ocurre durante relajación o concentración"
-                ],
-                treatment: "Opciones de Tratamiento",
-                treatmentList: [
-                    "Entrenamiento de Reversión de Hábitos (HRT)",
-                    "Terapia Cognitivo-Conductual",
-                    "Terapia de Aceptación y Compromiso (ACT)",
-                    "Técnicas de control de estímulos",
-                    "Medicamentos (ISRS, N-acetilcisteína)",
-                    "Grupos de apoyo y apoyo entre pares"
-                ]
-            },
-            
-            anankastic: {
-                title: "Trastorno de Personalidad Anancástico (Obsesivo-Compulsivo)",
-                description: "El trastorno de personalidad anancástico involucra un patrón generalizado de preocupación por el orden, el perfeccionismo y el control. A diferencia del TOC, es un patrón de personalidad en lugar de pensamientos intrusivos y compulsiones.",
-                symptoms: "Síntomas",
-                symptomsList: [
-                    "Preocupación por detalles, reglas y orden",
-                    "Perfeccionismo que interfiere con la finalización de tareas",
-                    "Devoción excesiva al trabajo",
-                    "Inflexibilidad sobre moralidad y valores",
-                    "Reticencia a delegar tareas",
-                    "Rigidez y terquedad",
-                    "Dificultad para desechar artículos gastados"
-                ],
-                treatment: "Opciones de Tratamiento",
-                treatmentList: [
-                    "Psicoterapia psicodinámica",
-                    "Terapia Cognitivo-Conductual para desafiar pensamiento rígido",
-                    "Entrenamiento de relajación",
-                    "Ejercicios de flexibilidad",
-                    "Terapia interpersonal",
-                    "Medicamentos para ansiedad si está presente"
-                ]
-            },
-            
-            avoidant: {
-                title: "Trastorno de Personalidad Evitativa",
-                description: "El Trastorno de Personalidad Evitativa involucra un patrón generalizado de inhibición social, sentimientos de inadecuación e hipersensibilidad a la evaluación negativa. Las personas con este trastorno desean relaciones pero las evitan debido al miedo al rechazo.",
-                symptoms: "Síntomas",
-                symptomsList: [
-                    "Evitación de actividades sociales por miedo a la crítica",
-                    "Reticencia a involucrarse a menos que esté seguro de ser apreciado",
-                    "Restricción en relaciones íntimas",
-                    "Preocupación por ser criticado o rechazado",
-                    "Inhibido en nuevas situaciones sociales",
-                    "Se ve a sí mismo como socialmente inepto o inferior",
-                    "Reticencia a tomar riesgos personales"
-                ],
-                treatment: "Opciones de Tratamiento",
-                treatmentList: [
-                    "Terapia Cognitivo-Conductual",
-                    "Entrenamiento en habilidades sociales",
-                    "Terapia de exposición para situaciones sociales",
-                    "Terapia de esquemas",
-                    "Terapia de grupo para práctica interpersonal",
-                    "Medicamentos para ansiedad o depresión concurrente"
-                ]
-            },
-            
-            intermittent: {
-                title: "Trastorno Explosivo Intermitente",
-                description: "El Trastorno Explosivo Intermitente involucra episodios repetidos y repentinos de comportamiento impulsivo, agresivo y violento o arrebatos verbales de ira groseramente desproporcionados a la situación.",
-                symptoms: "Síntomas",
-                symptomsList: [
-                    "Arrebatos conductuales recurrentes",
-                    "Agresión verbal o agresión física",
-                    "Ira impulsiva desproporcionada al desencadenante",
-                    "Tensión o excitación antes del episodio",
-                    "Alivio después, seguido de remordimiento",
-                    "Angustia o deterioro significativo",
-                    "Daño a propiedad o relaciones"
-                ],
-                treatment: "Opciones de Tratamiento",
-                treatmentList: [
-                    "Terapia Cognitivo-Conductual enfocada en manejo de la ira",
-                    "Técnicas de relajación y manejo del estrés",
-                    "Medicamentos (ISRS, estabilizadores del estado de ánimo)",
-                    "Entrenamiento en control de impulsos",
-                    "Desarrollo de habilidades de comunicación",
-                    "Evitar desencadenantes cuando sea posible"
-                ]
-            },
-            
-            bodyDysmorphic: {
-                title: "Trastorno Dismórfico Corporal",
-                description: "El Trastorno Dismórfico Corporal involucra preocupación con defectos percibidos en la apariencia física que no son observables o parecen menores para otros. Esta preocupación causa angustia y deterioro significativos.",
-                symptoms: "Síntomas",
-                symptomsList: [
-                    "Preocupación con defectos de apariencia percibidos",
-                    "Comportamientos repetitivos (revisar espejos, aseo excesivo)",
-                    "Comparar apariencia con otros",
-                    "Buscar tranquilidad sobre la apariencia",
-                    "Evitación de situaciones sociales",
-                    "Buscar procedimientos cosméticos con insatisfacción",
-                    "Angustia significativa y deterioro funcional"
-                ],
-                treatment: "Opciones de Tratamiento",
-                treatmentList: [
-                    "Terapia Cognitivo-Conductual (TCC) para TDC",
-                    "Exposición y Prevención de Respuesta",
-                    "ISRS (a menudo en dosis más altas)",
-                    "Reentrenamiento perceptual",
-                    "Intervenciones basadas en atención plena",
-                    "Evitar procedimientos cosméticos durante síntomas activos"
-                ]
-            },
-            
-            maladaptive: {
-                title: "Soñar Despierto Desadaptativo",
-                description: "El Soñar Despierto Desadaptativo involucra actividad de fantasía extensa que reemplaza la interacción humana e interfiere con el funcionamiento académico, interpersonal o vocacional. El soñar despierto es vívido, inmersivo y a menudo acompañado de movimientos repetitivos.",
-                symptoms: "Síntomas",
-                symptomsList: [
-                    "Soñar despierto intenso y vívido durante horas",
-                    "Acompañado de movimientos repetitivos (caminar, mecerse)",
-                    "Desencadenado por eventos de la vida real o estímulos sensoriales",
-                    "Dificultad para detener o controlar los sueños",
-                    "Interferencia con el funcionamiento diario",
-                    "Fuerte deseo de continuar soñando despierto",
-                    "Angustia cuando no puede soñar despierto"
-                ],
-                treatment: "Estrategias de Manejo",
-                treatmentList: [        
-                    "Terapia Cognitivo-Conductual",
-                    "Técnicas de atención plena y conexión a tierra",
-                    "Tiempo de ensueño programado con límites",
-                    "Identificar y manejar desencadenantes",
-                    "Aumentar el compromiso con el mundo real",
-                    "Tratamiento de condiciones subyacentes (TDAH, TOC)"
-                ]
-            },
-            prolongedGrief: {
-                title: "Trastorno de Duelo Prolongado",
-                description: "El Trastorno de Duelo Prolongado involucra dolor intenso y persistente que dura más de 12 meses después de la muerte de un ser querido. El dolor es lo suficientemente severo como para afectar significativamente el funcionamiento y la calidad de vida.",
-                symptoms: "Síntomas",
-                symptomsList: [
-                    "Anhelo o añoranza intensos por el fallecido",
-                    "Preocupación con pensamientos o recuerdos",
-                    "Dificultad para aceptar la muerte",
-                    "Sentir que la vida no tiene sentido sin el fallecido",
-                    "Dolor emocional intenso",
-                    "Evitación de recordatorios de la pérdida",
-                    "Retraimiento social y aislamiento"
-                ],
-                treatment: "Opciones de Tratamiento",
-                treatmentList: [
-                    "Terapia para el Trastorno de Duelo Prolongado (PGD-T)",
-                    "Tratamiento de Duelo Complicado (CGT)",
-                    "Terapia Cognitivo-Conductual",
-                    "Grupos de apoyo para el duelo",
-                    "Reconstrucción de significado y terapia narrativa",
-                    "Antidepresivos si hay depresión concurrente"
-                ]
-            },
-            
-            attachment: {
-                title: "Trastorno de Apego",
-                description: "Los trastornos de apego se desarrollan a partir de patrones de apego interrumpidos en la primera infancia. Involucran dificultad para formar vínculos emocionales saludables y pueden manifestarse como compromiso social inhibido o desinhibido, afectando las relaciones a lo largo de la vida.",
-                symptoms: "Síntomas",
-                symptomsList: [
-                    "Dificultad para confiar o conectarse con otros",
-                    "Evitación de consuelo o afecto",
-                    "Falta de respuesta emocional",
-                    "Amabilidad indiscriminada (tipo desinhibido)",
-                    "Miedo al abandono o rechazo",
-                    "Dificultad para regular emociones",
-                    "Problemas de comportamiento y agresión"
-                ],
-                treatment: "Opciones de Tratamiento",
-                treatmentList: [
-                    "Terapia basada en el apego",
-                    "Intervenciones enfocadas en trauma",
-                    "Terapia familiar y capacitación para cuidadores",
-                    "Terapia de juego para niños",
-                    "Crear relaciones estables y consistentes",
-                    "Entrenamiento en habilidades de regulación emocional"
-                ]
-            },
-            
-            dissociative: {
-                title: "Trastorno de Identidad Disociativo",
-                description: "El Trastorno de Identidad Disociativo (TID), anteriormente llamado trastorno de personalidad múltiple, involucra la presencia de dos o más estados de personalidad distintos. Típicamente se desarrolla como respuesta a trauma infantil severo e involucra interrupción de identidad y memoria.",
-                symptoms: "Síntomas",
-                symptomsList: [
-                    "Dos o más estados de personalidad distintos",
-                    "Lagunas en la memoria más allá del olvido normal",
-                    "Despersonalización (sentirse desconectado de sí mismo)",
-                    "Desrealización (sentir que el mundo es irreal)",
-                    "Confusión y alteración de identidad",
-                    "Pérdida de tiempo y posesiones inexplicables",
-                    "Voces o diálogo interno"
-                ],
-                treatment: "Opciones de Tratamiento",
-                treatmentList: [
-                    "Psicoterapia a largo plazo (tratamiento primario)",
-                    "Terapia de trauma orientada por fases",
-                    "EMDR para procesamiento de trauma",
-                    "Terapia Dialéctico-Conductual (DBT)",
-                    "Integración o colaboración entre estados de identidad",
-                    "Medicamentos para síntomas concurrentes",
-                    "Construir cooperación y seguridad interna"
-                ]
-            }
-        },
-        
-        // Sección de Condiciones
+        // SecciÃ³n de Condiciones
         conditions: {
             title: "Comprendiendo las Condiciones de Salud Mental",
-            // ... (resto de las condiciones ya traducidas arriba)
+            anxiety: {
+                title: "Trastornos de Ansiedad",
+                description: "Aprende sobre los sÃ­ntomas de ansiedad, estrategias de afrontamiento y opciones de tratamiento.",
+                tags: ["TAG", "PÃ¡nico", "Social"]
+            },
+            depression: {
+                title: "DepresiÃ³n",
+                description: "Comprendiendo la depresiÃ³n, su impacto y caminos hacia la recuperaciÃ³n y el apoyo.",
+                tags: ["Mayor", "Estacional", "Bipolar"]
+            },
+            stress: {
+                title: "Manejo del EstrÃ©s",
+                description: "TÃ©cnicas y estrategias efectivas para manejar el estrÃ©s diario y la presiÃ³n.",
+                tags: ["Trabajo", "Vida", "CrÃ³nico"]
+            },
+            trauma: {
+                title: "Trauma y TEPT",
+                description: "Apoyo y recursos para sobrevivientes de trauma y recuperaciÃ³n de TEPT.",
+                tags: ["TEPT", "Complejo", "RecuperaciÃ³n"]
+            },
+            relationships: {
+                title: "Problemas de Relaciones",
+                description: "OrientaciÃ³n para mejorar las relaciones y habilidades de comunicaciÃ³n.",
+                tags: ["Parejas", "Familia", "Social"]
+            },
+            selfcare: {
+                title: "Autocuidado y Bienestar",
+                description: "Construyendo hÃ¡bitos saludables y prÃ¡cticas sostenibles de autocuidado.",
+                tags: ["Mindfulness", "HÃ¡bitos", "Balance"]
+            },
+            biPolarDisorder: {
+                title: "Trastorno Bipolar",
+                description: "Aprende sobre los sÃ­ntomas del trastorno bipolar, estrategias de afrontamiento y opciones de tratamiento.",
+                tags: ["ManÃ­a", "DepresiÃ³n", "Estado de Ã¡nimo"]
+            },
+            panicdisorder: {
+                title: "Trastorno de PÃ¡nico",
+                description: "Comprendiendo el trastorno de pÃ¡nico, su impacto y caminos hacia la recuperaciÃ³n y el apoyo.",
+                tags: ["Ansiedad", "PÃ¡nico", "Miedo"]
+            },
+            delusionaldisorder: {
+                title: "Trastorno Delirante",
+                description: "TÃ©cnicas y estrategias efectivas para manejar el estrÃ©s diario y la presiÃ³n.",
+                tags: ["Paranoia", "Creencia", "PersecuciÃ³n"]
+            },
+            eatingDisorder: {
+                title: "Trastorno Alimentario",
+                description: "Apoyo y recursos para personas que luchan con trastornos alimentarios.",
+                tags: ["AlimentaciÃ³n", "AtracÃ³n", "Bulimia"]
+            },
+            Schizophrenia: {
+                title: "Esquizofrenia",
+                description: "OrientaciÃ³n para manejar los sÃ­ntomas y mejorar la calidad de vida.",
+                tags: ["Psicosis", "VisiÃ³n", "Delirios"]
+            },
+            HistrionicPersonalityDisorder: {
+                title: "Trastorno de Personalidad HistriÃ³nico",
+                description: "Construyendo hÃ¡bitos saludables y prÃ¡cticas sostenibles de autocuidado.",
+                tags: ["Emocional", "DramÃ¡tico", "Pose"]
+            },
+            Trichotillomania: {
+                title: "TricotilomanÃ­a",
+                description: "Reemplazar el tirÃ³n con hÃ¡bitos calmantes en cada impulso.",
+                tags: ["TirÃ³n de pelo", "Impulso", "Alivio"]
+            },
+            anankasticPersonalityDisorder: {
+                title: "Trastorno de Personalidad AnancÃ¡stico",
+                description: "Construir flexibilidad diaria trae paz y equilibrio.",
+                tags: ["Perfeccionista", "Ordenado", "Fijo"]
+            },
+            avoidantPersonalityDisorder: {
+                title: "Trastorno de Personalidad Evitativa",
+                description: "Construir coraje lentamente alivia el miedo y el aislamiento.",
+                tags: ["TÃ­mido", "Temeroso", "RetraÃ­do"]
+            },
+            intermittentExplosiveDisorder: {
+                title: "Trastorno Explosivo Intermitente",
+                description: "Construir hÃ¡bitos de calma previene la ira repentina y el daÃ±o.",
+                tags: ["Ira", "Impulsivo", "Intenso"]
+            },
+            bodyDysmorphicDisorder: {
+                title: "Trastorno DismÃ³rfico Corporal",
+                description: "Construir amor propio reduce pensamientos daÃ±inos sobre la apariencia.",
+                tags: ["CrÃ­tico", "Ansioso", "Inseguro"]
+            },
+            maladaptiveDaydreaming: {
+                title: "SoÃ±ar Despierto Desadaptativo",
+                description: "Construir enfoque ayuda a aterrizar sueÃ±os en la realidad.",
+                tags: ["DistraÃ­do", "SoÃ±ador", "Evitador"]
+            },
+            prolongedGriefDisorder: {
+                title: "Trastorno de Duelo Prolongado",
+                description: "Construir apoyo alivia el dolor y nutre la curaciÃ³n.",
+                tags: ["Triste", "Persistente", "Solitario"]
+            },
+            attachmentDisorder: {
+                title: "Trastorno de Apego",
+                description: "Construir confianza lentamente fortalece la conexiÃ³n emocional y la seguridad.",
+                tags: ["Desconfiado", "Aislado", "Inseguro"]
+            },
+            dissociativeIdentityDisorder: {
+                title: "Trastorno de Identidad Disociativo",
+                description: "Construir integraciÃ³n promueve armonÃ­a entre mÃºltiples identidades.",
+                tags: ["Disociativo", "Perdido", "Complejo"]
+            },
+            loadMore: "Cargar MÃ¡s"
         },
         
-        // ... (resto de las secciones ya completadas: blog, booking, chat, footer, emergency)
+        // SecciÃ³n de Blog
+        blog: {
+            title: "Testimonio",
+            reviewTitle: "Tu ReseÃ±a",
+            namePlaceholder: "Tu Nombre",
+            subjectPlaceholder: "Asunto",
+            messagePlaceholder: "Mensaje",
+            submitButton: "Enviar",
+            successTitle: "Â¡Formulario Enviado Exitosamente!",
+            successMessage: "Gracias por tu aporte, tu envÃ­o nos ayuda a mejorar. ContinÃºa explorando mÃ¡s recursos.",
+            nameError: "Por favor ingresa tu nombre (al menos 2 caracteres)",
+            subjectError: "Por favor ingresa un asunto (al menos 3 caracteres)",
+            messageError: "Por favor ingresa un mensaje (al menos 10 caracteres)",
+            posts: {
+                post1: {
+                    title: "Encontrando la Calma Cuando Mi CorazÃ³n No Se Calma",
+                    description: "DespuÃ©s de cinco aÃ±os de ataques de pÃ¡nico diarios, descubrÃ­ ejercicios de conexiÃ³n a tierra que convirtieron mi ansiedad en un ritmo manejable.",
+                    author: "Por Rajan Patel"
+                },
+                post2: {
+                    title: "Por QuÃ© la Terapia Es Mi Salvavidas, No un Lujo",
+                    description: "Cuando la depresiÃ³n me hizo sentir invisible, un terapeuta constante me ayudÃ³ a reconstruir mi autoestima, sesiÃ³n tras sesiÃ³n.",
+                    author: "Por Mara Kim"
+                },
+                post3: {
+                    title: "Juntos Prosperamos: Apoyo Entre Pares en la RecuperaciÃ³n",
+                    description: "Unirme a un grupo de apoyo local me dio responsabilidad y compasiÃ³n, demostrando que las experiencias compartidas sanan mÃ¡s rÃ¡pido.",
+                    author: "Por Emily Torres"
+                },
+                post4: {
+                    title: "Mindfulness en el Trabajo: Un Reinicio Diario",
+                    description: "Dedicar diez minutos a la respiraciÃ³n concentrada en el almuerzo redujo mi pico de estrÃ©s y aumentÃ³ mi creatividad laboral.",
+                    author: "Por Arun Gupta"
+                },
+                post5: {
+                    title: "Construyendo Resiliencia DespuÃ©s del Trauma",
+                    description: "A travÃ©s de imÃ¡genes guiadas y proyectos de arte comunitario, recuperÃ© la alegrÃ­a en pequeÃ±os momentos, aprendiendo que la curaciÃ³n es un viaje, no un destino.",
+                    author: "Por Sofia Reyes"
+                },
+                post6: {
+                    title: "DesintoxicaciÃ³n Digital y Claridad Mental",
+                    description: "Reducir el tiempo de pantalla a 30 minutos al dÃ­a me ayudÃ³ a redescubrir la lectura, el diario y la respiraciÃ³n profunda, todo lo cual trajo calma a mi mente.",
+                    author: "Por Liam Patel"
+                }
+            },
+            testimony: "Testimonio",
+            comments: "Comentarios"
+        },
+        
+        // SecciÃ³n de Reservas
+        booking: {
+            title: "Programar Cita",
+            nameLabel: "Nombre:",
+            namePlaceholder: "Tu Nombre",
+            emailLabel: "Correo electrÃ³nico:",
+            emailPlaceholder: "Tu Email",
+            phoneLabel: "TelÃ©fono:",
+            phonePlaceholder: "Tu TelÃ©fono",
+            datePlaceholder: "Fecha de Reserva",
+            subjectLabel: "Asunto:",
+            subjectPlaceholder: "Asunto",
+            messageLabel: "Mensaje",
+            messagePlaceholder: "Mensaje",
+            submitButton: "Enviar"
+        },
+        
+        // SecciÃ³n de Chat
+        chat: {
+            crisisBanner: "Si estÃ¡s en crisis, llama al 988 (LÃ­nea de Vida para Suicidio y Crisis) o al 911 para ayuda inmediata",
+            userProfile: "Usuario AnÃ³nimo",
+            safeSpace: "Seguro y Confidencial",
+            moodQuestion: "Â¿CÃ³mo te sientes?",
+            quickTools: "Herramientas RÃ¡pidas",
+            breathingExercise: "Ejercicio de RespiraciÃ³n",
+            guidedMeditation: "MeditaciÃ³n Guiada",
+            journalEntry: "Entrada de Diario",
+            copingStrategies: "Estrategias de Afrontamiento",
+            sessionInfo: "Info de SesiÃ³n",
+            duration: "DuraciÃ³n",
+            encrypted: "Cifrado de extremo a extremo",
+            endSession: "Terminar SesiÃ³n",
+            supportAssistant: "Asistente de Apoyo",
+            available: "Disponible 24/7 â€¢ Apoyo Confidencial",
+            clearChat: "Limpiar Chat",
+            welcomeTitle: "Bienvenido a InnerNest",
+            welcomeMessage: "Este es un espacio seguro y confidencial donde puedes expresarte libremente.",
+            confidential: "100% Confidencial",
+            nonjudgmental: "Apoyo Sin Juicios",
+            available247: "Disponible 24/7",
+            promptsLabel: "Iniciadores de conversaciÃ³n rÃ¡pidos:",
+            feelingAnxious: "Me siento ansioso",
+            needTalk: "Necesito hablar con alguien",
+            troubleSleeping: "Problemas para dormir",
+            feelingOverwhelmed: "Me siento abrumado",
+            copingStrategiesPrompt: "Estrategias de afrontamiento",
+            messagePlaceholder: "Escribe tu mensaje aquÃ­... Recuerda, este es un espacio seguro.",
+            pressEnter: "Presiona Enter para enviar, Shift+Enter para nueva lÃ­nea"
+        },
+        
+        // Pie de PÃ¡gina
+        footer: {
+            tagline: "Tu santuario para el bienestar mental y el crecimiento.",
+            quickLinks: "Enlaces RÃ¡pidos",
+            home: "Inicio",
+            services: "Servicios",
+            blog: "BitÃ¡cora",
+            contact: "Contacto",
+            support: "Apoyo",
+            crisis: "Apoyo en Crisis",
+            resources: "Recursos",
+            faq: "Preguntas Frecuentes",
+            copyright: "Â© 2025 InnerNest. Todos los derechos reservados.",
+            privacy: "PolÃ­tica de Privacidad",
+            terms: "TÃ©rminos de Servicio"
+        },
+        
+        // Contactos de Emergencia
+        emergency: {
+            title: "Recursos de Apoyo en Crisis",
+            subtitle: "No estÃ¡s solo. La ayuda estÃ¡ disponible 24/7.",
+            ohioTitle: "LÃ­neas Directas de Ohio",
+            nationalTitle: "LÃ­neas Directas Nacionales",
+            suicidePrevention: "PrevenciÃ³n del Suicidio",
+            call: "Llamar",
+            text: "Texto",
+            website: "Sitio Web",
+            immediateHelp: "Si estÃ¡s en peligro inmediato, llama al 911",
+            close: "Cerrar"
+        }
     }
 };
 
@@ -1344,23 +574,415 @@ class LanguageManager {
         });
         
         this.translatePage();
-        this.showNotification(lang === 'en' ? 'Language changed to English' : 'Idioma cambiado a Español');
+        this.showNotification(lang === 'en' ? 'Language changed to English' : 'Idioma cambiado a EspaÃ±ol');
     }
     
     translatePage() {
         const t = translations[this.currentLanguage];
         
+        // Translate navigation
         this.translateNav(t.nav);
+
+        // Translate About Us
         this.translateAboutSection(t.about);
+        
+        // Translate hero section
         this.translateHero(t.hero);
+        
+        // Translate conditions section
         this.translateConditions(t.conditions);
+        
+        // Translate blog section if present
         this.translateBlogSection(t.blog);
+        
+        // Translate booking section if present
         this.translateBookingSection(t.booking);
+        
+        // Translate chat section if present
         this.translateChatSection(t.chat);
+        
+        // Translate footer
         this.translateFooter(t.footer);
     }
     
-    // ... (resto de los métodos del LanguageManager ya proporcionados)
+    translateNav(nav) {
+        this.translateElement('.nav-link#home .nav-text', nav.home);
+        this.translateElement('.nav-link#blog .nav-text', nav.blog);
+        this.translateElement('.nav-link#chatb .nav-text', nav.chat);
+        this.translateElement('.nav-link#booka .nav-text', nav.book);
+        
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+        if (mobileLinks.length >= 4) {
+            const texts = [nav.home, nav.blog, nav.chat, nav.book];
+            mobileLinks.forEach((link, i) => {
+                const textNode = Array.from(link.childNodes).find(n => n.nodeType === 3);
+                if (textNode) textNode.textContent = ' ' + texts[i];
+            });
+        }
+    }
+    
+    
+    translateHero(hero) {
+        this.translateElement('.hero-title', hero.title);
+        this.translateElement('.hero-subtitle', hero.subtitle);
+        
+        const floatingCards = document.querySelectorAll('.floating-card');
+        if (floatingCards.length >= 3) {
+            const cards = [
+                { h3: hero.games, p: hero.gamesDesc },
+                { h3: hero.support, p: hero.supportDesc },
+                { h3: hero.mindfulness, p: hero.mindfulnessDesc }
+            ];
+            floatingCards.forEach((card, i) => {
+                const h3 = card.querySelector('h3');
+                const p = card.querySelector('p');
+                if (h3) h3.textContent = cards[i].h3;
+                if (p) p.textContent = cards[i].p;
+            });
+        }
+    }
+    translateAboutSection(about) {
+        // Title
+        const aboutTitle = document.querySelector('#about_title h2');
+        if (aboutTitle) aboutTitle.textContent = about.title;
+        
+        // Team Picture
+        const teamPicture = document.querySelector('#team-picture');
+        if (teamPicture) teamPicture.textContent = about.teamPicture;
+        
+        // Description
+        const aboutDescription = document.querySelector('#about_description p');
+        if (aboutDescription) aboutDescription.textContent = about.description;
+    }
+    
+    translateConditions(conditions) {
+        // Main title
+        const titles = document.querySelectorAll('#disoder_preview h2, .description h2');
+        titles.forEach(title => {
+            if (title.textContent.includes('Understanding') || title.textContent.includes('Comprendiendo')) {
+                title.textContent = conditions.title;
+            }
+        });
+        
+        // Individual conditions
+        Object.keys(conditions).forEach(key => {
+            if (key !== 'title' && key !== 'loadMore') {
+                this.translateCondition(key, conditions[key]);
+            }
+        });
+        
+        // Load More button
+        const loadMore = document.querySelector('#learnmore h4');
+        if (loadMore) loadMore.textContent = conditions.loadMore;
+    }
+    
+    translateCondition(id, translation) {
+        const element = document.getElementById(id);
+        if (!element) return;
+        
+        const title = element.querySelector('h3');
+        const description = element.querySelector('p');
+        const tags = element.querySelectorAll('.tag');
+        
+        if (title) title.textContent = translation.title;
+        if (description) description.textContent = translation.description;
+        if (tags.length === translation.tags.length) {
+            tags.forEach((tag, index) => {
+                tag.textContent = translation.tags[index];
+            });
+        }
+    }
+    
+    translateBlogSection(blog) {
+        // Main title
+        const testTitle = document.querySelector('#test-title h2');
+        if (testTitle) testTitle.textContent = blog.reviewTitle;
+        
+        // Form labels and placeholders
+        const nameLabel = document.querySelector('#name_label');
+        if (nameLabel) nameLabel.textContent = blog.nameLabel;
+        
+        const nameInput = document.querySelector('#name');
+        if (nameInput) nameInput.placeholder = blog.namePlaceholder;
+        
+        const subjectLabel = document.querySelector('#subject');
+        if (subjectLabel) subjectLabel.textContent = 'Asunto:';
+        
+        const subjectInput = document.querySelector('#subject-input');
+        if (subjectInput) subjectInput.placeholder = blog.subjectPlaceholder;
+        
+        const messageLabel = document.querySelector('#message_label');
+        if (messageLabel) messageLabel.textContent = 'Mensaje:';
+        
+        const messageTextarea = document.querySelector('#message');
+        if (messageTextarea) messageTextarea.placeholder = blog.messagePlaceholder;
+        
+        // Submit button
+        const submitBtn = document.querySelector('#test-submit h4');
+        if (submitBtn) submitBtn.textContent = blog.submitButton;
+        
+        // Success message
+        const successTitle = document.querySelector('#submit-message h4');
+        if (successTitle) successTitle.textContent = blog.successTitle;
+        
+        const successMsg = document.querySelector('#submit-message p');
+        if (successMsg) successMsg.textContent = blog.successMessage;
+        
+        // Error messages
+        const nameError = document.getElementById('name-error');
+        if (nameError) nameError.textContent = blog.nameError;
+        
+        const subjectError = document.getElementById('subject-error');
+        if (subjectError) subjectError.textContent = blog.subjectError;
+        
+        const messageError = document.getElementById('message-error');
+        if (messageError) messageError.textContent = blog.messageError;
+        
+        // Blog posts
+        const posts = [
+            { selector: '[data-blog-id="1"]', data: blog.posts.post1 },
+            { selector: '[data-blog-id="2"]', data: blog.posts.post2 },
+            { selector: '[data-blog-id="3"]', data: blog.posts.post3 },
+            { selector: '[data-blog-id="4"]', data: blog.posts.post4 },
+            { selector: '[data-blog-id="5"]', data: blog.posts.post5 },
+            { selector: '[data-blog-id="6"]', data: blog.posts.post6 }
+        ];
+        
+        posts.forEach(post => {
+            const element = document.querySelector(post.selector);
+            if (!element) return;
+            
+            const title = element.querySelector('h3');
+            const description = element.querySelector('p:not([style])');
+            const author = element.querySelector('p[style*="font-size: 0.9rem"]');
+            
+            if (title) title.textContent = post.data.title;
+            if (description) description.textContent = post.data.description;
+            if (author) author.textContent = post.data.author;
+        });
+        
+        // Testimony heading on index page
+        const testimonyHeading = document.querySelectorAll('h2');
+        testimonyHeading.forEach(h2 => {
+            if (h2.textContent.includes('Testimony') || h2.textContent.includes('Testimonio')) {
+                h2.textContent = blog.title;
+            }
+        });
+        
+        // Translate testimonies on index page (without data-blog-id)
+        const testimonies = document.querySelectorAll('#testimony .condition-item, .disorder-container:last-of-type .condition-item');
+        const testimonyData = [
+            blog.posts.post1,
+            blog.posts.post2,
+            blog.posts.post3,
+            blog.posts.post4,
+            blog.posts.post5,
+            blog.posts.post6
+        ];
+        
+        testimonies.forEach((testimony, index) => {
+            if (index < testimonyData.length) {
+                const h3 = testimony.querySelector('h3');
+                const p = testimony.querySelector('p');
+                
+                if (h3 && p && !testimony.hasAttribute('data-blog-id')) {
+                    // Check if this is a testimony card (has author name in h3)
+                    if (h3.textContent.includes('Rajan') || h3.textContent.includes('Mara') || 
+                        h3.textContent.includes('Justin') || h3.textContent.includes('Arun') || 
+                        h3.textContent.includes('Sofia') || h3.textContent.includes('Liam')) {
+                        // Keep the name, translate the description
+                        p.textContent = testimonyData[index].description;
+                    }
+                }
+            }
+        });
+        
+        // Translate the main blog description on blog.html
+        const blogDescription = document.querySelector('.description h2');
+        if (blogDescription && blogDescription.closest('.disorder-container') && 
+            (blogDescription.textContent.includes('Finding Calm') || 
+             blogDescription.textContent.includes('Encontrando la Calma'))) {
+            blogDescription.textContent = blog.posts.post1.title;
+        }
+        
+        const blogDescriptionP = document.querySelector('.description p');
+        if (blogDescriptionP && blogDescriptionP.closest('.disorder-container') &&
+            (blogDescriptionP.textContent.includes('After five years') || 
+             blogDescriptionP.textContent.includes('DespuÃ©s de cinco aÃ±os'))) {
+            blogDescriptionP.textContent = blog.posts.post1.description;
+        }
+    }
+
+
+    
+    translateBookingSection(booking) {
+        // Title
+        const title = document.querySelector('#s_appointment h1');
+        if (title) title.textContent = booking.title;
+        
+        // Form fields
+        const nameLabel = document.querySelector('#name_label');
+        if (nameLabel) nameLabel.textContent = booking.nameLabel;
+        const nameInput = document.querySelector('input[name="name"]');
+        if (nameInput) nameInput.placeholder = booking.namePlaceholder;
+        
+        const emailLabel = document.querySelector('#email_label');
+        if (emailLabel) emailLabel.textContent = booking.emailLabel;
+        
+        const emailInput = document.querySelector('input[name="email"]');
+        if (emailInput) emailInput.placeholder = booking.emailPlaceholder;
+        
+        const phoneLabel = document.querySelector('#phone');
+        if (phoneLabel) phoneLabel.textContent = booking.phoneLabel;
+        
+        const phoneInput = document.querySelector('input[name="phone"]');
+        if (phoneInput) phoneInput.placeholder = booking.phonePlaceholder;
+        
+        const dateInput = document.querySelector('input[name="date"]');
+        if (dateInput) dateInput.placeholder = booking.datePlaceholder;
+        
+        const subjectLabel = document.querySelector('#subject');
+        if (subjectLabel) subjectLabel.textContent = booking.subjectLabel;
+        
+        const subjectInput = document.querySelector('input[name="subject"]');
+        if (subjectInput) subjectInput.placeholder = booking.subjectPlaceholder;
+        
+        const messageLabel = document.querySelector('#message_label');
+        if (messageLabel) messageLabel.textContent = booking.messageLabel;
+        
+        const messageTextarea = document.querySelector('#message');
+        if (messageTextarea) messageTextarea.placeholder = booking.messagePlaceholder;
+        
+        const submitBtn = document.querySelector('#submit');
+        if (submitBtn) submitBtn.textContent = booking.submitButton;
+    }
+    
+    translateChatSection(chat) {
+        // Crisis banner
+        const crisisBanner = document.querySelector('.crisis-content span');
+        if (crisisBanner) {
+            const strong = crisisBanner.querySelector('strong');
+            if (strong) {
+                const numbers = ['988', '911'];
+                let text = chat.crisisBanner;
+                crisisBanner.innerHTML = text.replace('988', '<strong>988</strong>').replace('911', '<strong>911</strong>');
+            }
+        }
+        
+        // User profile
+        this.translateElement('.user-info h3', chat.userProfile);
+        this.translateElement('.user-status', chat.safeSpace);
+        
+        // Mood tracker
+        this.translateElement('.mood-tracker h4', chat.moodQuestion);
+        
+        // Quick tools
+        this.translateElement('.quick-tools h4', chat.quickTools);
+        const toolBtns = document.querySelectorAll('.tool-btn span:last-child');
+        if (toolBtns.length >= 4) {
+            toolBtns[0].textContent = chat.breathingExercise;
+            toolBtns[1].textContent = chat.guidedMeditation;
+            toolBtns[2].textContent = chat.journalEntry;
+            toolBtns[3].textContent = chat.copingStrategies;
+        }
+        
+        // Session info
+        this.translateElement('.session-info h4', chat.sessionInfo);
+        const sessionTimeLabel = document.querySelector('.session-time');
+        if (sessionTimeLabel) {
+            const timeSpan = sessionTimeLabel.querySelector('span');
+            if (timeSpan) {
+                sessionTimeLabel.childNodes[0].textContent = chat.duration + ': ';
+            }
+        }
+        this.translateElement('.session-privacy', `ðŸ”’ ${chat.encrypted}`);
+        this.translateElement('.end-session-btn', chat.endSession);
+        
+        // Chat header
+        this.translateElement('.assistant-info h3', chat.supportAssistant);
+        const assistantStatus = document.querySelector('.assistant-status');
+        if (assistantStatus) {
+            const statusDot = assistantStatus.querySelector('.status-dot');
+            assistantStatus.innerHTML = '';
+            if (statusDot) assistantStatus.appendChild(statusDot);
+            assistantStatus.appendChild(document.createTextNode(' ' + chat.available));
+        }
+        this.translateElement('.clear-chat-btn', chat.clearChat);
+        
+        // Welcome message
+        this.translateElement('.welcome-message h2', chat.welcomeTitle);
+        this.translateElement('.welcome-message > p', chat.welcomeMessage);
+        
+        const features = document.querySelectorAll('.feature span:last-child');
+        if (features.length >= 3) {
+            features[0].textContent = chat.confidential;
+            features[1].textContent = chat.nonjudgmental;
+            features[2].textContent = chat.available247;
+        }
+        
+        // Suggested prompts
+        this.translateElement('.prompts-label', chat.promptsLabel);
+        const prompts = document.querySelectorAll('.prompt-chip');
+        if (prompts.length >= 5) {
+            prompts[0].textContent = chat.feelingAnxious;
+            prompts[1].textContent = chat.needTalk;
+            prompts[2].textContent = chat.troubleSleeping;
+            prompts[3].textContent = chat.feelingOverwhelmed;
+            prompts[4].textContent = chat.copingStrategiesPrompt;
+        }
+        
+        // Input area
+        this.translatePlaceholder('#messageInput', chat.messagePlaceholder);
+        const inputHint = document.querySelector('.input-hint span');
+        if (inputHint) inputHint.textContent = chat.pressEnter;
+    }
+    
+    translateFooter(footer) {
+        const footerSections = document.querySelectorAll('.footer-section');
+        if (footerSections.length >= 3) {
+            // First section
+            const tagline = footerSections[0].querySelector('p');
+            if (tagline) tagline.textContent = footer.tagline;
+            
+            // Quick Links section
+            const quickLinksTitle = footerSections[1].querySelector('h4');
+            if (quickLinksTitle) quickLinksTitle.textContent = footer.quickLinks;
+            
+            const quickLinks = footerSections[1].querySelectorAll('li a');
+            if (quickLinks.length >= 4) {
+                quickLinks[0].textContent = footer.home;
+                quickLinks[1].textContent = footer.services;
+                quickLinks[2].textContent = footer.blog;
+                quickLinks[3].textContent = footer.contact;
+            }
+            
+            // Support section
+            const supportTitle = footerSections[2].querySelector('h4');
+            if (supportTitle) supportTitle.textContent = footer.support;
+            
+            const supportLinks = footerSections[2].querySelectorAll('li a');
+            if (supportLinks.length >= 3) {
+                supportLinks[0].textContent = footer.crisis;
+                supportLinks[1].textContent = footer.resources;
+                supportLinks[2].textContent = footer.faq;
+            }
+        }
+        
+        const footerBottom = document.querySelector('.footer-bottom p');
+        if (footerBottom) {
+            footerBottom.innerHTML = `${footer.copyright} | ${footer.privacy} | ${footer.terms}`;
+        }
+    }
+    
+    translateElement(selector, text) {
+        const element = document.querySelector(selector);
+        if (element) element.textContent = text;
+    }
+    
+    translatePlaceholder(selector, text) {
+        const element = document.querySelector(selector);
+        if (element) element.placeholder = text;
+    }
     
     showNotification(message) {
         const existingNotification = document.querySelector('.language-notification');
@@ -1385,6 +1007,30 @@ class LanguageManager {
         `;
         notification.textContent = message;
         
+        if (!document.getElementById('notification-animations')) {
+            const animStyles = document.createElement('style');
+            animStyles.id = 'notification-animations';
+            animStyles.textContent = `
+                @keyframes slideInRight {
+                    from {
+                        transform: translateX(400px);
+                        opacity: 0;
+                    }
+                    to {
+                        transform: translateX(0);
+                        opacity: 1;
+                    }
+                }
+                @keyframes fadeOut {
+                    to {
+                        opacity: 0;
+                        transform: translateX(400px);
+                    }
+                }
+            `;
+            document.head.appendChild(animStyles);
+        }
+        
         document.body.appendChild(notification);
         
         setTimeout(() => {
@@ -1393,6 +1039,7 @@ class LanguageManager {
             }
         }, 3000);
     }
+    
 }
 
 // Initialize language manager when DOM is ready
