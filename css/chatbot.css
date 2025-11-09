@@ -1045,7 +1045,8 @@ body.dark-mode .clear-chat-btn{
     color: #E5E7EB;
     border-color: transparent;
 }
-body.dark-mode .end-session-btn {
+body.dark-mode .end-session-btn,
+body.dark-mode .clear-chat-btn{
     background: #ff0000;
     color: #E5E7EB;
     border-color: transparent;
