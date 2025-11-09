@@ -550,7 +550,7 @@ body {
 
 .prompts-label {
     font-size: 12px;
-    color: #000000;
+    color: #ffffff;
     margin-bottom: 10px;
 }
 
@@ -970,7 +970,7 @@ body {
     .quick-tools {
         display: flex;
         justify-content: center;
-        flex-direction: row;
+        flex-direction: column;
         flex-wrap: wrap;
         gap: 8px;
     }
@@ -1030,7 +1030,7 @@ body.dark-mode .suggested-prompts,
 body.dark-mode .welcome-message {
     background: #232A25;
     color: #E5E7EB;
-    border-color: #374151;
+    border-color: transparent;
 }
 
 body.dark-mode .nav-link, 
@@ -1044,7 +1044,7 @@ body.dark-mode .clear-chat-btn,
 body.dark-mode .end-session-btn {
     background: #232A25;
     color: #E5E7EB;
-    border-color: #374151;
+    border-color: transparent;
 }
 
 body.dark-mode .message.user .message-content {
@@ -1055,7 +1055,7 @@ body.dark-mode .message.user .message-content {
 body.dark-mode .message.assistant .message-content {
     background: #232A25;
     color: #E5E7EB;
-    border-color: #374151;
+    border-color: transparent;
 }
 
 body.dark-mode .messages-container {
@@ -1065,7 +1065,7 @@ body.dark-mode .messages-container {
 body.dark-mode .typing-bubble {
     background: #232A25;
     color: #E5E7EB;
-    border-color: #374151;
+    border-color: transparent;
 }
 
 body.dark-mode .breathing-circle {
@@ -1075,7 +1075,7 @@ body.dark-mode .breathing-circle {
 body.dark-mode .journal-textarea {
     background: #1A1F1B;
     color: #E5E7EB;
-    border-color: #374151;
+    border-color: transparent;
 }
 
 body.dark-mode ::-webkit-scrollbar-thumb {
