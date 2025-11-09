@@ -1040,9 +1040,13 @@ body.dark-mode .message-content,
 body.dark-mode .message-input, 
 body.dark-mode .attachment-btn, 
 body.dark-mode .voice-btn, 
-body.dark-mode .clear-chat-btn, 
-body.dark-mode .end-session-btn {
+body.dark-mode .clear-chat-btn{
     background: #232A25;
+    color: #E5E7EB;
+    border-color: transparent;
+}
+body.dark-mode .end-session-btn {
+    background: #ff0000;
     color: #E5E7EB;
     border-color: transparent;
 }
