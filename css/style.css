@@ -3386,3 +3386,22 @@ body.dark-mode #cure-list li {
     height: auto;
     border-radius: 14px;
 }
+#anxietyicon
+{
+    width: 25%;
+    height: auto;
+    border-radius: 14px;
+}
+#depressionicon
+{
+    width: 25%;
+    height: auto;
+    border-radius: 14px;
+}
+#stressicon
+{
+    width: 25%;
+    height: auto;
+    border-radius: 14px;
+    margin-bottom: 25px;
+}
