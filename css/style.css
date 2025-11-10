@@ -297,6 +297,7 @@ body {
 .card-icon {
     font-size: 2.5rem;
     margin-bottom: 15px;
+
 }
 
 .floating-card h3 {
@@ -3367,5 +3368,21 @@ body.dark-mode #cure-list li {
     }
     
 }
-
-
+#mindfullnessicon
+{
+    width: 25%;
+    height: auto;
+    border-radius: 14px;
+}
+#sessionicon
+{
+    width: 20%;
+    height: auto;
+    border-radius: 14px;
+}
+#gamesicon
+{
+    width: 35%;
+    height: auto;
+    border-radius: 14px;
+}
