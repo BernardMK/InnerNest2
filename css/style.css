@@ -3411,3 +3411,15 @@ body.dark-mode #cure-list li {
     height: auto;
     border-radius: 14px;
 }
+#traumaicon
+{
+    width: 25%;
+    height: auto;
+    border-radius: 14px;
+}
+#relationshipicon
+{
+    width: 50%;
+    height: auto;
+    border-radius: 14px;
+}
