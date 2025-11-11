@@ -1,12 +1,12 @@
-// preferences.js - Universal Cookie-based Preferences Manager for InnerNest
-// This file handles theme and language preferences across all pages
+// preferences.js - Enhanced Universal Preferences Manager for InnerNest
+// Handles theme and language preferences with smooth transitions and accessibility
 
 /**
- * Cookie Manager - Handles all cookie operations
+ * Cookie Manager - Secure cookie operations with enhanced features
  */
 class CookieManager {
     /**
-     * Set a cookie with expiration
+     * Set a cookie with expiration and security options
      * @param {string} name - Cookie name
      * @param {string} value - Cookie value
      * @param {number} days - Days until expiration (default: 365)
@@ -51,17 +51,31 @@ class CookieManager {
     static hasCookie(name) {
         return this.getCookie(name) !== null;
     }
+
+    /**
+     * Get all InnerNest cookies
+     * @returns {Object} Object with all preference cookies
+     */
+    static getAllPreferences() {
+        return {
+            theme: this.getCookie('innerNestTheme'),
+            language: this.getCookie('innerNestLanguage'),
+            timestamp: this.getCookie('innerNestTimestamp')
+        };
+    }
 }
 
 /**
- * Universal Preferences Manager - Handles theme and language preferences
+ * Enhanced Universal Preferences Manager
  */
 class UniversalPreferencesManager {
     constructor() {
         this.THEME_COOKIE = 'innerNestTheme';
         this.LANGUAGE_COOKIE = 'innerNestLanguage';
+        this.TIMESTAMP_COOKIE = 'innerNestTimestamp';
         this.theme = this.getThemePreference();
         this.language = this.getLanguagePreference();
+        this.transitionDuration = 300; // ms for smooth transitions
         
         this.init();
     }
@@ -72,6 +86,7 @@ class UniversalPreferencesManager {
     init() {
         // Apply saved preferences immediately (before DOM loads to prevent flashing)
         this.applyThemeImmediate();
+        this.saveTimestamp();
         
         // Wait for DOM to be ready for other operations
         if (document.readyState === 'loading') {
@@ -89,11 +104,14 @@ class UniversalPreferencesManager {
         this.applyLanguage(this.language, false);
         this.setupThemeToggle();
         this.setupLanguageToggle();
+        this.addTransitionStyles();
+        this.setupAccessibility();
+        this.setupKeyboardShortcuts();
         this.logPreferences();
     }
 
     /**
-     * Get saved theme preference
+     * Get saved theme preference with system preference fallback
      * @returns {string} 'dark' or 'light'
      */
     getThemePreference() {
@@ -111,7 +129,7 @@ class UniversalPreferencesManager {
     }
 
     /**
-     * Get saved language preference
+     * Get saved language preference with browser language fallback
      * @returns {string} 'en' or 'es'
      */
     getLanguagePreference() {
@@ -138,23 +156,30 @@ class UniversalPreferencesManager {
             if (document.body) {
                 document.body.classList.add('dark-mode');
             }
+        } else {
+            document.documentElement.classList.remove('dark-mode');
+            if (document.body) {
+                document.body.classList.remove('dark-mode');
+            }
         }
     }
 
     /**
-     * Apply theme to the page
-     * @param {string} theme 
-     * @param {boolean} showNotification
+     * Apply theme to the page with smooth transition
+     * @param {string} theme - 'dark' or 'light'
+     * @param {boolean} showNotification - Whether to show notification
      */
     applyTheme(theme, showNotification = true) {
         const isDark = theme === 'dark';
         
-        // Properly apply or remove dark mode
+        // Add transition class for smooth change
+        document.body.classList.add('theme-transitioning');
+        
+        // Apply or remove dark mode
         if (isDark) {
             document.documentElement.classList.add('dark-mode');
             document.body.classList.add('dark-mode');
         } else {
-            // Remove dark mode completely for light theme
             document.documentElement.classList.remove('dark-mode');
             document.body.classList.remove('dark-mode');
         }
@@ -164,19 +189,33 @@ class UniversalPreferencesManager {
         themeToggles.forEach(toggle => {
             toggle.innerHTML = isDark ? '☀️' : '🌙';
             toggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+            toggle.setAttribute('title', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+            
+            // Add animation class
+            toggle.classList.add('toggle-animate');
+            setTimeout(() => toggle.classList.remove('toggle-animate'), 300);
         });
         
         // Force a reflow to ensure styles are recalculated
         void document.body.offsetHeight;
         
+        // Remove transition class after animation
+        setTimeout(() => {
+            document.body.classList.remove('theme-transitioning');
+        }, this.transitionDuration);
+        
         // Save preference
         CookieManager.setCookie(this.THEME_COOKIE, theme);
         this.theme = theme;
+        this.saveTimestamp();
+        
+        // Trigger custom event for other scripts to listen
+        this.triggerEvent('themeChanged', { theme });
         
         if (showNotification) {
             this.showNotification(
-                isDark ? 'Dark mode enabled' : 'Light mode enabled',
-                isDark ? 'Modo oscuro activado' : 'Modo claro activado'
+                isDark ? '🌙 Dark mode enabled' : '☀️ Light mode enabled',
+                isDark ? '🌙 Modo oscuro activado' : '☀️ Modo claro activado'
             );
         }
     }
@@ -187,17 +226,25 @@ class UniversalPreferencesManager {
      * @param {boolean} showNotification - Whether to show notification
      */
     applyLanguage(language, showNotification = true) {
-        // Update language buttons
+        // Update language buttons with smooth transition
         document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.lang === language);
+            const isActive = btn.dataset.lang === language;
+            btn.classList.toggle('active', isActive);
+            
+            // Add pulse animation to active button
+            if (isActive && showNotification) {
+                btn.classList.add('lang-pulse');
+                setTimeout(() => btn.classList.remove('lang-pulse'), 600);
+            }
         });
         
-        // Update html lang attribute
+        // Update html lang attribute for accessibility
         document.documentElement.lang = language;
         
         // Save preference
         CookieManager.setCookie(this.LANGUAGE_COOKIE, language);
         this.language = language;
+        this.saveTimestamp();
         
         // Trigger language manager if it exists
         if (window.languageManager) {
@@ -205,19 +252,21 @@ class UniversalPreferencesManager {
             window.languageManager.translatePage();
         }
         
+        // Trigger custom event
+        this.triggerEvent('languageChanged', { language });
+        
         if (showNotification) {
             this.showNotification(
-                'Language changed to English',
-                'Idioma cambiado a Español'
+                language === 'en' ? '🇺🇸 Language changed to English' : '🇪🇸 Idioma cambiado a Español',
+                language === 'en' ? '🇺🇸 Language changed to English' : '🇪🇸 Idioma cambiado a Español'
             );
         }
     }
 
     /**
-     * Setup theme toggle functionality
+     * Setup theme toggle functionality with enhanced UX
      */
     setupThemeToggle() {
-        // Find all theme toggle buttons
         const themeToggles = document.querySelectorAll('.theme-toggle, #themeToggle');
         
         themeToggles.forEach(toggle => {
@@ -225,19 +274,31 @@ class UniversalPreferencesManager {
             const newToggle = toggle.cloneNode(true);
             toggle.parentNode.replaceChild(newToggle, toggle);
             
-            // Add new listener
-            newToggle.addEventListener('click', () => {
+            // Add click listener
+            newToggle.addEventListener('click', (e) => {
+                e.preventDefault();
                 const newTheme = this.theme === 'dark' ? 'light' : 'dark';
                 this.applyTheme(newTheme, true);
             });
             
-            // Set initial state
+            // Add hover effect
+            newToggle.addEventListener('mouseenter', () => {
+                newToggle.style.transform = 'scale(1.1) rotate(10deg)';
+            });
+            
+            newToggle.addEventListener('mouseleave', () => {
+                newToggle.style.transform = 'scale(1) rotate(0deg)';
+            });
+            
+            // Set initial state with accessibility
             newToggle.innerHTML = this.theme === 'dark' ? '☀️' : '🌙';
+            newToggle.setAttribute('role', 'button');
+            newToggle.setAttribute('tabindex', '0');
         });
     }
 
     /**
-     * Setup language toggle functionality
+     * Setup language toggle functionality with enhanced UX
      */
     setupLanguageToggle() {
         document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -245,18 +306,133 @@ class UniversalPreferencesManager {
             const newBtn = btn.cloneNode(true);
             btn.parentNode.replaceChild(newBtn, btn);
             
-            // Add new listener
+            // Add click listener
             newBtn.addEventListener('click', (e) => {
+                e.preventDefault();
                 const newLang = e.target.dataset.lang;
-                if (newLang !== this.language) {
+                if (newLang && newLang !== this.language) {
                     this.applyLanguage(newLang, true);
                 }
             });
+            
+            // Add keyboard support
+            newBtn.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    newBtn.click();
+                }
+            });
+            
+            // Accessibility attributes
+            newBtn.setAttribute('role', 'button');
+            newBtn.setAttribute('tabindex', '0');
+            newBtn.setAttribute('aria-pressed', newBtn.dataset.lang === this.language ? 'true' : 'false');
         });
     }
 
     /**
-     * Show notification message
+     * Add smooth transition styles
+     */
+    addTransitionStyles() {
+        if (!document.getElementById('preference-transitions')) {
+            const styles = document.createElement('style');
+            styles.id = 'preference-transitions';
+            styles.textContent = `
+                /* Smooth theme transitions */
+                body.theme-transitioning,
+                body.theme-transitioning * {
+                    transition: background-color 0.3s ease, 
+                                color 0.3s ease, 
+                                border-color 0.3s ease,
+                                box-shadow 0.3s ease !important;
+                }
+                
+                /* Toggle button animations */
+                .theme-toggle, #themeToggle {
+                    transition: transform 0.2s ease, opacity 0.2s ease;
+                    cursor: pointer;
+                }
+                
+                .theme-toggle.toggle-animate {
+                    animation: toggleBounce 0.3s ease;
+                }
+                
+                @keyframes toggleBounce {
+                    0%, 100% { transform: scale(1) rotate(0deg); }
+                    50% { transform: scale(1.2) rotate(180deg); }
+                }
+                
+                /* Language button pulse */
+                .lang-btn.lang-pulse {
+                    animation: langPulse 0.6s ease;
+                }
+                
+                @keyframes langPulse {
+                    0%, 100% { transform: scale(1); }
+                    50% { transform: scale(1.1); }
+                }
+                
+                /* Language button styles */
+                .lang-btn {
+                    transition: all 0.2s ease;
+                    cursor: pointer;
+                }
+                
+                .lang-btn:hover {
+                    transform: translateY(-2px);
+                }
+                
+                .lang-btn:active {
+                    transform: translateY(0);
+                }
+            `;
+            document.head.appendChild(styles);
+        }
+    }
+
+    /**
+     * Setup accessibility features
+     */
+    setupAccessibility() {
+        // Announce theme changes to screen readers
+        const announcer = document.createElement('div');
+        announcer.id = 'preference-announcer';
+        announcer.setAttribute('role', 'status');
+        announcer.setAttribute('aria-live', 'polite');
+        announcer.setAttribute('aria-atomic', 'true');
+        announcer.style.cssText = `
+            position: absolute;
+            left: -10000px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        `;
+        document.body.appendChild(announcer);
+    }
+
+    /**
+     * Setup keyboard shortcuts
+     */
+    setupKeyboardShortcuts() {
+        document.addEventListener('keydown', (e) => {
+            // Alt + T = Toggle theme
+            if (e.altKey && e.key.toLowerCase() === 't') {
+                e.preventDefault();
+                const newTheme = this.theme === 'dark' ? 'light' : 'dark';
+                this.applyTheme(newTheme, true);
+            }
+            
+            // Alt + L = Toggle language
+            if (e.altKey && e.key.toLowerCase() === 'l') {
+                e.preventDefault();
+                const newLang = this.language === 'en' ? 'es' : 'en';
+                this.applyLanguage(newLang, true);
+            }
+        });
+    }
+
+    /**
+     * Show enhanced notification message
      * @param {string} messageEn - English message
      * @param {string} messageEs - Spanish message
      */
@@ -271,6 +447,8 @@ class UniversalPreferencesManager {
         
         const notification = document.createElement('div');
         notification.className = 'preference-notification';
+        notification.setAttribute('role', 'status');
+        notification.setAttribute('aria-live', 'polite');
         notification.style.cssText = `
             position: fixed;
             top: 100px;
@@ -286,14 +464,21 @@ class UniversalPreferencesManager {
             animation: slideInRight 0.3s ease, fadeOut 0.3s ease 2.7s;
             max-width: 300px;
             text-align: center;
+            backdrop-filter: blur(10px);
+            cursor: pointer;
         `;
         
         notification.innerHTML = `
-            <div style="display: flex; align-items: center; gap: 10px;">
-                <span style="font-size: 20px;">${this.theme === 'dark' ? '🌙' : '☀️'}</span>
+            <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
                 <span>${message}</span>
             </div>
         `;
+        
+        // Click to dismiss
+        notification.addEventListener('click', () => {
+            notification.style.animation = 'fadeOut 0.2s ease';
+            setTimeout(() => notification.remove(), 200);
+        });
         
         // Add animation styles if not already present
         if (!document.getElementById('preference-animations')) {
@@ -322,10 +507,17 @@ class UniversalPreferencesManager {
                     .preference-notification {
                         top: 80px !important;
                         right: 15px !important;
+                        left: 15px !important;
                         max-width: calc(100vw - 30px) !important;
                         padding: 12px 20px !important;
                         font-size: 13px !important;
                     }
+                }
+                
+                /* Hover effect */
+                .preference-notification:hover {
+                    box-shadow: 0 12px 32px rgba(107, 162, 146, 0.6);
+                    transform: translateY(-2px);
                 }
             `;
             document.head.appendChild(animStyles);
@@ -336,19 +528,42 @@ class UniversalPreferencesManager {
         // Auto remove after 3 seconds
         setTimeout(() => {
             if (notification.parentElement) {
-                notification.remove();
+                notification.style.animation = 'fadeOut 0.3s ease';
+                setTimeout(() => {
+                    if (notification.parentElement) {
+                        notification.remove();
+                    }
+                }, 300);
             }
         }, 3000);
     }
 
     /**
-     * Log current preferences to console
+     * Save timestamp of last preference change
+     */
+    saveTimestamp() {
+        const timestamp = new Date().toISOString();
+        CookieManager.setCookie(this.TIMESTAMP_COOKIE, timestamp);
+    }
+
+    /**
+     * Trigger custom events for other scripts
+     */
+    triggerEvent(eventName, detail) {
+        const event = new CustomEvent(eventName, { detail });
+        window.dispatchEvent(event);
+    }
+
+    /**
+     * Log current preferences to console with style
      */
     logPreferences() {
-        console.log('🎨 InnerNest Preferences:');
-        console.log(`  Theme: ${this.theme}`);
-        console.log(`  Language: ${this.language}`);
-        console.log(`  Cookies: ${CookieManager.hasCookie(this.THEME_COOKIE) ? '✓' : '✗'} Theme, ${CookieManager.hasCookie(this.LANGUAGE_COOKIE) ? '✓' : '✗'} Language`);
+        console.log('%c🎨 InnerNest Preferences', 'color: #6BA292; font-weight: bold; font-size: 16px;');
+        console.log('%c  Theme:', 'color: #588377; font-weight: bold;', this.theme);
+        console.log('%c  Language:', 'color: #588377; font-weight: bold;', this.language);
+        console.log('%c  Cookies:', 'color: #588377; font-weight: bold;', 
+            `${CookieManager.hasCookie(this.THEME_COOKIE) ? '✓' : '✗'} Theme, ${CookieManager.hasCookie(this.LANGUAGE_COOKIE) ? '✓' : '✗'} Language`);
+        console.log('%c  Keyboard Shortcuts:', 'color: #588377; font-weight: bold;', 'Alt+T (theme), Alt+L (language)');
     }
 
     /**
@@ -357,6 +572,7 @@ class UniversalPreferencesManager {
     resetPreferences() {
         CookieManager.deleteCookie(this.THEME_COOKIE);
         CookieManager.deleteCookie(this.LANGUAGE_COOKIE);
+        CookieManager.deleteCookie(this.TIMESTAMP_COOKIE);
         this.theme = 'light';
         this.language = 'en';
         this.applyTheme(this.theme, true);
@@ -373,19 +589,43 @@ class UniversalPreferencesManager {
             theme: this.theme,
             language: this.language,
             themeCookie: CookieManager.getCookie(this.THEME_COOKIE),
-            languageCookie: CookieManager.getCookie(this.LANGUAGE_COOKIE)
+            languageCookie: CookieManager.getCookie(this.LANGUAGE_COOKIE),
+            lastUpdated: CookieManager.getCookie(this.TIMESTAMP_COOKIE),
+            systemPreference: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light',
+            browserLanguage: navigator.language || navigator.userLanguage
         };
+    }
+
+    /**
+     * Export preferences as JSON
+     * @returns {string} JSON string of preferences
+     */
+    exportPreferences() {
+        return JSON.stringify(this.getPreferences(), null, 2);
+    }
+
+    /**
+     * Import preferences from JSON
+     * @param {string} jsonString - JSON string of preferences
+     */
+    importPreferences(jsonString) {
+        try {
+            const prefs = JSON.parse(jsonString);
+            if (prefs.theme) this.applyTheme(prefs.theme, true);
+            if (prefs.language) this.applyLanguage(prefs.language, true);
+            console.log('✓ Preferences imported successfully');
+        } catch (e) {
+            console.error('✗ Failed to import preferences:', e);
+        }
     }
 }
 
 /**
- * Enhanced Language Manager with Cookie Integration
+ * Enhanced Language Manager Integration
  */
 if (typeof LanguageManager !== 'undefined') {
-    // Extend the existing LanguageManager to use preferences
     const originalInit = LanguageManager.prototype.init;
     LanguageManager.prototype.init = function() {
-        // Use preference manager's language if available
         if (window.preferencesManager) {
             this.currentLanguage = window.preferencesManager.language;
         }
@@ -395,7 +635,6 @@ if (typeof LanguageManager !== 'undefined') {
     const originalChangeLanguage = LanguageManager.prototype.changeLanguage;
     LanguageManager.prototype.changeLanguage = function(lang) {
         originalChangeLanguage.call(this, lang);
-        // Update preferences manager
         if (window.preferencesManager) {
             window.preferencesManager.applyLanguage(lang, false);
         }
@@ -405,16 +644,29 @@ if (typeof LanguageManager !== 'undefined') {
 // Initialize preferences manager immediately (even before DOM loads)
 window.preferencesManager = new UniversalPreferencesManager();
 
-// Expose utility functions for debugging
+// Expose enhanced utility functions
 window.resetPreferences = () => window.preferencesManager.resetPreferences();
 window.getPreferences = () => window.preferencesManager.getPreferences();
 window.showPreferences = () => console.table(window.preferencesManager.getPreferences());
+window.exportPreferences = () => {
+    const json = window.preferencesManager.exportPreferences();
+    console.log(json);
+    return json;
+};
+window.importPreferences = (json) => window.preferencesManager.importPreferences(json);
 
 // Export for use in other modules
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { CookieManager, UniversalPreferencesManager };
 }
 
-console.log('🍪 Universal Preferences Manager loaded');
-console.log('💡 Type resetPreferences() to reset all preferences');
-console.log('💡 Type showPreferences() to view current preferences');
+// Stylish console messages
+console.log('%c🍪 Enhanced Preferences Manager Loaded', 'background: linear-gradient(135deg, #6BA292, #588377); color: white; padding: 8px 16px; border-radius: 8px; font-weight: bold;');
+console.log('%c💡 Keyboard Shortcuts:', 'color: #6BA292; font-weight: bold;');
+console.log('   Alt+T - Toggle theme');
+console.log('   Alt+L - Toggle language');
+console.log('%c💡 Console Commands:', 'color: #6BA292; font-weight: bold;');
+console.log('   resetPreferences()  - Reset to defaults');
+console.log('   showPreferences()   - View current settings');
+console.log('   exportPreferences() - Export as JSON');
+console.log('   importPreferences(json) - Import from JSON');

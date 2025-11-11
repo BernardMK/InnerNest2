@@ -180,6 +180,13 @@ const gamesPopupHTML = `
 
 document.addEventListener('DOMContentLoaded', function() {
     document.body.insertAdjacentHTML('beforeend', gamesPopupHTML);
+    
+    // Translate games popup immediately after insertion
+    if (window.languageManager) {
+        const t = translations[window.languageManager.currentLanguage];
+        window.languageManager.translateGamesPopup(t.games);
+    }
+    
     initializeGamesPopup();
 });
 
@@ -196,7 +203,7 @@ function initializeGamesPopup() {
     const floatingCards = document.querySelectorAll('.floating-card');
     floatingCards.forEach(card => {
         const cardText = card.querySelector('h3');
-        if (cardText && cardText.textContent.trim() === 'Games') {
+        if (cardText && (cardText.textContent.trim() === 'Games' || cardText.textContent.trim() === 'Juegos')) {
             card.style.cursor = 'pointer';
             card.addEventListener('click', function() {
                 overlay.style.display = 'flex';
@@ -563,7 +570,7 @@ function initializeGamesPopup() {
                 
                 if (matches === 8) {
                     setTimeout(() => {
-                        alert(`🎉 Congratulations! You won in ${moves} moves!`);
+                        alert(window.languageManager ? window.languageManager.getAlert('games.memoryWin', { moves: moves }) : `🎉 Congratulations! You won in ${moves} moves!`);
                     }, 500);
                 }
             } else {
@@ -781,7 +788,7 @@ function initializeGamesPopup() {
                     clearInterval(gameInterval);
                     clearInterval(moleInterval);
                     startBtn.disabled = false;
-                    alert(`🎯 Game Over! Your score: ${score}`);
+                    alert(window.languageManager ? window.languageManager.getAlert('games.whackGameOver', { score: score }) : `🎯 Game Over! Your score: ${score}`);
                 }
             }, 1000);
 
@@ -1026,7 +1033,7 @@ function initializeGamesPopup() {
                     startBtn.disabled = false;
                     wordEl.textContent = 'GAME OVER';
                     wordEl.style.color = '#ef4444';
-                    setTimeout(() => alert(`🎨 Final Score: ${score}`), 300);
+                    setTimeout(() => alert(window.languageManager ? window.languageManager.getAlert('games.paintFinalScore', { score: score }) : `🎨 Final Score: ${score}`), 300);
                 }
             }, 1000);
         });
@@ -1305,7 +1312,7 @@ function initializeGamesPopup() {
                 foundEl.textContent = found;
                 
                 if (found === words.length) {
-                    setTimeout(() => alert('🎉 Congratulations! You found all words!'), 300);
+                    setTimeout(() => alert(window.languageManager ? window.languageManager.getAlert('games.wordSearchComplete') : '🎉 Congratulations! You found all words!'), 300);
                 }
             } else {
                 selectedCells.forEach(c => c.classList.remove('selected'));
@@ -1731,6 +1738,13 @@ function initializeGamesPopup() {
     }
 }
 }
+function retranslateGamesPopup() {
+    if (window.languageManager) {
+        const t = translations[window.languageManager.currentLanguage];
+        window.languageManager.translateGamesPopup(t.games);
+    }
+}
+window.addEventListener('languageChanged', retranslateGamesPopup);
 
 
 // DOM Elements
@@ -1861,39 +1875,46 @@ function handleServiceClick(serviceType) {
             showResourcesLibrary();
             break;
         default:
-            alert('Coming soon! This feature is under development.');
+            alert(window.languageManager ? window.languageManager.getAlert('games.comingSoon') : 'Coming soon! This feature is under development.');
     }
 }
 
 function showTherapyOptions() {
-    alert('Professional Therapy\n\nConnect with licensed therapists:\n• Individual counseling\n• Specialized treatment approaches\n• Flexible scheduling\n• Online and in-person options\n\nContact us to schedule your consultation!');
+    alert(window.languageManager ? window.languageManager.getAlert('therapyOptions') : 'Professional Therapy\n\nConnect with licensed therapists:\n• Individual counseling\n• Specialized treatment approaches\n• Flexible scheduling\n• Online and in-person options\n\nContact us to schedule your consultation!');
 }
 
 function showGroupSessions() {
-    alert('Group Sessions\n\nJoin our supportive community:\n• Anxiety support groups\n• Depression recovery circles\n• Stress management workshops\n• Trauma healing groups\n\nFind your group and start healing together!');
+    alert(window.languageManager ? window.languageManager.getAlert('groupSessions') : 'Group Sessions\n\nJoin our supportive community:\n• Anxiety support groups\n• Depression recovery circles\n• Stress management workshops\n• Trauma healing groups\n\nFind your group and start healing together!');
 }
 
 function showResourcesLibrary() {
-    alert('Resources Library\n\nExplore our comprehensive collection:\n• Educational articles\n• Self-help guides\n• Meditation resources\n• Crisis support information\n\nAccess tools for your mental health journey!');
+    alert(window.languageManager ? window.languageManager.getAlert('resourcesLibrary') : 'Resources Library\n\nExplore our comprehensive collection:\n• Educational articles\n• Self-help guides\n• Meditation resources\n• Crisis support information\n\nAccess tools for your mental health journey!');
 }
 
 // Button click handlers
 function bookAppointment() {
-    alert('Book Appointment\n\nWe\'ll connect you with a qualified mental health professional.\n\nFeatures:\n• Choose your preferred therapist\n• Select convenient time slots\n• Online or in-person sessions\n• Insurance verification assistance\n\nCall us at: (555) 123-MIND\nOr visit our booking portal online!');
+    alert(window.languageManager ? window.languageManager.getAlert('bookAppointment') : 'Book Appointment\n\nWe\'ll connect you with a qualified mental health professional.\n\nFeatures:\n• Choose your preferred therapist\n• Select convenient time slots\n• Online or in-person sessions\n• Insurance verification assistance\n\nCall us at: (555) 123-MIND\nOr visit our booking portal online!');
 }
 
 function findResources(conditionType) {
-    const resourceLinks = {
-        anxiety: 'anxiety management tools and exercises',
-        depression: 'depression support resources and guides',
-        stress: 'stress reduction techniques and worksheets',
-        trauma: 'trauma recovery resources and support groups',
-        relationships: 'relationship building tools and communication guides',
-        selfcare: 'self-care planning tools and wellness activities'
-    };
-    
-    const resource = resourceLinks[conditionType] || 'mental health resources';
-    alert(`Find Resources\n\nDiscover helpful ${resource}:\n\n• Educational materials\n• Interactive tools\n• Support group finder\n• Crisis hotlines\n• Professional referrals\n\nVisit our resources section for comprehensive support!`);
+    if (window.languageManager) {
+        const resource = window.languageManager.getAlert(`resourceType.${conditionType}`);
+        const message = window.languageManager.getAlert('findResources', { resource: resource });
+        alert(message);
+    } else {
+        // Fallback if translation system not loaded
+        const resourceLinks = {
+            anxiety: 'anxiety management tools and exercises',
+            depression: 'depression support resources and guides',
+            stress: 'stress reduction techniques and worksheets',
+            trauma: 'trauma recovery resources and support groups',
+            relationships: 'relationship building tools and communication guides',
+            selfcare: 'self-care planning tools and wellness activities'
+        };
+        
+        const resource = resourceLinks[conditionType] || 'mental health resources';
+        alert(`Find Resources\n\nDiscover helpful ${resource}:\n\n• Educational materials\n• Interactive tools\n• Support group finder\n• Crisis hotlines\n• Professional referrals\n\nVisit our resources section for comprehensive support!`);
+    }
 }
 
 // Scroll animations
