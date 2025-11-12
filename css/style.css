@@ -3424,3 +3424,27 @@ body.dark-mode #cure-list li {
     height: auto;
     border-radius: 14px;
 }
+#bipolaricon
+{
+    width: 50%;
+    height: auto;
+    border-radius: 14px;
+}
+#panicdisordericon
+{
+    width: 25%;
+    height: auto;
+    border-radius: 14px;
+}
+#delusionaldisordericon
+{
+    width: 40%;
+    height: auto;
+    border-radius: 14px;
+}
+#eatingdisordericon
+{
+    width: 30%;
+    height: auto;
+    border-radius: 14px;
+}
