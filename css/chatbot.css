@@ -254,6 +254,7 @@ body {
     box-shadow: var(--shadow);
     margin-top: 30px;
     max-width: 1200px;
+    height: 758px;
 }
 
 .chat-header {
