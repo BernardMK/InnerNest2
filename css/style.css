@@ -3377,7 +3377,7 @@ body.dark-mode #cure-list li {
 }
 #gamesicon
 {
-    width: 12%;
+    width:100%;
     height: auto;
     border-radius: 14px;
 }
