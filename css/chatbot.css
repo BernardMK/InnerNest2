@@ -1048,7 +1048,7 @@ body.dark-mode .clear-chat-btn{
 }
 body.dark-mode .end-session-btn,
 body.dark-mode .clear-chat-btn{
-    background: #ff0000;
+    background: linear-gradient(135deg, rgb(220, 53, 69), rgb(200, 35, 51));
     color: #E5E7EB;
     border-color: transparent;
 }
