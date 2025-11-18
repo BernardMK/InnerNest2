@@ -3448,3 +3448,6 @@ body.dark-mode #cure-list li {
     height: auto;
     border-radius: 14px;
 }
+#game_text{
+    margin-top: -20px;
+}
