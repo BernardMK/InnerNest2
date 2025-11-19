@@ -164,11 +164,7 @@ class UniversalPreferencesManager {
         }
     }
 
-    /**
-     * Apply theme to the page with smooth transition
-     * @param {string} theme - 'dark' or 'light'
-     * @param {boolean} showNotification - Whether to show notification
-     */
+   
     applyTheme(theme, showNotification = true) {
         const isDark = theme === 'dark';
         
