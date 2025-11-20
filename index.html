@@ -136,23 +136,25 @@
             </div>
         </div>
         <div class="container">
+            <div class="description" id="description">
+                <h2>Understanding Mental Health Conditions</h2>
+            </div>
+        </div>
+        <div class="container">
             
             <div id ="disoder_preview">
-                <h2>Understanding Mental Health Conditions</h2>
                 <div class="conditions-grid" id="item_container">
-                    <a href="resources.html">
-                        <div class="condition-item" id="anxiety">
-                            <div class="condition-icon"><img src="image/anxiety.png" alt="Anxiety Icon" id="anxietyicon"></div>
-                            <h3>Anxiety Disorders</h3>
-                            <p>Learn about anxiety symptoms, coping strategies, and treatment options.</p>
-                            <div class="condition-tags">
-                                <span class="tag">GAD</span>
-                                <span class="tag">Panic</span>
-                                <span class="tag">Social</span>
-                            </div>
-                        
+                    <div class="condition-item" id="anxiety" onclick="showAndScroll('anxiety_disorder')">
+                        <div class="condition-icon"><img src="image/anxiety.png" alt="Anxiety Icon" id="anxietyicon"></div>
+                        <h3>Anxiety Disorders</h3>
+                        <p>Learn about anxiety symptoms, coping strategies, and treatment options.</p>
+                        <div class="condition-tags">
+                            <span class="tag">GAD</span>
+                            <span class="tag">Panic</span>
+                            <span class="tag">Social</span>
                         </div>
-                    </a>
+                    
+                    </div>
                     
                     <a href="resources.html">
                         <div class="condition-item" id="depression">
