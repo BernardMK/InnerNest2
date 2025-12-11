@@ -1,4 +1,4 @@
-
+alert("Click on the name to book an appointment with our therapist!");
 // Enhanced Games Popup System
 // Guarded event listeners: some pages may not include these elements
 const supportCard = document.getElementById('supportCard');

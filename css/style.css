@@ -3516,7 +3516,7 @@ body.dark-mode #cure-list li {
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    padding: 20px;
+    padding: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -3525,7 +3525,7 @@ body.dark-mode #cure-list li {
 }
 
 .profile-image {
-    width: 100%;
+    width: 80%;
     aspect-ratio: 1;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.2);
@@ -3545,6 +3545,17 @@ body.dark-mode #cure-list li {
     font-weight: 600;
     text-align: center;
     width: 100%;
+    margin-bottom: 10px;
+}
+.availability-tag{
+    background: rgba(102, 23, 23, 0);
+    padding: 10px 20px;
+    border-radius: 15px;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .doctor-info {
@@ -3560,6 +3571,7 @@ body.dark-mode #cure-list li {
     font-size: 2rem;
     margin-bottom: 10px;
     color: white;
+    text-align: center;
 }
 
 .doctor-info .specialty {
@@ -3570,15 +3582,18 @@ body.dark-mode #cure-list li {
 }
 
 .doctor-info p {
-    color: rgba(255, 255, 255, 0.95);
+    color: rgb(255 255 255);
     line-height: 1.8;
     font-size: 1rem;
+    text-align: center;
 }
 
 .details-section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
+    display: flex;
+}
+#booking_btn{
+    display: flex;
+    justify-content: center;
 }
 
 .detail-box {
@@ -3654,7 +3669,6 @@ body.dark-mode .detail-box {
 body.dark-mode .footer {
     background: #2C3E37;
 }
-
 /* Responsive Design */
 @media (max-width: 1024px) {
     .doctor-profile-section {
@@ -3665,6 +3679,7 @@ body.dark-mode .footer {
     .profile-image {
         font-size: 3rem;
     }
+    
 }
 
 @media (max-width: 768px) {
