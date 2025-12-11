@@ -2344,14 +2344,14 @@ function addCustomStyles() {
         
         .modal-content {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            top: 42%;
+            left: 42%;
+            transform: translate(-45%, -45%);
             background: #719a8d;
             border-radius: 20px;
             padding: 40px;
             max-width: 600px;
-            max-height: 80vh;
+            max-height: 95vh;
             overflow-y: auto;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         }
