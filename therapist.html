@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnerNest - Your Mental Health Sanctuary</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="language-toggle">
+        <button class="lang-btn active" data-lang="en">
+            EN
+        </button>
+        <button class="lang-btn" data-lang="es">
+            ES
+        </button>
+    </div> 
+    <button class="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()">🌙</button>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-links" id="index">
+                <a href="index.html" class="nav-link" id="home">
+
+                    <span class="nav-text">Home</span>
+                </a>
+            </div>
+            <div class="nav-links" id="post">
+                <a href="blog.html" class="nav-link" id="blog">
+
+                    <span class="nav-text">Blog</span>
+                </a>
+            </div>
+            
+            <div class="logo" id="logo">
+                <div id="logo_img">
+                    <a href ="index.html"><img src="image/InnerNest logo.png" alt="logo" id="image"></a>
+                </div>
+                
+
+            </div>
+            
+            <div class="nav-links" id="chat">
+                <a href="chat.html" class="nav-link" id="chatb">
+                    <span class="nav-text">Chat</span>
+                </a>
+            </div>
+            <div class="nav-links" id="book">
+                <a href="therapist.html" class="nav-link" id="booka">
+
+                    <span class="nav-text">Book</span>
+                </a>
+            </div>
+            
+            <div class="mobile-menu-toggle" id="mobileToggle">
+                <span>
+                </span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html" class="mobile-nav-link">
+        </a>
+        <a href="blog.html" class="mobile-nav-link">
+        </a>
+        <a href="chat.html" class="mobile-nav-link">
+        </a>
+        <a href="therapist.html" class="mobile-nav-link">
+        </a>
+    </div>
+
+    <!-- Main Hero Section -->
+    <div id="content">
+        <h1 class="page-title">Meet Our Mental Health Professionals</h1>
+
+        <div class="doctor-card">
+            <div class="doctor-profile-section">
+                <div class="profile-image-wrapper">
+                    <div class="profile-image" style="background-image: url('images/doctor1.jpg');">
+                    </div>
+                    <div class="doctor-name-tag">
+                        Dr. Maya Thompson
+                    </div>
+                </div>
+
+                <div class="doctor-info">
+                    <h2>Licensed Clinical Psychologist</h2>
+                    <p class="specialty">Anxiety • Depression • Teen Counseling</p>
+                    <p>Dr. Thompson specializes in helping teens and young adults navigate overwhelming emotions, social pressure, and academic stress. With more than eight years of practice, she blends evidence-based cognitive behavioral therapy with mindfulness strategies that help clients slow down their thoughts, build confidence, and take control of their emotional wellbeing. Her approach is encouraging and non-judgmental, creating a safe space where clients can express themselves freely and grow at their own pace.</p>
+                </div>
+            </div>
+
+            <div class="details-section">
+                <a href="book.html">
+                    <div class="detail-box">Book Now</div>
+                </a>
+                <div class="detail-box">CBT, Mindfulness Therapy</div>
+                <div class="detail-box">Solution-Focused & Empathy-Driven</div>
+                <div class="detail-box">Mon–Fri • 9 AM – 6 PM</div>
+            </div>
+        </div>
+
+
+
+        <div class="doctor-card">
+            <div class="doctor-profile-section">
+                <div class="profile-image-wrapper">
+                    <div class="profile-image" style="background-image: url('images/doctor2.jpg');">
+                    </div>
+                    <div class="doctor-name-tag">
+                        Dr. Samuel Rivera
+                    </div>
+                </div>
+
+                <div class="doctor-info">
+                    <h2>Mental Health Counselor</h2>
+                    <p class="specialty">Stress • Trauma • Relationship Counseling</p>
+                    <p>Dr. Rivera is known for his calm, reassuring presence and his ability to help clients process difficult experiences without feeling overwhelmed. He focuses on healing trauma, managing long-term stress, and improving communication in relationships. His therapeutic style is slow-paced, grounding, and deeply patient, helping clients regain stability and rebuild trust in themselves after emotional setbacks. Dr. Rivera encourages clients to reflect, release, and reconnect with their personal strengths.</p>
+                </div>
+            </div>
+
+            <div class="details-section">
+                <a href="book.html">
+                    <div class="detail-box">Book Now</div>
+                </a>
+                <div class="detail-box">Trauma-Informed Therapy</div>
+                <div class="detail-box">Calm, Supportive & Patient-Centered</div>
+                <div class="detail-box">Tue–Sat • 10 AM – 7 PM</div>
+            </div>
+        </div>
+
+
+
+        <div class="doctor-card">
+            <div class="doctor-profile-section">
+                <div class="profile-image-wrapper">
+                    <div class="profile-image" style="background-image: url('images/doctor3.jpg');">
+                    </div>
+                    <div class="doctor-name-tag">
+                        Dr. Amina Khalid
+                    </div>
+                </div>
+
+                <div class="doctor-info">
+                    <h2>Therapist & Wellness Coach</h2>
+                    <p class="specialty">Self-Esteem • Burnout • Life Transitions</p>
+                    <p>Dr. Khalid helps clients work through feelings of overwhelm, exhaustion, and self-doubt by taking a holistic approach to mental wellness. Her sessions integrate guided reflection, behavioral techniques, and personalized wellness planning to help clients regain motivation and clarity. Whether someone is transitioning into a new phase of life or recovering from burnout, she emphasizes self-awareness, healing, and sustainable growth. Her warm, uplifting energy helps clients reconnect with their purpose and feel more grounded in their daily lives.</p>
+                </div>
+            </div>
+
+            <div class="details-section">
+                <a href="book.html">
+                    <div class="detail-box">Book Now</div>
+                </a>
+                <div class="detail-box">Holistic + Behavioral Therapy</div>
+                <div class="detail-box">Warm, Motivational & Growth-Focused</div>
+                <div class="detail-box">Mon–Thu • 11 AM – 5 PM</div>
+            </div>
+        </div>
+        <div class="doctor-card">
+            <div class="doctor-profile-section">
+                <div class="profile-image-wrapper">
+                    <div class="profile-image" style="background-image: url('images/doctor4.jpg');"></div>
+                    <div class="doctor-name-tag">Dr. Elena Brooks</div>
+                </div>
+
+                <div class="doctor-info">
+                    <h2>Child & Family Therapist</h2>
+                    <p class="specialty">Family Conflict • Behavioral Issues • Child Development</p>
+                    <p>Dr. Brooks works closely with children, teens, and their families to help create healthier communication patterns and emotional understanding at home. Her sessions are interactive, gentle, and designed to make younger clients feel safe and heard. She helps parents and guardians understand emotional triggers, improve structure at home, and support kids through developmental and academic challenges. Dr. Brooks believes in teamwork—family and therapist moving together toward stronger relationships.</p>
+                </div>
+            </div>
+
+            <div class="details-section">
+                <a href="book.html"><div class="detail-box">Book Now</div></a>
+                <div class="detail-box">Play Therapy, Family Systems</div>
+                <div class="detail-box">Practical, Family-Driven Approach</div>
+                <div class="detail-box">Wed–Sat • 8 AM – 4 PM</div>
+            </div>
+        </div>
+
+
+        <div class="doctor-card">
+            <div class="doctor-profile-section">
+                <div class="profile-image-wrapper">
+                    <div class="profile-image" style="background-image: url('images/doctor5.jpg');"></div>
+                    <div class="doctor-name-tag">Dr. Lucas Bennett</div>
+                </div>
+
+                <div class="doctor-info">
+                    <h2>Clinical Social Worker</h2>
+                    <p class="specialty">Trauma Recovery • Addiction • Grief Support</p>
+                    <p>Dr. Bennett specializes in helping individuals rebuild their lives after major emotional distress, loss, or addictive patterns. His style is steady and grounded, giving clients space to talk openly while guiding them toward healthier coping strategies. He emphasizes emotional validation and long-term stability, helping clients recognize harmful cycles and replace them with supportive habits. Dr. Bennett’s clients appreciate his honesty, structure, and ability to help them see progress clearly and consistently.</p>
+                </div>
+            </div>
+
+            <div class="details-section">
+                <a href="book.html"><div class="detail-box">Book Now</div></a>
+                <div class="detail-box">Trauma Recovery Programs</div>
+                <div class="detail-box">Direct, Honest & Supportive</div>
+                <div class="detail-box">Mon–Fri • 12 PM – 8 PM</div>
+            </div>
+        </div>
+
+
+        <div class="doctor-card">
+            <div class="doctor-profile-section">
+                <div class="profile-image-wrapper">
+                    <div class="profile-image" style="background-image: url('images/doctor6.jpg');"></div>
+                    <div class="doctor-name-tag">Dr. Amara Desai</div>
+                </div>
+
+                <div class="doctor-info">
+                    <h2>Holistic Mental Wellness Specialist</h2>
+                    <p class="specialty">Mindfulness • Emotional Regulation • Stress Relief</p>
+                    <p>Dr. Desai blends traditional therapy with holistic wellness practices such as grounding techniques, breathing work, guided visualization, and emotional awareness training. She focuses on helping clients reduce overthinking, break out of stress cycles, and reconnect with their inner calm. Clients describe her sessions as peaceful, grounding, and highly personalized. Her goal is to help people find balance not just mentally, but physically and emotionally as well.</p>
+                </div>
+            </div>
+
+            <div class="details-section">
+                <a href="book.html"><div class="detail-box">Book Now</div></a>
+                <div class="detail-box">Holistic + Integrative Therapy</div>
+                <div class="detail-box">Peaceful, Centered & Restorative</div>
+                <div class="detail-box">Tue–Fri • 9 AM – 3 PM</div>
+            </div>
+        </div>
+
+
+        <div class="doctor-card">
+            <div class="doctor-profile-section">
+                <div class="profile-image-wrapper">
+                    <div class="profile-image" style="background-image: url('images/doctor7.jpg');"></div>
+                    <div class="doctor-name-tag">Dr. Jonathan Pierce</div>
+                </div>
+
+                <div class="doctor-info">
+                    <h2>Behavioral Health Specialist</h2>
+                    <p class="specialty">Habit Change • Anger Management • ADHD Support</p>
+                    <p>Dr. Pierce helps clients build stronger daily routines, improve self-control, and understand their emotional reactions. He works especially well with teens and young adults who struggle with impulse control, motivation, or maintaining focus. His sessions combine strategy, structure, and straightforward coaching. Clients leave with clear plans, simple steps, and renewed confidence in their ability to manage life’s challenges more effectively.</p>
+                </div>
+            </div>
+
+            <div class="details-section">
+                <a href="book.html"><div class="detail-box">Book Now</div></a>
+                <div class="detail-box">Behavioral Therapy & Coaching</div>
+                <div class="detail-box">Structured, Direct & Empowering</div>
+                <div class="detail-box">Fri–Sun • 10 AM – 6 PM</div>
+            </div>
+        </div>
+
+
+        <div class="doctor-card">
+            <div class="doctor-profile-section">
+                <div class="profile-image-wrapper">
+                    <div class="profile-image" style="background-image: url('images/doctor8.jpg');"></div>
+                    <div class="doctor-name-tag">Dr. Isabella Hart</div>
+                </div>
+
+                <div class="doctor-info">
+                    <h2>Licensed Therapist</h2>
+                    <p class="specialty">Self-Love • Identity • Personal Growth</p>
+                    <p>Dr. Hart guides clients who are exploring identity, purpose, and emotional self-worth. Her sessions are reflective and supportive, helping individuals understand who they are, what they want, and how to build a healthier relationship with themselves. She specializes in helping clients break patterns of negative self-talk and find a more empowered sense of identity. Dr. Hart believes transformation begins with compassion—for yourself first.</p>
+                </div>
+            </div>
+
+            <div class="details-section">
+                <a href="book.html"><div class="detail-box">Book Now</div></a>
+                <div class="detail-box">Reflective & Growth-Based Therapy</div>
+                <div class="detail-box">Compassionate, Insightful & Empowering</div>
+                <div class="detail-box">Mon–Thu • 1 PM – 7 PM</div>
+            </div>
+        </div>
+
+
+
+        <div id="load_more">
+            <div id="more">
+                <h4>Load More</h4>
+            </div>
+        </div>
+    </div>
+
+
+   
+
+    <!-- Footer -->
+     <footer class="footer">
+        <div class="container">
+        <div class="footer-content">
+        <div class="footer-section">
+        <h3>InnerNest</h3>
+        <p>Your sanctuary for mental wellness and growth. We provide compassionate support, evidence-based resources, and practical tools to help you manage anxiety, depression, stress, and relationship challenges. Explore guided exercises, informative articles, community stories, and professional connections designed to build resilience, foster self-care, and promote long-term well-being.</p>
+        </div>
+        <div class="footer-section" id="support-column" style="margin-left:auto; margin-right:-40px; text-align:right;">
+        <h4 style="margin-left:54px; margin-right: 55px;">Social</h4>
+        <div style="width:100%; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+            <ul style="list-style:none; padding:0; margin:0; text-align:center;">
+             <a href="https://www.instagram.com/innernest123/" style="margin-right: 0px; margin-left: 7px; font-style: italic;color: #F7EFE5; text-decoration: none;"><li style="margin:1px -56px;">Instagram</li></a>
+             <a href="https://www.youtube.com/@InnerNest-o5z" style="margin-right: 7px; margin-left: 7px; font-style: italic;color: #F7EFE5; text-decoration: none;"><li style="margin:6px -56px;">YouTube</li></a>
+
+            </ul>
+        </div>
+        </div>
+        </div>
+     
+        </div>
+    </footer>
+    <script src="js/preferences.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/booking.js"></script>
+    <script src="js/translate.js"></script>
+</body>
+</html>
